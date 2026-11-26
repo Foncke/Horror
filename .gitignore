@@ -3,5 +3,6 @@ out/
 models/
 __pycache__/
 .venv/
-# rendered videos
+# rendered videos (final uploads go in renders/ via Git LFS)
 *.mp4
+!renders/*.mp4
