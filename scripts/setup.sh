@@ -12,6 +12,13 @@ if ! command -v ffmpeg >/dev/null; then
 fi
 ffmpeg -version | head -1
 
+echo "==> Git LFS (for uploading full-size renders)"
+if ! command -v git-lfs >/dev/null; then
+  apt-get update -qq && apt-get install -y -qq git-lfs
+fi
+git lfs install >/dev/null
+git lfs version
+
 echo "==> Node packages (Remotion 4.0.545, @remotion/three, React 19, TypeScript 5.9, Three.js, React Three Fiber, GSAP, Lucide)"
 npm install
 
