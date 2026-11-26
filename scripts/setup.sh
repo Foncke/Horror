@@ -6,7 +6,13 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 PROJECT="${1:-$ROOT}"
 cd "$ROOT"
 
-echo "==> Node packages (Remotion 4.0.545, React 19, TypeScript 5.9)"
+echo "==> FFmpeg"
+if ! command -v ffmpeg >/dev/null; then
+  apt-get update -qq && apt-get install -y -qq ffmpeg
+fi
+ffmpeg -version | head -1
+
+echo "==> Node packages (Remotion 4.0.545, @remotion/three, React 19, TypeScript 5.9, Three.js, React Three Fiber, GSAP, Lucide)"
 npm install
 
 echo "==> Python packages (numpy, scipy, soundfile, Pillow, sherpa-onnx)"
