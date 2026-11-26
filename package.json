@@ -1,0 +1,24 @@
+{
+  "name": "horror-video-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Video studio: Remotion animation + Python sound/texture/transcription tooling",
+  "scripts": {
+    "setup": "bash scripts/setup.sh",
+    "studio": "remotion studio",
+    "render": "remotion render"
+  },
+  "dependencies": {
+    "remotion": "4.0.545",
+    "@remotion/cli": "4.0.545",
+    "@remotion/bundler": "4.0.545",
+    "@remotion/renderer": "4.0.545",
+    "@remotion/media": "4.0.545",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.0",
+    "@types/react": "^19.0.0"
+  }
+}
