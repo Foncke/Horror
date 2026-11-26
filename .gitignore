@@ -3,3 +3,6 @@ out/
 models/
 __pycache__/
 .venv/
+# generated: rebuild with tools/align.py, projects/*/mix.py and remotion render
+public/*/soundtrack.wav
+*.mp4

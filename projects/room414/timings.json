@@ -1,0 +1,1245 @@
+{
+ "duration": 87.327,
+ "lines": [
+  {
+   "text": "Imagine you check into a hotel at 3 a.m.",
+   "start": 0.0,
+   "end": 2.87
+  },
+  {
+   "text": "The man at the front desk never looks up. He just slides you a key. Room 414.",
+   "start": 3.0,
+   "end": 9.93
+  },
+  {
+   "text": "The hallway is so long, the lights at the end look like stars. Every door is shut.",
+   "start": 10.12,
+   "end": 16.46
+  },
+  {
+   "text": "On your pillow, there's a card. No logo. No phone number. Just one rule:",
+   "start": 16.854,
+   "end": 22.74
+  },
+  {
+   "text": "\"If someone knocks after midnight, do not answer. We do not have night staff.\"",
+   "start": 23.054,
+   "end": 28.67
+  },
+  {
+   "text": "You laugh.",
+   "start": 28.894,
+   "end": 30.02
+  },
+  {
+   "text": "Then \u2014 knock. Knock. Knock.",
+   "start": 30.534,
+   "end": 33.39
+  },
+  {
+   "text": "\"Room service.\"",
+   "start": 33.644,
+   "end": 34.65
+  },
+  {
+   "text": "You didn't order anything.",
+   "start": 34.844,
+   "end": 36.45
+  },
+  {
+   "text": "You look through the peephole. A bellhop. Perfectly still. Smiling\u2026 too wide.",
+   "start": 36.924,
+   "end": 44.11
+  },
+  {
+   "text": "He doesn't knock again. He just moves to the next door. Knock. Knock. Knock.",
+   "start": 44.324,
+   "end": 50.22
+  },
+  {
+   "text": "And it opens.",
+   "start": 50.4,
+   "end": 51.52
+  },
+  {
+   "text": "Then the next one. And the next. Every guest steps out\u2026 and follows him down the hall.",
+   "start": 51.88,
+   "end": 58.54
+  },
+  {
+   "text": "Until the hallway is empty.",
+   "start": 58.92,
+   "end": 60.87
+  },
+  {
+   "text": "Then, behind you \u2014 from inside your bathroom \u2014 someone whispers:",
+   "start": 61.32,
+   "end": 66.17
+  },
+  {
+   "text": "\"Don't let him know you're awake.\"",
+   "start": 66.25,
+   "end": 68.18
+  },
+  {
+   "text": "You checked in alone.",
+   "start": 68.49,
+   "end": 69.99
+  },
+  {
+   "text": "Under your door, the light goes dark. Two shadows. He's back.",
+   "start": 70.49,
+   "end": 76.19
+  },
+  {
+   "text": "So you have two choices.",
+   "start": 76.57,
+   "end": 78.62
+  },
+  {
+   "text": "Open the door\u2026 and follow the others.",
+   "start": 79.05,
+   "end": 81.5
+  },
+  {
+   "text": "Or stay\u2026 with whatever is in your bathroom.",
+   "start": 81.97,
+   "end": 85.37
+  },
+  {
+   "text": "What would you do?",
+   "start": 85.885,
+   "end": 87.05
+  }
+ ],
+ "words": [
+  {
+   "text": "Imagine",
+   "line": 0,
+   "start": 0.0,
+   "end": 0.48
+  },
+  {
+   "text": "you",
+   "line": 0,
+   "start": 0.48,
+   "end": 0.64
+  },
+  {
+   "text": "check",
+   "line": 0,
+   "start": 0.64,
+   "end": 0.92
+  },
+  {
+   "text": "into",
+   "line": 0,
+   "start": 0.92,
+   "end": 1.16
+  },
+  {
+   "text": "a",
+   "line": 0,
+   "start": 1.16,
+   "end": 1.28
+  },
+  {
+   "text": "hotel",
+   "line": 0,
+   "start": 1.28,
+   "end": 1.8
+  },
+  {
+   "text": "at",
+   "line": 0,
+   "start": 1.8,
+   "end": 2.04
+  },
+  {
+   "text": "3",
+   "line": 0,
+   "start": 2.04,
+   "end": 2.36
+  },
+  {
+   "text": "a.m.",
+   "line": 0,
+   "start": 2.36,
+   "end": 2.87
+  },
+  {
+   "text": "The",
+   "line": 1,
+   "start": 3.0,
+   "end": 3.44
+  },
+  {
+   "text": "man",
+   "line": 1,
+   "start": 3.44,
+   "end": 3.68
+  },
+  {
+   "text": "at",
+   "line": 1,
+   "start": 3.68,
+   "end": 3.84
+  },
+  {
+   "text": "the",
+   "line": 1,
+   "start": 3.84,
+   "end": 4.0
+  },
+  {
+   "text": "front",
+   "line": 1,
+   "start": 4.0,
+   "end": 4.36
+  },
+  {
+   "text": "desk",
+   "line": 1,
+   "start": 4.36,
+   "end": 4.88
+  },
+  {
+   "text": "never",
+   "line": 1,
+   "start": 4.88,
+   "end": 5.28
+  },
+  {
+   "text": "looks",
+   "line": 1,
+   "start": 5.28,
+   "end": 5.68
+  },
+  {
+   "text": "up.",
+   "line": 1,
+   "start": 5.68,
+   "end": 5.87
+  },
+  {
+   "text": "He",
+   "line": 1,
+   "start": 6.16,
+   "end": 6.48
+  },
+  {
+   "text": "just",
+   "line": 1,
+   "start": 6.48,
+   "end": 6.8
+  },
+  {
+   "text": "slides",
+   "line": 1,
+   "start": 6.8,
+   "end": 7.32
+  },
+  {
+   "text": "you",
+   "line": 1,
+   "start": 7.32,
+   "end": 7.48
+  },
+  {
+   "text": "a",
+   "line": 1,
+   "start": 7.48,
+   "end": 7.68
+  },
+  {
+   "text": "key.",
+   "line": 1,
+   "start": 7.68,
+   "end": 7.96
+  },
+  {
+   "text": "Room",
+   "line": 1,
+   "start": 8.32,
+   "end": 8.72
+  },
+  {
+   "text": "414.",
+   "line": 1,
+   "start": 8.72,
+   "end": 9.93
+  },
+  {
+   "text": "The",
+   "line": 2,
+   "start": 10.12,
+   "end": 10.48
+  },
+  {
+   "text": "hallway",
+   "line": 2,
+   "start": 10.48,
+   "end": 11.12
+  },
+  {
+   "text": "is",
+   "line": 2,
+   "start": 11.12,
+   "end": 11.36
+  },
+  {
+   "text": "so",
+   "line": 2,
+   "start": 11.36,
+   "end": 11.68
+  },
+  {
+   "text": "long,",
+   "line": 2,
+   "start": 11.68,
+   "end": 12.08
+  },
+  {
+   "text": "the",
+   "line": 2,
+   "start": 12.08,
+   "end": 12.21
+  },
+  {
+   "text": "lights",
+   "line": 2,
+   "start": 12.4,
+   "end": 12.76
+  },
+  {
+   "text": "at",
+   "line": 2,
+   "start": 12.76,
+   "end": 12.88
+  },
+  {
+   "text": "the",
+   "line": 2,
+   "start": 12.88,
+   "end": 13.04
+  },
+  {
+   "text": "end",
+   "line": 2,
+   "start": 13.04,
+   "end": 13.32
+  },
+  {
+   "text": "look",
+   "line": 2,
+   "start": 13.32,
+   "end": 13.6
+  },
+  {
+   "text": "like",
+   "line": 2,
+   "start": 13.6,
+   "end": 13.84
+  },
+  {
+   "text": "stars.",
+   "line": 2,
+   "start": 13.84,
+   "end": 14.44
+  },
+  {
+   "text": "Every",
+   "line": 2,
+   "start": 14.88,
+   "end": 15.36
+  },
+  {
+   "text": "door",
+   "line": 2,
+   "start": 15.36,
+   "end": 15.84
+  },
+  {
+   "text": "is",
+   "line": 2,
+   "start": 15.84,
+   "end": 16.16
+  },
+  {
+   "text": "shut.",
+   "line": 2,
+   "start": 16.16,
+   "end": 16.46
+  },
+  {
+   "text": "On",
+   "line": 3,
+   "start": 16.854,
+   "end": 17.054
+  },
+  {
+   "text": "your",
+   "line": 3,
+   "start": 17.054,
+   "end": 17.294
+  },
+  {
+   "text": "pillow,",
+   "line": 3,
+   "start": 17.294,
+   "end": 17.8
+  },
+  {
+   "text": "there's",
+   "line": 3,
+   "start": 17.854,
+   "end": 18.174
+  },
+  {
+   "text": "a",
+   "line": 3,
+   "start": 18.174,
+   "end": 18.374
+  },
+  {
+   "text": "card.",
+   "line": 3,
+   "start": 18.374,
+   "end": 18.78
+  },
+  {
+   "text": "No",
+   "line": 3,
+   "start": 19.134,
+   "end": 19.494
+  },
+  {
+   "text": "logo.",
+   "line": 3,
+   "start": 19.494,
+   "end": 20.1
+  },
+  {
+   "text": "No",
+   "line": 3,
+   "start": 20.134,
+   "end": 20.454
+  },
+  {
+   "text": "phone",
+   "line": 3,
+   "start": 20.454,
+   "end": 20.814
+  },
+  {
+   "text": "number.",
+   "line": 3,
+   "start": 20.814,
+   "end": 21.21
+  },
+  {
+   "text": "Just",
+   "line": 3,
+   "start": 21.494,
+   "end": 21.894
+  },
+  {
+   "text": "one",
+   "line": 3,
+   "start": 21.894,
+   "end": 22.334
+  },
+  {
+   "text": "rule:",
+   "line": 3,
+   "start": 22.334,
+   "end": 22.74
+  },
+  {
+   "text": "\"If",
+   "line": 4,
+   "start": 23.054,
+   "end": 23.414
+  },
+  {
+   "text": "someone",
+   "line": 4,
+   "start": 23.414,
+   "end": 23.894
+  },
+  {
+   "text": "knocks",
+   "line": 4,
+   "start": 23.894,
+   "end": 24.374
+  },
+  {
+   "text": "after",
+   "line": 4,
+   "start": 24.374,
+   "end": 24.694
+  },
+  {
+   "text": "midnight,",
+   "line": 4,
+   "start": 24.694,
+   "end": 25.21
+  },
+  {
+   "text": "do",
+   "line": 4,
+   "start": 25.414,
+   "end": 25.734
+  },
+  {
+   "text": "not",
+   "line": 4,
+   "start": 25.734,
+   "end": 26.214
+  },
+  {
+   "text": "answer.",
+   "line": 4,
+   "start": 26.214,
+   "end": 26.69
+  },
+  {
+   "text": "We",
+   "line": 4,
+   "start": 26.854,
+   "end": 27.214
+  },
+  {
+   "text": "do",
+   "line": 4,
+   "start": 27.214,
+   "end": 27.454
+  },
+  {
+   "text": "not",
+   "line": 4,
+   "start": 27.454,
+   "end": 27.734
+  },
+  {
+   "text": "have",
+   "line": 4,
+   "start": 27.734,
+   "end": 27.974
+  },
+  {
+   "text": "night",
+   "line": 4,
+   "start": 27.974,
+   "end": 28.294
+  },
+  {
+   "text": "staff.\"",
+   "line": 4,
+   "start": 28.294,
+   "end": 28.67
+  },
+  {
+   "text": "You",
+   "line": 5,
+   "start": 28.894,
+   "end": 29.494
+  },
+  {
+   "text": "laugh.",
+   "line": 5,
+   "start": 29.494,
+   "end": 30.02
+  },
+  {
+   "text": "Then",
+   "line": 6,
+   "start": 30.534,
+   "end": 31.11
+  },
+  {
+   "text": "knock.",
+   "line": 6,
+   "start": 31.494,
+   "end": 31.98
+  },
+  {
+   "text": "Knock.",
+   "line": 6,
+   "start": 32.204,
+   "end": 32.71
+  },
+  {
+   "text": "Knock.",
+   "line": 6,
+   "start": 32.844,
+   "end": 33.39
+  },
+  {
+   "text": "\"Room",
+   "line": 7,
+   "start": 33.644,
+   "end": 33.964
+  },
+  {
+   "text": "service.\"",
+   "line": 7,
+   "start": 33.964,
+   "end": 34.65
+  },
+  {
+   "text": "You",
+   "line": 8,
+   "start": 34.844,
+   "end": 35.164
+  },
+  {
+   "text": "didn't",
+   "line": 8,
+   "start": 35.164,
+   "end": 35.564
+  },
+  {
+   "text": "order",
+   "line": 8,
+   "start": 35.564,
+   "end": 35.964
+  },
+  {
+   "text": "anything.",
+   "line": 8,
+   "start": 35.964,
+   "end": 36.45
+  },
+  {
+   "text": "You",
+   "line": 9,
+   "start": 36.924,
+   "end": 37.204
+  },
+  {
+   "text": "look",
+   "line": 9,
+   "start": 37.204,
+   "end": 37.444
+  },
+  {
+   "text": "through",
+   "line": 9,
+   "start": 37.444,
+   "end": 37.644
+  },
+  {
+   "text": "the",
+   "line": 9,
+   "start": 37.644,
+   "end": 37.804
+  },
+  {
+   "text": "peephole.",
+   "line": 9,
+   "start": 37.804,
+   "end": 38.38
+  },
+  {
+   "text": "A",
+   "line": 9,
+   "start": 38.724,
+   "end": 39.004
+  },
+  {
+   "text": "bellhop.",
+   "line": 9,
+   "start": 39.004,
+   "end": 39.78
+  },
+  {
+   "text": "Perfectly",
+   "line": 9,
+   "start": 40.004,
+   "end": 40.924
+  },
+  {
+   "text": "still.",
+   "line": 9,
+   "start": 40.924,
+   "end": 41.37
+  },
+  {
+   "text": "Smiling\u2026",
+   "line": 9,
+   "start": 41.804,
+   "end": 42.74
+  },
+  {
+   "text": "too",
+   "line": 9,
+   "start": 43.004,
+   "end": 43.604
+  },
+  {
+   "text": "wide.",
+   "line": 9,
+   "start": 43.604,
+   "end": 44.11
+  },
+  {
+   "text": "He",
+   "line": 10,
+   "start": 44.324,
+   "end": 44.684
+  },
+  {
+   "text": "doesn't",
+   "line": 10,
+   "start": 44.684,
+   "end": 45.124
+  },
+  {
+   "text": "knock",
+   "line": 10,
+   "start": 45.124,
+   "end": 45.524
+  },
+  {
+   "text": "again.",
+   "line": 10,
+   "start": 45.524,
+   "end": 45.92
+  },
+  {
+   "text": "He",
+   "line": 10,
+   "start": 46.084,
+   "end": 46.324
+  },
+  {
+   "text": "just",
+   "line": 10,
+   "start": 46.324,
+   "end": 46.644
+  },
+  {
+   "text": "moves",
+   "line": 10,
+   "start": 46.644,
+   "end": 47.044
+  },
+  {
+   "text": "to",
+   "line": 10,
+   "start": 47.044,
+   "end": 47.204
+  },
+  {
+   "text": "the",
+   "line": 10,
+   "start": 47.204,
+   "end": 47.324
+  },
+  {
+   "text": "next",
+   "line": 10,
+   "start": 47.324,
+   "end": 47.724
+  },
+  {
+   "text": "door.",
+   "line": 10,
+   "start": 47.724,
+   "end": 48.01
+  },
+  {
+   "text": "Knock.",
+   "line": 10,
+   "start": 48.36,
+   "end": 48.85
+  },
+  {
+   "text": "Knock.",
+   "line": 10,
+   "start": 49.0,
+   "end": 49.55
+  },
+  {
+   "text": "Knock.",
+   "line": 10,
+   "start": 49.72,
+   "end": 50.22
+  },
+  {
+   "text": "And",
+   "line": 11,
+   "start": 50.4,
+   "end": 50.72
+  },
+  {
+   "text": "it",
+   "line": 11,
+   "start": 50.72,
+   "end": 50.92
+  },
+  {
+   "text": "opens.",
+   "line": 11,
+   "start": 50.92,
+   "end": 51.52
+  },
+  {
+   "text": "Then",
+   "line": 12,
+   "start": 51.88,
+   "end": 52.2
+  },
+  {
+   "text": "the",
+   "line": 12,
+   "start": 52.2,
+   "end": 52.4
+  },
+  {
+   "text": "next",
+   "line": 12,
+   "start": 52.4,
+   "end": 52.84
+  },
+  {
+   "text": "one.",
+   "line": 12,
+   "start": 52.84,
+   "end": 53.03
+  },
+  {
+   "text": "And",
+   "line": 12,
+   "start": 53.32,
+   "end": 53.64
+  },
+  {
+   "text": "the",
+   "line": 12,
+   "start": 53.64,
+   "end": 53.84
+  },
+  {
+   "text": "next.",
+   "line": 12,
+   "start": 53.84,
+   "end": 54.38
+  },
+  {
+   "text": "Every",
+   "line": 12,
+   "start": 54.8,
+   "end": 55.32
+  },
+  {
+   "text": "guest",
+   "line": 12,
+   "start": 55.32,
+   "end": 55.84
+  },
+  {
+   "text": "steps",
+   "line": 12,
+   "start": 55.84,
+   "end": 56.36
+  },
+  {
+   "text": "out\u2026",
+   "line": 12,
+   "start": 56.36,
+   "end": 56.54
+  },
+  {
+   "text": "and",
+   "line": 12,
+   "start": 56.72,
+   "end": 57.0
+  },
+  {
+   "text": "follows",
+   "line": 12,
+   "start": 57.0,
+   "end": 57.52
+  },
+  {
+   "text": "him",
+   "line": 12,
+   "start": 57.52,
+   "end": 57.8
+  },
+  {
+   "text": "down",
+   "line": 12,
+   "start": 57.8,
+   "end": 58.04
+  },
+  {
+   "text": "the",
+   "line": 12,
+   "start": 58.04,
+   "end": 58.24
+  },
+  {
+   "text": "hall.",
+   "line": 12,
+   "start": 58.24,
+   "end": 58.54
+  },
+  {
+   "text": "Until",
+   "line": 13,
+   "start": 58.92,
+   "end": 59.24
+  },
+  {
+   "text": "the",
+   "line": 13,
+   "start": 59.24,
+   "end": 59.48
+  },
+  {
+   "text": "hallway",
+   "line": 13,
+   "start": 59.48,
+   "end": 60.12
+  },
+  {
+   "text": "is",
+   "line": 13,
+   "start": 60.12,
+   "end": 60.36
+  },
+  {
+   "text": "empty.",
+   "line": 13,
+   "start": 60.36,
+   "end": 60.87
+  },
+  {
+   "text": "Then,",
+   "line": 14,
+   "start": 61.32,
+   "end": 61.92
+  },
+  {
+   "text": "behind",
+   "line": 14,
+   "start": 61.96,
+   "end": 62.56
+  },
+  {
+   "text": "you",
+   "line": 14,
+   "start": 62.56,
+   "end": 62.84
+  },
+  {
+   "text": "from",
+   "line": 14,
+   "start": 62.96,
+   "end": 63.28
+  },
+  {
+   "text": "inside",
+   "line": 14,
+   "start": 63.28,
+   "end": 63.8
+  },
+  {
+   "text": "your",
+   "line": 14,
+   "start": 63.8,
+   "end": 64.08
+  },
+  {
+   "text": "bathroom",
+   "line": 14,
+   "start": 64.08,
+   "end": 64.69
+  },
+  {
+   "text": "someone",
+   "line": 14,
+   "start": 65.0,
+   "end": 65.52
+  },
+  {
+   "text": "whispers:",
+   "line": 14,
+   "start": 65.52,
+   "end": 66.17
+  },
+  {
+   "text": "\"Don't",
+   "line": 15,
+   "start": 66.25,
+   "end": 66.77
+  },
+  {
+   "text": "let",
+   "line": 15,
+   "start": 66.77,
+   "end": 66.97
+  },
+  {
+   "text": "him",
+   "line": 15,
+   "start": 66.97,
+   "end": 67.13
+  },
+  {
+   "text": "know",
+   "line": 15,
+   "start": 67.13,
+   "end": 67.37
+  },
+  {
+   "text": "you're",
+   "line": 15,
+   "start": 67.37,
+   "end": 67.69
+  },
+  {
+   "text": "awake.\"",
+   "line": 15,
+   "start": 67.69,
+   "end": 68.18
+  },
+  {
+   "text": "You",
+   "line": 16,
+   "start": 68.49,
+   "end": 68.81
+  },
+  {
+   "text": "checked",
+   "line": 16,
+   "start": 68.81,
+   "end": 69.21
+  },
+  {
+   "text": "in",
+   "line": 16,
+   "start": 69.21,
+   "end": 69.45
+  },
+  {
+   "text": "alone.",
+   "line": 16,
+   "start": 69.45,
+   "end": 69.99
+  },
+  {
+   "text": "Under",
+   "line": 17,
+   "start": 70.49,
+   "end": 70.89
+  },
+  {
+   "text": "your",
+   "line": 17,
+   "start": 70.89,
+   "end": 71.17
+  },
+  {
+   "text": "door,",
+   "line": 17,
+   "start": 71.17,
+   "end": 71.62
+  },
+  {
+   "text": "the",
+   "line": 17,
+   "start": 71.69,
+   "end": 71.97
+  },
+  {
+   "text": "light",
+   "line": 17,
+   "start": 71.97,
+   "end": 72.41
+  },
+  {
+   "text": "goes",
+   "line": 17,
+   "start": 72.41,
+   "end": 72.89
+  },
+  {
+   "text": "dark.",
+   "line": 17,
+   "start": 72.89,
+   "end": 73.19
+  },
+  {
+   "text": "Two",
+   "line": 17,
+   "start": 73.69,
+   "end": 74.13
+  },
+  {
+   "text": "shadows.",
+   "line": 17,
+   "start": 74.13,
+   "end": 74.85
+  },
+  {
+   "text": "He's",
+   "line": 17,
+   "start": 75.29,
+   "end": 75.85
+  },
+  {
+   "text": "back.",
+   "line": 17,
+   "start": 75.85,
+   "end": 76.19
+  },
+  {
+   "text": "So",
+   "line": 18,
+   "start": 76.57,
+   "end": 77.09
+  },
+  {
+   "text": "you",
+   "line": 18,
+   "start": 77.09,
+   "end": 77.41
+  },
+  {
+   "text": "have",
+   "line": 18,
+   "start": 77.41,
+   "end": 77.65
+  },
+  {
+   "text": "two",
+   "line": 18,
+   "start": 77.65,
+   "end": 77.93
+  },
+  {
+   "text": "choices.",
+   "line": 18,
+   "start": 77.93,
+   "end": 78.62
+  },
+  {
+   "text": "Open",
+   "line": 19,
+   "start": 79.05,
+   "end": 79.45
+  },
+  {
+   "text": "the",
+   "line": 19,
+   "start": 79.45,
+   "end": 79.65
+  },
+  {
+   "text": "door\u2026",
+   "line": 19,
+   "start": 79.65,
+   "end": 80.08
+  },
+  {
+   "text": "and",
+   "line": 19,
+   "start": 80.17,
+   "end": 80.45
+  },
+  {
+   "text": "follow",
+   "line": 19,
+   "start": 80.45,
+   "end": 80.85
+  },
+  {
+   "text": "the",
+   "line": 19,
+   "start": 80.85,
+   "end": 81.09
+  },
+  {
+   "text": "others.",
+   "line": 19,
+   "start": 81.09,
+   "end": 81.5
+  },
+  {
+   "text": "Or",
+   "line": 20,
+   "start": 81.97,
+   "end": 82.33
+  },
+  {
+   "text": "stay\u2026",
+   "line": 20,
+   "start": 82.33,
+   "end": 82.87
+  },
+  {
+   "text": "with",
+   "line": 20,
+   "start": 83.085,
+   "end": 83.565
+  },
+  {
+   "text": "whatever",
+   "line": 20,
+   "start": 83.565,
+   "end": 83.685
+  },
+  {
+   "text": "is",
+   "line": 20,
+   "start": 84.245,
+   "end": 84.405
+  },
+  {
+   "text": "in",
+   "line": 20,
+   "start": 84.405,
+   "end": 84.565
+  },
+  {
+   "text": "your",
+   "line": 20,
+   "start": 84.565,
+   "end": 84.765
+  },
+  {
+   "text": "bathroom.",
+   "line": 20,
+   "start": 84.765,
+   "end": 85.37
+  },
+  {
+   "text": "What",
+   "line": 21,
+   "start": 85.885,
+   "end": 86.285
+  },
+  {
+   "text": "would",
+   "line": 21,
+   "start": 86.285,
+   "end": 86.565
+  },
+  {
+   "text": "you",
+   "line": 21,
+   "start": 86.565,
+   "end": 86.845
+  },
+  {
+   "text": "do?",
+   "line": 21,
+   "start": 86.845,
+   "end": 87.05
+  }
+ ]
+}
