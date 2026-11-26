@@ -1,7 +1,9 @@
 # Notes for Claude
 
 ## Owner's preferences (always follow)
-- Videos are vertical **1080×1920 at 60 fps**.
+- Videos are vertical **1080×1920 at 60 fps**, video bitrate **22–25 Mbps** (set in `remotion.config.ts`:
+  24 Mbps target, 25 Mbps max). Check it after every render with
+  `ffprobe -v error -select_streams v:0 -show_entries stream=bit_rate -of csv=p=0 out/<file>.mp4`.
 - **Never lose quality**: keep the full-quality render; don't compress the deliverable to save size.
 - **No film grain** (the `grain` setting in `src/three/Post.tsx` stays 0).
 - Don't start building or rendering a *new* video until the owner says so.
@@ -25,10 +27,10 @@ The cloud container has no GPU, so the owner renders on their own faster PC.
      falling back to the CPU — try `REMOTION_GL=egl` / `vulkan`), and the estimated total time.
 Then, once the owner says render:
 1. `npm ci` (needs Node 18+; Remotion downloads its own Chrome Headless Shell on first render).
-2. `npm run room414:render` → `out/Room414.mp4` (H.264 CRF 16, AAC 256k, 89 s, 5,360 frames).
+2. `npm run room414:render` → `out/Room414.mp4` (H.264 at 24 Mbps, max 25 Mbps, AAC 256k, 89 s, 5,360 frames).
    `remotion.config.ts` picks the GPU (`angle`) automatically outside the cloud container.
    If the GPU path fails, try `REMOTION_GL=egl` or `REMOTION_GL=vulkan`; last resort `swangle` (CPU, slow).
-3. Check it: `ffprobe out/Room414.mp4` (1080×1920, 60 fps, ~89.3 s, audio present) and look at a few frames.
+3. Check it: `ffprobe out/Room414.mp4` (1080×1920, 60 fps, ~89.3 s, audio present, video bitrate 22–25 Mbps) and look at a few frames.
 4. Upload the full-quality file to GitHub **unchanged** (no re-encode, no compression), whatever its size:
    - Plain Git rejects files over 100 MB, so use **Git LFS**: `git lfs install`,
      `git lfs track "renders/*.mp4"`, copy the file to `renders/Room414.mp4`, commit `.gitattributes`

@@ -16,7 +16,11 @@ Config.setChromiumOpenGlRenderer((process.env.REMOTION_GL as Gl | undefined) ?? 
 Config.setVideoImageFormat('jpeg');
 Config.setJpegQuality(100);
 Config.setCodec('h264');
-Config.setCrf(16);
+// Owner's standard: every video at 22-25 Mbps.
+// Average target 24 Mbps, never above 25 Mbps (x264 two-sided limits via maxrate + buffer).
+Config.setVideoBitrate('24M');
+Config.setEncodingMaxRate('25M');
+Config.setEncodingBufferSize('25M');
 Config.setPixelFormat('yuv420p');
 Config.setAudioCodec('aac');
 Config.setAudioBitrate('256k');
