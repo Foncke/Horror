@@ -7,11 +7,14 @@ const bundled = '/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-s
 const browser = process.env.REMOTION_BROWSER ?? (fs.existsSync(bundled) ? bundled : null);
 if (browser) Config.setBrowserExecutable(browser);
 
-// No GPU here: SwiftShader draws WebGL on the CPU. Set REMOTION_GL=angle on a machine with a GPU.
-Config.setChromiumOpenGlRenderer((process.env.REMOTION_GL as 'swangle' | 'angle' | undefined) ?? 'swangle');
+// In the cloud container there is no GPU, so SwiftShader draws WebGL on the CPU (slow).
+// On any other machine use the real graphics card through ANGLE (much faster).
+// Override with REMOTION_GL=swangle|angle|egl|vulkan if needed.
+type Gl = 'swangle' | 'angle' | 'egl' | 'vulkan' | 'angle-egl';
+Config.setChromiumOpenGlRenderer((process.env.REMOTION_GL as Gl | undefined) ?? (fs.existsSync(bundled) ? 'swangle' : 'angle'));
 
 Config.setVideoImageFormat('jpeg');
-Config.setJpegQuality(95);
+Config.setJpegQuality(100);
 Config.setCodec('h264');
 Config.setCrf(16);
 Config.setPixelFormat('yuv420p');

@@ -9,7 +9,7 @@
     "render": "remotion render",
     "room414:align": "python3 tools/align.py projects/room414/voice.mp3 projects/room414/script.txt projects/room414/timings.json",
     "room414:mix": "python3 projects/room414/mix.py",
-    "room414:render": "remotion render Room414 out/Room414.mp4 --concurrency=4",
+    "room414:render": "remotion render Room414 out/Room414.mp4",
     "stills": "node tools/stills.mjs"
   },
   "dependencies": {
