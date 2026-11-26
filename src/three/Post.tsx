@@ -11,7 +11,7 @@ const FinishShader = {
   uniforms: {
     tDiffuse: {value: null},
     uTime: {value: 0},
-    uGrain: {value: 0.07},
+    uGrain: {value: 0},
     uVignette: {value: 1.0},
     uFade: {value: 1.0},
     uTint: {value: new THREE.Vector3(1, 1, 1)},
@@ -105,7 +105,7 @@ export const Post: React.FC<FinishProps> = (p) => {
   const u = finish.uniforms;
   u.uTime.value = p.time;
   u.uFade.value = p.fade ?? 1;
-  u.uGrain.value = p.grain ?? 0.07;
+  u.uGrain.value = p.grain ?? 0; // no film grain unless a video asks for it
   u.uVignette.value = p.vignette ?? 1;
   u.uTint.value.set(...(p.tint ?? [1, 1, 1]));
   u.uTintAmount.value = p.tintAmount ?? 0;

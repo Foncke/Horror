@@ -55,7 +55,6 @@ export const Room414: React.FC = () => {
           time={t}
           fade={fade}
           peephole={peep}
-          grain={0.075}
           vignette={peep ? 0.4 : 1}
           bloomStrength={shot.id === 'hall' || shot.id === 'empty' ? 1.15 : peep ? 0.55 : 0.8}
           bloomRadius={0.65}
