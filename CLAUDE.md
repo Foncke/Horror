@@ -12,7 +12,18 @@ Everything needed is committed: script, ElevenLabs voiceover (`projects/room414/
 word timings (`timings.json`), mixed soundtrack (`public/room414/soundtrack.wav`), fonts, all 3D code.
 The cloud container has no GPU, so the owner renders on their own faster PC.
 
-**When a session starts on the owner's PC, render it straight away:**
+**When a session starts on the owner's PC — check first, then wait for the go-ahead:**
+0. Before rendering anything, identify the graphics card and estimate the render time, then tell the
+   owner and **wait for them to say "render"**:
+   - Windows: `wmic path win32_VideoController get name,AdapterRAM` (or PowerShell
+     `Get-CimInstance Win32_VideoController | Select Name,AdapterRAM`); macOS:
+     `system_profiler SPDisplaysDataType`; Linux: `nvidia-smi` or `lspci | grep -i vga`. Also note CPU cores.
+   - Measure, don't guess: `npm ci`, then render one 3-second test clip
+     (`npx remotion render Room414 out/test.mp4 --frames=1800-1980`) and time it.
+     Full render time ≈ test time × 5360 / 181 (plus ~1 min for audio and muxing).
+   - Report: the GPU name, whether Chrome is using it (if the test is as slow as ~0.85 s/frame it is
+     falling back to the CPU — try `REMOTION_GL=egl` / `vulkan`), and the estimated total time.
+Then, once the owner says render:
 1. `npm ci` (needs Node 18+; Remotion downloads its own Chrome Headless Shell on first render).
 2. `npm run room414:render` → `out/Room414.mp4` (H.264 CRF 16, AAC 256k, 89 s, 5,360 frames).
    `remotion.config.ts` picks the GPU (`angle`) automatically outside the cloud container.
