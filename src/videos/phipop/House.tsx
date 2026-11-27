@@ -43,7 +43,7 @@ const Bowl: React.FC<{p: V3}> = ({p}) => (
 
 /** Oil lamp with a flickering flame. */
 const Lamp: React.FC<{p: V3; t: number; on: number}> = ({p, t, on}) => {
-  const flick = 0.85 + Math.sin(t * 13) * 0.08 + Math.sin(t * 23.7) * 0.06;
+  const flick = 0.92 + Math.sin(t * 5.3) * 0.035 + Math.sin(t * 11.7) * 0.02;
   return (
     <group position={p}>
       <mesh material={plain('#6a4a2a', 0.5)}>
@@ -63,7 +63,7 @@ const Lamp: React.FC<{p: V3; t: number; on: number}> = ({p, t, on}) => {
 
 /** Mosquito net over a sleeping mat. */
 const Net: React.FC<{p: V3}> = ({p}) => {
-  const net = m('net', () => new THREE.MeshStandardMaterial({color: '#e8e4dc', transparent: true, opacity: 0.22, side: THREE.DoubleSide, roughness: 1, depthWrite: false}));
+  const net = m('net2', () => new THREE.MeshStandardMaterial({color: '#e8e4dc', transparent: true, opacity: 0.22, side: THREE.FrontSide, roughness: 1, depthWrite: false}));
   return (
     <mesh position={add(p, [0, 0.85, 0.05])} material={net}>
       <boxGeometry args={[1.15, 1.7, 2.15]} />
@@ -239,9 +239,9 @@ export const HouseSet: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
         <cylinderGeometry args={[0.06, 0.08, 0.16, 16]} />
       </mesh>
       <Lamp p={[1.55, 0.04, 0.0]} t={t} on={lampOn} />
-      {(shot === 'partner' || shot === 'dinner') && <pointLight position={[2.0, 1.1, 1.6]} intensity={2.5} distance={4} decay={1.6} color="#ffb070" />}
+      {(shot === 'partner' || shot === 'dinner') && <pointLight position={[2.0, 1.1, 1.6]} intensity={shot === 'partner' ? 5 : 2.5} distance={4} decay={1.6} color="#ffb070" />}
       {shot === 'dinner' && <pointLight position={[1.0, 1.5, 1.9]} intensity={3.5} distance={4} decay={1.4} color="#ffc890" />}
-      {(shot === 'sleeper' || shot === 'midnight' || shot === 'situp' || shot === 'clock') && <pointLight position={[-0.3, 1.6, 0.4]} intensity={3} distance={5} decay={1.4} color="#7fa8c8" />}
+      {(shot === 'sleeper' || shot === 'midnight' || shot === 'situp' || shot === 'clock') && <pointLight position={[-0.3, 1.6, 0.4]} intensity={shot === 'clock' ? 3 : 5} distance={5} decay={1.4} color="#7fa8c8" />}
 
       {/* people */}
       {sleeping && (
@@ -312,7 +312,8 @@ export const HouseSet: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
         <PovArm from={[0.05, 1.05, -3.25]} to={[lerp(0.25, 0.43, easeInOut(clamp((t - cue.dont + 0.1) / 1.0))), 1.27, lerp(-3.55, -3.78, easeInOut(clamp((t - cue.dont + 0.1) / 1.0)))]} curl={0.25} side={1} />
       )}
       {shot === 'fridge' && <pointLight position={[-0.55, 1.35, -4.7]} intensity={1.6 * easeInOut(clamp((t - (cue.worst - 1.8)) / 1.1))} distance={2.5} decay={1.5} color="#9fc0d8" />}
-      {(shot === 'hallway' || shot === 'switch') && <pointLight position={[0, 1.2, -5.0]} intensity={3} distance={4} decay={1.6} color="#9fc8e8" />}
+      {(shot === 'hallway' || shot === 'switch') && <pointLight position={[0, 1.2, -5.0]} intensity={4.5} distance={4.5} decay={1.6} color="#9fc8e8" />}
+      {shot === 'switch' && <pointLight position={[0.0, 1.6, -3.2]} intensity={1.2} distance={2} decay={1.6} color="#7f9fb8" />}
     </group>
   );
 };

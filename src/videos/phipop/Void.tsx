@@ -120,7 +120,7 @@ const waterMaterial = () =>
         float age = uT - uHit;
         float wave = age > 0.0 ? sin((r - age * 0.6) * 60.0) * exp(-age * 1.5) * smoothstep(age * 0.6 + 0.05, age * 0.6 - 0.15, r) : 0.0;
         vec3 deep = vec3(0.02, 0.05, 0.07);
-        vec3 c = deep + vec3(0.25, 0.4, 0.45) * max(wave, 0.0) + vec3(0.05, 0.09, 0.1) * (1.0 - r);
+        vec3 c = deep + vec3(0.45, 0.65, 0.72) * max(wave, 0.0) + vec3(0.05, 0.09, 0.1) * (1.0 - r);
         gl_FragColor = vec4(c, 1.0);
       }`,
   });
@@ -131,9 +131,12 @@ const Drop: React.FC<{t: number}> = ({t}) => {
   water.uniforms.uT.value = t;
   water.uniforms.uHit.value = hitAt;
   // the drop gathers on the lip above, falls slowly, and vanishes into the water
-  const fall = easeInOut(clamp((t - (hitAt - 1.4)) / 1.4));
-  const y = lerp(0.66, 0.29, fall * fall);
-  const stretch = 1 + fall * 0.6;
+  // it hangs and swells at the top of the frame, then falls fast into the cup on "drop"
+  const fallT = clamp((t - (hitAt - 0.55)) / 0.55);
+  const fall = fallT * fallT;
+  const swell = 0.6 + 0.4 * clamp((t - (hitAt - 4)) / 3.4);
+  const y = lerp(0.6, 0.29, fall);
+  const stretch = (1 + fall * 0.7) * (1 + (1 - fallT) * 0.25 * swell);
   return (
     <group>
       <mesh position={[0, 0.15, 0]} material={m('cup', () => new THREE.MeshStandardMaterial({color: '#b0b6ba', metalness: 0.9, roughness: 0.25, side: THREE.DoubleSide}))}>
@@ -143,7 +146,7 @@ const Drop: React.FC<{t: number}> = ({t}) => {
         <circleGeometry args={[0.098, 48]} />
       </mesh>
       {t < hitAt && (
-        <mesh position={[0, y, 0]} scale={[0.008, 0.008 * stretch, 0.008]} material={m('drop2', () => new THREE.MeshStandardMaterial({color: '#8fa8b2', roughness: 0.15, metalness: 0, transparent: true, opacity: 0.8}))}>
+        <mesh position={[0, y, 0]} scale={[0.012 * swell, 0.012 * swell * stretch, 0.012 * swell]} material={m('drop3', () => new THREE.MeshStandardMaterial({color: '#a9c4ce', roughness: 0.1, metalness: 0, transparent: true, opacity: 0.85}))}>
           <sphereGeometry args={[1, 20, 16]} />
         </mesh>
       )}
@@ -204,6 +207,7 @@ export const VoidSet: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
           <Drop t={t} />
           <pointLight position={[0.3, 0.75, 0.45]} intensity={6} distance={2.5} decay={1.4} color="#bfe3ff" />
           <pointLight position={[-0.4, 0.55, -0.3]} intensity={3} distance={2.5} decay={1.4} color="#ff9a48" />
+          <pointLight position={[0.0, 0.6, -0.35]} intensity={4} distance={1.2} decay={1.4} color="#cfe8f5" />
         </>
       )}
     </group>

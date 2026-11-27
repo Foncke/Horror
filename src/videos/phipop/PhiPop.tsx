@@ -47,7 +47,7 @@ const VillageShot: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
           <pointLight position={[1.4, 3.4, 1.1]} intensity={day ? 1.5 : 2.2} distance={3} decay={1.6} color={day ? '#fff0d8' : '#ffb070'} />
         </>
       )}
-      {shot === 'creep' && <pointLight position={[-0.6, 1.4, 1.2]} intensity={2.4} distance={4} decay={1.5} color="#9fc0d8" />}
+      {shot === 'creep' && <pointLight position={[-0.6, 1.5, 0.6]} intensity={2.4 * easeInOut(clamp((t - (cue.hunt - 2.0)) / 1.2))} distance={4} decay={1.5} color="#9fc0d8" />}
       {shot === 'creep' && (
         // crouched low, creeping away down the misty lane
         <Human face="possessed" position={[-0.8, 0, lerp(1.6, -0.6, clamp((t - cue.itHijacks) / 5))]} rotationY={Math.PI} hipY={0.8} thigh={-0.22} knee={0.5} spread={0.04} hunch={0.72} armL={-0.35} armR={-0.45} elbowL={-0.25} elbowR={-0.3} walk={((t - (cue.itHijacks - 0.5)) * Math.PI * 2) / 1.8} stride={0.32} headPitch={-0.55} headYaw={2.75 * easeInOut(clamp((t - (cue.hunt - 1.7)) / 1.0)) + twitch(t)} headRoll={twitch(t, 3) * 0.8} hairDrift={t} />
@@ -124,12 +124,12 @@ export const PhiPop: React.FC = () => {
       {!black && (
         <>
           {shot.id === 'title' && <Title t={t} />}
-          <Label t={t} from={cue.byDay} to={cue.until - 0.3} text="BY DAY" color="#f0c87a" />
-          <Label t={t} from={cue.until} to={cue.worst - 0.3} text="AFTER MIDNIGHT" color="#e0563a" />
+          <Label t={t} from={cue.byDay} to={cue.until - 0.6} text="BY DAY" color="#f0c87a" />
+          <Label t={t} from={cue.until} to={cue.worst - 0.6} text="AFTER MIDNIGHT" color="#e0563a" />
           <Label
             t={t}
             from={cue.elders + 0.2}
-            to={cue.tonight - 0.3}
+            to={cue.tonight - 0.6}
             text="THE SIGNS"
             color="#e0563a"
             lines={[

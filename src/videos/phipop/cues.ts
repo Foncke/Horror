@@ -159,7 +159,7 @@ export const cameraAt = (t: number): Cam => {
     case 'day':
       return push({pos: [-1.6, 1.8, 5.6], target: [2.4, 2.4, 0.8], fov: 46}, {pos: [-1.0, 1.9, 4.8], target: [2.4, 2.5, 0.8], fov: 42}, u, t);
     case 'smileclose':
-      return push({pos: [1.25, 3.22, 1.1], target: [2.37, 3.27, 0.79], fov: 34}, {pos: [1.45, 3.24, 1.05], target: [2.37, 3.28, 0.79], fov: 32}, u, t, 0.002);
+      return push({pos: [1.3, 3.5, 1.1], target: [2.37, 3.22, 0.79], fov: 34}, {pos: [1.5, 3.47, 1.05], target: [2.37, 3.23, 0.79], fov: 32}, u, t, 0.002);
     case 'dinner':
       return push({pos: H([1.0, 1.05, 2.3]), target: H([1.0, 0.55, 0.45]), fov: 46}, {pos: H([1.0, 1.0, 2.05]), target: H([1.0, 0.58, 0.45]), fov: 42}, u, t);
     case 'midnight':

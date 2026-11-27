@@ -140,13 +140,13 @@ const lockStrands = () =>
 /** Checked pha khao ma cloth. */
 const khaoMa = () =>
   canvasTexture(
-    'khaoma',
+    'khaoma2',
     64,
     64,
     (ctx, w, h) => {
-      ctx.fillStyle = '#a89c88';
+      ctx.fillStyle = '#7d7466';
       ctx.fillRect(0, 0, w, h);
-      ctx.fillStyle = 'rgba(140,35,35,0.8)';
+      ctx.fillStyle = 'rgba(120,30,30,0.85)';
       ctx.fillRect(0, 0, w / 2, h);
       ctx.fillStyle = 'rgba(40,60,140,0.55)';
       ctx.fillRect(0, 0, w, h / 2);
