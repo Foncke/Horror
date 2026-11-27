@@ -4,7 +4,8 @@ import {Character} from '../../three/Character';
 import {Spot, std} from '../../three/Common';
 import {canvasTexture, FaceKind} from '../../three/textures';
 import {clamp, easeInOut, hash, lerp} from '../../lib/timeline';
-import {MIMIC, MIMIC_SCALE, PINE, PINE_R, RIDGE, ShotId, View, cue, dusk, flashOn, leanIn, mimicVisible, neckBend} from './cues';
+import {Skinwalker} from './Skinwalker';
+import {MIMIC, PINE, PINE_R, RIDGE, ShotId, View, cue, dusk, flashOn, flicker, leanIn, mimicVisible, neckBend, twitch} from './cues';
 
 type V3 = [number, number, number];
 const col = (a: string, b: string, u: number) => new THREE.Color(a).lerp(new THREE.Color(b), u);
@@ -313,11 +314,15 @@ export const Forest: React.FC<{t: number; shot: ShotId; view: View}> = ({t, shot
   let mimicFace: FaceKind = 'void';
   let hunch = 0;
   let roll = neckBend(t);
+  let reach = 0;
+  if ((shot === 'tilt' || shot === 'behind') && t > cue.shoulder - 0.5) mimicFace = 'voidGrin'; // the grin spreads as the neck finishes bending
   if (shot === 'breath') {
-    mimicPos = [0.4, 0, lerp(1.0, 0.5, lean)];
+    // it stoops over her shoulder from behind: hip bent far forward, head lifted to face the camera
+    mimicPos = [0.6, 0, lerp(1.7, 1.0, lean)];
     mimicYaw = Math.PI;
-    hunch = 0.42 * lean;
-    roll = -0.85;
+    hunch = 1.0 * lean;
+    roll = -0.35;
+    reach = lean;
     mimicFace = t > cue.found - 0.15 ? 'voidGrin' : 'void';
   }
   const showMimic = mimicVisible(shot) && !(shot === 'sweep' && t < cue.froze - 0.4);
@@ -337,8 +342,8 @@ export const Forest: React.FC<{t: number; shot: ShotId; view: View}> = ({t, shot
 
       {on && (
         <>
-          <Spot position={view.beam.pos} target={view.beam.target} intensity={shot === 'gear' ? 0.7 : shot === 'stare' || shot === 'tilt' ? 22 : shot === 'figure' ? 30 : shot === 'sweep' ? 80 : 170} angle={0.3} penumbra={0.55} distance={30} decay={1.4} color="#fff0d8" shadow />
-          {shot !== 'gear' && <Beam from={view.beam.pos} to={view.beam.target} strength={view.pov ? 0.05 : 0.11} />}
+          <Spot position={view.beam.pos} target={view.beam.target} intensity={flicker(t) * (shot === 'gear' ? 0.7 : shot === 'stare' || shot === 'tilt' ? 22 : shot === 'figure' ? 30 : shot === 'sweep' ? 80 : 170)} angle={0.3} penumbra={0.55} distance={30} decay={1.4} color="#fff0d8" shadow />
+          {shot !== 'gear' && <Beam from={view.beam.pos} to={view.beam.target} strength={flicker(t) * (view.pov ? 0.05 : 0.11)} />}
         </>
       )}
       {/* soft key on faces in the close third-person shots */}
@@ -398,11 +403,22 @@ export const Forest: React.FC<{t: number; shot: ShotId; view: View}> = ({t, shot
         </group>
       )}
 
-      {/* the thing that copies her */}
+      {/* the skinwalker */}
       {showMimic && (
-        <group position={mimicPos} rotation={[0, mimicYaw, 0]} scale={MIMIC_SCALE}>
-          <Character outfit="mimic" face={mimicFace} neckRoll={roll} hunch={hunch} armL={0} armR={0} breathe={0} shadows />
-        </group>
+        <Skinwalker
+          position={mimicPos}
+          rotationY={mimicYaw}
+          face={mimicFace}
+          neckRoll={roll}
+          hunch={hunch}
+          headPitch={-hunch * 0.95}
+          headYaw={twitch(t)}
+          headRoll={twitch(t + 0.4) * 0.6}
+          armL={0.04}
+          armR={-1.05 * reach - hunch * 0.2}
+          armROut={-0.2 * reach}
+          breathe={t}
+        />
       )}
     </group>
   );

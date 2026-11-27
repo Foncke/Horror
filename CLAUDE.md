@@ -54,7 +54,10 @@ alias, so run scripts with that path); FFmpeg isn't on PATH, `tools/ffmpeg_path.
 `npm run foundyou:render` → `out/FoundYou.mp4` (112.5 s, 6,749 frames, 24.0 Mbps, 341 MB); uploaded as `renders/FoundYou.mp4`.
 Hard cut to black right after "Found you." (picture and sound stop; one hit rings out). The two mimic lines are
 treated in mix.py per the owner's note ("Are you lost?" lower + distant echo, "Found you." close whisper); the rest
-of the voice is untouched. The hiker is a girl (matches Sia); the mimic wears her clothes, pale, pitch-black eyes.
+of the voice is untouched. The hiker is a girl (matches Sia). The mimic is a skinwalker (`Skinwalker.tsx`): tall,
+gaunt and grey, ribs and claws, an animal pelt with ears and muzzle, pitch-black eyes with black streaks, head
+twitches, grin once its neck has bent. The flashlight flickers in 5-frame steps (never single-frame blips).
+Check new renders for stray dark frames: an earlier beam-shader NaN made single frames go black.
 
 Only if the soundtrack or timings must be rebuilt (Python + FFmpeg needed):
 `npm run room414:align` then `npm run room414:mix`.

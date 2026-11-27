@@ -70,6 +70,29 @@ const drawFace = (kind: FaceKind, ctx: CanvasRenderingContext2D, w: number, h: n
       return;
     }
     if (kind === 'blank') return;
+    if (kind === 'void' || kind === 'voidGrin') {
+      // sunken grey sockets around the black eyes, and black streaks running down the cheeks
+      for (const s of [-1, 1]) {
+        const ex = cx + s * 108;
+        const g = ctx.createRadialGradient(ex, eyeY, 30, ex, eyeY, 105);
+        g.addColorStop(0, 'rgba(20,22,26,0.75)');
+        g.addColorStop(1, 'rgba(20,22,26,0)');
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.ellipse(ex, eyeY, 105, 120, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = '#050505';
+        for (const [dx, len, wid] of [[-14, 150, 13], [10, 205, 9], [26, 115, 7]]) {
+          const x = ex + s * dx;
+          ctx.beginPath();
+          ctx.moveTo(x - wid / 2, eyeY + 30);
+          ctx.quadraticCurveTo(x - wid * 0.4, eyeY + 30 + len * 0.6, x - wid * 0.25, eyeY + 30 + len);
+          ctx.arc(x, eyeY + 30 + len, wid * 0.5, Math.PI, 0, true);
+          ctx.quadraticCurveTo(x + wid * 0.4, eyeY + 30 + len * 0.6, x + wid / 2, eyeY + 30);
+          ctx.fill();
+        }
+      }
+    }
     if (kind === 'void') {
       // the mimic's blank stare: black eyes (meshes), a flat line of a mouth
       ctx.strokeStyle = ink;

@@ -1,5 +1,6 @@
 import timingsJson from '../../../projects/foundyou/timings.json';
 import {Cam} from '../../three/Common';
+import {SKINWALKER_HEAD_Y} from './Skinwalker';
 import {Timings, clamp, easeInOut, easeOut, hash, lerp, makeCues} from '../../lib/timeline';
 
 export const timings = timingsJson as Timings;
@@ -75,11 +76,10 @@ export const RIDGE: V3 = [0, 0, 16];
 /** The massive pine, twenty feet ahead of where she stops (she stands at the origin facing -z). */
 export const PINE: V3 = [0.35, 0, -6.5];
 export const PINE_R = 0.55;
-/** The thing behind the pine. */
+/** The thing behind the pine (a skinwalker wearing her voice). */
 export const MIMIC: V3 = [-0.32, 0, -7.0];
-export const MIMIC_SCALE = 1.12;
 export const EYE = 1.56; // her eye height
-export const mimicHead = (): V3 => [MIMIC[0], (0.62 + 0.86) * MIMIC_SCALE, MIMIC[2]];
+export const mimicHead = (): V3 => [MIMIC[0], SKINWALKER_HEAD_Y, MIMIC[2]];
 
 /** How far the mimic's head has bent toward its shoulder (radians). */
 export const neckBend = (t: number) => 1.45 * easeInOut(clamp((t - cue.head - 0.2) / (cue.shoulder - cue.head + 0.4)));
@@ -94,6 +94,24 @@ export const dusk = (t: number) => {
 };
 
 /** Off at sunset, back on as the map close-up starts (so that shot is never black). */
+/** The flashlight stutters when it lands on the figure, and again on the close-up of its face. */
+export const flicker = (t: number) => {
+  // steps of 1/12 s (5 frames) counted from each window's start, so no single-frame blips
+  for (const [a, steps] of [[cue.froze + 0.2, 9], [cue.answer - 0.1, 6], [cue.shoulder + 0.25, 5]]) {
+    const k = Math.floor((t - a) * 12);
+    if (k >= 0 && k < steps) return k % 2 === 0 || hash(k * 3.7 + a) < 0.3 ? 0.08 : 1;
+  }
+  return 1;
+};
+
+/** Small sudden snaps of the mimic's head, held for a moment, then back. */
+export const twitch = (t: number) => {
+  const k = Math.floor(t / 1.35);
+  const ph = t - k * 1.35;
+  if (hash(k * 3.3) < 0.35 || ph > 0.22) return 0;
+  return (hash(k * 7.1) - 0.5) * 0.5 * (ph < 0.05 ? ph / 0.05 : 1 - Math.max(0, ph - 0.12) / 0.1);
+};
+
 export const flashOn = (t: number) => t < L(1) - LEAD || t >= cue.wasnt - 0.1;
 
 export const mimicVisible = (s: ShotId) => ['figure', 'stare', 'tilt', 'behind', 'breath'].includes(s) || (s === 'sweep');
@@ -245,7 +263,7 @@ export const viewAt = (t: number): View => {
       return {cam, beam: povBeam(cam, t, 0.02), pov: true};
     }
     case 'breath': {
-      const cam = move({pos: [-0.2, 1.5, -1.3], target: [0.12, 1.52, 0.2], fov: 46}, {pos: [-0.16, 1.5, -1.05], target: [0.14, 1.53, 0.2], fov: 44}, clamp((t - s.start) / 7), t, 0.003, linear);
+      const cam = move({pos: [-0.05, 1.52, -1.5], target: [0.2, 1.53, 0.2], fov: 50}, {pos: [-0.02, 1.52, -1.25], target: [0.21, 1.54, 0.2], fov: 48}, clamp((t - s.start) / 7), t, 0.003, linear);
       return {cam, beam: handBeam([0, 0, 0], 0.5, -0.45, t, 0.02), pov: false};
     }
     default:

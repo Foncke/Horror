@@ -12,6 +12,7 @@ export type Pose = {
   armL?: number; // shoulder pitch, - raises forward
   armR?: number;
   armROut?: number;
+  armLength?: number; // 1 = normal; the mimic's arms hang past its knees
   walk?: number; // walk cycle phase in radians (0 = standing)
   stride?: number;
   sit?: boolean;
@@ -61,7 +62,7 @@ const OUTFIT: Record<Outfit, {skin: string; body: string; arm: string; legs: str
   double: {skin: '#c4c1b9', body: '#c97ba3', arm: '#c97ba3', legs: '#b26d93', hands: '#c4c1b9'},
   // Found You: the hiker and the thing that copies her (same clothes, paler skin)
   hiker: {skin: '#ebe7df', body: '#2f6a6c', arm: '#2f6a6c', legs: '#3b3a35', hands: '#ebe7df'},
-  mimic: {skin: '#c9c6bf', body: '#2f6a6c', arm: '#2f6a6c', legs: '#3b3a35', hands: '#c9c6bf'},
+  mimic: {skin: '#aeb0ab', body: '#2f6a6c', arm: '#2f6a6c', legs: '#3b3a35', hands: '#9fa29c'},
 };
 const HAIR: Partial<Record<Outfit, string>> = {pajamas: '#3a2418', double: '#3a2418', hiker: '#5a321f', mimic: '#5a321f'};
 /** Knit beanie and backpack for the hiking outfits. */
@@ -131,7 +132,7 @@ export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0
             const base = s === -1 ? (pose.armL ?? 0) : (pose.armR ?? 0);
             const out = s === 1 ? (pose.armROut ?? 0) : 0;
             return (
-              <group key={s} position={[s * 0.25, 0.6, 0]} rotation={[base - s * swing * 0.8, 0, s * (0.1 + out)]}>
+              <group key={s} position={[s * 0.25, 0.6, 0]} rotation={[base - s * swing * 0.8, 0, s * (0.1 + out)]} scale={[1, pose.armLength ?? 1, 1]}>
                 <mesh geometry={geo.limb} material={cloth(o.arm)} position={[0, -0.25, 0]} castShadow={cast} />
                 <mesh geometry={geo.hand} material={vinyl(o.hands)} position={[0, -0.5, 0]} castShadow={cast} />
               </group>
@@ -154,7 +155,7 @@ export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0
             {(face === 'double' || face === 'doubleWide' || face === 'void' || face === 'voidGrin') &&
               [-1, 1].map((s) => (
                 // pitch-black eyes: unlit, so no light ever reflects in them
-                <mesh key={s} geometry={geo.eye} material={voidMat} position={[s * 0.0565, -0.004, 0.2043]} rotation={[0, s * 0.27, s * 0.12]} scale={[0.04, 0.05, 0.022]} />
+                <mesh key={s} geometry={geo.eye} material={voidMat} position={[s * 0.0565, -0.004, 0.2043]} rotation={[0, s * 0.27, s * 0.12]} scale={outfit === 'mimic' ? [0.05, 0.066, 0.026] : [0.04, 0.05, 0.022]} />
               ))}
             <mesh geometry={geo.face} material={faceMat} />
             {outfit === 'bellhop' && (
