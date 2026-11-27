@@ -135,7 +135,16 @@ export const StiltHouse: React.FC<{p: V3; rotY?: number; w?: number; d?: number;
       {/* front wall with a doorway and a window */}
       <Box p={[-w / 4 - 0.25, floorY + wallH / 2, d / 2]} s={[w / 2 - 0.5, wallH, 0.08]} mat={planks()} />
       <Box p={[w / 4 + 0.45, floorY + wallH / 2, d / 2]} s={[w / 2 - 0.9, wallH, 0.08]} mat={planks()} />
-      <Box p={[0.1, floorY + wallH - 0.12, d / 2]} s={[0.9, 0.24, 0.08]} mat={planks()} />
+      {/* door frame: a header across the whole opening, posts either side */}
+      <Box p={[0.2, floorY + 2.0, d / 2]} s={[1.4, 0.2, 0.1]} mat={planks()} />
+      {[-0.5, 0.9].map((x) => (
+        <Box key={x} p={[x, floorY + 1.0, d / 2 + 0.01]} s={[0.09, 2.0, 0.1]} mat={post} />
+      ))}
+      {/* a small open porch in front of the door */}
+      <Box p={[0.2, floorY, d / 2 + 0.55]} s={[2.2, 0.12, 1.1]} mat={post} />
+      {[-0.85, 1.25].map((x) => (
+        <mesh key={x} geometry={cyl} material={post} position={[x, floorY / 2, d / 2 + 1.05]} scale={[0.07, floorY, 0.07]} castShadow />
+      ))}
       {!door && <mesh geometry={box} material={planks()} position={[0.1, floorY + 0.9, d / 2 - 0.02]} scale={[0.85, 1.8, 0.04]} />}
       {door && <Box p={[0.1, floorY + 1.05, -d / 2 + 0.06]} s={[w - 0.2, wallH, 0.02]} mat={plain('#120c08', 1)} cast={false} />}
       <mesh geometry={box} material={lit > 0 ? windowGlow(lit) : plain('#0a0908', 1)} position={[-w / 4 - 0.3, floorY + 1.2, d / 2 + 0.055]} scale={[0.7, 0.55, 0.01]} />
@@ -149,7 +158,7 @@ export const StiltHouse: React.FC<{p: V3; rotY?: number; w?: number; d?: number;
       <mesh geometry={new THREE.CylinderGeometry(0, 1, 1, 3)} material={planks()} position={[0, floorY + wallH + 0.48, d / 2]} rotation={[Math.PI / 2, 0, 0]} scale={[w / 2 + 0.05, 0.08, 1.0]} />
       {/* steps */}
       {Array.from({length: 6}, (_, i) => (
-        <Box key={i} p={[0.1, floorY - 0.15 - i * 0.28, d / 2 + 0.3 + i * 0.24]} s={[0.9, 0.06, 0.26]} mat={post} />
+        <Box key={i} p={[-1.15 - i * 0.24, floorY - 0.15 - i * 0.28, d / 2 + 0.7]} s={[0.26, 0.06, 0.7]} mat={post} />
       ))}
       {/* clay water jar and baskets under the house */}
       <mesh geometry={new THREE.SphereGeometry(1, 20, 14)} material={plain('#7a4a2e', 0.8)} position={[w / 2 - 0.7, 0.35, -0.3]} scale={[0.3, 0.35, 0.3]} castShadow />

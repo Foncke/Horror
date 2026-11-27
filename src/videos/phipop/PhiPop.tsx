@@ -41,16 +41,16 @@ const VillageShot: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
       {!day && <Mist t={t} color="#4f7480" opacity={0.28} area={[-10, 10, -30, 25]} />}
       {inDoor && (
         <>
-          <Human face="smile" position={[2.92, 1.7, 0.73]} rotationY={-Math.PI / 2 + 0.1} armL={-0.1} armR={-0.15} headYaw={0.1} breathe={t} hairDrift={t} />
+          <Human face="smile" position={[2.37, 1.7, 0.79]} rotationY={-Math.PI / 2 + 0.1} armL={-0.1} armR={-0.15} headYaw={0.1} breathe={t} hairDrift={t} />
           {!day && <pointLight position={[3.6, 2.9, 0.75]} intensity={5} distance={4} decay={1.5} color="#ff9a48" />}
           {/* soft key on her face */}
-          <pointLight position={[1.9, 3.3, 1.0]} intensity={day ? 1.5 : 2.2} distance={3} decay={1.6} color={day ? '#fff0d8' : '#ffb070'} />
+          <pointLight position={[1.4, 3.4, 1.1]} intensity={day ? 1.5 : 2.2} distance={3} decay={1.6} color={day ? '#fff0d8' : '#ffb070'} />
         </>
       )}
       {shot === 'creep' && <pointLight position={[-0.6, 1.4, 1.2]} intensity={2.4} distance={4} decay={1.5} color="#9fc0d8" />}
       {shot === 'creep' && (
         // crouched low, creeping away down the misty lane
-        <Human face="possessed" position={[-0.8, 0, lerp(1.6, -0.6, clamp((t - cue.itHijacks) / 5))]} rotationY={Math.PI} hipY={0.55} thigh={-1.4} knee={1.9} spread={0.15} hunch={0.8} armL={-0.6} armR={-0.9} elbowL={-0.3} elbowR={-0.3} headPitch={-0.5} headYaw={2.75 * easeInOut(clamp((t - (cue.hunt - 1.7)) / 1.0)) + twitch(t)} headRoll={twitch(t, 3) * 0.8} hairDrift={t} />
+        <Human face="possessed" position={[-0.8, 0, lerp(1.6, -0.6, clamp((t - cue.itHijacks) / 5))]} rotationY={Math.PI} hipY={0.8} thigh={-0.22} knee={0.5} spread={0.04} hunch={0.72} armL={-0.35} armR={-0.45} elbowL={-0.25} elbowR={-0.3} walk={((t - (cue.itHijacks - 0.5)) * Math.PI * 2) / 1.8} stride={0.32} headPitch={-0.55} headYaw={2.75 * easeInOut(clamp((t - (cue.hunt - 1.7)) / 1.0)) + twitch(t)} headRoll={twitch(t, 3) * 0.8} hairDrift={t} />
       )}
     </group>
   );

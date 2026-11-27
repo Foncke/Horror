@@ -70,6 +70,8 @@ Villagers dress Thai (Isan): women in a woven pha sin + blouse (no sari, no bind
 with a checked pha khao ma, the elder with cropped grey hair and a white sabai. The possessed host: grey-green skin,
 dark veins, solid black eyes with small glowing pupils (meshes), a dark stain from the mouth, head twitches
 (`twitch()` in Human.tsx), and her head turning right round to look back (lane, fridge, kitchen).
+She walks with a real stalking gait (`walk`/`stride` props), and long hair is a strand-textured curtain with a few
+sparse loose locks (not capsules). The neighbour stands on the house's porch, clear of the door frame.
 Thai title ผีปอบ uses Noto Sans Thai (`public/fonts/NotoSansThai-ExtraBold.woff2`). Captions show "Phi Pop"/"Isan"
 though the voice says the phonetic "Pee Pop"/"Ee-sahn". Gore is only implied. Hard cut to black after "light."
 Camera depth range is per-shot optional (`Cam.near/far`, default 0.02/80); Phi Pop uses 0.05/200 for its sky.

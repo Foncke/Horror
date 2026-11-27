@@ -140,9 +140,9 @@ export const cameraAt = (t: number): Cam => {
       // under a stilt house, between its posts, looking out at the misty lane
       return push({pos: [-4.95, 0.35, 2.5], target: [0, 0.7, 0.8], fov: 50}, {pos: [-4.7, 0.34, 2.3], target: [0, 0.72, 0.8], fov: 46}, u, t, 0.002);
     case 'neighbor':
-      return push({pos: [-0.2, 2.3, 2.6], target: [2.95, 2.7, 0.75], fov: 40}, {pos: [0.4, 2.45, 2.0], target: [2.95, 2.75, 0.75], fov: 36}, u, t);
+      return push({pos: [-0.6, 2.3, 2.6], target: [2.4, 2.75, 0.8], fov: 40}, {pos: [0.0, 2.45, 2.05], target: [2.4, 2.8, 0.8], fov: 36}, u, t);
     case 'partner':
-      return push({pos: H([1.4, 1.0, 2.6]), target: H([1.0, 0.75, 0.6]), fov: 38}, {pos: H([1.3, 0.95, 2.1]), target: H([1.0, 0.78, 0.6]), fov: 34}, u, t);
+      return push({pos: H([1.35, 1.0, 2.3]), target: H([1.0, 0.75, 0.6]), fov: 38}, {pos: H([1.3, 0.95, 2.0]), target: H([1.0, 0.78, 0.6]), fov: 34}, u, t);
     case 'sleeper':
       return push({pos: H([1.6, 1.5, 1.8]), target: H([-1.2, 0.25, -1.2]), fov: 44}, {pos: H([0.9, 1.3, 0.9]), target: H([-1.2, 0.25, -1.2]), fov: 40}, u, t);
     case 'title':
@@ -155,11 +155,11 @@ export const cameraAt = (t: number): Cam => {
     case 'xray2':
       return push({pos: V([0, 1.05, 3.6]), target: V([0, 1.0, 0]), fov: 40}, {pos: V([0, 1.1, 3.0]), target: V([0, 1.05, 0]), fov: 38}, u, t, 0.003);
     case 'day':
-      return push({pos: [-1.4, 1.8, 5.6], target: [3.0, 2.3, 0.8], fov: 46}, {pos: [-0.8, 1.9, 4.8], target: [3.0, 2.4, 0.8], fov: 42}, u, t);
+      return push({pos: [-1.6, 1.8, 5.6], target: [2.4, 2.4, 0.8], fov: 46}, {pos: [-1.0, 1.9, 4.8], target: [2.4, 2.5, 0.8], fov: 42}, u, t);
     case 'smileclose':
-      return push({pos: [1.5, 3.2, 1.05], target: [2.92, 3.25, 0.73], fov: 32}, {pos: [1.7, 3.22, 1.0], target: [2.92, 3.26, 0.73], fov: 30}, u, t, 0.002);
+      return push({pos: [1.25, 3.22, 1.1], target: [2.37, 3.27, 0.79], fov: 34}, {pos: [1.45, 3.24, 1.05], target: [2.37, 3.28, 0.79], fov: 32}, u, t, 0.002);
     case 'dinner':
-      return push({pos: H([1.0, 1.05, 2.5]), target: H([1.0, 0.55, 0.45]), fov: 46}, {pos: H([1.0, 1.0, 2.15]), target: H([1.0, 0.58, 0.45]), fov: 42}, u, t);
+      return push({pos: H([1.0, 1.05, 2.3]), target: H([1.0, 0.55, 0.45]), fov: 46}, {pos: H([1.0, 1.0, 2.05]), target: H([1.0, 0.58, 0.45]), fov: 42}, u, t);
     case 'midnight':
       return push({pos: H([1.9, 2.1, 2.0]), target: H([-1.0, 0.2, -1.0]), fov: 48}, {pos: H([1.6, 1.9, 1.6]), target: H([-1.0, 0.25, -1.0]), fov: 44}, u, t, 0.002);
     case 'eyes':
@@ -171,7 +171,7 @@ export const cameraAt = (t: number): Cam => {
     }
     case 'creep':
       // following her down the lane, closing in as her head comes round
-      return push({pos: [-0.4, 0.85, 4.4], target: [-0.8, 0.65, -2.5], fov: 44}, {pos: [-0.75, 1.0, 0.95], target: [-0.8, 0.85, -1.2], fov: 40}, u, t);
+      return push({pos: [-0.4, 1.0, 4.6], target: [-0.8, 0.8, -2.5], fov: 44}, {pos: [-0.7, 1.15, 1.8], target: [-0.8, 1.05, -1.2], fov: 40}, u, t);
     case 'fridge':
       return push({pos: H([-0.55, 1.15, -4.35]), target: H([-1.05, 0.75, -6.4]), fov: 46}, {pos: H([-0.6, 1.1, -4.6]), target: H([-1.05, 0.78, -6.4]), fov: 42}, u, t, 0.002);
     case 'trapped': {
