@@ -49,5 +49,12 @@ pop up on those words, then the "A or B?" card. The girl (and her double) has lo
 On this Windows PC: Python 3.12 is at `%LOCALAPPDATA%\Programs\Python\Python312\python.exe` (`python3` is the Store
 alias, so run scripts with that path); FFmpeg isn't on PATH, `tools/ffmpeg_path.py` uses the copy Remotion ships.
 
+## "Found You" (third video) is finished and rendered
+`projects/foundyou/` (script, ElevenLabs voice "Sia", timings, mix.py), `src/videos/foundyou/`, composition `FoundYou`.
+`npm run foundyou:render` → `out/FoundYou.mp4` (112.5 s, 6,749 frames, 24.0 Mbps, 341 MB); uploaded as `renders/FoundYou.mp4`.
+Hard cut to black right after "Found you." (picture and sound stop; one hit rings out). The two mimic lines are
+treated in mix.py per the owner's note ("Are you lost?" lower + distant echo, "Found you." close whisper); the rest
+of the voice is untouched. The hiker is a girl (matches Sia); the mimic wears her clothes, pale, pitch-black eyes.
+
 Only if the soundtrack or timings must be rebuilt (Python + FFmpeg needed):
 `npm run room414:align` then `npm run room414:mix`.

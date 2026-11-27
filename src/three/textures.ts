@@ -21,7 +21,7 @@ export const canvasTexture = (key: string, w: number, h: number, draw: (ctx: Can
   return tex;
 };
 
-export type FaceKind = 'calm' | 'worried' | 'scared' | 'scaredDown' | 'laugh' | 'sleepwalk' | 'grin' | 'blank' | 'double' | 'doubleWide';
+export type FaceKind = 'calm' | 'worried' | 'scared' | 'scaredDown' | 'laugh' | 'sleepwalk' | 'grin' | 'blank' | 'double' | 'doubleWide' | 'void' | 'voidGrin';
 
 /**
  * Face painted on the front of a sphere head. The texture covers a patch of
@@ -70,6 +70,17 @@ const drawFace = (kind: FaceKind, ctx: CanvasRenderingContext2D, w: number, h: n
       return;
     }
     if (kind === 'blank') return;
+    if (kind === 'void') {
+      // the mimic's blank stare: black eyes (meshes), a flat line of a mouth
+      ctx.strokeStyle = ink;
+      ctx.lineWidth = 9;
+      ctx.beginPath();
+      ctx.moveTo(cx - 34, eyeY + 120);
+      ctx.lineTo(cx + 34, eyeY + 120);
+      ctx.stroke();
+      return;
+    }
+    if (kind === 'voidGrin') kind = 'doubleWide';
     if (kind === 'double' || kind === 'doubleWide') {
       // your face, but the eyes are solid pitch black and the smile goes too far
       ctx.fillStyle = '#000000';
@@ -166,7 +177,7 @@ const drawFace = (kind: FaceKind, ctx: CanvasRenderingContext2D, w: number, h: n
 const drawGirly = (kind: FaceKind, ctx: CanvasRenderingContext2D, w: number, h: number) => {
   const cx = w / 2;
   const eyeY = h * 0.5;
-  const isDouble = kind === 'double' || kind === 'doubleWide';
+  const isDouble = kind === 'double' || kind === 'doubleWide' || kind === 'void' || kind === 'voidGrin';
   if (!isDouble && kind !== 'grin' && kind !== 'blank') {
     for (const s of [-1, 1]) {
       const g = ctx.createRadialGradient(cx + s * 165, eyeY + 78, 4, cx + s * 165, eyeY + 78, 58);
@@ -178,7 +189,7 @@ const drawGirly = (kind: FaceKind, ctx: CanvasRenderingContext2D, w: number, h: 
       ctx.fill();
     }
   }
-  const open = ['calm', 'worried', 'scared', 'scaredDown', 'laugh', 'double', 'doubleWide'].includes(kind);
+  const open = ['calm', 'worried', 'scared', 'scaredDown', 'laugh', 'double', 'doubleWide', 'void', 'voidGrin'].includes(kind);
   ctx.strokeStyle = '#111114';
   ctx.lineCap = 'round';
   ctx.lineWidth = 8;

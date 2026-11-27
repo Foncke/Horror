@@ -1,0 +1,1600 @@
+{
+ "duration": 110.106,
+ "lines": [
+  {
+   "text": "If you're ever hiking alone in the woods, and realize the forest has gone completely silent... do not look into the trees. Just turn around, and walk out.",
+   "start": 0.0,
+   "end": 11.72
+  },
+  {
+   "text": "Last October, I took a solo trip deep into the mountains. I missed a turn on the ridge, and before I knew it, the sun was gone. I wasn't panicking yet. I had a flashlight, a compass, and plenty of water. I just needed to find the main trail.",
+   "start": 12.4,
+   "end": 29.81
+  },
+  {
+   "text": "That's when I realized... the woods had gone dead silent. No wind. No birds. Not even the crunch of leaves under my boots sounded right.",
+   "start": 30.294,
+   "end": 41.52
+  },
+  {
+   "text": "I swept my flashlight across the treeline, looking for a marker... and froze.",
+   "start": 42.0,
+   "end": 47.83
+  },
+  {
+   "text": "Twenty feet ahead, half-hidden behind a massive pine, someone was standing completely still... staring right at me.",
+   "start": 48.547,
+   "end": 57.787
+  },
+  {
+   "text": "I yelled out, asking if they were lost. They didn't answer. They didn't even blink when my beam hit their face. Instead, their head slowly tilted sideways \u2014 way past what a human neck could do \u2014 until their ear rested flat against their shoulder.",
+   "start": 58.387,
+   "end": 76.52
+  },
+  {
+   "text": "Then, from deep in the woods behind me, I heard my own voice yell back... \"Are you lost?\"",
+   "start": 77.207,
+   "end": 83.66
+  },
+  {
+   "text": "I spun around, flashing my light into the empty dark behind me. My heart was hammering against my ribs. When I whipped the beam back toward the pine tree... the figure was gone.",
+   "start": 83.956,
+   "end": 95.82
+  },
+  {
+   "text": "I stood there shaking, sweeping my light in every direction. Until I felt warm breath on the back of my neck... and my own voice whispered right into my ear... \"Found you.\"",
+   "start": 96.436,
+   "end": 109.81
+  }
+ ],
+ "words": [
+  {
+   "text": "If",
+   "line": 0,
+   "start": 0.0,
+   "end": 0.12
+  },
+  {
+   "text": "you're",
+   "line": 0,
+   "start": 0.12,
+   "end": 0.4
+  },
+  {
+   "text": "ever",
+   "line": 0,
+   "start": 0.4,
+   "end": 0.72
+  },
+  {
+   "text": "hiking",
+   "line": 0,
+   "start": 0.72,
+   "end": 1.16
+  },
+  {
+   "text": "alone",
+   "line": 0,
+   "start": 1.16,
+   "end": 1.6
+  },
+  {
+   "text": "in",
+   "line": 0,
+   "start": 1.6,
+   "end": 1.72
+  },
+  {
+   "text": "the",
+   "line": 0,
+   "start": 1.72,
+   "end": 1.88
+  },
+  {
+   "text": "woods,",
+   "line": 0,
+   "start": 1.88,
+   "end": 2.4
+  },
+  {
+   "text": "and",
+   "line": 0,
+   "start": 2.4,
+   "end": 2.68
+  },
+  {
+   "text": "realize",
+   "line": 0,
+   "start": 2.68,
+   "end": 3.24
+  },
+  {
+   "text": "the",
+   "line": 0,
+   "start": 3.24,
+   "end": 3.48
+  },
+  {
+   "text": "forest",
+   "line": 0,
+   "start": 3.48,
+   "end": 3.96
+  },
+  {
+   "text": "has",
+   "line": 0,
+   "start": 3.96,
+   "end": 4.2
+  },
+  {
+   "text": "gone",
+   "line": 0,
+   "start": 4.2,
+   "end": 4.6
+  },
+  {
+   "text": "completely",
+   "line": 0,
+   "start": 4.6,
+   "end": 5.44
+  },
+  {
+   "text": "silent...",
+   "line": 0,
+   "start": 5.44,
+   "end": 6.05
+  },
+  {
+   "text": "do",
+   "line": 0,
+   "start": 6.72,
+   "end": 7.12
+  },
+  {
+   "text": "not",
+   "line": 0,
+   "start": 7.12,
+   "end": 7.68
+  },
+  {
+   "text": "look",
+   "line": 0,
+   "start": 7.68,
+   "end": 8.08
+  },
+  {
+   "text": "into",
+   "line": 0,
+   "start": 8.08,
+   "end": 8.36
+  },
+  {
+   "text": "the",
+   "line": 0,
+   "start": 8.36,
+   "end": 8.56
+  },
+  {
+   "text": "trees.",
+   "line": 0,
+   "start": 8.56,
+   "end": 9.02
+  },
+  {
+   "text": "Just",
+   "line": 0,
+   "start": 9.4,
+   "end": 9.76
+  },
+  {
+   "text": "turn",
+   "line": 0,
+   "start": 9.76,
+   "end": 10.08
+  },
+  {
+   "text": "around,",
+   "line": 0,
+   "start": 10.08,
+   "end": 10.6
+  },
+  {
+   "text": "and",
+   "line": 0,
+   "start": 10.72,
+   "end": 11.04
+  },
+  {
+   "text": "walk",
+   "line": 0,
+   "start": 11.04,
+   "end": 11.48
+  },
+  {
+   "text": "out.",
+   "line": 0,
+   "start": 11.48,
+   "end": 11.72
+  },
+  {
+   "text": "Last",
+   "line": 1,
+   "start": 12.4,
+   "end": 12.88
+  },
+  {
+   "text": "October,",
+   "line": 1,
+   "start": 12.88,
+   "end": 13.64
+  },
+  {
+   "text": "I",
+   "line": 1,
+   "start": 13.64,
+   "end": 13.88
+  },
+  {
+   "text": "took",
+   "line": 1,
+   "start": 13.88,
+   "end": 14.04
+  },
+  {
+   "text": "a",
+   "line": 1,
+   "start": 14.04,
+   "end": 14.2
+  },
+  {
+   "text": "solo",
+   "line": 1,
+   "start": 14.2,
+   "end": 14.64
+  },
+  {
+   "text": "trip",
+   "line": 1,
+   "start": 14.64,
+   "end": 14.85
+  },
+  {
+   "text": "deep",
+   "line": 1,
+   "start": 15.0,
+   "end": 15.4
+  },
+  {
+   "text": "into",
+   "line": 1,
+   "start": 15.4,
+   "end": 15.64
+  },
+  {
+   "text": "the",
+   "line": 1,
+   "start": 15.64,
+   "end": 15.8
+  },
+  {
+   "text": "mountains.",
+   "line": 1,
+   "start": 15.8,
+   "end": 16.32
+  },
+  {
+   "text": "I",
+   "line": 1,
+   "start": 16.854,
+   "end": 16.974
+  },
+  {
+   "text": "missed",
+   "line": 1,
+   "start": 16.934,
+   "end": 17.254
+  },
+  {
+   "text": "a",
+   "line": 1,
+   "start": 17.254,
+   "end": 17.414
+  },
+  {
+   "text": "turn",
+   "line": 1,
+   "start": 17.414,
+   "end": 17.694
+  },
+  {
+   "text": "on",
+   "line": 1,
+   "start": 17.694,
+   "end": 17.814
+  },
+  {
+   "text": "the",
+   "line": 1,
+   "start": 17.814,
+   "end": 17.974
+  },
+  {
+   "text": "ridge,",
+   "line": 1,
+   "start": 17.974,
+   "end": 18.454
+  },
+  {
+   "text": "and",
+   "line": 1,
+   "start": 18.454,
+   "end": 18.734
+  },
+  {
+   "text": "before",
+   "line": 1,
+   "start": 18.734,
+   "end": 19.094
+  },
+  {
+   "text": "I",
+   "line": 1,
+   "start": 19.094,
+   "end": 19.334
+  },
+  {
+   "text": "knew",
+   "line": 1,
+   "start": 19.334,
+   "end": 19.614
+  },
+  {
+   "text": "it,",
+   "line": 1,
+   "start": 19.614,
+   "end": 19.8
+  },
+  {
+   "text": "the",
+   "line": 1,
+   "start": 19.934,
+   "end": 20.214
+  },
+  {
+   "text": "sun",
+   "line": 1,
+   "start": 20.214,
+   "end": 20.614
+  },
+  {
+   "text": "was",
+   "line": 1,
+   "start": 20.614,
+   "end": 20.854
+  },
+  {
+   "text": "gone.",
+   "line": 1,
+   "start": 20.854,
+   "end": 21.31
+  },
+  {
+   "text": "I",
+   "line": 1,
+   "start": 21.694,
+   "end": 22.014
+  },
+  {
+   "text": "wasn't",
+   "line": 1,
+   "start": 22.014,
+   "end": 22.534
+  },
+  {
+   "text": "panicking",
+   "line": 1,
+   "start": 22.534,
+   "end": 23.174
+  },
+  {
+   "text": "yet.",
+   "line": 1,
+   "start": 23.174,
+   "end": 23.52
+  },
+  {
+   "text": "I",
+   "line": 1,
+   "start": 23.694,
+   "end": 23.934
+  },
+  {
+   "text": "had",
+   "line": 1,
+   "start": 23.934,
+   "end": 24.094
+  },
+  {
+   "text": "a",
+   "line": 1,
+   "start": 24.094,
+   "end": 24.254
+  },
+  {
+   "text": "flashlight,",
+   "line": 1,
+   "start": 24.254,
+   "end": 25.054
+  },
+  {
+   "text": "a",
+   "line": 1,
+   "start": 25.054,
+   "end": 25.254
+  },
+  {
+   "text": "compass,",
+   "line": 1,
+   "start": 25.254,
+   "end": 25.814
+  },
+  {
+   "text": "and",
+   "line": 1,
+   "start": 25.814,
+   "end": 26.094
+  },
+  {
+   "text": "plenty",
+   "line": 1,
+   "start": 26.094,
+   "end": 26.614
+  },
+  {
+   "text": "of",
+   "line": 1,
+   "start": 26.614,
+   "end": 26.774
+  },
+  {
+   "text": "water.",
+   "line": 1,
+   "start": 26.774,
+   "end": 27.15
+  },
+  {
+   "text": "I",
+   "line": 1,
+   "start": 27.454,
+   "end": 27.774
+  },
+  {
+   "text": "just",
+   "line": 1,
+   "start": 27.774,
+   "end": 28.094
+  },
+  {
+   "text": "needed",
+   "line": 1,
+   "start": 28.094,
+   "end": 28.494
+  },
+  {
+   "text": "to",
+   "line": 1,
+   "start": 28.494,
+   "end": 28.654
+  },
+  {
+   "text": "find",
+   "line": 1,
+   "start": 28.654,
+   "end": 28.934
+  },
+  {
+   "text": "the",
+   "line": 1,
+   "start": 28.934,
+   "end": 29.094
+  },
+  {
+   "text": "main",
+   "line": 1,
+   "start": 29.094,
+   "end": 29.414
+  },
+  {
+   "text": "trail.",
+   "line": 1,
+   "start": 29.414,
+   "end": 29.81
+  },
+  {
+   "text": "That's",
+   "line": 2,
+   "start": 30.294,
+   "end": 30.934
+  },
+  {
+   "text": "when",
+   "line": 2,
+   "start": 30.934,
+   "end": 31.134
+  },
+  {
+   "text": "I",
+   "line": 2,
+   "start": 31.134,
+   "end": 31.334
+  },
+  {
+   "text": "realized...",
+   "line": 2,
+   "start": 31.334,
+   "end": 32.04
+  },
+  {
+   "text": "the",
+   "line": 2,
+   "start": 32.6,
+   "end": 32.84
+  },
+  {
+   "text": "woods",
+   "line": 2,
+   "start": 32.84,
+   "end": 33.36
+  },
+  {
+   "text": "had",
+   "line": 2,
+   "start": 33.36,
+   "end": 33.6
+  },
+  {
+   "text": "gone",
+   "line": 2,
+   "start": 33.6,
+   "end": 33.91
+  },
+  {
+   "text": "dead",
+   "line": 2,
+   "start": 33.96,
+   "end": 34.48
+  },
+  {
+   "text": "silent.",
+   "line": 2,
+   "start": 34.48,
+   "end": 35.08
+  },
+  {
+   "text": "No",
+   "line": 2,
+   "start": 35.6,
+   "end": 36.04
+  },
+  {
+   "text": "wind.",
+   "line": 2,
+   "start": 36.04,
+   "end": 36.53
+  },
+  {
+   "text": "No",
+   "line": 2,
+   "start": 36.8,
+   "end": 37.2
+  },
+  {
+   "text": "birds.",
+   "line": 2,
+   "start": 37.2,
+   "end": 37.81
+  },
+  {
+   "text": "Not",
+   "line": 2,
+   "start": 38.12,
+   "end": 38.52
+  },
+  {
+   "text": "even",
+   "line": 2,
+   "start": 38.52,
+   "end": 38.76
+  },
+  {
+   "text": "the",
+   "line": 2,
+   "start": 38.76,
+   "end": 38.96
+  },
+  {
+   "text": "crunch",
+   "line": 2,
+   "start": 38.96,
+   "end": 39.32
+  },
+  {
+   "text": "of",
+   "line": 2,
+   "start": 39.32,
+   "end": 39.52
+  },
+  {
+   "text": "leaves",
+   "line": 2,
+   "start": 39.52,
+   "end": 39.96
+  },
+  {
+   "text": "under",
+   "line": 2,
+   "start": 39.96,
+   "end": 40.2
+  },
+  {
+   "text": "my",
+   "line": 2,
+   "start": 40.2,
+   "end": 40.36
+  },
+  {
+   "text": "boots",
+   "line": 2,
+   "start": 40.36,
+   "end": 40.8
+  },
+  {
+   "text": "sounded",
+   "line": 2,
+   "start": 40.8,
+   "end": 41.24
+  },
+  {
+   "text": "right.",
+   "line": 2,
+   "start": 41.24,
+   "end": 41.52
+  },
+  {
+   "text": "I",
+   "line": 3,
+   "start": 42.0,
+   "end": 42.44
+  },
+  {
+   "text": "swept",
+   "line": 3,
+   "start": 42.44,
+   "end": 42.92
+  },
+  {
+   "text": "my",
+   "line": 3,
+   "start": 42.92,
+   "end": 43.12
+  },
+  {
+   "text": "flashlight",
+   "line": 3,
+   "start": 43.12,
+   "end": 43.72
+  },
+  {
+   "text": "across",
+   "line": 3,
+   "start": 43.72,
+   "end": 44.12
+  },
+  {
+   "text": "the",
+   "line": 3,
+   "start": 44.12,
+   "end": 44.28
+  },
+  {
+   "text": "treeline,",
+   "line": 3,
+   "start": 44.28,
+   "end": 44.84
+  },
+  {
+   "text": "looking",
+   "line": 3,
+   "start": 44.96,
+   "end": 45.28
+  },
+  {
+   "text": "for",
+   "line": 3,
+   "start": 45.28,
+   "end": 45.48
+  },
+  {
+   "text": "a",
+   "line": 3,
+   "start": 45.48,
+   "end": 45.6
+  },
+  {
+   "text": "marker...",
+   "line": 3,
+   "start": 45.6,
+   "end": 46.1
+  },
+  {
+   "text": "and",
+   "line": 3,
+   "start": 46.6,
+   "end": 47.14
+  },
+  {
+   "text": "froze.",
+   "line": 3,
+   "start": 47.16,
+   "end": 47.83
+  },
+  {
+   "text": "Twenty",
+   "line": 4,
+   "start": 48.547,
+   "end": 49.107
+  },
+  {
+   "text": "feet",
+   "line": 4,
+   "start": 49.107,
+   "end": 49.387
+  },
+  {
+   "text": "ahead,",
+   "line": 4,
+   "start": 49.387,
+   "end": 49.79
+  },
+  {
+   "text": "half-hidden",
+   "line": 4,
+   "start": 50.067,
+   "end": 50.827
+  },
+  {
+   "text": "behind",
+   "line": 4,
+   "start": 50.827,
+   "end": 51.187
+  },
+  {
+   "text": "a",
+   "line": 4,
+   "start": 51.187,
+   "end": 51.387
+  },
+  {
+   "text": "massive",
+   "line": 4,
+   "start": 51.387,
+   "end": 51.987
+  },
+  {
+   "text": "pine,",
+   "line": 4,
+   "start": 51.987,
+   "end": 52.37
+  },
+  {
+   "text": "someone",
+   "line": 4,
+   "start": 52.707,
+   "end": 53.427
+  },
+  {
+   "text": "was",
+   "line": 4,
+   "start": 53.427,
+   "end": 53.707
+  },
+  {
+   "text": "standing",
+   "line": 4,
+   "start": 53.707,
+   "end": 54.267
+  },
+  {
+   "text": "completely",
+   "line": 4,
+   "start": 54.267,
+   "end": 54.387
+  },
+  {
+   "text": "still...",
+   "line": 4,
+   "start": 55.227,
+   "end": 55.56
+  },
+  {
+   "text": "staring",
+   "line": 4,
+   "start": 56.067,
+   "end": 56.867
+  },
+  {
+   "text": "right",
+   "line": 4,
+   "start": 56.867,
+   "end": 57.347
+  },
+  {
+   "text": "at",
+   "line": 4,
+   "start": 57.347,
+   "end": 57.667
+  },
+  {
+   "text": "me.",
+   "line": 4,
+   "start": 57.667,
+   "end": 57.787
+  },
+  {
+   "text": "I",
+   "line": 5,
+   "start": 58.387,
+   "end": 58.827
+  },
+  {
+   "text": "yelled",
+   "line": 5,
+   "start": 58.827,
+   "end": 59.307
+  },
+  {
+   "text": "out,",
+   "line": 5,
+   "start": 59.307,
+   "end": 59.59
+  },
+  {
+   "text": "asking",
+   "line": 5,
+   "start": 59.667,
+   "end": 60.147
+  },
+  {
+   "text": "if",
+   "line": 5,
+   "start": 60.147,
+   "end": 60.347
+  },
+  {
+   "text": "they",
+   "line": 5,
+   "start": 60.347,
+   "end": 60.467
+  },
+  {
+   "text": "were",
+   "line": 5,
+   "start": 60.467,
+   "end": 60.747
+  },
+  {
+   "text": "lost.",
+   "line": 5,
+   "start": 60.747,
+   "end": 61.16
+  },
+  {
+   "text": "They",
+   "line": 5,
+   "start": 61.507,
+   "end": 61.907
+  },
+  {
+   "text": "didn't",
+   "line": 5,
+   "start": 61.907,
+   "end": 62.387
+  },
+  {
+   "text": "answer.",
+   "line": 5,
+   "start": 62.387,
+   "end": 62.78
+  },
+  {
+   "text": "They",
+   "line": 5,
+   "start": 63.067,
+   "end": 63.467
+  },
+  {
+   "text": "didn't",
+   "line": 5,
+   "start": 63.467,
+   "end": 63.867
+  },
+  {
+   "text": "even",
+   "line": 5,
+   "start": 63.867,
+   "end": 64.147
+  },
+  {
+   "text": "blink",
+   "line": 5,
+   "start": 64.147,
+   "end": 64.667
+  },
+  {
+   "text": "when",
+   "line": 5,
+   "start": 64.667,
+   "end": 64.827
+  },
+  {
+   "text": "my",
+   "line": 5,
+   "start": 64.827,
+   "end": 65.027
+  },
+  {
+   "text": "beam",
+   "line": 5,
+   "start": 65.027,
+   "end": 65.387
+  },
+  {
+   "text": "hit",
+   "line": 5,
+   "start": 65.387,
+   "end": 65.627
+  },
+  {
+   "text": "their",
+   "line": 5,
+   "start": 65.627,
+   "end": 65.947
+  },
+  {
+   "text": "face.",
+   "line": 5,
+   "start": 65.947,
+   "end": 66.27
+  },
+  {
+   "text": "Instead,",
+   "line": 5,
+   "start": 66.447,
+   "end": 67.64
+  },
+  {
+   "text": "their",
+   "line": 5,
+   "start": 67.847,
+   "end": 68.287
+  },
+  {
+   "text": "head",
+   "line": 5,
+   "start": 68.287,
+   "end": 68.687
+  },
+  {
+   "text": "slowly",
+   "line": 5,
+   "start": 68.687,
+   "end": 69.407
+  },
+  {
+   "text": "tilted",
+   "line": 5,
+   "start": 69.407,
+   "end": 69.967
+  },
+  {
+   "text": "sideways",
+   "line": 5,
+   "start": 69.967,
+   "end": 70.7
+  },
+  {
+   "text": "way",
+   "line": 5,
+   "start": 71.047,
+   "end": 71.367
+  },
+  {
+   "text": "past",
+   "line": 5,
+   "start": 71.367,
+   "end": 71.767
+  },
+  {
+   "text": "what",
+   "line": 5,
+   "start": 71.767,
+   "end": 71.927
+  },
+  {
+   "text": "a",
+   "line": 5,
+   "start": 71.927,
+   "end": 72.047
+  },
+  {
+   "text": "human",
+   "line": 5,
+   "start": 72.047,
+   "end": 72.367
+  },
+  {
+   "text": "neck",
+   "line": 5,
+   "start": 72.367,
+   "end": 72.727
+  },
+  {
+   "text": "could",
+   "line": 5,
+   "start": 72.727,
+   "end": 72.967
+  },
+  {
+   "text": "do",
+   "line": 5,
+   "start": 72.967,
+   "end": 73.12
+  },
+  {
+   "text": "until",
+   "line": 5,
+   "start": 73.447,
+   "end": 73.807
+  },
+  {
+   "text": "their",
+   "line": 5,
+   "start": 73.807,
+   "end": 74.127
+  },
+  {
+   "text": "ear",
+   "line": 5,
+   "start": 74.127,
+   "end": 74.527
+  },
+  {
+   "text": "rested",
+   "line": 5,
+   "start": 74.527,
+   "end": 74.91
+  },
+  {
+   "text": "flat",
+   "line": 5,
+   "start": 75.047,
+   "end": 75.447
+  },
+  {
+   "text": "against",
+   "line": 5,
+   "start": 75.447,
+   "end": 75.847
+  },
+  {
+   "text": "their",
+   "line": 5,
+   "start": 75.847,
+   "end": 76.087
+  },
+  {
+   "text": "shoulder.",
+   "line": 5,
+   "start": 76.087,
+   "end": 76.52
+  },
+  {
+   "text": "Then,",
+   "line": 6,
+   "start": 77.207,
+   "end": 77.8
+  },
+  {
+   "text": "from",
+   "line": 6,
+   "start": 77.847,
+   "end": 78.207
+  },
+  {
+   "text": "deep",
+   "line": 6,
+   "start": 78.207,
+   "end": 78.607
+  },
+  {
+   "text": "in",
+   "line": 6,
+   "start": 78.607,
+   "end": 78.727
+  },
+  {
+   "text": "the",
+   "line": 6,
+   "start": 78.727,
+   "end": 78.887
+  },
+  {
+   "text": "woods",
+   "line": 6,
+   "start": 78.887,
+   "end": 79.247
+  },
+  {
+   "text": "behind",
+   "line": 6,
+   "start": 79.247,
+   "end": 79.727
+  },
+  {
+   "text": "me,",
+   "line": 6,
+   "start": 79.727,
+   "end": 79.89
+  },
+  {
+   "text": "I",
+   "line": 6,
+   "start": 80.047,
+   "end": 80.287
+  },
+  {
+   "text": "heard",
+   "line": 6,
+   "start": 80.287,
+   "end": 80.607
+  },
+  {
+   "text": "my",
+   "line": 6,
+   "start": 80.607,
+   "end": 80.847
+  },
+  {
+   "text": "own",
+   "line": 6,
+   "start": 80.847,
+   "end": 81.167
+  },
+  {
+   "text": "voice",
+   "line": 6,
+   "start": 81.167,
+   "end": 81.567
+  },
+  {
+   "text": "yell",
+   "line": 6,
+   "start": 81.567,
+   "end": 82.007
+  },
+  {
+   "text": "back...",
+   "line": 6,
+   "start": 82.007,
+   "end": 82.21
+  },
+  {
+   "text": "\"Are",
+   "line": 6,
+   "start": 82.677,
+   "end": 82.836
+  },
+  {
+   "text": "you",
+   "line": 6,
+   "start": 82.836,
+   "end": 83.156
+  },
+  {
+   "text": "lost?\"",
+   "line": 6,
+   "start": 83.156,
+   "end": 83.66
+  },
+  {
+   "text": "I",
+   "line": 7,
+   "start": 83.956,
+   "end": 84.436
+  },
+  {
+   "text": "spun",
+   "line": 7,
+   "start": 84.436,
+   "end": 84.917
+  },
+  {
+   "text": "around,",
+   "line": 7,
+   "start": 84.917,
+   "end": 85.4
+  },
+  {
+   "text": "flashing",
+   "line": 7,
+   "start": 85.476,
+   "end": 86.036
+  },
+  {
+   "text": "my",
+   "line": 7,
+   "start": 86.036,
+   "end": 86.236
+  },
+  {
+   "text": "light",
+   "line": 7,
+   "start": 86.236,
+   "end": 86.476
+  },
+  {
+   "text": "into",
+   "line": 7,
+   "start": 86.476,
+   "end": 86.677
+  },
+  {
+   "text": "the",
+   "line": 7,
+   "start": 86.677,
+   "end": 86.836
+  },
+  {
+   "text": "empty",
+   "line": 7,
+   "start": 86.836,
+   "end": 87.316
+  },
+  {
+   "text": "dark",
+   "line": 7,
+   "start": 87.316,
+   "end": 87.597
+  },
+  {
+   "text": "behind",
+   "line": 7,
+   "start": 87.597,
+   "end": 88.117
+  },
+  {
+   "text": "me.",
+   "line": 7,
+   "start": 88.117,
+   "end": 88.516
+  },
+  {
+   "text": "My",
+   "line": 7,
+   "start": 88.516,
+   "end": 88.916
+  },
+  {
+   "text": "heart",
+   "line": 7,
+   "start": 88.916,
+   "end": 89.236
+  },
+  {
+   "text": "was",
+   "line": 7,
+   "start": 89.236,
+   "end": 89.476
+  },
+  {
+   "text": "hammering",
+   "line": 7,
+   "start": 89.476,
+   "end": 90.117
+  },
+  {
+   "text": "against",
+   "line": 7,
+   "start": 90.117,
+   "end": 90.516
+  },
+  {
+   "text": "my",
+   "line": 7,
+   "start": 90.516,
+   "end": 90.716
+  },
+  {
+   "text": "ribs.",
+   "line": 7,
+   "start": 90.716,
+   "end": 91.1
+  },
+  {
+   "text": "When",
+   "line": 7,
+   "start": 91.477,
+   "end": 91.756
+  },
+  {
+   "text": "I",
+   "line": 7,
+   "start": 91.756,
+   "end": 91.956
+  },
+  {
+   "text": "whipped",
+   "line": 7,
+   "start": 91.956,
+   "end": 92.276
+  },
+  {
+   "text": "the",
+   "line": 7,
+   "start": 92.276,
+   "end": 92.437
+  },
+  {
+   "text": "beam",
+   "line": 7,
+   "start": 92.437,
+   "end": 92.756
+  },
+  {
+   "text": "back",
+   "line": 7,
+   "start": 92.756,
+   "end": 92.996
+  },
+  {
+   "text": "toward",
+   "line": 7,
+   "start": 92.996,
+   "end": 93.356
+  },
+  {
+   "text": "the",
+   "line": 7,
+   "start": 93.356,
+   "end": 93.477
+  },
+  {
+   "text": "pine",
+   "line": 7,
+   "start": 93.477,
+   "end": 93.876
+  },
+  {
+   "text": "tree...",
+   "line": 7,
+   "start": 93.876,
+   "end": 94.1
+  },
+  {
+   "text": "the",
+   "line": 7,
+   "start": 94.517,
+   "end": 94.836
+  },
+  {
+   "text": "figure",
+   "line": 7,
+   "start": 94.836,
+   "end": 95.356
+  },
+  {
+   "text": "was",
+   "line": 7,
+   "start": 95.356,
+   "end": 95.637
+  },
+  {
+   "text": "gone.",
+   "line": 7,
+   "start": 95.637,
+   "end": 95.82
+  },
+  {
+   "text": "I",
+   "line": 8,
+   "start": 96.436,
+   "end": 96.836
+  },
+  {
+   "text": "stood",
+   "line": 8,
+   "start": 96.836,
+   "end": 97.316
+  },
+  {
+   "text": "there",
+   "line": 8,
+   "start": 97.316,
+   "end": 97.716
+  },
+  {
+   "text": "shaking,",
+   "line": 8,
+   "start": 97.716,
+   "end": 98.37
+  },
+  {
+   "text": "sweeping",
+   "line": 8,
+   "start": 98.516,
+   "end": 99.076
+  },
+  {
+   "text": "my",
+   "line": 8,
+   "start": 99.076,
+   "end": 99.316
+  },
+  {
+   "text": "light",
+   "line": 8,
+   "start": 99.316,
+   "end": 99.514
+  },
+  {
+   "text": "in",
+   "line": 8,
+   "start": 99.514,
+   "end": 99.712
+  },
+  {
+   "text": "every",
+   "line": 8,
+   "start": 99.712,
+   "end": 100.152
+  },
+  {
+   "text": "direction.",
+   "line": 8,
+   "start": 100.152,
+   "end": 100.77
+  },
+  {
+   "text": "Until",
+   "line": 8,
+   "start": 101.312,
+   "end": 101.872
+  },
+  {
+   "text": "I",
+   "line": 8,
+   "start": 101.872,
+   "end": 102.232
+  },
+  {
+   "text": "felt",
+   "line": 8,
+   "start": 102.232,
+   "end": 102.592
+  },
+  {
+   "text": "warm",
+   "line": 8,
+   "start": 102.592,
+   "end": 103.072
+  },
+  {
+   "text": "breath",
+   "line": 8,
+   "start": 103.072,
+   "end": 103.42
+  },
+  {
+   "text": "on",
+   "line": 8,
+   "start": 103.552,
+   "end": 103.672
+  },
+  {
+   "text": "the",
+   "line": 8,
+   "start": 103.672,
+   "end": 103.832
+  },
+  {
+   "text": "back",
+   "line": 8,
+   "start": 103.832,
+   "end": 104.112
+  },
+  {
+   "text": "of",
+   "line": 8,
+   "start": 104.112,
+   "end": 104.272
+  },
+  {
+   "text": "my",
+   "line": 8,
+   "start": 104.272,
+   "end": 104.512
+  },
+  {
+   "text": "neck...",
+   "line": 8,
+   "start": 104.512,
+   "end": 104.76
+  },
+  {
+   "text": "and",
+   "line": 8,
+   "start": 105.112,
+   "end": 105.392
+  },
+  {
+   "text": "my",
+   "line": 8,
+   "start": 105.392,
+   "end": 105.672
+  },
+  {
+   "text": "own",
+   "line": 8,
+   "start": 105.672,
+   "end": 106.032
+  },
+  {
+   "text": "voice",
+   "line": 8,
+   "start": 106.032,
+   "end": 106.432
+  },
+  {
+   "text": "whispered",
+   "line": 8,
+   "start": 106.432,
+   "end": 107.072
+  },
+  {
+   "text": "right",
+   "line": 8,
+   "start": 107.072,
+   "end": 107.392
+  },
+  {
+   "text": "into",
+   "line": 8,
+   "start": 107.392,
+   "end": 107.672
+  },
+  {
+   "text": "my",
+   "line": 8,
+   "start": 107.672,
+   "end": 107.952
+  },
+  {
+   "text": "ear...",
+   "line": 8,
+   "start": 107.952,
+   "end": 108.23
+  },
+  {
+   "text": "\"Found",
+   "line": 8,
+   "start": 109.032,
+   "end": 109.552
+  },
+  {
+   "text": "you.\"",
+   "line": 8,
+   "start": 109.552,
+   "end": 109.81
+  }
+ ]
+}

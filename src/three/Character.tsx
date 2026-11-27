@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import {FaceKind, faceTexture} from './textures';
 
 /** Toy-like vinyl figure: big sphere head, soft capsule body. Feet at the group origin, ~1.6 m tall. */
-export type Outfit = 'you' | 'clerk' | 'bellhop' | 'guest' | 'guest2' | 'guest3' | 'pajamas' | 'double';
+export type Outfit = 'you' | 'clerk' | 'bellhop' | 'guest' | 'guest2' | 'guest3' | 'pajamas' | 'double' | 'hiker' | 'mimic';
 
 export type Pose = {
   headPitch?: number; // + looks down
@@ -17,6 +17,7 @@ export type Pose = {
   sit?: boolean;
   breathe?: number; // time in seconds for idle breathing
   hunch?: number;
+  neckRoll?: number; // head bends sideways at the neck (+ toward the figure's left shoulder)
 };
 
 const geo = {
@@ -58,10 +59,15 @@ const OUTFIT: Record<Outfit, {skin: string; body: string; arm: string; legs: str
   // 3 A.M.: you (a girl) and your double wear the same pink pajamas; the double is paler
   pajamas: {skin: '#ebe7df', body: '#c97ba3', arm: '#c97ba3', legs: '#b26d93', hands: '#ebe7df'},
   double: {skin: '#c4c1b9', body: '#c97ba3', arm: '#c97ba3', legs: '#b26d93', hands: '#c4c1b9'},
+  // Found You: the hiker and the thing that copies her (same clothes, paler skin)
+  hiker: {skin: '#ebe7df', body: '#2f6a6c', arm: '#2f6a6c', legs: '#3b3a35', hands: '#ebe7df'},
+  mimic: {skin: '#c9c6bf', body: '#2f6a6c', arm: '#2f6a6c', legs: '#3b3a35', hands: '#c9c6bf'},
 };
-const HAIR: Partial<Record<Outfit, string>> = {pajamas: '#3a2418', double: '#3a2418'};
+const HAIR: Partial<Record<Outfit, string>> = {pajamas: '#3a2418', double: '#3a2418', hiker: '#5a321f', mimic: '#5a321f'};
+/** Knit beanie and backpack for the hiking outfits. */
+const HIKING: Partial<Record<Outfit, boolean>> = {hiker: true, mimic: true};
 /** Outfits drawn as a girl: long hair, a bow, lashes and blush. */
-const GIRLY: Partial<Record<Outfit, boolean>> = {pajamas: true, double: true};
+const GIRLY: Partial<Record<Outfit, boolean>> = {pajamas: true, double: true, hiker: true, mimic: true};
 
 type Props = Pose & {
   outfit: Outfit;
@@ -131,10 +137,21 @@ export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0
               </group>
             );
           })}
-          {/* head */}
-          <group position={[0, 0.86, 0]} rotation={[pose.headPitch ?? 0, pose.headYaw ?? 0, pose.headRoll ?? 0]}>
-            <mesh geometry={geo.head} material={outfit === 'double' ? cloth(o.skin) : vinyl(o.skin, outfit === 'bellhop' ? 0.12 : 0.38)} castShadow={cast} />
-            {(face === 'double' || face === 'doubleWide') &&
+          {HIKING[outfit] && !headOnly && (
+            <group position={[0, 0.42, -0.2]}>
+              <mesh material={cloth('#7a4a2a')} castShadow={cast} scale={[0.3, 0.42, 0.16]}>
+                <boxGeometry args={[1, 1, 1]} />
+              </mesh>
+              <mesh material={cloth('#5e3820')} position={[0, 0.14, -0.06]} scale={[0.32, 0.12, 0.12]}>
+                <boxGeometry args={[1, 1, 1]} />
+              </mesh>
+            </group>
+          )}
+          {/* head, on a neck that can bend sideways */}
+          <group position={[0, 0.65, 0]} rotation={[0, 0, pose.neckRoll ?? 0]}>
+          <group position={[0, 0.21, 0]} rotation={[pose.headPitch ?? 0, pose.headYaw ?? 0, pose.headRoll ?? 0]}>
+            <mesh geometry={geo.head} material={outfit === 'double' || outfit === 'mimic' ? cloth(o.skin) : vinyl(o.skin, outfit === 'bellhop' ? 0.12 : 0.38)} castShadow={cast} />
+            {(face === 'double' || face === 'doubleWide' || face === 'void' || face === 'voidGrin') &&
               [-1, 1].map((s) => (
                 // pitch-black eyes: unlit, so no light ever reflects in them
                 <mesh key={s} geometry={geo.eye} material={voidMat} position={[s * 0.0565, -0.004, 0.2043]} rotation={[0, s * 0.27, s * 0.12]} scale={[0.04, 0.05, 0.022]} />
@@ -154,15 +171,15 @@ export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0
                 {/* long hair down the back, locks framing the face */}
                 <mesh geometry={geo.hairBack} material={cloth(HAIR[outfit]!)} position={[0, -0.13, -0.07]} scale={[1.1, 1, 0.62]} castShadow={cast} />
                 {[-1, 1].map((s) => (
-                  <mesh key={s} geometry={geo.hairLock} material={cloth(HAIR[outfit]!)} position={[s * 0.178, -0.15, 0.03]} rotation={[0.08, 0, s * 0.1]} castShadow={cast} />
+                  <mesh key={s} geometry={geo.hairLock} material={cloth(HAIR[outfit]!)} position={[s * 0.182, -0.15, -0.005]} rotation={[0.08, 0, s * 0.1]} castShadow={cast} />
                 ))}
                 {/* a pink bow */}
-                <group position={[0.145, 0.185, 0.06]} rotation={[0.2, 0.5, -0.7]}>
+                {!HIKING[outfit] && <group position={[0.145, 0.185, 0.06]} rotation={[0.2, 0.5, -0.7]}>
                   {[-1, 1].map((s) => (
                     <mesh key={s} geometry={geo.bow} material={cloth('#ff8fb8')} position={[s * 0.034, 0, 0]} rotation={[0, 0, s * 0.35]} scale={[0.036, 0.026, 0.014]} />
                   ))}
                   <mesh geometry={geo.bow} material={cloth('#e0609a')} scale={[0.014, 0.014, 0.016]} />
-                </group>
+                </group>}
               </group>
             )}
             {outfit === 'clerk' && (
@@ -171,6 +188,15 @@ export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0
                 <mesh geometry={geo.capBrim} material={cloth('#0f1814')} position={[0, -0.02, 0.06]} scale={[1.05, 1, 1.55]} />
               </group>
             )}
+            {HIKING[outfit] && (
+              <group position={[0, 0.045, -0.02]} rotation={[-0.3, 0, 0]}>
+                <mesh geometry={geo.capCrown} material={cloth('#c4572b')} scale={[1.06, 1.08, 1.06]} castShadow={cast} />
+                <mesh material={cloth('#c4572b')} position={[0, 0.25, 0]}>
+                  <sphereGeometry args={[0.045, 16, 12]} />
+                </mesh>
+              </group>
+            )}
+          </group>
           </group>
         </group>
       </group>

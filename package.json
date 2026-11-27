@@ -14,6 +14,9 @@
     "3am:align": "python3 tools/align.py projects/3am/voice.mp3 projects/3am/script.txt projects/3am/timings.json",
     "3am:mix": "python3 projects/3am/mix.py",
     "3am:render": "remotion render ThreeAM out/3AM.mp4",
+    "foundyou:align": "python3 tools/align.py projects/foundyou/voice.mp3 projects/foundyou/script.txt projects/foundyou/timings.json",
+    "foundyou:mix": "python3 projects/foundyou/mix.py",
+    "foundyou:render": "remotion render FoundYou out/FoundYou.mp4",
     "stills": "node tools/stills.mjs"
   },
   "dependencies": {
