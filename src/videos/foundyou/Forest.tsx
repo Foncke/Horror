@@ -218,10 +218,16 @@ const beamMaterial = () =>
     fragmentShader: `
       uniform float uStrength; uniform vec3 uColor;
       varying float vAlong; varying vec3 vN; varying vec3 vView;
+      // safe normalize: at the tip of the cone a vector can be zero, and NaN pixels get
+      // smeared into black blotches by the bloom pass (the black flashes in the first render)
+      vec3 safeN(vec3 v){ float l = length(v); return l > 1e-5 ? v / l : vec3(0.0, 0.0, 1.0); }
       void main(){
-        float facing = pow(abs(dot(normalize(vN), normalize(vView))), 1.6);
-        float fall = pow(1.0 - vAlong, 1.7) * smoothstep(0.0, 0.08, vAlong);
-        gl_FragColor = vec4(uColor * uStrength * facing * fall, 1.0);
+        float facing = pow(clamp(abs(dot(safeN(vN), safeN(vView))), 0.0, 1.0), 1.6);
+        float a = clamp(vAlong, 0.0, 1.0);
+        float fall = pow(1.0 - a, 1.7) * smoothstep(0.0, 0.08, a);
+        vec3 c = uColor * uStrength * facing * fall;
+        if (!(c.r >= 0.0 && c.g >= 0.0 && c.b >= 0.0)) c = vec3(0.0); // never let a NaN through
+        gl_FragColor = vec4(c, 1.0);
       }`,
   });
 
