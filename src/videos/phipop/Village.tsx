@@ -128,6 +128,8 @@ export const StiltHouse: React.FC<{p: V3; rotY?: number; w?: number; d?: number;
         <mesh key={`${sx}${sz}`} geometry={cyl} material={post} position={[sx * (w / 2 - 0.15), floorY / 2, sz * (d / 2 - 0.15)]} scale={[0.09, floorY, 0.09]} castShadow receiveShadow />
       )))}
       <Box p={[0, floorY, 0]} s={[w + 0.3, 0.12, d + 0.3]} mat={post} />
+      {/* the inside of the house: pure black, unlit, so doorways and gaps show only darkness */}
+      <mesh geometry={box} material={m('house-void', () => new THREE.MeshBasicMaterial({color: '#000000'}))} position={[0, floorY + wallH / 2, 0]} scale={[w - 0.12, wallH - 0.04, d - 0.12]} />
       {/* walls */}
       <Box p={[0, floorY + wallH / 2, -d / 2]} s={[w, wallH, 0.08]} mat={planks()} />
       <Box p={[-w / 2, floorY + wallH / 2, 0]} s={[0.08, wallH, d]} mat={planks()} />
