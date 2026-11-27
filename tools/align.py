@@ -18,6 +18,9 @@ import numpy as np
 import sherpa_onnx
 import soundfile as sf
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ffmpeg_path import ffmpeg  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 MODEL = ROOT / "models" / "sherpa-onnx-zipformer-en-2023-06-26"
 SR = 16000
@@ -42,7 +45,7 @@ def spoken_tokens(word: str) -> list[str]:
 def load_audio(path: str) -> np.ndarray:
     with tempfile.TemporaryDirectory() as d:
         wav = f"{d}/a.wav"
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", path, "-ac", "1", "-ar", str(SR), wav], check=True)
+        subprocess.run([ffmpeg(), "-v", "error", "-y", "-i", path, "-ac", "1", "-ar", str(SR), wav], check=True)
         audio, _ = sf.read(wav, dtype="float32")
     return audio
 
@@ -95,7 +98,7 @@ def main(audio_path, script_path, out_path):
     quiet = silences(audio)
     heard = recognize(audio)
 
-    lines = [re.sub(r"\s+", " ", b).strip() for b in Path(script_path).read_text().split("\n\n") if b.strip()]
+    lines = [re.sub(r"\s+", " ", b).strip() for b in Path(script_path).read_text(encoding="utf-8").split("\n\n") if b.strip()]
     display = []  # (word, line index)
     for li, line in enumerate(lines):
         for w in line.split(" "):
@@ -150,7 +153,7 @@ def main(audio_path, script_path, out_path):
         out_lines.append({"text": text, "start": ws[0]["start"], "end": ws[-1]["end"]})
 
     matched = sum(1 for tag, a0, a1, *_ in sm.get_opcodes() if tag == "equal" for _ in range(a0, a1))
-    Path(out_path).write_text(json.dumps({"duration": round(duration, 3), "lines": out_lines, "words": words}, indent=1))
+    Path(out_path).write_text(encoding="utf-8", data=json.dumps({"duration": round(duration, 3), "lines": out_lines, "words": words}, indent=1))
     print(f"{len(words)} words, {len(lines)} lines, {duration:.2f}s, {matched}/{len(flat)} tokens matched exactly")
 
 

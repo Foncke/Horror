@@ -21,7 +21,7 @@ export const canvasTexture = (key: string, w: number, h: number, draw: (ctx: Can
   return tex;
 };
 
-export type FaceKind = 'calm' | 'worried' | 'scared' | 'laugh' | 'sleepwalk' | 'grin' | 'blank';
+export type FaceKind = 'calm' | 'worried' | 'scared' | 'scaredDown' | 'laugh' | 'sleepwalk' | 'grin' | 'blank' | 'double' | 'doubleWide';
 
 /**
  * Face painted on the front of a sphere head. The texture covers a patch of
@@ -71,6 +71,47 @@ export const faceTexture = (kind: FaceKind) =>
       return;
     }
     if (kind === 'blank') return;
+    if (kind === 'double' || kind === 'doubleWide') {
+      // your face, but the eyes are solid pitch black and the smile goes too far
+      ctx.fillStyle = '#000000';
+      for (const s of [-1, 1]) {
+        ctx.beginPath();
+        ctx.ellipse(cx + s * 108, eyeY - 4, 40, 50, s * 0.12, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      const half = kind === 'doubleWide' ? 330 : 150;
+      const lift = kind === 'doubleWide' ? 95 : 30;
+      const sag = kind === 'doubleWide' ? 175 : 70;
+      const y0 = eyeY + 110;
+      if (kind === 'doubleWide') {
+        // a thin dark crescent of mouth with faint teeth
+        ctx.beginPath();
+        ctx.moveTo(cx - half, y0 - lift);
+        ctx.quadraticCurveTo(cx, y0 + sag + 40, cx + half, y0 - lift);
+        ctx.quadraticCurveTo(cx, y0 + sag - 25, cx - half, y0 - lift);
+        ctx.fillStyle = '#0b0606';
+        ctx.fill();
+        ctx.save();
+        ctx.clip();
+        ctx.strokeStyle = 'rgba(225,220,205,0.55)';
+        ctx.lineWidth = 5;
+        for (let i = -11; i <= 11; i++) {
+          ctx.beginPath();
+          ctx.moveTo(cx + i * 26, y0 - 120);
+          ctx.lineTo(cx + i * 27, y0 + sag + 60);
+          ctx.stroke();
+        }
+        ctx.restore();
+      } else {
+        ctx.strokeStyle = ink;
+        ctx.lineWidth = 11;
+        ctx.beginPath();
+        ctx.moveTo(cx - half, y0 - lift);
+        ctx.quadraticCurveTo(cx, y0 + sag, cx + half, y0 - lift);
+        ctx.stroke();
+      }
+      return;
+    }
     ctx.strokeStyle = ink;
     ctx.lineWidth = 12;
     if (kind === 'sleepwalk') {
@@ -85,14 +126,16 @@ export const faceTexture = (kind: FaceKind) =>
       ctx.stroke();
       return;
     }
-    const r = kind === 'scared' ? 30 : 20;
+    const isScared = kind === 'scared' || kind === 'scaredDown';
+    const r = isScared ? 30 : 20;
+    const down = kind === 'scaredDown' ? 16 : 0;
     eye(cx - 105, r * 0.8, r);
     eye(cx + 105, r * 0.8, r);
-    if (kind === 'scared') {
+    if (isScared) {
       ctx.fillStyle = '#ffffff';
       for (const s of [-1, 1]) {
         ctx.beginPath();
-        ctx.arc(cx + s * 105 + 7, eyeY - 10, 7, 0, Math.PI * 2);
+        ctx.arc(cx + s * 105 + 7, eyeY - 10 + down * 1.6, 7, 0, Math.PI * 2);
         ctx.fill();
       }
     }
@@ -109,12 +152,12 @@ export const faceTexture = (kind: FaceKind) =>
       ctx.ellipse(cx, eyeY + 124, 16, 22, 0, 0, Math.PI * 2);
     }
     ctx.stroke();
-    if (kind === 'worried' || kind === 'scared') {
+    if (kind === 'worried' || isScared) {
       // raised brows
       for (const s of [-1, 1]) {
         ctx.beginPath();
         ctx.moveTo(cx + s * 70, eyeY - 62);
-        ctx.lineTo(cx + s * 140, eyeY - 76 + (kind === 'scared' ? -10 : 8));
+        ctx.lineTo(cx + s * 140, eyeY - 76 + (isScared ? -10 : 8));
         ctx.stroke();
       }
     }
@@ -191,6 +234,20 @@ export const plateTexture = (text: string) =>
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(text, w / 2, h / 2 + 4);
+  });
+
+/** Red digital bedside-clock face. */
+export const clockTexture = (text: string) =>
+  canvasTexture(`clock-${text}`, 512, 224, (ctx, w, h) => {
+    ctx.fillStyle = '#070303';
+    ctx.fillRect(0, 0, w, h);
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = '700 170px Oswald';
+    ctx.fillStyle = 'rgba(255,40,30,0.08)';
+    ctx.fillText('8:88', w / 2, h / 2 + 8); // unlit segments
+    ctx.fillStyle = '#ff2a1c';
+    ctx.fillText(text, w / 2, h / 2 + 8);
   });
 
 /** The rule card. `chars` controls the typewriter reveal of the rule text. */

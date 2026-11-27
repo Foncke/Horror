@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import {FaceKind, faceTexture} from './textures';
 
 /** Toy-like vinyl figure: big sphere head, soft capsule body. Feet at the group origin, ~1.6 m tall. */
-export type Outfit = 'you' | 'clerk' | 'bellhop' | 'guest' | 'guest2' | 'guest3';
+export type Outfit = 'you' | 'clerk' | 'bellhop' | 'guest' | 'guest2' | 'guest3' | 'pajamas' | 'double';
 
 export type Pose = {
   headPitch?: number; // + looks down
@@ -31,7 +31,9 @@ const geo = {
   capCrown: new THREE.SphereGeometry(0.224, 48, 24, 0, Math.PI * 2, 0, Math.PI * 0.53),
   capBrim: new THREE.CylinderGeometry(0.2, 0.2, 0.02, 40, 1, false, -0.9, 1.8),
   button: new THREE.SphereGeometry(0.018, 12, 8),
+  eye: new THREE.SphereGeometry(1, 24, 16),
 };
+const voidMat = new THREE.MeshBasicMaterial({color: '#000000'});
 
 const mats = new Map<string, THREE.Material>();
 const mat = (key: string, make: () => THREE.Material) => {
@@ -50,7 +52,11 @@ const OUTFIT: Record<Outfit, {skin: string; body: string; arm: string; legs: str
   guest: {skin: '#ebe7df', body: '#dcd7cd', arm: '#dcd7cd', legs: '#dcd7cd', hands: '#ebe7df'},
   guest2: {skin: '#ebe7df', body: '#8f9db0', arm: '#8f9db0', legs: '#56606d', hands: '#ebe7df'},
   guest3: {skin: '#ebe7df', body: '#b08f7a', arm: '#b08f7a', legs: '#5d4a3d', hands: '#ebe7df'},
+  // 3 A.M.: you and your double wear the same pajamas; the double is paler
+  pajamas: {skin: '#ebe7df', body: '#3e4c69', arm: '#3e4c69', legs: '#36425c', hands: '#ebe7df'},
+  double: {skin: '#c4c1b9', body: '#3e4c69', arm: '#3e4c69', legs: '#36425c', hands: '#c4c1b9'},
 };
+const HAIR: Partial<Record<Outfit, string>> = {pajamas: '#2b1e17', double: '#2b1e17'};
 
 type Props = Pose & {
   outfit: Outfit;
@@ -60,9 +66,11 @@ type Props = Pose & {
   faceGlow?: number;
   faceOpacity?: number;
   shadows?: boolean;
+  /** draw only the head (e.g. someone tucked under a blanket) */
+  headOnly?: boolean;
 };
 
-export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0, 0, 0], rotationY = 0, faceGlow = 0, faceOpacity = 1, shadows = true, ...pose}) => {
+export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0, 0, 0], rotationY = 0, faceGlow = 0, faceOpacity = 1, shadows = true, headOnly = false, ...pose}) => {
   const o = OUTFIT[outfit];
   const walk = pose.walk ?? 0;
   const stride = pose.stride ?? (walk ? 0.45 : 0);
@@ -97,18 +105,18 @@ export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0
     <group position={position} rotation={[0, rotationY, 0]}>
       <group position={[0, bob, 0]}>
         {/* legs */}
-        {[-1, 1].map((s) => (
+        {!headOnly && [-1, 1].map((s) => (
           <group key={s} position={[s * 0.1, hip, 0]} rotation={[sit ? -Math.PI / 2 : s * swing, 0, 0]}>
             <mesh geometry={geo.leg} material={cloth(o.legs)} position={[0, -0.27, 0]} castShadow={cast} />
           </group>
         ))}
         {/* torso */}
         <group position={[0, hip, 0]} rotation={[hunch, 0, 0]}>
-          <mesh geometry={geo.torso} material={cloth(o.body)} position={[0, 0.36, 0]} scale={[1, 1 + breathe, 0.82]} castShadow={cast} />
+          {!headOnly && <mesh geometry={geo.torso} material={cloth(o.body)} position={[0, 0.36, 0]} scale={[1, 1 + breathe, 0.82]} castShadow={cast} />}
           {outfit === 'bellhop' &&
             [0.5, 0.38, 0.26].map((y) => <mesh key={y} geometry={geo.button} material={gold()} position={[0, y, 0.165]} />)}
           {/* arms */}
-          {[-1, 1].map((s) => {
+          {!headOnly && [-1, 1].map((s) => {
             const base = s === -1 ? (pose.armL ?? 0) : (pose.armR ?? 0);
             const out = s === 1 ? (pose.armROut ?? 0) : 0;
             return (
@@ -120,13 +128,21 @@ export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0
           })}
           {/* head */}
           <group position={[0, 0.86, 0]} rotation={[pose.headPitch ?? 0, pose.headYaw ?? 0, pose.headRoll ?? 0]}>
-            <mesh geometry={geo.head} material={vinyl(o.skin, outfit === 'bellhop' ? 0.12 : 0.38)} castShadow={cast} />
+            <mesh geometry={geo.head} material={outfit === 'double' ? cloth(o.skin) : vinyl(o.skin, outfit === 'bellhop' ? 0.12 : 0.38)} castShadow={cast} />
+            {(face === 'double' || face === 'doubleWide') &&
+              [-1, 1].map((s) => (
+                // pitch-black eyes: unlit, so no light ever reflects in them
+                <mesh key={s} geometry={geo.eye} material={voidMat} position={[s * 0.0565, -0.004, 0.2043]} rotation={[0, s * 0.27, s * 0.12]} scale={[0.04, 0.05, 0.022]} />
+              ))}
             <mesh geometry={geo.face} material={faceMat} />
             {outfit === 'bellhop' && (
               <group position={[0, 0.2, -0.01]} rotation={[-0.12, 0, 0.08]}>
                 <mesh geometry={geo.hatTop} material={cloth('#5b1419')} castShadow={cast} />
                 <mesh geometry={geo.hatBand} material={gold()} position={[0, -0.035, 0]} />
               </group>
+            )}
+            {HAIR[outfit] && (
+              <mesh geometry={geo.capCrown} material={cloth(HAIR[outfit]!)} position={[0, 0.03, -0.04]} rotation={[-0.62, 0, 0]} scale={[1.02, 1.0, 1.04]} castShadow={cast} />
             )}
             {outfit === 'clerk' && (
               <group>

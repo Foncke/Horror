@@ -5,8 +5,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const [id, outDir, ...secs] = process.argv.slice(2);
-const browserExecutable = process.env.REMOTION_BROWSER ?? '/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell';
-const chromiumOptions = {gl: process.env.REMOTION_GL ?? 'swangle'};
+// cloud container: bundled headless shell + CPU WebGL; anywhere else: Remotion's own browser + the GPU
+const bundled = '/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell';
+const inCloud = fs.existsSync(bundled);
+const browserExecutable = process.env.REMOTION_BROWSER ?? (inCloud ? bundled : null);
+const chromiumOptions = {gl: process.env.REMOTION_GL ?? (inCloud ? 'swangle' : 'angle')};
 fs.mkdirSync(outDir, {recursive: true});
 const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
 const composition = await selectComposition({serveUrl, id, browserExecutable, chromiumOptions});

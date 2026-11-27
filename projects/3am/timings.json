@@ -1,0 +1,1160 @@
+{
+ "duration": 74.998,
+ "lines": [
+  {
+   "text": "Last night, I woke up at three A.M. to the sound of my own voice whispering to me from inside my closet.",
+   "start": 0.0,
+   "end": 6.75
+  },
+  {
+   "text": "At first, I thought I was just having sleep paralysis.",
+   "start": 7.12,
+   "end": 10.5
+  },
+  {
+   "text": "I lay frozen under my covers, staring at the crack in the closet door, waiting for my eyes to adjust to the dark.",
+   "start": 10.72,
+   "end": 17.83
+  },
+  {
+   "text": "Then, the voice spoke again. It was my exact pitch, my exact breathing... begging me not to make a sound.",
+   "start": 17.9,
+   "end": 26.98
+  },
+  {
+   "text": "\"Whatever you do,\" it whispered from the shadows, \"do not look at the foot of your bed.\"",
+   "start": 27.38,
+   "end": 33.14
+  },
+  {
+   "text": "My heart stopped. Slowly, without moving my head, I shifted my eyes downward.",
+   "start": 33.675,
+   "end": 39.75
+  },
+  {
+   "text": "Standing at the end of my mattress was a tall, pale figure wearing my exact pajamas.",
+   "start": 40.155,
+   "end": 45.97
+  },
+  {
+   "text": "It had my face, my hair... everything. Except its eyes were completely pitch black, and its smile stretched way too wide.",
+   "start": 46.315,
+   "end": 55.82
+  },
+  {
+   "text": "It leaned forward, resting its hands on my blankets, and spoke in a cold, hollow voice.",
+   "start": 56.086,
+   "end": 62.19
+  },
+  {
+   "text": "\"Why are you listening to the thing in the closet?\"",
+   "start": 62.606,
+   "end": 65.14
+  },
+  {
+   "text": "I didn't have time to scream... because the closet door slowly creaked open behind it.",
+   "start": 65.662,
+   "end": 72.23
+  }
+ ],
+ "words": [
+  {
+   "text": "Last",
+   "line": 0,
+   "start": 0.0,
+   "end": 0.4
+  },
+  {
+   "text": "night,",
+   "line": 0,
+   "start": 0.4,
+   "end": 0.8
+  },
+  {
+   "text": "I",
+   "line": 0,
+   "start": 0.8,
+   "end": 1.04
+  },
+  {
+   "text": "woke",
+   "line": 0,
+   "start": 1.04,
+   "end": 1.4
+  },
+  {
+   "text": "up",
+   "line": 0,
+   "start": 1.4,
+   "end": 1.6
+  },
+  {
+   "text": "at",
+   "line": 0,
+   "start": 1.6,
+   "end": 1.8
+  },
+  {
+   "text": "three",
+   "line": 0,
+   "start": 1.8,
+   "end": 2.12
+  },
+  {
+   "text": "A.M.",
+   "line": 0,
+   "start": 2.12,
+   "end": 2.56
+  },
+  {
+   "text": "to",
+   "line": 0,
+   "start": 2.56,
+   "end": 2.76
+  },
+  {
+   "text": "the",
+   "line": 0,
+   "start": 2.76,
+   "end": 2.96
+  },
+  {
+   "text": "sound",
+   "line": 0,
+   "start": 2.96,
+   "end": 3.32
+  },
+  {
+   "text": "of",
+   "line": 0,
+   "start": 3.32,
+   "end": 3.44
+  },
+  {
+   "text": "my",
+   "line": 0,
+   "start": 3.44,
+   "end": 3.68
+  },
+  {
+   "text": "own",
+   "line": 0,
+   "start": 3.68,
+   "end": 4.04
+  },
+  {
+   "text": "voice",
+   "line": 0,
+   "start": 4.04,
+   "end": 4.48
+  },
+  {
+   "text": "whispering",
+   "line": 0,
+   "start": 4.48,
+   "end": 5.08
+  },
+  {
+   "text": "to",
+   "line": 0,
+   "start": 5.08,
+   "end": 5.24
+  },
+  {
+   "text": "me",
+   "line": 0,
+   "start": 5.24,
+   "end": 5.44
+  },
+  {
+   "text": "from",
+   "line": 0,
+   "start": 5.44,
+   "end": 5.64
+  },
+  {
+   "text": "inside",
+   "line": 0,
+   "start": 5.64,
+   "end": 6.08
+  },
+  {
+   "text": "my",
+   "line": 0,
+   "start": 6.08,
+   "end": 6.28
+  },
+  {
+   "text": "closet.",
+   "line": 0,
+   "start": 6.28,
+   "end": 6.75
+  },
+  {
+   "text": "At",
+   "line": 1,
+   "start": 7.12,
+   "end": 7.48
+  },
+  {
+   "text": "first,",
+   "line": 1,
+   "start": 7.48,
+   "end": 7.92
+  },
+  {
+   "text": "I",
+   "line": 1,
+   "start": 7.92,
+   "end": 8.32
+  },
+  {
+   "text": "thought",
+   "line": 1,
+   "start": 8.32,
+   "end": 8.64
+  },
+  {
+   "text": "I",
+   "line": 1,
+   "start": 8.64,
+   "end": 8.76
+  },
+  {
+   "text": "was",
+   "line": 1,
+   "start": 8.76,
+   "end": 8.96
+  },
+  {
+   "text": "just",
+   "line": 1,
+   "start": 8.96,
+   "end": 9.2
+  },
+  {
+   "text": "having",
+   "line": 1,
+   "start": 9.2,
+   "end": 9.44
+  },
+  {
+   "text": "sleep",
+   "line": 1,
+   "start": 9.44,
+   "end": 9.76
+  },
+  {
+   "text": "paralysis.",
+   "line": 1,
+   "start": 9.76,
+   "end": 10.5
+  },
+  {
+   "text": "I",
+   "line": 2,
+   "start": 10.72,
+   "end": 11.04
+  },
+  {
+   "text": "lay",
+   "line": 2,
+   "start": 11.04,
+   "end": 11.36
+  },
+  {
+   "text": "frozen",
+   "line": 2,
+   "start": 11.36,
+   "end": 12.08
+  },
+  {
+   "text": "under",
+   "line": 2,
+   "start": 12.08,
+   "end": 12.32
+  },
+  {
+   "text": "my",
+   "line": 2,
+   "start": 12.32,
+   "end": 12.48
+  },
+  {
+   "text": "covers,",
+   "line": 2,
+   "start": 12.48,
+   "end": 13.04
+  },
+  {
+   "text": "staring",
+   "line": 2,
+   "start": 13.24,
+   "end": 13.72
+  },
+  {
+   "text": "at",
+   "line": 2,
+   "start": 13.72,
+   "end": 13.84
+  },
+  {
+   "text": "the",
+   "line": 2,
+   "start": 13.84,
+   "end": 14.0
+  },
+  {
+   "text": "crack",
+   "line": 2,
+   "start": 14.0,
+   "end": 14.32
+  },
+  {
+   "text": "in",
+   "line": 2,
+   "start": 14.32,
+   "end": 14.44
+  },
+  {
+   "text": "the",
+   "line": 2,
+   "start": 14.44,
+   "end": 14.56
+  },
+  {
+   "text": "closet",
+   "line": 2,
+   "start": 14.56,
+   "end": 15.04
+  },
+  {
+   "text": "door,",
+   "line": 2,
+   "start": 15.04,
+   "end": 15.32
+  },
+  {
+   "text": "waiting",
+   "line": 2,
+   "start": 15.56,
+   "end": 16.08
+  },
+  {
+   "text": "for",
+   "line": 2,
+   "start": 16.08,
+   "end": 16.2
+  },
+  {
+   "text": "my",
+   "line": 2,
+   "start": 16.2,
+   "end": 16.4
+  },
+  {
+   "text": "eyes",
+   "line": 2,
+   "start": 16.4,
+   "end": 16.64
+  },
+  {
+   "text": "to",
+   "line": 2,
+   "start": 16.64,
+   "end": 16.84
+  },
+  {
+   "text": "adjust",
+   "line": 2,
+   "start": 16.84,
+   "end": 17.24
+  },
+  {
+   "text": "to",
+   "line": 2,
+   "start": 17.24,
+   "end": 17.36
+  },
+  {
+   "text": "the",
+   "line": 2,
+   "start": 17.36,
+   "end": 17.52
+  },
+  {
+   "text": "dark.",
+   "line": 2,
+   "start": 17.52,
+   "end": 17.83
+  },
+  {
+   "text": "Then,",
+   "line": 3,
+   "start": 17.9,
+   "end": 18.82
+  },
+  {
+   "text": "the",
+   "line": 3,
+   "start": 18.82,
+   "end": 19.26
+  },
+  {
+   "text": "voice",
+   "line": 3,
+   "start": 19.26,
+   "end": 19.66
+  },
+  {
+   "text": "spoke",
+   "line": 3,
+   "start": 19.66,
+   "end": 20.14
+  },
+  {
+   "text": "again.",
+   "line": 3,
+   "start": 20.14,
+   "end": 20.46
+  },
+  {
+   "text": "It",
+   "line": 3,
+   "start": 20.82,
+   "end": 21.1
+  },
+  {
+   "text": "was",
+   "line": 3,
+   "start": 21.1,
+   "end": 21.26
+  },
+  {
+   "text": "my",
+   "line": 3,
+   "start": 21.26,
+   "end": 21.54
+  },
+  {
+   "text": "exact",
+   "line": 3,
+   "start": 21.54,
+   "end": 22.14
+  },
+  {
+   "text": "pitch,",
+   "line": 3,
+   "start": 22.14,
+   "end": 22.63
+  },
+  {
+   "text": "my",
+   "line": 3,
+   "start": 22.78,
+   "end": 23.1
+  },
+  {
+   "text": "exact",
+   "line": 3,
+   "start": 23.1,
+   "end": 23.22
+  },
+  {
+   "text": "breathing...",
+   "line": 3,
+   "start": 23.74,
+   "end": 24.33
+  },
+  {
+   "text": "begging",
+   "line": 3,
+   "start": 24.82,
+   "end": 25.42
+  },
+  {
+   "text": "me",
+   "line": 3,
+   "start": 25.42,
+   "end": 25.7
+  },
+  {
+   "text": "not",
+   "line": 3,
+   "start": 25.7,
+   "end": 25.98
+  },
+  {
+   "text": "to",
+   "line": 3,
+   "start": 25.98,
+   "end": 26.18
+  },
+  {
+   "text": "make",
+   "line": 3,
+   "start": 26.18,
+   "end": 26.42
+  },
+  {
+   "text": "a",
+   "line": 3,
+   "start": 26.42,
+   "end": 26.62
+  },
+  {
+   "text": "sound.",
+   "line": 3,
+   "start": 26.62,
+   "end": 26.98
+  },
+  {
+   "text": "\"Whatever",
+   "line": 4,
+   "start": 27.38,
+   "end": 28.02
+  },
+  {
+   "text": "you",
+   "line": 4,
+   "start": 28.02,
+   "end": 28.3
+  },
+  {
+   "text": "do,\"",
+   "line": 4,
+   "start": 28.3,
+   "end": 28.55
+  },
+  {
+   "text": "it",
+   "line": 4,
+   "start": 28.78,
+   "end": 29.1
+  },
+  {
+   "text": "whispered",
+   "line": 4,
+   "start": 29.1,
+   "end": 29.7
+  },
+  {
+   "text": "from",
+   "line": 4,
+   "start": 29.7,
+   "end": 29.86
+  },
+  {
+   "text": "the",
+   "line": 4,
+   "start": 29.86,
+   "end": 30.06
+  },
+  {
+   "text": "shadows,",
+   "line": 4,
+   "start": 30.06,
+   "end": 30.57
+  },
+  {
+   "text": "\"do",
+   "line": 4,
+   "start": 30.82,
+   "end": 31.14
+  },
+  {
+   "text": "not",
+   "line": 4,
+   "start": 31.14,
+   "end": 31.58
+  },
+  {
+   "text": "look",
+   "line": 4,
+   "start": 31.58,
+   "end": 31.9
+  },
+  {
+   "text": "at",
+   "line": 4,
+   "start": 31.9,
+   "end": 32.1
+  },
+  {
+   "text": "the",
+   "line": 4,
+   "start": 32.1,
+   "end": 32.26
+  },
+  {
+   "text": "foot",
+   "line": 4,
+   "start": 32.26,
+   "end": 32.54
+  },
+  {
+   "text": "of",
+   "line": 4,
+   "start": 32.54,
+   "end": 32.7
+  },
+  {
+   "text": "your",
+   "line": 4,
+   "start": 32.7,
+   "end": 32.98
+  },
+  {
+   "text": "bed.\"",
+   "line": 4,
+   "start": 32.98,
+   "end": 33.14
+  },
+  {
+   "text": "My",
+   "line": 5,
+   "start": 33.675,
+   "end": 33.995
+  },
+  {
+   "text": "heart",
+   "line": 5,
+   "start": 33.995,
+   "end": 34.435
+  },
+  {
+   "text": "stopped.",
+   "line": 5,
+   "start": 34.435,
+   "end": 34.98
+  },
+  {
+   "text": "Slowly,",
+   "line": 5,
+   "start": 35.275,
+   "end": 36.22
+  },
+  {
+   "text": "without",
+   "line": 5,
+   "start": 36.315,
+   "end": 36.755
+  },
+  {
+   "text": "moving",
+   "line": 5,
+   "start": 36.755,
+   "end": 37.235
+  },
+  {
+   "text": "my",
+   "line": 5,
+   "start": 37.235,
+   "end": 37.475
+  },
+  {
+   "text": "head,",
+   "line": 5,
+   "start": 37.475,
+   "end": 37.69
+  },
+  {
+   "text": "I",
+   "line": 5,
+   "start": 37.835,
+   "end": 38.155
+  },
+  {
+   "text": "shifted",
+   "line": 5,
+   "start": 38.155,
+   "end": 38.675
+  },
+  {
+   "text": "my",
+   "line": 5,
+   "start": 38.675,
+   "end": 38.955
+  },
+  {
+   "text": "eyes",
+   "line": 5,
+   "start": 38.955,
+   "end": 39.275
+  },
+  {
+   "text": "downward.",
+   "line": 5,
+   "start": 39.275,
+   "end": 39.75
+  },
+  {
+   "text": "Standing",
+   "line": 6,
+   "start": 40.155,
+   "end": 40.715
+  },
+  {
+   "text": "at",
+   "line": 6,
+   "start": 40.715,
+   "end": 40.875
+  },
+  {
+   "text": "the",
+   "line": 6,
+   "start": 40.875,
+   "end": 41.035
+  },
+  {
+   "text": "end",
+   "line": 6,
+   "start": 41.035,
+   "end": 41.195
+  },
+  {
+   "text": "of",
+   "line": 6,
+   "start": 41.195,
+   "end": 41.315
+  },
+  {
+   "text": "my",
+   "line": 6,
+   "start": 41.315,
+   "end": 41.515
+  },
+  {
+   "text": "mattress",
+   "line": 6,
+   "start": 41.515,
+   "end": 42.075
+  },
+  {
+   "text": "was",
+   "line": 6,
+   "start": 42.075,
+   "end": 42.275
+  },
+  {
+   "text": "a",
+   "line": 6,
+   "start": 42.275,
+   "end": 42.515
+  },
+  {
+   "text": "tall,",
+   "line": 6,
+   "start": 42.515,
+   "end": 43.035
+  },
+  {
+   "text": "pale",
+   "line": 6,
+   "start": 43.035,
+   "end": 43.595
+  },
+  {
+   "text": "figure",
+   "line": 6,
+   "start": 43.595,
+   "end": 44.09
+  },
+  {
+   "text": "wearing",
+   "line": 6,
+   "start": 44.155,
+   "end": 44.555
+  },
+  {
+   "text": "my",
+   "line": 6,
+   "start": 44.555,
+   "end": 44.795
+  },
+  {
+   "text": "exact",
+   "line": 6,
+   "start": 44.795,
+   "end": 45.315
+  },
+  {
+   "text": "pajamas.",
+   "line": 6,
+   "start": 45.315,
+   "end": 45.97
+  },
+  {
+   "text": "It",
+   "line": 7,
+   "start": 46.315,
+   "end": 46.595
+  },
+  {
+   "text": "had",
+   "line": 7,
+   "start": 46.595,
+   "end": 46.795
+  },
+  {
+   "text": "my",
+   "line": 7,
+   "start": 46.795,
+   "end": 47.155
+  },
+  {
+   "text": "face,",
+   "line": 7,
+   "start": 47.155,
+   "end": 47.64
+  },
+  {
+   "text": "my",
+   "line": 7,
+   "start": 47.755,
+   "end": 48.075
+  },
+  {
+   "text": "hair...",
+   "line": 7,
+   "start": 48.075,
+   "end": 48.5
+  },
+  {
+   "text": "everything.",
+   "line": 7,
+   "start": 48.875,
+   "end": 49.61
+  },
+  {
+   "text": "Except",
+   "line": 7,
+   "start": 50.126,
+   "end": 50.566
+  },
+  {
+   "text": "its",
+   "line": 7,
+   "start": 50.566,
+   "end": 50.846
+  },
+  {
+   "text": "eyes",
+   "line": 7,
+   "start": 50.846,
+   "end": 51.206
+  },
+  {
+   "text": "were",
+   "line": 7,
+   "start": 51.206,
+   "end": 51.406
+  },
+  {
+   "text": "completely",
+   "line": 7,
+   "start": 51.406,
+   "end": 52.206
+  },
+  {
+   "text": "pitch",
+   "line": 7,
+   "start": 52.206,
+   "end": 52.606
+  },
+  {
+   "text": "black,",
+   "line": 7,
+   "start": 52.606,
+   "end": 53.06
+  },
+  {
+   "text": "and",
+   "line": 7,
+   "start": 53.206,
+   "end": 53.446
+  },
+  {
+   "text": "its",
+   "line": 7,
+   "start": 53.446,
+   "end": 53.726
+  },
+  {
+   "text": "smile",
+   "line": 7,
+   "start": 53.726,
+   "end": 54.246
+  },
+  {
+   "text": "stretched",
+   "line": 7,
+   "start": 54.246,
+   "end": 54.846
+  },
+  {
+   "text": "way",
+   "line": 7,
+   "start": 54.846,
+   "end": 55.126
+  },
+  {
+   "text": "too",
+   "line": 7,
+   "start": 55.126,
+   "end": 55.486
+  },
+  {
+   "text": "wide.",
+   "line": 7,
+   "start": 55.486,
+   "end": 55.82
+  },
+  {
+   "text": "It",
+   "line": 8,
+   "start": 56.086,
+   "end": 56.406
+  },
+  {
+   "text": "leaned",
+   "line": 8,
+   "start": 56.406,
+   "end": 56.846
+  },
+  {
+   "text": "forward,",
+   "line": 8,
+   "start": 56.846,
+   "end": 57.38
+  },
+  {
+   "text": "resting",
+   "line": 8,
+   "start": 57.486,
+   "end": 58.006
+  },
+  {
+   "text": "its",
+   "line": 8,
+   "start": 58.006,
+   "end": 58.286
+  },
+  {
+   "text": "hands",
+   "line": 8,
+   "start": 58.286,
+   "end": 58.526
+  },
+  {
+   "text": "on",
+   "line": 8,
+   "start": 58.526,
+   "end": 58.686
+  },
+  {
+   "text": "my",
+   "line": 8,
+   "start": 58.686,
+   "end": 58.846
+  },
+  {
+   "text": "blankets,",
+   "line": 8,
+   "start": 58.846,
+   "end": 59.49
+  },
+  {
+   "text": "and",
+   "line": 8,
+   "start": 59.566,
+   "end": 59.806
+  },
+  {
+   "text": "spoke",
+   "line": 8,
+   "start": 59.806,
+   "end": 60.206
+  },
+  {
+   "text": "in",
+   "line": 8,
+   "start": 60.206,
+   "end": 60.406
+  },
+  {
+   "text": "a",
+   "line": 8,
+   "start": 60.406,
+   "end": 60.606
+  },
+  {
+   "text": "cold,",
+   "line": 8,
+   "start": 60.606,
+   "end": 61.05
+  },
+  {
+   "text": "hollow",
+   "line": 8,
+   "start": 61.246,
+   "end": 61.846
+  },
+  {
+   "text": "voice.",
+   "line": 8,
+   "start": 61.846,
+   "end": 62.19
+  },
+  {
+   "text": "\"Why",
+   "line": 9,
+   "start": 62.606,
+   "end": 62.926
+  },
+  {
+   "text": "are",
+   "line": 9,
+   "start": 62.926,
+   "end": 63.086
+  },
+  {
+   "text": "you",
+   "line": 9,
+   "start": 63.086,
+   "end": 63.326
+  },
+  {
+   "text": "listening",
+   "line": 9,
+   "start": 63.326,
+   "end": 63.806
+  },
+  {
+   "text": "to",
+   "line": 9,
+   "start": 63.806,
+   "end": 63.966
+  },
+  {
+   "text": "the",
+   "line": 9,
+   "start": 63.966,
+   "end": 64.126
+  },
+  {
+   "text": "thing",
+   "line": 9,
+   "start": 64.126,
+   "end": 64.406
+  },
+  {
+   "text": "in",
+   "line": 9,
+   "start": 64.406,
+   "end": 64.526
+  },
+  {
+   "text": "the",
+   "line": 9,
+   "start": 64.526,
+   "end": 64.686
+  },
+  {
+   "text": "closet?\"",
+   "line": 9,
+   "start": 64.686,
+   "end": 65.14
+  },
+  {
+   "text": "I",
+   "line": 10,
+   "start": 65.662,
+   "end": 65.782
+  },
+  {
+   "text": "didn't",
+   "line": 10,
+   "start": 65.782,
+   "end": 66.102
+  },
+  {
+   "text": "have",
+   "line": 10,
+   "start": 66.102,
+   "end": 66.302
+  },
+  {
+   "text": "time",
+   "line": 10,
+   "start": 66.302,
+   "end": 66.502
+  },
+  {
+   "text": "to",
+   "line": 10,
+   "start": 66.502,
+   "end": 66.702
+  },
+  {
+   "text": "scream...",
+   "line": 10,
+   "start": 66.702,
+   "end": 67.13
+  },
+  {
+   "text": "because",
+   "line": 10,
+   "start": 67.342,
+   "end": 67.662
+  },
+  {
+   "text": "the",
+   "line": 10,
+   "start": 67.662,
+   "end": 67.822
+  },
+  {
+   "text": "closet",
+   "line": 10,
+   "start": 67.822,
+   "end": 68.342
+  },
+  {
+   "text": "door",
+   "line": 10,
+   "start": 68.342,
+   "end": 68.702
+  },
+  {
+   "text": "slowly",
+   "line": 10,
+   "start": 68.702,
+   "end": 69.342
+  },
+  {
+   "text": "creaked",
+   "line": 10,
+   "start": 69.342,
+   "end": 69.822
+  },
+  {
+   "text": "open",
+   "line": 10,
+   "start": 69.822,
+   "end": 70.142
+  },
+  {
+   "text": "behind",
+   "line": 10,
+   "start": 70.142,
+   "end": 70.662
+  },
+  {
+   "text": "it.",
+   "line": 10,
+   "start": 70.662,
+   "end": 72.23
+  }
+ ]
+}

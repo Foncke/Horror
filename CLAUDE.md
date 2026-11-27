@@ -40,5 +40,13 @@ Then, once the owner says render:
      that `cat renders/Room414.mp4.part* > Room414.mp4` (Windows: `copy /b`) restores the exact file.
    - Tell the owner the file size and that it is the untouched render.
 
+## "3 A.M." (second video) is finished and rendered
+`projects/3am/` (script, ElevenLabs voice "Jessica", timings, mix.py), `src/videos/3am/`, composition `ThreeAM`.
+`npm run 3am:render` → `out/3AM.mp4` (80.2 s, 4,814 frames, 24.0 Mbps, 243 MB); uploaded as `renders/3AM.mp4` via LFS.
+Encoding is constant 24 Mbps (x264 `nal-hrd=cbr` in `remotion.config.ts`): with only a target, dark scenes came out at ~21.9 Mbps.
+Ending: on-screen A/B choice ("Trust the closet" / "Trust the figure") + "A or B?" card; the voiceover itself has no choice line.
+On this Windows PC: Python 3.12 is at `%LOCALAPPDATA%\Programs\Python\Python312\python.exe` (`python3` is the Store
+alias, so run scripts with that path); FFmpeg isn't on PATH, `tools/ffmpeg_path.py` uses the copy Remotion ships.
+
 Only if the soundtrack or timings must be rebuilt (Python + FFmpeg needed):
 `npm run room414:align` then `npm run room414:mix`.

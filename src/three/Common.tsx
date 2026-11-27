@@ -30,19 +30,24 @@ export type DoorProps = {
   interiorGlow?: number;
   shake?: number; // knock rattle offset
   children?: React.ReactNode; // things placed inside the doorway (local coords, -z is inside)
+  paint?: string; // painted door (leaf + casing) instead of dark wood
+  hardware?: boolean; // knob and peephole (default true)
 };
 
 /** A hotel door facing local +z, set into a wall at z = 0. */
-export const Door: React.FC<DoorProps> = ({x, number, open = 0, width = 0.95, height = 2.15, interior = 'dark', interiorGlow = 1, shake = 0, children}) => {
+export const Door: React.FC<DoorProps> = ({x, number, open = 0, width = 0.95, height = 2.15, interior = 'dark', interiorGlow = 1, shake = 0, children, paint, hardware = true}) => {
   const plate = number ? plateTexture(number) : null;
+  const trim = paint ? std(paint, 0.55) : woodTrim();
+  const leaf = paint ? std(paint, 0.6) : wood();
+  const panel = paint ? std(paint, 0.7) : woodTrim();
   // only the inner faces, so whoever stands inside the doorway can be seen
   const inside = interior === 'warm' ? std('#f0a35c', 1, 0, {emissive: new THREE.Color('#f0a35c'), emissiveIntensity: 0.22 * interiorGlow, side: THREE.BackSide}) : std('#050506', 1, 0, {side: THREE.BackSide});
   return (
     <group position={[x, 0, 0]}>
       {/* casing */}
-      <Box size={[0.09, height + 0.09, 0.07]} position={[-width / 2 - 0.045, (height + 0.09) / 2, 0.01]} material={woodTrim()} />
-      <Box size={[0.09, height + 0.09, 0.07]} position={[width / 2 + 0.045, (height + 0.09) / 2, 0.01]} material={woodTrim()} />
-      <Box size={[width + 0.18, 0.09, 0.07]} position={[0, height + 0.045, 0.01]} material={woodTrim()} />
+      <Box size={[0.09, height + 0.09, 0.07]} position={[-width / 2 - 0.045, (height + 0.09) / 2, 0.01]} material={trim} />
+      <Box size={[0.09, height + 0.09, 0.07]} position={[width / 2 + 0.045, (height + 0.09) / 2, 0.01]} material={trim} />
+      <Box size={[width + 0.18, 0.09, 0.07]} position={[0, height + 0.045, 0.01]} material={trim} />
       {/* the space behind the door */}
       <mesh position={[0, height / 2, -0.9]} material={inside}>
         <boxGeometry args={[width + 0.4, height + 0.2, 1.7]} />
@@ -51,15 +56,15 @@ export const Door: React.FC<DoorProps> = ({x, number, open = 0, width = 0.95, he
       {/* leaf, hinged on the left */}
       <group position={[-width / 2, 0, -0.02 + shake]} rotation={[0, open, 0]}>
         <group position={[width / 2, 0, 0]}>
-          <Box size={[width, height, 0.045]} position={[0, height / 2, 0]} material={wood()} />
-          <Box size={[width * 0.7, height * 0.36, 0.012]} position={[0, height * 0.73, 0.027]} material={woodTrim()} />
-          <Box size={[width * 0.7, height * 0.36, 0.012]} position={[0, height * 0.29, 0.027]} material={woodTrim()} />
-          <mesh position={[width / 2 - 0.1, 1.0, 0.05]} material={brass()} castShadow>
+          <Box size={[width, height, 0.045]} position={[0, height / 2, 0]} material={leaf} />
+          <Box size={[width * 0.7, height * 0.36, 0.012]} position={[0, height * 0.73, 0.027]} material={panel} />
+          <Box size={[width * 0.7, height * 0.36, 0.012]} position={[0, height * 0.29, 0.027]} material={panel} />
+          {hardware && <mesh position={[width / 2 - 0.1, 1.0, 0.05]} material={brass()} castShadow>
             <sphereGeometry args={[0.032, 20, 14]} />
-          </mesh>
-          <mesh position={[0, 1.55, 0.026]} rotation={[Math.PI / 2, 0, 0]} material={brass()}>
+          </mesh>}
+          {hardware && <mesh position={[0, 1.55, 0.026]} rotation={[Math.PI / 2, 0, 0]} material={brass()}>
             <cylinderGeometry args={[0.016, 0.016, 0.012, 20]} />
-          </mesh>
+          </mesh>}
           {plate && (
             <mesh position={[0, 1.78, 0.025]}>
               <planeGeometry args={[0.22, 0.11]} />

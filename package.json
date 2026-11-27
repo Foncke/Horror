@@ -10,6 +10,10 @@
     "room414:align": "python3 tools/align.py projects/room414/voice.mp3 projects/room414/script.txt projects/room414/timings.json",
     "room414:mix": "python3 projects/room414/mix.py",
     "room414:render": "remotion render Room414 out/Room414.mp4",
+    "3am:estimate": "node tools/estimate_timings.mjs projects/3am/script.txt projects/3am/timings.json",
+    "3am:align": "python3 tools/align.py projects/3am/voice.mp3 projects/3am/script.txt projects/3am/timings.json",
+    "3am:mix": "python3 projects/3am/mix.py",
+    "3am:render": "remotion render ThreeAM out/3AM.mp4",
     "stills": "node tools/stills.mjs"
   },
   "dependencies": {
