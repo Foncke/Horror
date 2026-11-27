@@ -110,6 +110,37 @@ export const windowGlow = (k: number) =>
 
 // --- pieces ---------------------------------------------------------------------
 const box = new THREE.BoxGeometry(1, 1, 1);
+
+/** Roof pitch and how far the roof sits above the wall top (shared by the roof and the gables). */
+const ROOF_PITCH = 0.52;
+const ROOF_RISE = 0.55;
+const ROOF_T = 0.07;
+const gableCache = new Map<string, THREE.BufferGeometry>();
+/**
+ * Gable end: a triangle of planks whose base sits on the wall top and whose sloping sides follow the
+ * underside of the two roof planes exactly, so nothing pokes through the roof.
+ */
+const gableGeometry = (w: number) => {
+  const key = w.toFixed(3);
+  if (!gableCache.has(key)) {
+    const under = ROOF_T / 2 / Math.cos(ROOF_PITCH); // half the roof thickness, measured vertically
+    const apex = ROOF_RISE + (w / 4 + 0.1) * Math.tan(ROOF_PITCH) - under - 0.015;
+    const eave = Math.max(0, ROOF_RISE - (w / 4 - 0.1) * Math.tan(ROOF_PITCH) - under - 0.015);
+    const shape = new THREE.Shape();
+    shape.moveTo(-w / 2, 0);
+    shape.lineTo(w / 2, 0);
+    shape.lineTo(w / 2, eave);
+    shape.lineTo(0, apex);
+    shape.lineTo(-w / 2, eave);
+    shape.closePath();
+    const g = new THREE.ExtrudeGeometry(shape, {depth: 0.08, bevelEnabled: false});
+    // planks run vertically: scale the UVs so the texture repeats at plank width
+    const uv = g.attributes.uv;
+    for (let i = 0; i < uv.count; i++) uv.setXY(i, uv.getX(i) * 0.75, uv.getY(i) * 0.5);
+    gableCache.set(key, g);
+  }
+  return gableCache.get(key)!;
+};
 const cyl = new THREE.CylinderGeometry(1, 1, 1, 12);
 
 export const Box: React.FC<{p: V3; s: V3; r?: V3; mat: THREE.Material; cast?: boolean}> = ({p, s, r, mat, cast = true}) => (
@@ -155,10 +186,11 @@ export const StiltHouse: React.FC<{p: V3; rotY?: number; w?: number; d?: number;
       ))}
       {/* gable roof with deep eaves */}
       {[-1, 1].map((s) => (
-        <Box key={s} p={[s * (w / 4 + 0.1), floorY + wallH + 0.55, 0]} s={[w / 2 + 0.6, 0.07, d + 1.0]} r={[0, 0, -s * 0.52]} mat={roof} />
+        <Box key={s} p={[s * (w / 4 + 0.1), floorY + wallH + ROOF_RISE, 0]} s={[w / 2 + 0.6, ROOF_T, d + 1.0]} r={[0, 0, -s * ROOF_PITCH]} mat={roof} />
       ))}
-      {/* gable: a triangle of planks above the front wall, point up into the roof */}
-      <mesh geometry={new THREE.CylinderGeometry(0, 1, 1, 3)} material={planks()} position={[0, floorY + wallH + 0.48, d / 2]} rotation={[-Math.PI / 2, 0, 0]} scale={[w / 2 + 0.05, 0.08, 1.0]} />
+      {/* gables front and back, cut to fit exactly under the roof */}
+      <mesh geometry={gableGeometry(w)} material={planks()} position={[0, floorY + wallH, d / 2 - 0.08]} castShadow receiveShadow />
+      <mesh geometry={gableGeometry(w)} material={planks()} position={[0, floorY + wallH, -d / 2]} castShadow receiveShadow />
       {/* steps */}
       {Array.from({length: 6}, (_, i) => (
         <Box key={i} p={[-1.15 - i * 0.24, floorY - 0.15 - i * 0.28, d / 2 + 0.7]} s={[0.26, 0.06, 0.7]} mat={post} />
