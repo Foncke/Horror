@@ -17,6 +17,9 @@
     "foundyou:align": "python3 tools/align.py projects/foundyou/voice.mp3 projects/foundyou/script.txt projects/foundyou/timings.json",
     "foundyou:mix": "python3 projects/foundyou/mix.py",
     "foundyou:render": "remotion render FoundYou out/FoundYou.mp4",
+    "phipop:align": "python3 tools/align.py projects/phipop/voice.mp3 projects/phipop/script.txt projects/phipop/timings.json",
+    "phipop:mix": "python3 projects/phipop/mix.py",
+    "phipop:render": "remotion render PhiPop out/PhiPop.mp4",
     "stills": "node tools/stills.mjs"
   },
   "dependencies": {

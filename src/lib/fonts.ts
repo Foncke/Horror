@@ -7,6 +7,7 @@ const FONTS: [family: string, file: string, weight: string, style: string][] = [
   ['Anton', 'Anton-Regular.woff2', '400', 'normal'],
   ['Oswald', 'Oswald-Bold.woff2', '700', 'normal'],
   ['Playfair Display', 'PlayfairDisplay-Italic.woff2', '400', 'italic'],
+  ['Noto Sans Thai', 'NotoSansThai-ExtraBold.woff2', '800', 'normal'],
 ];
 
 let ready: Promise<void> | null = null;

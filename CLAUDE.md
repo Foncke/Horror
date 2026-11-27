@@ -59,5 +59,16 @@ gaunt and grey, ribs and claws, an animal pelt with ears and muzzle, pitch-black
 twitches, grin once its neck has bent. The flashlight flickers in 5-frame steps (never single-frame blips).
 Check new renders for stray dark frames: an earlier beam-shader NaN made single frames go black.
 
+## "Phi Pop" (fourth video) is finished and rendered
+`projects/phipop/` (script, ElevenLabs voice "Declan Sage", timings, mix.py), `src/videos/phipop/`, composition `PhiPop`.
+`npm run phipop:render` → `out/PhiPop.mp4` (105.5 s, 6,331 frames, 24.0 Mbps, 320 MB); uploaded as `renders/PhiPop.mp4`.
+**Only this video** uses the "3D painted look" from the owner's reference clip: realistic-proportioned villagers
+(`Human.tsx`, not the toy `Character`), a Kuwahara brush filter + ink edges + teal/orange grade (`Post` props
+`paint`/`grade`, off by default so the other videos are unchanged), slow push-ins and hard cuts every 2–6 s.
+Three sets: village of stilt houses (`Village.tsx`), house + kitchen (`House.tsx`), black void (`Void.tsx`).
+Thai title ผีปอบ uses Noto Sans Thai (`public/fonts/NotoSansThai-ExtraBold.woff2`). Captions show "Phi Pop"/"Isan"
+though the voice says the phonetic "Pee Pop"/"Ee-sahn". Gore is only implied. Hard cut to black after "light."
+Camera depth range is per-shot optional (`Cam.near/far`, default 0.02/80); Phi Pop uses 0.05/200 for its sky.
+
 Only if the soundtrack or timings must be rebuilt (Python + FFmpeg needed):
 `npm run room414:align` then `npm run room414:mix`.

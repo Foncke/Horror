@@ -126,7 +126,7 @@ export const Sconce: React.FC<{position: [number, number, number]; rotationY?: n
   </group>
 );
 
-export type Cam = {pos: [number, number, number]; target: [number, number, number]; fov?: number; roll?: number};
+export type Cam = {pos: [number, number, number]; target: [number, number, number]; fov?: number; roll?: number; near?: number; far?: number};
 
 /** Puts the scene camera where the current shot wants it (runs before R3F draws the frame). */
 export const CameraRig: React.FC<{cam: Cam}> = ({cam}) => {
@@ -136,8 +136,8 @@ export const CameraRig: React.FC<{cam: Cam}> = ({cam}) => {
     camera.up.set(Math.sin(cam.roll ?? 0), Math.cos(cam.roll ?? 0), 0);
     camera.lookAt(...cam.target);
     camera.fov = cam.fov ?? 40;
-    camera.near = 0.02;
-    camera.far = 80;
+    camera.near = cam.near ?? 0.02;
+    camera.far = cam.far ?? 80;
     camera.updateProjectionMatrix();
   });
   return null;

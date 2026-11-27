@@ -1,0 +1,1586 @@
+{
+ "duration": 103.314,
+ "lines": [
+  {
+   "text": "In Thailand, the scariest monster doesn't hide in the woods... or wait in the dark under your bed.",
+   "start": 0.0,
+   "end": 6.74
+  },
+  {
+   "text": "It wears the skin of your neighbor... your partner... or the person sleeping in the room right next to yours.",
+   "start": 7.16,
+   "end": 14.57
+  },
+  {
+   "text": "It's called a Phi Pop. A parasitic, flesh-eating spirit from Isan, in northeastern Thailand.",
+   "start": 14.88,
+   "end": 21.85
+  },
+  {
+   "text": "Unlike ordinary ghosts, a Phi Pop isn't the spirit of someone who died. It is a living curse \u2014 born when forbidden dark magic backfires, rotting a human soul until something inhuman crawls inside to take its place.",
+   "start": 22.185,
+   "end": 37.7
+  },
+  {
+   "text": "By day, the host looks and acts completely normal. They smile, they hold conversations, and they eat dinner right beside you.",
+   "start": 38.123,
+   "end": 47.203
+  },
+  {
+   "text": "Until the house goes quiet after midnight.",
+   "start": 47.203,
+   "end": 49.86
+  },
+  {
+   "text": "That's when the parasite wakes up. It hijacks the host's nervous system \u2014 forcing them to creep into the dark to hunt for raw meat, warm blood, and fresh human entrails. And the worst part? Folklore warns the victim is sometimes trapped inside their own mind... watching helplessly as their hands tear into raw flesh.",
+   "start": 49.969,
+   "end": 72.34
+  },
+  {
+   "text": "If it can't find prey outside, it slowly eats its own host from the inside out, hollowing out their organs until they waste away... before jumping into someone new through a single drop of saliva.",
+   "start": 72.542,
+   "end": 85.84
+  },
+  {
+   "text": "Elders say there are only two ways to tell if someone you love is already gone.",
+   "start": 86.226,
+   "end": 91.06
+  },
+  {
+   "text": "They will never look you directly in the eye... and they always wake up starving at three A.M.",
+   "start": 91.506,
+   "end": 97.37
+  },
+  {
+   "text": "So tonight, if you hear chewing in the kitchen... don't turn on the light.",
+   "start": 97.964,
+   "end": 103.04
+  }
+ ],
+ "words": [
+  {
+   "text": "In",
+   "line": 0,
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "text": "Thailand,",
+   "line": 0,
+   "start": 0.24,
+   "end": 0.91
+  },
+  {
+   "text": "the",
+   "line": 0,
+   "start": 1.04,
+   "end": 1.32
+  },
+  {
+   "text": "scariest",
+   "line": 0,
+   "start": 1.32,
+   "end": 2.04
+  },
+  {
+   "text": "monster",
+   "line": 0,
+   "start": 2.04,
+   "end": 2.64
+  },
+  {
+   "text": "doesn't",
+   "line": 0,
+   "start": 2.64,
+   "end": 3.12
+  },
+  {
+   "text": "hide",
+   "line": 0,
+   "start": 3.12,
+   "end": 3.44
+  },
+  {
+   "text": "in",
+   "line": 0,
+   "start": 3.44,
+   "end": 3.56
+  },
+  {
+   "text": "the",
+   "line": 0,
+   "start": 3.56,
+   "end": 3.76
+  },
+  {
+   "text": "woods...",
+   "line": 0,
+   "start": 3.76,
+   "end": 4.17
+  },
+  {
+   "text": "or",
+   "line": 0,
+   "start": 4.52,
+   "end": 4.96
+  },
+  {
+   "text": "wait",
+   "line": 0,
+   "start": 4.96,
+   "end": 5.32
+  },
+  {
+   "text": "in",
+   "line": 0,
+   "start": 5.32,
+   "end": 5.44
+  },
+  {
+   "text": "the",
+   "line": 0,
+   "start": 5.44,
+   "end": 5.6
+  },
+  {
+   "text": "dark",
+   "line": 0,
+   "start": 5.6,
+   "end": 6.0
+  },
+  {
+   "text": "under",
+   "line": 0,
+   "start": 6.0,
+   "end": 6.24
+  },
+  {
+   "text": "your",
+   "line": 0,
+   "start": 6.24,
+   "end": 6.56
+  },
+  {
+   "text": "bed.",
+   "line": 0,
+   "start": 6.56,
+   "end": 6.74
+  },
+  {
+   "text": "It",
+   "line": 1,
+   "start": 7.16,
+   "end": 7.44
+  },
+  {
+   "text": "wears",
+   "line": 1,
+   "start": 7.44,
+   "end": 7.96
+  },
+  {
+   "text": "the",
+   "line": 1,
+   "start": 7.96,
+   "end": 8.16
+  },
+  {
+   "text": "skin",
+   "line": 1,
+   "start": 8.16,
+   "end": 8.52
+  },
+  {
+   "text": "of",
+   "line": 1,
+   "start": 8.52,
+   "end": 8.72
+  },
+  {
+   "text": "your",
+   "line": 1,
+   "start": 8.72,
+   "end": 8.96
+  },
+  {
+   "text": "neighbor...",
+   "line": 1,
+   "start": 8.96,
+   "end": 9.39
+  },
+  {
+   "text": "your",
+   "line": 1,
+   "start": 9.72,
+   "end": 10.12
+  },
+  {
+   "text": "partner...",
+   "line": 1,
+   "start": 10.12,
+   "end": 10.64
+  },
+  {
+   "text": "or",
+   "line": 1,
+   "start": 11.04,
+   "end": 11.36
+  },
+  {
+   "text": "the",
+   "line": 1,
+   "start": 11.36,
+   "end": 11.68
+  },
+  {
+   "text": "person",
+   "line": 1,
+   "start": 11.68,
+   "end": 12.04
+  },
+  {
+   "text": "sleeping",
+   "line": 1,
+   "start": 12.04,
+   "end": 12.56
+  },
+  {
+   "text": "in",
+   "line": 1,
+   "start": 12.56,
+   "end": 12.72
+  },
+  {
+   "text": "the",
+   "line": 1,
+   "start": 12.72,
+   "end": 12.88
+  },
+  {
+   "text": "room",
+   "line": 1,
+   "start": 12.88,
+   "end": 13.2
+  },
+  {
+   "text": "right",
+   "line": 1,
+   "start": 13.2,
+   "end": 13.56
+  },
+  {
+   "text": "next",
+   "line": 1,
+   "start": 13.56,
+   "end": 13.96
+  },
+  {
+   "text": "to",
+   "line": 1,
+   "start": 13.96,
+   "end": 14.12
+  },
+  {
+   "text": "yours.",
+   "line": 1,
+   "start": 14.12,
+   "end": 14.57
+  },
+  {
+   "text": "It's",
+   "line": 2,
+   "start": 14.88,
+   "end": 15.32
+  },
+  {
+   "text": "called",
+   "line": 2,
+   "start": 15.32,
+   "end": 15.84
+  },
+  {
+   "text": "a",
+   "line": 2,
+   "start": 15.84,
+   "end": 16.04
+  },
+  {
+   "text": "Phi",
+   "line": 2,
+   "start": 16.04,
+   "end": 16.16
+  },
+  {
+   "text": "Pop.",
+   "line": 2,
+   "start": 16.08,
+   "end": 16.75
+  },
+  {
+   "text": "A",
+   "line": 2,
+   "start": 17.145,
+   "end": 17.345
+  },
+  {
+   "text": "parasitic,",
+   "line": 2,
+   "start": 17.345,
+   "end": 18.185
+  },
+  {
+   "text": "flesh-eating",
+   "line": 2,
+   "start": 18.185,
+   "end": 18.985
+  },
+  {
+   "text": "spirit",
+   "line": 2,
+   "start": 18.985,
+   "end": 19.465
+  },
+  {
+   "text": "from",
+   "line": 2,
+   "start": 19.465,
+   "end": 19.705
+  },
+  {
+   "text": "Isan,",
+   "line": 2,
+   "start": 19.705,
+   "end": 20.24
+  },
+  {
+   "text": "in",
+   "line": 2,
+   "start": 20.305,
+   "end": 20.505
+  },
+  {
+   "text": "northeastern",
+   "line": 2,
+   "start": 20.505,
+   "end": 21.305
+  },
+  {
+   "text": "Thailand.",
+   "line": 2,
+   "start": 21.305,
+   "end": 21.85
+  },
+  {
+   "text": "Unlike",
+   "line": 3,
+   "start": 22.185,
+   "end": 22.705
+  },
+  {
+   "text": "ordinary",
+   "line": 3,
+   "start": 22.705,
+   "end": 23.385
+  },
+  {
+   "text": "ghosts,",
+   "line": 3,
+   "start": 23.385,
+   "end": 23.97
+  },
+  {
+   "text": "a",
+   "line": 3,
+   "start": 24.025,
+   "end": 24.185
+  },
+  {
+   "text": "Phi",
+   "line": 3,
+   "start": 24.185,
+   "end": 24.305
+  },
+  {
+   "text": "Pop",
+   "line": 3,
+   "start": 24.225,
+   "end": 24.825
+  },
+  {
+   "text": "isn't",
+   "line": 3,
+   "start": 24.825,
+   "end": 25.145
+  },
+  {
+   "text": "the",
+   "line": 3,
+   "start": 25.145,
+   "end": 25.345
+  },
+  {
+   "text": "spirit",
+   "line": 3,
+   "start": 25.345,
+   "end": 25.745
+  },
+  {
+   "text": "of",
+   "line": 3,
+   "start": 25.745,
+   "end": 25.865
+  },
+  {
+   "text": "someone",
+   "line": 3,
+   "start": 25.865,
+   "end": 26.305
+  },
+  {
+   "text": "who",
+   "line": 3,
+   "start": 26.305,
+   "end": 26.585
+  },
+  {
+   "text": "died.",
+   "line": 3,
+   "start": 26.585,
+   "end": 26.89
+  },
+  {
+   "text": "It",
+   "line": 3,
+   "start": 27.145,
+   "end": 27.385
+  },
+  {
+   "text": "is",
+   "line": 3,
+   "start": 27.385,
+   "end": 27.585
+  },
+  {
+   "text": "a",
+   "line": 3,
+   "start": 27.585,
+   "end": 27.745
+  },
+  {
+   "text": "living",
+   "line": 3,
+   "start": 27.745,
+   "end": 28.345
+  },
+  {
+   "text": "curse",
+   "line": 3,
+   "start": 28.345,
+   "end": 28.9
+  },
+  {
+   "text": "born",
+   "line": 3,
+   "start": 29.025,
+   "end": 29.545
+  },
+  {
+   "text": "when",
+   "line": 3,
+   "start": 29.545,
+   "end": 29.785
+  },
+  {
+   "text": "forbidden",
+   "line": 3,
+   "start": 29.785,
+   "end": 30.465
+  },
+  {
+   "text": "dark",
+   "line": 3,
+   "start": 30.465,
+   "end": 30.825
+  },
+  {
+   "text": "magic",
+   "line": 3,
+   "start": 30.825,
+   "end": 31.385
+  },
+  {
+   "text": "backfires,",
+   "line": 3,
+   "start": 31.385,
+   "end": 32.22
+  },
+  {
+   "text": "rotting",
+   "line": 3,
+   "start": 32.363,
+   "end": 32.923
+  },
+  {
+   "text": "a",
+   "line": 3,
+   "start": 32.923,
+   "end": 33.123
+  },
+  {
+   "text": "human",
+   "line": 3,
+   "start": 33.123,
+   "end": 33.563
+  },
+  {
+   "text": "soul",
+   "line": 3,
+   "start": 33.563,
+   "end": 34.003
+  },
+  {
+   "text": "until",
+   "line": 3,
+   "start": 34.003,
+   "end": 34.403
+  },
+  {
+   "text": "something",
+   "line": 3,
+   "start": 34.403,
+   "end": 34.883
+  },
+  {
+   "text": "inhuman",
+   "line": 3,
+   "start": 34.883,
+   "end": 35.563
+  },
+  {
+   "text": "crawls",
+   "line": 3,
+   "start": 35.563,
+   "end": 36.043
+  },
+  {
+   "text": "inside",
+   "line": 3,
+   "start": 36.043,
+   "end": 36.563
+  },
+  {
+   "text": "to",
+   "line": 3,
+   "start": 36.563,
+   "end": 36.763
+  },
+  {
+   "text": "take",
+   "line": 3,
+   "start": 36.763,
+   "end": 37.003
+  },
+  {
+   "text": "its",
+   "line": 3,
+   "start": 37.003,
+   "end": 37.403
+  },
+  {
+   "text": "place.",
+   "line": 3,
+   "start": 37.403,
+   "end": 37.7
+  },
+  {
+   "text": "By",
+   "line": 4,
+   "start": 38.123,
+   "end": 38.443
+  },
+  {
+   "text": "day,",
+   "line": 4,
+   "start": 38.443,
+   "end": 38.883
+  },
+  {
+   "text": "the",
+   "line": 4,
+   "start": 38.883,
+   "end": 39.203
+  },
+  {
+   "text": "host",
+   "line": 4,
+   "start": 39.203,
+   "end": 39.643
+  },
+  {
+   "text": "looks",
+   "line": 4,
+   "start": 39.643,
+   "end": 40.003
+  },
+  {
+   "text": "and",
+   "line": 4,
+   "start": 40.003,
+   "end": 40.203
+  },
+  {
+   "text": "acts",
+   "line": 4,
+   "start": 40.203,
+   "end": 40.643
+  },
+  {
+   "text": "completely",
+   "line": 4,
+   "start": 40.643,
+   "end": 41.283
+  },
+  {
+   "text": "normal.",
+   "line": 4,
+   "start": 41.283,
+   "end": 41.69
+  },
+  {
+   "text": "They",
+   "line": 4,
+   "start": 42.043,
+   "end": 42.323
+  },
+  {
+   "text": "smile,",
+   "line": 4,
+   "start": 42.323,
+   "end": 43.003
+  },
+  {
+   "text": "they",
+   "line": 4,
+   "start": 43.003,
+   "end": 43.243
+  },
+  {
+   "text": "hold",
+   "line": 4,
+   "start": 43.243,
+   "end": 43.563
+  },
+  {
+   "text": "conversations,",
+   "line": 4,
+   "start": 43.563,
+   "end": 44.52
+  },
+  {
+   "text": "and",
+   "line": 4,
+   "start": 44.603,
+   "end": 44.843
+  },
+  {
+   "text": "they",
+   "line": 4,
+   "start": 44.843,
+   "end": 45.043
+  },
+  {
+   "text": "eat",
+   "line": 4,
+   "start": 45.043,
+   "end": 45.363
+  },
+  {
+   "text": "dinner",
+   "line": 4,
+   "start": 45.363,
+   "end": 45.843
+  },
+  {
+   "text": "right",
+   "line": 4,
+   "start": 45.843,
+   "end": 46.123
+  },
+  {
+   "text": "beside",
+   "line": 4,
+   "start": 46.123,
+   "end": 46.643
+  },
+  {
+   "text": "you.",
+   "line": 4,
+   "start": 46.643,
+   "end": 47.203
+  },
+  {
+   "text": "Until",
+   "line": 5,
+   "start": 47.203,
+   "end": 47.563
+  },
+  {
+   "text": "the",
+   "line": 5,
+   "start": 47.563,
+   "end": 47.803
+  },
+  {
+   "text": "house",
+   "line": 5,
+   "start": 47.803,
+   "end": 48.163
+  },
+  {
+   "text": "goes",
+   "line": 5,
+   "start": 48.163,
+   "end": 48.563
+  },
+  {
+   "text": "quiet",
+   "line": 5,
+   "start": 48.563,
+   "end": 49.003
+  },
+  {
+   "text": "after",
+   "line": 5,
+   "start": 49.003,
+   "end": 49.323
+  },
+  {
+   "text": "midnight.",
+   "line": 5,
+   "start": 49.323,
+   "end": 49.86
+  },
+  {
+   "text": "That's",
+   "line": 6,
+   "start": 49.969,
+   "end": 50.729
+  },
+  {
+   "text": "when",
+   "line": 6,
+   "start": 50.729,
+   "end": 50.969
+  },
+  {
+   "text": "the",
+   "line": 6,
+   "start": 50.969,
+   "end": 51.129
+  },
+  {
+   "text": "parasite",
+   "line": 6,
+   "start": 51.129,
+   "end": 51.849
+  },
+  {
+   "text": "wakes",
+   "line": 6,
+   "start": 51.849,
+   "end": 52.289
+  },
+  {
+   "text": "up.",
+   "line": 6,
+   "start": 52.289,
+   "end": 52.42
+  },
+  {
+   "text": "It",
+   "line": 6,
+   "start": 52.769,
+   "end": 53.089
+  },
+  {
+   "text": "hijacks",
+   "line": 6,
+   "start": 53.089,
+   "end": 53.729
+  },
+  {
+   "text": "the",
+   "line": 6,
+   "start": 53.729,
+   "end": 53.889
+  },
+  {
+   "text": "host's",
+   "line": 6,
+   "start": 53.889,
+   "end": 54.329
+  },
+  {
+   "text": "nervous",
+   "line": 6,
+   "start": 54.329,
+   "end": 54.769
+  },
+  {
+   "text": "system",
+   "line": 6,
+   "start": 54.769,
+   "end": 55.14
+  },
+  {
+   "text": "forcing",
+   "line": 6,
+   "start": 55.409,
+   "end": 55.969
+  },
+  {
+   "text": "them",
+   "line": 6,
+   "start": 55.969,
+   "end": 56.129
+  },
+  {
+   "text": "to",
+   "line": 6,
+   "start": 56.129,
+   "end": 56.289
+  },
+  {
+   "text": "creep",
+   "line": 6,
+   "start": 56.289,
+   "end": 56.689
+  },
+  {
+   "text": "into",
+   "line": 6,
+   "start": 56.689,
+   "end": 56.929
+  },
+  {
+   "text": "the",
+   "line": 6,
+   "start": 56.929,
+   "end": 57.089
+  },
+  {
+   "text": "dark",
+   "line": 6,
+   "start": 57.089,
+   "end": 57.409
+  },
+  {
+   "text": "to",
+   "line": 6,
+   "start": 57.409,
+   "end": 57.609
+  },
+  {
+   "text": "hunt",
+   "line": 6,
+   "start": 57.609,
+   "end": 57.889
+  },
+  {
+   "text": "for",
+   "line": 6,
+   "start": 57.889,
+   "end": 58.089
+  },
+  {
+   "text": "raw",
+   "line": 6,
+   "start": 58.089,
+   "end": 58.489
+  },
+  {
+   "text": "meat,",
+   "line": 6,
+   "start": 58.489,
+   "end": 58.84
+  },
+  {
+   "text": "warm",
+   "line": 6,
+   "start": 59.009,
+   "end": 59.569
+  },
+  {
+   "text": "blood,",
+   "line": 6,
+   "start": 59.569,
+   "end": 59.98
+  },
+  {
+   "text": "and",
+   "line": 6,
+   "start": 60.089,
+   "end": 60.369
+  },
+  {
+   "text": "fresh",
+   "line": 6,
+   "start": 60.369,
+   "end": 60.889
+  },
+  {
+   "text": "human",
+   "line": 6,
+   "start": 60.889,
+   "end": 61.329
+  },
+  {
+   "text": "entrails.",
+   "line": 6,
+   "start": 61.329,
+   "end": 62.09
+  },
+  {
+   "text": "And",
+   "line": 6,
+   "start": 62.409,
+   "end": 62.609
+  },
+  {
+   "text": "the",
+   "line": 6,
+   "start": 62.609,
+   "end": 62.849
+  },
+  {
+   "text": "worst",
+   "line": 6,
+   "start": 62.849,
+   "end": 63.249
+  },
+  {
+   "text": "part?",
+   "line": 6,
+   "start": 63.249,
+   "end": 63.44
+  },
+  {
+   "text": "Folklore",
+   "line": 6,
+   "start": 63.849,
+   "end": 64.569
+  },
+  {
+   "text": "warns",
+   "line": 6,
+   "start": 64.569,
+   "end": 65.049
+  },
+  {
+   "text": "the",
+   "line": 6,
+   "start": 65.049,
+   "end": 65.209
+  },
+  {
+   "text": "victim",
+   "line": 6,
+   "start": 65.209,
+   "end": 65.609
+  },
+  {
+   "text": "is",
+   "line": 6,
+   "start": 65.609,
+   "end": 65.809
+  },
+  {
+   "text": "sometimes",
+   "line": 6,
+   "start": 65.809,
+   "end": 66.289
+  },
+  {
+   "text": "trapped",
+   "line": 6,
+   "start": 66.289,
+   "end": 66.662
+  },
+  {
+   "text": "inside",
+   "line": 6,
+   "start": 66.662,
+   "end": 67.262
+  },
+  {
+   "text": "their",
+   "line": 6,
+   "start": 67.262,
+   "end": 67.502
+  },
+  {
+   "text": "own",
+   "line": 6,
+   "start": 67.502,
+   "end": 67.822
+  },
+  {
+   "text": "mind...",
+   "line": 6,
+   "start": 67.822,
+   "end": 68.2
+  },
+  {
+   "text": "watching",
+   "line": 6,
+   "start": 68.422,
+   "end": 69.022
+  },
+  {
+   "text": "helplessly",
+   "line": 6,
+   "start": 69.022,
+   "end": 69.782
+  },
+  {
+   "text": "as",
+   "line": 6,
+   "start": 69.782,
+   "end": 69.982
+  },
+  {
+   "text": "their",
+   "line": 6,
+   "start": 69.982,
+   "end": 70.222
+  },
+  {
+   "text": "hands",
+   "line": 6,
+   "start": 70.222,
+   "end": 70.662
+  },
+  {
+   "text": "tear",
+   "line": 6,
+   "start": 70.662,
+   "end": 71.142
+  },
+  {
+   "text": "into",
+   "line": 6,
+   "start": 71.142,
+   "end": 71.382
+  },
+  {
+   "text": "raw",
+   "line": 6,
+   "start": 71.382,
+   "end": 71.862
+  },
+  {
+   "text": "flesh.",
+   "line": 6,
+   "start": 71.862,
+   "end": 72.34
+  },
+  {
+   "text": "If",
+   "line": 7,
+   "start": 72.542,
+   "end": 72.822
+  },
+  {
+   "text": "it",
+   "line": 7,
+   "start": 72.822,
+   "end": 73.062
+  },
+  {
+   "text": "can't",
+   "line": 7,
+   "start": 73.062,
+   "end": 73.382
+  },
+  {
+   "text": "find",
+   "line": 7,
+   "start": 73.382,
+   "end": 73.702
+  },
+  {
+   "text": "prey",
+   "line": 7,
+   "start": 73.702,
+   "end": 74.062
+  },
+  {
+   "text": "outside,",
+   "line": 7,
+   "start": 74.062,
+   "end": 74.71
+  },
+  {
+   "text": "it",
+   "line": 7,
+   "start": 74.822,
+   "end": 75.102
+  },
+  {
+   "text": "slowly",
+   "line": 7,
+   "start": 75.102,
+   "end": 75.742
+  },
+  {
+   "text": "eats",
+   "line": 7,
+   "start": 75.742,
+   "end": 76.102
+  },
+  {
+   "text": "its",
+   "line": 7,
+   "start": 76.102,
+   "end": 76.382
+  },
+  {
+   "text": "own",
+   "line": 7,
+   "start": 76.382,
+   "end": 76.702
+  },
+  {
+   "text": "host",
+   "line": 7,
+   "start": 76.702,
+   "end": 77.102
+  },
+  {
+   "text": "from",
+   "line": 7,
+   "start": 77.102,
+   "end": 77.262
+  },
+  {
+   "text": "the",
+   "line": 7,
+   "start": 77.262,
+   "end": 77.502
+  },
+  {
+   "text": "inside",
+   "line": 7,
+   "start": 77.502,
+   "end": 78.102
+  },
+  {
+   "text": "out,",
+   "line": 7,
+   "start": 78.102,
+   "end": 78.37
+  },
+  {
+   "text": "hollowing",
+   "line": 7,
+   "start": 78.662,
+   "end": 79.262
+  },
+  {
+   "text": "out",
+   "line": 7,
+   "start": 79.262,
+   "end": 79.422
+  },
+  {
+   "text": "their",
+   "line": 7,
+   "start": 79.422,
+   "end": 79.662
+  },
+  {
+   "text": "organs",
+   "line": 7,
+   "start": 79.662,
+   "end": 80.222
+  },
+  {
+   "text": "until",
+   "line": 7,
+   "start": 80.222,
+   "end": 80.502
+  },
+  {
+   "text": "they",
+   "line": 7,
+   "start": 80.502,
+   "end": 80.742
+  },
+  {
+   "text": "waste",
+   "line": 7,
+   "start": 80.742,
+   "end": 81.222
+  },
+  {
+   "text": "away...",
+   "line": 7,
+   "start": 81.222,
+   "end": 81.53
+  },
+  {
+   "text": "before",
+   "line": 7,
+   "start": 81.906,
+   "end": 82.226
+  },
+  {
+   "text": "jumping",
+   "line": 7,
+   "start": 82.226,
+   "end": 82.746
+  },
+  {
+   "text": "into",
+   "line": 7,
+   "start": 82.746,
+   "end": 82.986
+  },
+  {
+   "text": "someone",
+   "line": 7,
+   "start": 82.986,
+   "end": 83.466
+  },
+  {
+   "text": "new",
+   "line": 7,
+   "start": 83.466,
+   "end": 83.786
+  },
+  {
+   "text": "through",
+   "line": 7,
+   "start": 83.786,
+   "end": 83.986
+  },
+  {
+   "text": "a",
+   "line": 7,
+   "start": 83.986,
+   "end": 84.186
+  },
+  {
+   "text": "single",
+   "line": 7,
+   "start": 84.186,
+   "end": 84.706
+  },
+  {
+   "text": "drop",
+   "line": 7,
+   "start": 84.706,
+   "end": 85.066
+  },
+  {
+   "text": "of",
+   "line": 7,
+   "start": 85.066,
+   "end": 85.266
+  },
+  {
+   "text": "saliva.",
+   "line": 7,
+   "start": 85.266,
+   "end": 85.84
+  },
+  {
+   "text": "Elders",
+   "line": 8,
+   "start": 86.226,
+   "end": 86.946
+  },
+  {
+   "text": "say",
+   "line": 8,
+   "start": 86.946,
+   "end": 87.186
+  },
+  {
+   "text": "there",
+   "line": 8,
+   "start": 87.186,
+   "end": 87.426
+  },
+  {
+   "text": "are",
+   "line": 8,
+   "start": 87.426,
+   "end": 87.626
+  },
+  {
+   "text": "only",
+   "line": 8,
+   "start": 87.626,
+   "end": 87.906
+  },
+  {
+   "text": "two",
+   "line": 8,
+   "start": 87.906,
+   "end": 88.226
+  },
+  {
+   "text": "ways",
+   "line": 8,
+   "start": 88.226,
+   "end": 88.546
+  },
+  {
+   "text": "to",
+   "line": 8,
+   "start": 88.546,
+   "end": 88.746
+  },
+  {
+   "text": "tell",
+   "line": 8,
+   "start": 88.746,
+   "end": 88.986
+  },
+  {
+   "text": "if",
+   "line": 8,
+   "start": 88.986,
+   "end": 89.146
+  },
+  {
+   "text": "someone",
+   "line": 8,
+   "start": 89.146,
+   "end": 89.546
+  },
+  {
+   "text": "you",
+   "line": 8,
+   "start": 89.546,
+   "end": 89.746
+  },
+  {
+   "text": "love",
+   "line": 8,
+   "start": 89.746,
+   "end": 90.026
+  },
+  {
+   "text": "is",
+   "line": 8,
+   "start": 90.026,
+   "end": 90.226
+  },
+  {
+   "text": "already",
+   "line": 8,
+   "start": 90.226,
+   "end": 90.826
+  },
+  {
+   "text": "gone.",
+   "line": 8,
+   "start": 90.826,
+   "end": 91.06
+  },
+  {
+   "text": "They",
+   "line": 9,
+   "start": 91.506,
+   "end": 91.746
+  },
+  {
+   "text": "will",
+   "line": 9,
+   "start": 91.746,
+   "end": 92.026
+  },
+  {
+   "text": "never",
+   "line": 9,
+   "start": 92.026,
+   "end": 92.386
+  },
+  {
+   "text": "look",
+   "line": 9,
+   "start": 92.386,
+   "end": 92.626
+  },
+  {
+   "text": "you",
+   "line": 9,
+   "start": 92.626,
+   "end": 92.866
+  },
+  {
+   "text": "directly",
+   "line": 9,
+   "start": 92.866,
+   "end": 93.506
+  },
+  {
+   "text": "in",
+   "line": 9,
+   "start": 93.506,
+   "end": 93.666
+  },
+  {
+   "text": "the",
+   "line": 9,
+   "start": 93.666,
+   "end": 93.826
+  },
+  {
+   "text": "eye...",
+   "line": 9,
+   "start": 93.826,
+   "end": 94.06
+  },
+  {
+   "text": "and",
+   "line": 9,
+   "start": 94.306,
+   "end": 94.626
+  },
+  {
+   "text": "they",
+   "line": 9,
+   "start": 94.626,
+   "end": 94.866
+  },
+  {
+   "text": "always",
+   "line": 9,
+   "start": 94.866,
+   "end": 95.426
+  },
+  {
+   "text": "wake",
+   "line": 9,
+   "start": 95.426,
+   "end": 95.706
+  },
+  {
+   "text": "up",
+   "line": 9,
+   "start": 95.706,
+   "end": 95.946
+  },
+  {
+   "text": "starving",
+   "line": 9,
+   "start": 95.946,
+   "end": 96.466
+  },
+  {
+   "text": "at",
+   "line": 9,
+   "start": 96.466,
+   "end": 96.706
+  },
+  {
+   "text": "three",
+   "line": 9,
+   "start": 96.706,
+   "end": 97.026
+  },
+  {
+   "text": "A.M.",
+   "line": 9,
+   "start": 97.026,
+   "end": 97.37
+  },
+  {
+   "text": "So",
+   "line": 10,
+   "start": 97.964,
+   "end": 98.44
+  },
+  {
+   "text": "tonight,",
+   "line": 10,
+   "start": 98.484,
+   "end": 99.19
+  },
+  {
+   "text": "if",
+   "line": 10,
+   "start": 99.324,
+   "end": 99.564
+  },
+  {
+   "text": "you",
+   "line": 10,
+   "start": 99.564,
+   "end": 99.804
+  },
+  {
+   "text": "hear",
+   "line": 10,
+   "start": 99.804,
+   "end": 100.084
+  },
+  {
+   "text": "chewing",
+   "line": 10,
+   "start": 100.084,
+   "end": 100.604
+  },
+  {
+   "text": "in",
+   "line": 10,
+   "start": 100.604,
+   "end": 100.724
+  },
+  {
+   "text": "the",
+   "line": 10,
+   "start": 100.684,
+   "end": 100.884
+  },
+  {
+   "text": "kitchen...",
+   "line": 10,
+   "start": 100.884,
+   "end": 101.23
+  },
+  {
+   "text": "don't",
+   "line": 10,
+   "start": 101.644,
+   "end": 102.124
+  },
+  {
+   "text": "turn",
+   "line": 10,
+   "start": 102.124,
+   "end": 102.404
+  },
+  {
+   "text": "on",
+   "line": 10,
+   "start": 102.404,
+   "end": 102.604
+  },
+  {
+   "text": "the",
+   "line": 10,
+   "start": 102.604,
+   "end": 102.844
+  },
+  {
+   "text": "light.",
+   "line": 10,
+   "start": 102.844,
+   "end": 103.04
+  }
+ ]
+}
