@@ -163,11 +163,11 @@ const drawFace = (kind: FaceKind, ctx: CanvasRenderingContext2D, w: number, h: n
     }
     ctx.stroke();
     if (kind === 'worried' || isScared) {
-      // raised brows
+      // brows lifted at the inner ends: fear and worry, not anger
       for (const s of [-1, 1]) {
         ctx.beginPath();
-        ctx.moveTo(cx + s * 70, eyeY - 62);
-        ctx.lineTo(cx + s * 140, eyeY - 76 + (isScared ? -10 : 8));
+        ctx.moveTo(cx + s * 62, eyeY - (isScared ? 92 : 76));
+        ctx.lineTo(cx + s * 140, eyeY - (isScared ? 68 : 64));
         ctx.stroke();
       }
     }

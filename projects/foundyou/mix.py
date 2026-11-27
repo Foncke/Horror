@@ -169,7 +169,7 @@ fx = np.zeros(N)
 # footsteps on leaves while walking in the hook and the setup
 for k, at in enumerate(np.arange(0.5, L[1] - 0.4, 0.62)):
     place(fx, leaf_step(), at + (0.05 if k % 2 else 0), -21 + (k % 2) * 2)
-place(fx, click(), word(1, "flashlight"), -12)
+place(fx, click(), word(1, "wasn") - 0.1, -12)  # the flashlight clicks on as the map close-up starts
 # one wrong-sounding step on "crunch"
 place(fx, lowpass(leaf_step(), 500), word(2, "crunch") + 0.05, -16)
 place(fx, sfx.riser(word(3, "froze") - L[3]), L[3], -19)

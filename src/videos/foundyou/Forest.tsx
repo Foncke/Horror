@@ -331,7 +331,7 @@ export const Forest: React.FC<{t: number; shot: ShotId; view: View}> = ({t, shot
 
       {on && (
         <>
-          <Spot position={view.beam.pos} target={view.beam.target} intensity={shot === 'gear' ? 0.7 : shot === 'stare' || shot === 'tilt' ? 22 : shot === 'figure' || shot === 'sweep' ? 80 : 170} angle={0.3} penumbra={0.55} distance={30} decay={1.4} color="#fff0d8" shadow />
+          <Spot position={view.beam.pos} target={view.beam.target} intensity={shot === 'gear' ? 0.7 : shot === 'stare' || shot === 'tilt' ? 22 : shot === 'figure' ? 30 : shot === 'sweep' ? 80 : 170} angle={0.3} penumbra={0.55} distance={30} decay={1.4} color="#fff0d8" shadow />
           {shot !== 'gear' && <Beam from={view.beam.pos} to={view.beam.target} strength={view.pov ? 0.05 : 0.11} />}
         </>
       )}

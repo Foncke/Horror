@@ -93,7 +93,8 @@ export const dusk = (t: number) => {
   return 1 - easeInOut(clamp((t - cue.sunGone + 0.6) / 2.2));
 };
 
-export const flashOn = (t: number) => t < L(1) - LEAD || t >= cue.flashlight;
+/** Off at sunset, back on as the map close-up starts (so that shot is never black). */
+export const flashOn = (t: number) => t < L(1) - LEAD || t >= cue.wasnt - 0.1;
 
 export const mimicVisible = (s: ShotId) => ['figure', 'stare', 'tilt', 'behind', 'breath'].includes(s) || (s === 'sweep');
 
