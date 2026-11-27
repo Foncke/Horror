@@ -32,6 +32,9 @@ const geo = {
   capBrim: new THREE.CylinderGeometry(0.2, 0.2, 0.02, 40, 1, false, -0.9, 1.8),
   button: new THREE.SphereGeometry(0.018, 12, 8),
   eye: new THREE.SphereGeometry(1, 24, 16),
+  hairBack: new THREE.CapsuleGeometry(0.2, 0.24, 12, 32),
+  hairLock: new THREE.CapsuleGeometry(0.052, 0.28, 8, 16),
+  bow: new THREE.SphereGeometry(1, 20, 12),
 };
 const voidMat = new THREE.MeshBasicMaterial({color: '#000000'});
 
@@ -52,11 +55,13 @@ const OUTFIT: Record<Outfit, {skin: string; body: string; arm: string; legs: str
   guest: {skin: '#ebe7df', body: '#dcd7cd', arm: '#dcd7cd', legs: '#dcd7cd', hands: '#ebe7df'},
   guest2: {skin: '#ebe7df', body: '#8f9db0', arm: '#8f9db0', legs: '#56606d', hands: '#ebe7df'},
   guest3: {skin: '#ebe7df', body: '#b08f7a', arm: '#b08f7a', legs: '#5d4a3d', hands: '#ebe7df'},
-  // 3 A.M.: you and your double wear the same pajamas; the double is paler
-  pajamas: {skin: '#ebe7df', body: '#3e4c69', arm: '#3e4c69', legs: '#36425c', hands: '#ebe7df'},
-  double: {skin: '#c4c1b9', body: '#3e4c69', arm: '#3e4c69', legs: '#36425c', hands: '#c4c1b9'},
+  // 3 A.M.: you (a girl) and your double wear the same pink pajamas; the double is paler
+  pajamas: {skin: '#ebe7df', body: '#c97ba3', arm: '#c97ba3', legs: '#b26d93', hands: '#ebe7df'},
+  double: {skin: '#c4c1b9', body: '#c97ba3', arm: '#c97ba3', legs: '#b26d93', hands: '#c4c1b9'},
 };
-const HAIR: Partial<Record<Outfit, string>> = {pajamas: '#2b1e17', double: '#2b1e17'};
+const HAIR: Partial<Record<Outfit, string>> = {pajamas: '#3a2418', double: '#3a2418'};
+/** Outfits drawn as a girl: long hair, a bow, lashes and blush. */
+const GIRLY: Partial<Record<Outfit, boolean>> = {pajamas: true, double: true};
 
 type Props = Pose & {
   outfit: Outfit;
@@ -82,7 +87,7 @@ export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0
   const hunch = pose.hunch ?? 0;
 
   const faceMat = useMemo(() => {
-    const tex = faceTexture(face);
+    const tex = faceTexture(face, GIRLY[outfit] ?? false);
     if (face === 'grin') {
       return new THREE.MeshStandardMaterial({
         map: tex,
@@ -96,7 +101,7 @@ export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0
       });
     }
     return new THREE.MeshStandardMaterial({map: tex, transparent: true, depthWrite: false, roughness: 0.5, polygonOffset: true, polygonOffsetFactor: -2});
-  }, [face]);
+  }, [face, outfit]);
   faceMat.opacity = faceOpacity;
   if (face === 'grin') faceMat.emissiveIntensity = (0.9 + faceGlow) * faceOpacity;
 
@@ -142,7 +147,23 @@ export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0
               </group>
             )}
             {HAIR[outfit] && (
-              <mesh geometry={geo.capCrown} material={cloth(HAIR[outfit]!)} position={[0, 0.03, -0.04]} rotation={[-0.62, 0, 0]} scale={[1.02, 1.0, 1.04]} castShadow={cast} />
+              <mesh geometry={geo.capCrown} material={cloth(HAIR[outfit]!)} position={[0, 0.03, -0.035]} rotation={[GIRLY[outfit] ? -0.45 : -0.62, 0, 0]} scale={[1.03, 1.0, 1.05]} castShadow={cast} />
+            )}
+            {GIRLY[outfit] && (
+              <group>
+                {/* long hair down the back, locks framing the face */}
+                <mesh geometry={geo.hairBack} material={cloth(HAIR[outfit]!)} position={[0, -0.13, -0.07]} scale={[1.1, 1, 0.62]} castShadow={cast} />
+                {[-1, 1].map((s) => (
+                  <mesh key={s} geometry={geo.hairLock} material={cloth(HAIR[outfit]!)} position={[s * 0.178, -0.15, 0.03]} rotation={[0.08, 0, s * 0.1]} castShadow={cast} />
+                ))}
+                {/* a pink bow */}
+                <group position={[0.145, 0.185, 0.06]} rotation={[0.2, 0.5, -0.7]}>
+                  {[-1, 1].map((s) => (
+                    <mesh key={s} geometry={geo.bow} material={cloth('#ff8fb8')} position={[s * 0.034, 0, 0]} rotation={[0, 0, s * 0.35]} scale={[0.036, 0.026, 0.014]} />
+                  ))}
+                  <mesh geometry={geo.bow} material={cloth('#e0609a')} scale={[0.014, 0.014, 0.016]} />
+                </group>
+              </group>
             )}
             {outfit === 'clerk' && (
               <group>

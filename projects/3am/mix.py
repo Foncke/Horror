@@ -54,8 +54,9 @@ def bed_creak(dur=0.9):
 
 
 voice_path = HERE / "voice.mp3"
-final_end = LINES[10]["end"]
-total = final_end + 8.0  # matches cue.end in src/videos/3am/cues.ts
+final_end = LINES[-1]["end"]  # "Where will you go? To the bed or in the closet?"
+creak_end = LINES[10]["end"]
+total = final_end + 6.0  # matches cue.end in src/videos/3am/cues.ts
 N = int(total * SR)
 if voice_path.exists():
     with tempfile.TemporaryDirectory() as d:
@@ -84,7 +85,7 @@ drone_env = [
     (0, 0.0), (1.5, 0.25), (L[2], 0.4), (L[3], 0.55), (L[4], 0.7), (word(4, "foot") - 0.05, 0.85),
     (word(4, "foot") + 0.2, 0.15), (L[5] + 1.0, 0.3), (L[6], 0.9), (L[7], 0.8), (L[8], 0.9),
     (L[9] - 0.05, 0.9), (L[9] + 0.1, 0.0), (LINES[9]["end"] + 0.1, 0.0), (L[10], 0.6),
-    (final_end, 1.0), (final_end + 4.5, 0.8), (total - 1.0, 0.0), (total, 0.0),
+    (creak_end, 1.0), (L[11], 0.7), (final_end + 2.5, 0.8), (total - 1.0, 0.0), (total, 0.0),
 ]
 beds += sfx.drone(dur, base=49) * env(drone_env, N) * db(-15)
 beds *= duck
@@ -115,7 +116,10 @@ place(fx, bed_creak(1.1), word(8, "leaned"), -14)
 
 # the closet door, then the final hit
 place(fx, sfx.creak(3.0), word(10, "creaked") - 0.3, -9)
-place(fx, sfx.hit(3.5, 55, 30), final_end + 0.2, -6)
+place(fx, sfx.hit(3.5, 55, 30), creak_end + 0.15, -6)
+# a soft hit under each choice as it is spoken
+place(fx, sfx.hit(1.8, 80, 45), word(11, "bed") - 0.02, -14)
+place(fx, sfx.hit(1.8, 70, 40), word(11, "closet") - 0.02, -14)
 
 # --- master -------------------------------------------------------------
 delay = int(0.012 * SR)

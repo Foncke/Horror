@@ -8,7 +8,8 @@ const L = (i: number) => c.line(i).start;
 const LEAD = 0.12; // cut slightly before the line is spoken
 
 /** Named moments in the story, all taken from the voiceover. */
-const finalEnd = c.line(10).end;
+const LAST = timings.lines.length - 1; // "Where will you go? To the bed or in the closet?"
+const finalEnd = c.line(LAST).end;
 export const cue = {
   three: c.word(0, 'three').start,
   closet0: c.word(0, 'inside').start,
@@ -29,10 +30,11 @@ export const cue = {
   because: c.word(10, 'because').start,
   creaked: c.word(10, 'creaked').start,
   finalEnd,
-  choiceA: finalEnd + 0.6,
-  choiceB: finalEnd + 1.2,
-  outStart: finalEnd + 4.6,
-  end: finalEnd + 8.0,
+  creakEnd: c.line(10).end,
+  choiceA: c.word(LAST, 'bed').start - 0.05,
+  choiceB: c.word(LAST, 'closet').start - 0.05,
+  outStart: finalEnd + 2.6,
+  end: finalEnd + 6.0,
 };
 
 export type ShotId =

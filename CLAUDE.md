@@ -42,9 +42,10 @@ Then, once the owner says render:
 
 ## "3 A.M." (second video) is finished and rendered
 `projects/3am/` (script, ElevenLabs voice "Jessica", timings, mix.py), `src/videos/3am/`, composition `ThreeAM`.
-`npm run 3am:render` → `out/3AM.mp4` (80.2 s, 4,814 frames, 24.0 Mbps, 243 MB); uploaded as `renders/3AM.mp4` via LFS.
+`npm run 3am:render` → `out/3AM.mp4` (85.3 s, 5,118 frames, 24.0 Mbps, 258 MB); uploaded as `renders/3AM.mp4` via LFS.
 Encoding is constant 24 Mbps (x264 `nal-hrd=cbr` in `remotion.config.ts`): with only a target, dark scenes came out at ~21.9 Mbps.
-Ending: on-screen A/B choice ("Trust the closet" / "Trust the figure") + "A or B?" card; the voiceover itself has no choice line.
+Voiceover take 2 (79.5 s) ends with "Where will you go? To the bed or in the closet?"; "A: THE BED" / "B: THE CLOSET"
+pop up on those words, then the "A or B?" card. The girl (and her double) has long hair, a bow, lashes, blush, pink pajamas.
 On this Windows PC: Python 3.12 is at `%LOCALAPPDATA%\Programs\Python\Python312\python.exe` (`python3` is the Store
 alias, so run scripts with that path); FFmpeg isn't on PATH, `tools/ffmpeg_path.py` uses the copy Remotion ships.
 

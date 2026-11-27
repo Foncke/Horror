@@ -27,8 +27,7 @@ export type FaceKind = 'calm' | 'worried' | 'scared' | 'scaredDown' | 'laugh' | 
  * Face painted on the front of a sphere head. The texture covers a patch of
  * the sphere (see Character), so x runs left->right across the face and y top->bottom.
  */
-export const faceTexture = (kind: FaceKind) =>
-  canvasTexture(`face-${kind}`, 1024, 512, (ctx, w, h) => {
+const drawFace = (kind: FaceKind, ctx: CanvasRenderingContext2D, w: number, h: number) => {
     ctx.clearRect(0, 0, w, h);
     const cx = w / 2;
     const eyeY = h * 0.5;
@@ -161,6 +160,64 @@ export const faceTexture = (kind: FaceKind) =>
         ctx.stroke();
       }
     }
+};
+
+/** Eyelashes and rosy cheeks, drawn over a face (used for the girl in 3 A.M. and her double). */
+const drawGirly = (kind: FaceKind, ctx: CanvasRenderingContext2D, w: number, h: number) => {
+  const cx = w / 2;
+  const eyeY = h * 0.5;
+  const isDouble = kind === 'double' || kind === 'doubleWide';
+  if (!isDouble && kind !== 'grin' && kind !== 'blank') {
+    for (const s of [-1, 1]) {
+      const g = ctx.createRadialGradient(cx + s * 165, eyeY + 78, 4, cx + s * 165, eyeY + 78, 58);
+      g.addColorStop(0, 'rgba(255,105,140,0.55)');
+      g.addColorStop(1, 'rgba(255,105,140,0)');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.ellipse(cx + s * 165, eyeY + 78, 62, 40, 0, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+  const open = ['calm', 'worried', 'scared', 'scaredDown', 'laugh', 'double', 'doubleWide'].includes(kind);
+  ctx.strokeStyle = '#111114';
+  ctx.lineCap = 'round';
+  ctx.lineWidth = 8;
+  for (const s of [-1, 1]) {
+    if (open) {
+      const ex = cx + s * (isDouble ? 108 : 105);
+      const ey = isDouble ? eyeY - 4 : eyeY;
+      const ry = isDouble ? 50 : kind === 'scared' || kind === 'scaredDown' ? 30 : 20;
+      const rx = isDouble ? 40 : ry * 0.8;
+      for (let k = 0; k < 3; k++) {
+        const a = -Math.PI / 2 + s * (0.45 + k * 0.38);
+        const x0 = ex + rx * Math.cos(a);
+        const y0 = ey + ry * Math.sin(a);
+        const len = 26 - k * 3;
+        const b = a + s * 0.35;
+        ctx.beginPath();
+        ctx.moveTo(x0, y0);
+        ctx.lineTo(x0 + Math.cos(b) * len, y0 + Math.sin(b) * len);
+        ctx.stroke();
+      }
+    } else if (kind === 'sleepwalk') {
+      // closed eyes: lashes hang from the lid
+      for (let k = 0; k < 3; k++) {
+        const a = Math.PI * (0.3 + k * 0.2);
+        const x0 = cx + s * 105 + 30 * Math.cos(a);
+        const y0 = eyeY - 6 + 30 * Math.sin(a);
+        ctx.beginPath();
+        ctx.moveTo(x0, y0);
+        ctx.lineTo(x0 + Math.cos(a) * 16, y0 + Math.sin(a) * 16);
+        ctx.stroke();
+      }
+    }
+  }
+};
+
+export const faceTexture = (kind: FaceKind, girly = false) =>
+  canvasTexture(`face-${kind}${girly ? '-girly' : ''}`, 1024, 512, (ctx, w, h) => {
+    drawFace(kind, ctx, w, h);
+    if (girly) drawGirly(kind, ctx, w, h);
   });
 
 export const carpetTexture = () =>

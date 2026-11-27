@@ -1,60 +1,65 @@
 {
- "duration": 74.998,
+ "duration": 79.491,
  "lines": [
   {
    "text": "Last night, I woke up at three A.M. to the sound of my own voice whispering to me from inside my closet.",
    "start": 0.0,
-   "end": 6.75
+   "end": 7.11
   },
   {
    "text": "At first, I thought I was just having sleep paralysis.",
-   "start": 7.12,
-   "end": 10.5
+   "start": 7.64,
+   "end": 11.15
   },
   {
    "text": "I lay frozen under my covers, staring at the crack in the closet door, waiting for my eyes to adjust to the dark.",
-   "start": 10.72,
-   "end": 17.83
+   "start": 11.52,
+   "end": 18.87
   },
   {
    "text": "Then, the voice spoke again. It was my exact pitch, my exact breathing... begging me not to make a sound.",
-   "start": 17.9,
-   "end": 26.98
+   "start": 19.463,
+   "end": 28.26
   },
   {
    "text": "\"Whatever you do,\" it whispered from the shadows, \"do not look at the foot of your bed.\"",
-   "start": 27.38,
-   "end": 33.14
+   "start": 28.743,
+   "end": 34.92
   },
   {
    "text": "My heart stopped. Slowly, without moving my head, I shifted my eyes downward.",
-   "start": 33.675,
-   "end": 39.75
+   "start": 35.415,
+   "end": 41.84
   },
   {
    "text": "Standing at the end of my mattress was a tall, pale figure wearing my exact pajamas.",
-   "start": 40.155,
-   "end": 45.97
+   "start": 42.535,
+   "end": 48.56
   },
   {
    "text": "It had my face, my hair... everything. Except its eyes were completely pitch black, and its smile stretched way too wide.",
-   "start": 46.315,
-   "end": 55.82
+   "start": 49.094,
+   "end": 58.98
   },
   {
    "text": "It leaned forward, resting its hands on my blankets, and spoke in a cold, hollow voice.",
-   "start": 56.086,
-   "end": 62.19
+   "start": 59.494,
+   "end": 65.66
   },
   {
    "text": "\"Why are you listening to the thing in the closet?\"",
-   "start": 62.606,
-   "end": 65.14
+   "start": 65.721,
+   "end": 68.63
   },
   {
    "text": "I didn't have time to scream... because the closet door slowly creaked open behind it.",
-   "start": 65.662,
-   "end": 72.23
+   "start": 69.16,
+   "end": 74.96
+  },
+  {
+   "text": "Where will you go? To the bed or in the closet?",
+   "start": 75.641,
+   "end": 79.3
   }
  ],
  "words": [
@@ -62,1099 +67,1165 @@
    "text": "Last",
    "line": 0,
    "start": 0.0,
-   "end": 0.4
+   "end": 0.44
   },
   {
    "text": "night,",
    "line": 0,
-   "start": 0.4,
-   "end": 0.8
+   "start": 0.44,
+   "end": 0.84
   },
   {
    "text": "I",
    "line": 0,
-   "start": 0.8,
-   "end": 1.04
+   "start": 0.84,
+   "end": 1.12
   },
   {
    "text": "woke",
    "line": 0,
-   "start": 1.04,
-   "end": 1.4
+   "start": 1.12,
+   "end": 1.48
   },
   {
    "text": "up",
    "line": 0,
-   "start": 1.4,
-   "end": 1.6
+   "start": 1.48,
+   "end": 1.64
   },
   {
    "text": "at",
    "line": 0,
-   "start": 1.6,
-   "end": 1.8
+   "start": 1.64,
+   "end": 1.88
   },
   {
    "text": "three",
    "line": 0,
-   "start": 1.8,
-   "end": 2.12
+   "start": 1.88,
+   "end": 2.24
   },
   {
    "text": "A.M.",
    "line": 0,
-   "start": 2.12,
-   "end": 2.56
+   "start": 2.24,
+   "end": 2.72
   },
   {
    "text": "to",
    "line": 0,
-   "start": 2.56,
-   "end": 2.76
+   "start": 2.72,
+   "end": 2.88
   },
   {
    "text": "the",
    "line": 0,
-   "start": 2.76,
-   "end": 2.96
+   "start": 2.88,
+   "end": 3.04
   },
   {
    "text": "sound",
    "line": 0,
-   "start": 2.96,
-   "end": 3.32
+   "start": 3.04,
+   "end": 3.4
   },
   {
    "text": "of",
    "line": 0,
-   "start": 3.32,
-   "end": 3.44
+   "start": 3.4,
+   "end": 3.56
   },
   {
    "text": "my",
    "line": 0,
-   "start": 3.44,
-   "end": 3.68
+   "start": 3.56,
+   "end": 3.8
   },
   {
    "text": "own",
    "line": 0,
-   "start": 3.68,
-   "end": 4.04
+   "start": 3.8,
+   "end": 4.16
   },
   {
    "text": "voice",
    "line": 0,
-   "start": 4.04,
-   "end": 4.48
+   "start": 4.16,
+   "end": 4.64
   },
   {
    "text": "whispering",
    "line": 0,
-   "start": 4.48,
-   "end": 5.08
+   "start": 4.64,
+   "end": 5.28
   },
   {
    "text": "to",
    "line": 0,
-   "start": 5.08,
-   "end": 5.24
+   "start": 5.28,
+   "end": 5.44
   },
   {
    "text": "me",
    "line": 0,
-   "start": 5.24,
-   "end": 5.44
+   "start": 5.44,
+   "end": 5.68
   },
   {
    "text": "from",
    "line": 0,
-   "start": 5.44,
-   "end": 5.64
+   "start": 5.68,
+   "end": 5.92
   },
   {
    "text": "inside",
    "line": 0,
-   "start": 5.64,
-   "end": 6.08
+   "start": 5.92,
+   "end": 6.36
   },
   {
    "text": "my",
    "line": 0,
-   "start": 6.08,
-   "end": 6.28
+   "start": 6.36,
+   "end": 6.6
   },
   {
    "text": "closet.",
    "line": 0,
-   "start": 6.28,
-   "end": 6.75
+   "start": 6.6,
+   "end": 7.11
   },
   {
    "text": "At",
    "line": 1,
-   "start": 7.12,
-   "end": 7.48
+   "start": 7.64,
+   "end": 8.04
   },
   {
    "text": "first,",
    "line": 1,
-   "start": 7.48,
-   "end": 7.92
+   "start": 8.04,
+   "end": 8.48
   },
   {
    "text": "I",
    "line": 1,
-   "start": 7.92,
-   "end": 8.32
+   "start": 8.48,
+   "end": 8.75
   },
   {
    "text": "thought",
    "line": 1,
-   "start": 8.32,
-   "end": 8.64
+   "start": 8.88,
+   "end": 9.2
   },
   {
    "text": "I",
    "line": 1,
-   "start": 8.64,
-   "end": 8.76
+   "start": 9.2,
+   "end": 9.32
   },
   {
    "text": "was",
    "line": 1,
-   "start": 8.76,
-   "end": 8.96
+   "start": 9.32,
+   "end": 9.52
   },
   {
    "text": "just",
    "line": 1,
-   "start": 8.96,
-   "end": 9.2
+   "start": 9.52,
+   "end": 9.76
   },
   {
    "text": "having",
    "line": 1,
-   "start": 9.2,
-   "end": 9.44
+   "start": 9.76,
+   "end": 10.04
   },
   {
    "text": "sleep",
    "line": 1,
-   "start": 9.44,
-   "end": 9.76
+   "start": 10.04,
+   "end": 10.4
   },
   {
    "text": "paralysis.",
    "line": 1,
-   "start": 9.76,
-   "end": 10.5
+   "start": 10.4,
+   "end": 11.15
   },
   {
    "text": "I",
    "line": 2,
-   "start": 10.72,
-   "end": 11.04
+   "start": 11.52,
+   "end": 12.0
   },
   {
    "text": "lay",
    "line": 2,
-   "start": 11.04,
-   "end": 11.36
+   "start": 12.0,
+   "end": 12.28
   },
   {
    "text": "frozen",
    "line": 2,
-   "start": 11.36,
-   "end": 12.08
+   "start": 12.28,
+   "end": 12.96
   },
   {
    "text": "under",
    "line": 2,
-   "start": 12.08,
-   "end": 12.32
+   "start": 12.96,
+   "end": 13.2
   },
   {
    "text": "my",
    "line": 2,
-   "start": 12.32,
-   "end": 12.48
+   "start": 13.2,
+   "end": 13.4
   },
   {
    "text": "covers,",
    "line": 2,
-   "start": 12.48,
-   "end": 13.04
+   "start": 13.4,
+   "end": 13.88
   },
   {
    "text": "staring",
    "line": 2,
-   "start": 13.24,
-   "end": 13.72
+   "start": 14.2,
+   "end": 14.72
   },
   {
    "text": "at",
    "line": 2,
-   "start": 13.72,
-   "end": 13.84
+   "start": 14.72,
+   "end": 14.84
   },
   {
    "text": "the",
    "line": 2,
-   "start": 13.84,
-   "end": 14.0
+   "start": 14.84,
+   "end": 14.96
   },
   {
    "text": "crack",
    "line": 2,
-   "start": 14.0,
-   "end": 14.32
+   "start": 14.96,
+   "end": 15.32
   },
   {
    "text": "in",
    "line": 2,
-   "start": 14.32,
-   "end": 14.44
+   "start": 15.32,
+   "end": 15.44
   },
   {
    "text": "the",
    "line": 2,
-   "start": 14.44,
-   "end": 14.56
+   "start": 15.4,
+   "end": 15.52
   },
   {
    "text": "closet",
    "line": 2,
-   "start": 14.56,
-   "end": 15.04
+   "start": 15.52,
+   "end": 16.0
   },
   {
    "text": "door,",
    "line": 2,
-   "start": 15.04,
-   "end": 15.32
+   "start": 16.0,
+   "end": 16.26
   },
   {
    "text": "waiting",
    "line": 2,
-   "start": 15.56,
-   "end": 16.08
+   "start": 16.383,
+   "end": 17.023
   },
   {
    "text": "for",
    "line": 2,
-   "start": 16.08,
-   "end": 16.2
+   "start": 17.023,
+   "end": 17.183
   },
   {
    "text": "my",
    "line": 2,
-   "start": 16.2,
-   "end": 16.4
+   "start": 17.183,
+   "end": 17.423
   },
   {
    "text": "eyes",
    "line": 2,
-   "start": 16.4,
-   "end": 16.64
+   "start": 17.423,
+   "end": 17.663
   },
   {
    "text": "to",
    "line": 2,
-   "start": 16.64,
-   "end": 16.84
+   "start": 17.663,
+   "end": 17.823
   },
   {
    "text": "adjust",
    "line": 2,
-   "start": 16.84,
-   "end": 17.24
+   "start": 17.823,
+   "end": 18.263
   },
   {
    "text": "to",
    "line": 2,
-   "start": 17.24,
-   "end": 17.36
+   "start": 18.263,
+   "end": 18.383
   },
   {
    "text": "the",
    "line": 2,
-   "start": 17.36,
-   "end": 17.52
+   "start": 18.383,
+   "end": 18.583
   },
   {
    "text": "dark.",
    "line": 2,
-   "start": 17.52,
-   "end": 17.83
+   "start": 18.583,
+   "end": 18.87
   },
   {
    "text": "Then,",
    "line": 3,
-   "start": 17.9,
-   "end": 18.82
+   "start": 19.463,
+   "end": 20.05
   },
   {
    "text": "the",
    "line": 3,
-   "start": 18.82,
-   "end": 19.26
+   "start": 20.103,
+   "end": 20.423
   },
   {
    "text": "voice",
    "line": 3,
-   "start": 19.26,
-   "end": 19.66
+   "start": 20.423,
+   "end": 20.863
   },
   {
    "text": "spoke",
    "line": 3,
-   "start": 19.66,
-   "end": 20.14
+   "start": 20.863,
+   "end": 21.303
   },
   {
    "text": "again.",
    "line": 3,
-   "start": 20.14,
-   "end": 20.46
+   "start": 21.303,
+   "end": 21.57
   },
   {
    "text": "It",
    "line": 3,
-   "start": 20.82,
-   "end": 21.1
+   "start": 22.063,
+   "end": 22.383
   },
   {
    "text": "was",
    "line": 3,
-   "start": 21.1,
-   "end": 21.26
+   "start": 22.383,
+   "end": 22.623
   },
   {
    "text": "my",
    "line": 3,
-   "start": 21.26,
-   "end": 21.54
+   "start": 22.623,
+   "end": 22.903
   },
   {
    "text": "exact",
    "line": 3,
-   "start": 21.54,
-   "end": 22.14
+   "start": 22.903,
+   "end": 23.543
   },
   {
    "text": "pitch,",
    "line": 3,
-   "start": 22.14,
-   "end": 22.63
+   "start": 23.543,
+   "end": 23.98
   },
   {
    "text": "my",
    "line": 3,
-   "start": 22.78,
-   "end": 23.1
+   "start": 24.183,
+   "end": 24.463
   },
   {
    "text": "exact",
    "line": 3,
-   "start": 23.1,
-   "end": 23.22
+   "start": 24.463,
+   "end": 25.103
   },
   {
    "text": "breathing...",
    "line": 3,
-   "start": 23.74,
-   "end": 24.33
+   "start": 25.103,
+   "end": 25.67
   },
   {
    "text": "begging",
    "line": 3,
-   "start": 24.82,
-   "end": 25.42
+   "start": 26.143,
+   "end": 26.743
   },
   {
    "text": "me",
    "line": 3,
-   "start": 25.42,
-   "end": 25.7
+   "start": 26.743,
+   "end": 27.063
   },
   {
    "text": "not",
    "line": 3,
-   "start": 25.7,
-   "end": 25.98
+   "start": 27.063,
+   "end": 27.343
   },
   {
    "text": "to",
    "line": 3,
-   "start": 25.98,
-   "end": 26.18
+   "start": 27.343,
+   "end": 27.543
   },
   {
    "text": "make",
    "line": 3,
-   "start": 26.18,
-   "end": 26.42
+   "start": 27.543,
+   "end": 27.783
   },
   {
    "text": "a",
    "line": 3,
-   "start": 26.42,
-   "end": 26.62
+   "start": 27.783,
+   "end": 27.943
   },
   {
    "text": "sound.",
    "line": 3,
-   "start": 26.62,
-   "end": 26.98
+   "start": 27.943,
+   "end": 28.26
   },
   {
    "text": "\"Whatever",
    "line": 4,
-   "start": 27.38,
-   "end": 28.02
+   "start": 28.743,
+   "end": 29.503
   },
   {
    "text": "you",
    "line": 4,
-   "start": 28.02,
-   "end": 28.3
+   "start": 29.503,
+   "end": 29.783
   },
   {
    "text": "do,\"",
    "line": 4,
-   "start": 28.3,
-   "end": 28.55
+   "start": 29.783,
+   "end": 29.98
   },
   {
    "text": "it",
    "line": 4,
-   "start": 28.78,
-   "end": 29.1
+   "start": 30.223,
+   "end": 30.543
   },
   {
    "text": "whispered",
    "line": 4,
-   "start": 29.1,
-   "end": 29.7
+   "start": 30.543,
+   "end": 31.143
   },
   {
    "text": "from",
    "line": 4,
-   "start": 29.7,
-   "end": 29.86
+   "start": 31.143,
+   "end": 31.303
   },
   {
    "text": "the",
    "line": 4,
-   "start": 29.86,
-   "end": 30.06
+   "start": 31.303,
+   "end": 31.503
   },
   {
    "text": "shadows,",
    "line": 4,
-   "start": 30.06,
-   "end": 30.57
+   "start": 31.503,
+   "end": 32.0
   },
   {
    "text": "\"do",
    "line": 4,
-   "start": 30.82,
-   "end": 31.14
+   "start": 32.535,
+   "end": 32.855
   },
   {
    "text": "not",
    "line": 4,
-   "start": 31.14,
-   "end": 31.58
+   "start": 32.855,
+   "end": 33.255
   },
   {
    "text": "look",
    "line": 4,
-   "start": 31.58,
-   "end": 31.9
+   "start": 33.255,
+   "end": 33.615
   },
   {
    "text": "at",
    "line": 4,
-   "start": 31.9,
-   "end": 32.1
+   "start": 33.615,
+   "end": 33.815
   },
   {
    "text": "the",
    "line": 4,
-   "start": 32.1,
-   "end": 32.26
+   "start": 33.815,
+   "end": 33.975
   },
   {
    "text": "foot",
    "line": 4,
-   "start": 32.26,
-   "end": 32.54
+   "start": 33.975,
+   "end": 34.295
   },
   {
    "text": "of",
    "line": 4,
-   "start": 32.54,
-   "end": 32.7
+   "start": 34.295,
+   "end": 34.455
   },
   {
    "text": "your",
    "line": 4,
-   "start": 32.7,
-   "end": 32.98
+   "start": 34.455,
+   "end": 34.695
   },
   {
    "text": "bed.\"",
    "line": 4,
-   "start": 32.98,
-   "end": 33.14
+   "start": 34.695,
+   "end": 34.92
   },
   {
    "text": "My",
    "line": 5,
-   "start": 33.675,
-   "end": 33.995
+   "start": 35.415,
+   "end": 35.815
   },
   {
    "text": "heart",
    "line": 5,
-   "start": 33.995,
-   "end": 34.435
+   "start": 35.815,
+   "end": 36.295
   },
   {
    "text": "stopped.",
    "line": 5,
-   "start": 34.435,
-   "end": 34.98
+   "start": 36.295,
+   "end": 36.86
   },
   {
    "text": "Slowly,",
    "line": 5,
-   "start": 35.275,
-   "end": 36.22
+   "start": 37.295,
+   "end": 38.3
   },
   {
    "text": "without",
    "line": 5,
-   "start": 36.315,
-   "end": 36.755
+   "start": 38.375,
+   "end": 38.855
   },
   {
    "text": "moving",
    "line": 5,
-   "start": 36.755,
-   "end": 37.235
+   "start": 38.855,
+   "end": 39.295
   },
   {
    "text": "my",
    "line": 5,
-   "start": 37.235,
-   "end": 37.475
+   "start": 39.295,
+   "end": 39.575
   },
   {
    "text": "head,",
    "line": 5,
-   "start": 37.475,
-   "end": 37.69
+   "start": 39.575,
+   "end": 39.75
   },
   {
    "text": "I",
    "line": 5,
-   "start": 37.835,
-   "end": 38.155
+   "start": 39.975,
+   "end": 40.255
   },
   {
    "text": "shifted",
    "line": 5,
-   "start": 38.155,
-   "end": 38.675
+   "start": 40.255,
+   "end": 40.775
   },
   {
    "text": "my",
    "line": 5,
-   "start": 38.675,
-   "end": 38.955
+   "start": 40.775,
+   "end": 41.055
   },
   {
    "text": "eyes",
    "line": 5,
-   "start": 38.955,
-   "end": 39.275
+   "start": 41.055,
+   "end": 41.415
   },
   {
    "text": "downward.",
    "line": 5,
-   "start": 39.275,
-   "end": 39.75
+   "start": 41.415,
+   "end": 41.84
   },
   {
    "text": "Standing",
    "line": 6,
-   "start": 40.155,
-   "end": 40.715
+   "start": 42.535,
+   "end": 43.175
   },
   {
    "text": "at",
    "line": 6,
-   "start": 40.715,
-   "end": 40.875
+   "start": 43.175,
+   "end": 43.295
   },
   {
    "text": "the",
    "line": 6,
-   "start": 40.875,
-   "end": 41.035
+   "start": 43.255,
+   "end": 43.415
   },
   {
    "text": "end",
    "line": 6,
-   "start": 41.035,
-   "end": 41.195
+   "start": 43.415,
+   "end": 43.655
   },
   {
    "text": "of",
    "line": 6,
-   "start": 41.195,
-   "end": 41.315
+   "start": 43.655,
+   "end": 43.775
   },
   {
    "text": "my",
    "line": 6,
-   "start": 41.315,
-   "end": 41.515
+   "start": 43.735,
+   "end": 43.935
   },
   {
    "text": "mattress",
    "line": 6,
-   "start": 41.515,
-   "end": 42.075
+   "start": 43.935,
+   "end": 44.495
   },
   {
    "text": "was",
    "line": 6,
-   "start": 42.075,
-   "end": 42.275
+   "start": 44.495,
+   "end": 44.695
   },
   {
    "text": "a",
    "line": 6,
-   "start": 42.275,
-   "end": 42.515
+   "start": 44.695,
+   "end": 44.935
   },
   {
    "text": "tall,",
    "line": 6,
-   "start": 42.515,
-   "end": 43.035
+   "start": 44.935,
+   "end": 45.37
   },
   {
    "text": "pale",
    "line": 6,
-   "start": 43.035,
-   "end": 43.595
+   "start": 45.455,
+   "end": 46.015
   },
   {
    "text": "figure",
    "line": 6,
-   "start": 43.595,
-   "end": 44.09
+   "start": 46.015,
+   "end": 46.47
   },
   {
    "text": "wearing",
    "line": 6,
-   "start": 44.155,
-   "end": 44.555
+   "start": 46.615,
+   "end": 47.095
   },
   {
    "text": "my",
    "line": 6,
-   "start": 44.555,
-   "end": 44.795
+   "start": 47.095,
+   "end": 47.295
   },
   {
    "text": "exact",
    "line": 6,
-   "start": 44.795,
-   "end": 45.315
+   "start": 47.295,
+   "end": 47.855
   },
   {
    "text": "pajamas.",
    "line": 6,
-   "start": 45.315,
-   "end": 45.97
+   "start": 47.855,
+   "end": 48.56
   },
   {
    "text": "It",
    "line": 7,
-   "start": 46.315,
-   "end": 46.595
+   "start": 49.094,
+   "end": 49.334
   },
   {
    "text": "had",
    "line": 7,
-   "start": 46.595,
-   "end": 46.795
+   "start": 49.334,
+   "end": 49.534
   },
   {
    "text": "my",
    "line": 7,
-   "start": 46.795,
-   "end": 47.155
+   "start": 49.534,
+   "end": 49.814
   },
   {
    "text": "face,",
    "line": 7,
-   "start": 47.155,
-   "end": 47.64
+   "start": 49.814,
+   "end": 50.25
   },
   {
    "text": "my",
    "line": 7,
-   "start": 47.755,
-   "end": 48.075
+   "start": 50.374,
+   "end": 50.734
   },
   {
    "text": "hair...",
    "line": 7,
-   "start": 48.075,
-   "end": 48.5
+   "start": 50.734,
+   "end": 51.15
   },
   {
    "text": "everything.",
    "line": 7,
-   "start": 48.875,
-   "end": 49.61
+   "start": 51.574,
+   "end": 52.4
   },
   {
    "text": "Except",
    "line": 7,
-   "start": 50.126,
-   "end": 50.566
+   "start": 52.934,
+   "end": 53.534
   },
   {
    "text": "its",
    "line": 7,
-   "start": 50.566,
-   "end": 50.846
+   "start": 53.534,
+   "end": 53.894
   },
   {
    "text": "eyes",
    "line": 7,
-   "start": 50.846,
-   "end": 51.206
+   "start": 53.894,
+   "end": 54.254
   },
   {
    "text": "were",
    "line": 7,
-   "start": 51.206,
-   "end": 51.406
+   "start": 54.254,
+   "end": 54.454
   },
   {
    "text": "completely",
    "line": 7,
-   "start": 51.406,
-   "end": 52.206
+   "start": 54.454,
+   "end": 55.254
   },
   {
    "text": "pitch",
    "line": 7,
-   "start": 52.206,
-   "end": 52.606
+   "start": 55.254,
+   "end": 55.654
   },
   {
    "text": "black,",
    "line": 7,
-   "start": 52.606,
-   "end": 53.06
+   "start": 55.654,
+   "end": 56.07
   },
   {
    "text": "and",
    "line": 7,
-   "start": 53.206,
-   "end": 53.446
+   "start": 56.254,
+   "end": 56.494
   },
   {
    "text": "its",
    "line": 7,
-   "start": 53.446,
-   "end": 53.726
+   "start": 56.494,
+   "end": 56.814
   },
   {
    "text": "smile",
    "line": 7,
-   "start": 53.726,
-   "end": 54.246
+   "start": 56.814,
+   "end": 57.374
   },
   {
    "text": "stretched",
    "line": 7,
-   "start": 54.246,
-   "end": 54.846
+   "start": 57.374,
+   "end": 57.974
   },
   {
    "text": "way",
    "line": 7,
-   "start": 54.846,
-   "end": 55.126
+   "start": 57.974,
+   "end": 58.254
   },
   {
    "text": "too",
    "line": 7,
-   "start": 55.126,
-   "end": 55.486
+   "start": 58.254,
+   "end": 58.694
   },
   {
    "text": "wide.",
    "line": 7,
-   "start": 55.486,
-   "end": 55.82
+   "start": 58.694,
+   "end": 58.98
   },
   {
    "text": "It",
    "line": 8,
-   "start": 56.086,
-   "end": 56.406
+   "start": 59.494,
+   "end": 59.894
   },
   {
    "text": "leaned",
    "line": 8,
-   "start": 56.406,
-   "end": 56.846
+   "start": 59.894,
+   "end": 60.334
   },
   {
    "text": "forward,",
    "line": 8,
-   "start": 56.846,
-   "end": 57.38
+   "start": 60.334,
+   "end": 60.86
   },
   {
    "text": "resting",
    "line": 8,
-   "start": 57.486,
-   "end": 58.006
+   "start": 60.974,
+   "end": 61.494
   },
   {
    "text": "its",
    "line": 8,
-   "start": 58.006,
-   "end": 58.286
+   "start": 61.494,
+   "end": 61.734
   },
   {
    "text": "hands",
    "line": 8,
-   "start": 58.286,
-   "end": 58.526
+   "start": 61.734,
+   "end": 62.014
   },
   {
    "text": "on",
    "line": 8,
-   "start": 58.526,
-   "end": 58.686
+   "start": 62.014,
+   "end": 62.134
   },
   {
    "text": "my",
    "line": 8,
-   "start": 58.686,
-   "end": 58.846
+   "start": 62.134,
+   "end": 62.294
   },
   {
    "text": "blankets,",
    "line": 8,
-   "start": 58.846,
-   "end": 59.49
+   "start": 62.294,
+   "end": 62.94
   },
   {
    "text": "and",
    "line": 8,
-   "start": 59.566,
-   "end": 59.806
+   "start": 63.014,
+   "end": 63.254
   },
   {
    "text": "spoke",
    "line": 8,
-   "start": 59.806,
-   "end": 60.206
+   "start": 63.254,
+   "end": 63.694
   },
   {
    "text": "in",
    "line": 8,
-   "start": 60.206,
-   "end": 60.406
+   "start": 63.694,
+   "end": 63.854
   },
   {
    "text": "a",
    "line": 8,
-   "start": 60.406,
-   "end": 60.606
+   "start": 63.854,
+   "end": 64.094
   },
   {
    "text": "cold,",
    "line": 8,
-   "start": 60.606,
-   "end": 61.05
+   "start": 64.094,
+   "end": 64.5
   },
   {
    "text": "hollow",
    "line": 8,
-   "start": 61.246,
-   "end": 61.846
+   "start": 64.694,
+   "end": 65.294
   },
   {
    "text": "voice.",
    "line": 8,
-   "start": 61.846,
-   "end": 62.19
+   "start": 65.294,
+   "end": 65.66
   },
   {
    "text": "\"Why",
    "line": 9,
-   "start": 62.606,
-   "end": 62.926
+   "start": 65.721,
+   "end": 66.52
   },
   {
    "text": "are",
    "line": 9,
-   "start": 62.926,
-   "end": 63.086
+   "start": 66.52,
+   "end": 66.68
   },
   {
    "text": "you",
    "line": 9,
-   "start": 63.086,
-   "end": 63.326
+   "start": 66.68,
+   "end": 66.92
   },
   {
    "text": "listening",
    "line": 9,
-   "start": 63.326,
-   "end": 63.806
+   "start": 66.92,
+   "end": 67.48
   },
   {
    "text": "to",
    "line": 9,
-   "start": 63.806,
-   "end": 63.966
+   "start": 67.48,
+   "end": 67.6
   },
   {
    "text": "the",
    "line": 9,
-   "start": 63.966,
-   "end": 64.126
+   "start": 67.6,
+   "end": 67.8
   },
   {
    "text": "thing",
    "line": 9,
-   "start": 64.126,
-   "end": 64.406
+   "start": 67.8,
+   "end": 68.04
   },
   {
    "text": "in",
    "line": 9,
-   "start": 64.406,
-   "end": 64.526
+   "start": 68.04,
+   "end": 68.201
   },
   {
    "text": "the",
    "line": 9,
-   "start": 64.526,
-   "end": 64.686
+   "start": 68.201,
+   "end": 68.36
   },
   {
    "text": "closet?\"",
    "line": 9,
-   "start": 64.686,
-   "end": 65.14
+   "start": 68.36,
+   "end": 68.63
   },
   {
    "text": "I",
    "line": 10,
-   "start": 65.662,
-   "end": 65.782
+   "start": 69.16,
+   "end": 69.48
   },
   {
    "text": "didn't",
    "line": 10,
-   "start": 65.782,
-   "end": 66.102
+   "start": 69.48,
+   "end": 69.88
   },
   {
    "text": "have",
    "line": 10,
-   "start": 66.102,
-   "end": 66.302
+   "start": 69.88,
+   "end": 70.121
   },
   {
    "text": "time",
    "line": 10,
-   "start": 66.302,
-   "end": 66.502
+   "start": 70.121,
+   "end": 70.36
   },
   {
    "text": "to",
    "line": 10,
-   "start": 66.502,
-   "end": 66.702
+   "start": 70.36,
+   "end": 70.52
   },
   {
    "text": "scream...",
    "line": 10,
-   "start": 66.702,
-   "end": 67.13
+   "start": 70.52,
+   "end": 70.94
   },
   {
    "text": "because",
    "line": 10,
-   "start": 67.342,
-   "end": 67.662
+   "start": 71.32,
+   "end": 71.641
   },
   {
    "text": "the",
    "line": 10,
-   "start": 67.662,
-   "end": 67.822
+   "start": 71.641,
+   "end": 71.84
   },
   {
    "text": "closet",
    "line": 10,
-   "start": 67.822,
-   "end": 68.342
+   "start": 71.84,
+   "end": 72.36
   },
   {
    "text": "door",
    "line": 10,
-   "start": 68.342,
-   "end": 68.702
+   "start": 72.36,
+   "end": 72.721
   },
   {
    "text": "slowly",
    "line": 10,
-   "start": 68.702,
-   "end": 69.342
+   "start": 72.721,
+   "end": 73.4
   },
   {
    "text": "creaked",
    "line": 10,
-   "start": 69.342,
-   "end": 69.822
+   "start": 73.4,
+   "end": 73.92
   },
   {
    "text": "open",
    "line": 10,
-   "start": 69.822,
-   "end": 70.142
+   "start": 73.92,
+   "end": 74.28
   },
   {
    "text": "behind",
    "line": 10,
-   "start": 70.142,
-   "end": 70.662
+   "start": 74.28,
+   "end": 74.84
   },
   {
    "text": "it.",
    "line": 10,
-   "start": 70.662,
-   "end": 72.23
+   "start": 74.84,
+   "end": 74.96
+  },
+  {
+   "text": "Where",
+   "line": 11,
+   "start": 75.641,
+   "end": 76.04
+  },
+  {
+   "text": "will",
+   "line": 11,
+   "start": 76.04,
+   "end": 76.28
+  },
+  {
+   "text": "you",
+   "line": 11,
+   "start": 76.28,
+   "end": 76.561
+  },
+  {
+   "text": "go?",
+   "line": 11,
+   "start": 76.561,
+   "end": 76.83
+  },
+  {
+   "text": "To",
+   "line": 11,
+   "start": 77.16,
+   "end": 77.4
+  },
+  {
+   "text": "the",
+   "line": 11,
+   "start": 77.4,
+   "end": 77.641
+  },
+  {
+   "text": "bed",
+   "line": 11,
+   "start": 77.641,
+   "end": 78.03
+  },
+  {
+   "text": "or",
+   "line": 11,
+   "start": 78.16,
+   "end": 78.44
+  },
+  {
+   "text": "in",
+   "line": 11,
+   "start": 78.44,
+   "end": 78.601
+  },
+  {
+   "text": "the",
+   "line": 11,
+   "start": 78.601,
+   "end": 78.76
+  },
+  {
+   "text": "closet?",
+   "line": 11,
+   "start": 78.76,
+   "end": 79.3
   }
  ]
 }

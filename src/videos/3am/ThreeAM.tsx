@@ -57,14 +57,14 @@ export const ThreeAM: React.FC = () => {
 
       {shot.id === 'creak' && t < cue.outStart + 0.3 && (
         <>
-          <Callout letter="A" text="TRUST THE CLOSET" color="#f5c542" at={cue.choiceA} anchor={project(cam, [CLOSET_X - 0.1, 1.35, ROOM.D / 2 + 0.45], width, height)} label={{x: 740, y: 430}} />
-          <Callout letter="B" text="TRUST THE FIGURE" color="#4f8cff" at={cue.choiceB} anchor={project(cam, figureHead(t), width, height)} label={{x: 330, y: 1480}} />
+          <Callout letter="A" text="THE BED" color="#f5c542" at={cue.choiceA} anchor={project(cam, figureHead(t), width, height)} label={{x: 300, y: 1480}} />
+          <Callout letter="B" text="THE CLOSET" color="#4f8cff" at={cue.choiceB} anchor={project(cam, [CLOSET_X - 0.1, 1.35, ROOM.D / 2 + 0.45], width, height)} label={{x: 780, y: 430}} />
         </>
       )}
 
       <Captions
         words={timings.words}
-        emphasis={['closet', 'paralysis', 'black', 'wide', 'scream', 'bed', 'downward']}
+        emphasis={['paralysis', 'black', 'wide', 'scream', 'downward']}
         accent={['three', 'am']}
         accentColor="#ff5a48"
         y={0.66}
