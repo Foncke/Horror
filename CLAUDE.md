@@ -72,6 +72,8 @@ dark veins, solid black eyes with small glowing pupils (meshes), a dark stain fr
 (`twitch()` in Human.tsx), and her head turning right round to look back (lane, fridge, kitchen).
 She walks with a real stalking gait (`walk`/`stride` props), and long hair is a strand-textured curtain with a few
 sparse loose locks (not capsules). The neighbour stands on the house's porch, clear of the door frame.
+Music: a synthesised Thai-style score (`projects/phipop/thaimusic.py`): khaen drone, ranat and khim, ching and klong,
+in Thai 7-tone tuning; dark and sparse at night, lighter by day, only the drone under the chewing, dead stop at the cut.
 Thai title ผีปอบ uses Noto Sans Thai (`public/fonts/NotoSansThai-ExtraBold.woff2`). Captions show "Phi Pop"/"Isan"
 though the voice says the phonetic "Pee Pop"/"Ee-sahn". Gore is only implied. Hard cut to black after "light."
 Camera depth range is per-shot optional (`Cam.near/far`, default 0.02/80); Phi Pop uses 0.05/200 for its sky.

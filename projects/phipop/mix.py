@@ -1,4 +1,4 @@
-"""Phi Pop soundtrack: voiceover + night ambience, a breathy flute, drones and effects, timed from timings.json.
+"""Phi Pop soundtrack: voiceover + night ambience, a scary Thai-style score (thaimusic.py), drones and effects, timed from timings.json.
 
 Usage: python projects/phipop/mix.py   ->  public/phipop/soundtrack.wav
 The voice is used exactly as delivered.
@@ -18,6 +18,8 @@ sys.path.insert(0, str(ROOT / "tools"))
 import sfx  # noqa: E402
 from ffmpeg_path import ffmpeg  # noqa: E402
 from sfx import SR, bandpass, db, fade, highpass, lowpass, norm, place, rng, t_axis  # noqa: E402
+sys.path.insert(0, str(HERE))
+import thaimusic  # noqa: E402
 
 T = json.loads((HERE / "timings.json").read_text(encoding="utf-8"))
 LINES, WORDS = T["lines"], T["words"]
@@ -95,7 +97,7 @@ def chew(n_bites, dur):
     """Wet, slow chewing: soft squelches on a jaw rhythm."""
     out = np.zeros(int(dur * SR))
     for k in range(n_bites):
-        at = k * 0.42 + rng.uniform(-0.03, 0.03)
+        at = max(0.0, k * 0.42 + rng.uniform(-0.03, 0.03))
         t = t_axis(0.22)
         sq = bandpass(rng.standard_normal(len(t)), 500, 3500) * np.exp(-t * 18) * (rng.random(len(t)) > 0.4)
         thud = lowpass(rng.standard_normal(len(t)), 220) * np.exp(-t * 30)
@@ -139,15 +141,13 @@ drone_env = [
     (DAY_B, 0.05), (L[5] + 0.5, 0.6), (L[6], 0.85), (word(6, "and", 1), 1.0), (L[7], 0.8), (L[8], 0.6),
     (L[10], 0.9), (CUT, 1.0), (CUT + 0.01, 0.0), (dur, 0.0),
 ]
-beds += sfx.drone(dur, base=46) * env(drone_env, N) * db(-15)
-# a breathy flute: over the opening, the title, and (gently) by day
-penta = [392.0, 440.0, 523.3, 587.3, 659.3, 784.0]
-line1 = flute([None if i is None else penta[i] for i in [2, 1, 0, None, 1, 2, 4, 3]], step=0.85)
-place(beds, line1 * env([(0, 0.0), (0.4, 1.0), (7.0, 1.0), (7.5, 0.0)], len(line1)), 1.0, -27)
-line2 = flute([None if i is None else penta[i] for i in [4, 3, 2, 1, 2, None, 0, 1]], step=0.9)
-place(beds, line2, L[2] + 0.3, -26)
-line3 = flute([None if i is None else penta[i] for i in [2, 3, 4, 3, 2, 1]], step=1.0)
-place(beds, line3, DAY_A + 0.4, -31)
+beds += sfx.drone(dur, base=46) * env(drone_env, N) * db(-19)
+# the Thai score: khaen drone, ranat and khim, ching and klong, in the 7-tone tuning
+music = thaimusic.score(N, {
+    "day_a": DAY_A, "day_b": DAY_B, "title": word(2, "phi") - 0.05, "signs": L[8],
+    "tonight": L[10], "cut": WORDS[-1]["end"] + 0.06,
+})
+beds += norm(music) * db(-22)
 beds *= duck
 
 # --- effects --------------------------------------------------------------------

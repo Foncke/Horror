@@ -155,7 +155,8 @@ export const StiltHouse: React.FC<{p: V3; rotY?: number; w?: number; d?: number;
       {[-1, 1].map((s) => (
         <Box key={s} p={[s * (w / 4 + 0.1), floorY + wallH + 0.55, 0]} s={[w / 2 + 0.6, 0.07, d + 1.0]} r={[0, 0, -s * 0.52]} mat={roof} />
       ))}
-      <mesh geometry={new THREE.CylinderGeometry(0, 1, 1, 3)} material={planks()} position={[0, floorY + wallH + 0.48, d / 2]} rotation={[Math.PI / 2, 0, 0]} scale={[w / 2 + 0.05, 0.08, 1.0]} />
+      {/* gable: a triangle of planks above the front wall, point up into the roof */}
+      <mesh geometry={new THREE.CylinderGeometry(0, 1, 1, 3)} material={planks()} position={[0, floorY + wallH + 0.48, d / 2]} rotation={[-Math.PI / 2, 0, 0]} scale={[w / 2 + 0.05, 0.08, 1.0]} />
       {/* steps */}
       {Array.from({length: 6}, (_, i) => (
         <Box key={i} p={[-1.15 - i * 0.24, floorY - 0.15 - i * 0.28, d / 2 + 0.7]} s={[0.26, 0.06, 0.7]} mat={post} />

@@ -202,10 +202,10 @@ export const HouseSet: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
                 <Box p={[-0.3, 0, 0.02]} s={[0.6, 1.7, 0.05]} mat={plain('#d0cdc4', 0.4)} />
               </group>
             )}
-            <mesh position={[0, 0.85, 0.27]} material={m('fridgein', () => new THREE.MeshBasicMaterial({color: '#7f9fae'}))}>
+            <mesh position={[0, 0.85, 0.27]} material={m('fridgein2', () => new THREE.MeshBasicMaterial({color: '#62808c'}))}>
               <planeGeometry args={[0.52, 1.6]} />
             </mesh>
-            <pointLight position={[0, 1.15, 0.36]} intensity={3.2} distance={5} decay={1.5} color="#bfe3ff" castShadow />
+            <pointLight position={[0, 1.15, 0.36]} intensity={2.4} distance={5} decay={1.5} color="#bfe3ff" castShadow />
           </>
         ) : (
           <Box p={[0, 0.85, 0.31]} s={[0.6, 1.7, 0.03]} mat={plain('#d0cdc4', 0.4)} />
