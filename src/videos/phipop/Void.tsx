@@ -143,7 +143,7 @@ const Drop: React.FC<{t: number}> = ({t}) => {
         <circleGeometry args={[0.098, 48]} />
       </mesh>
       {t < hitAt && (
-        <mesh position={[0, y, 0]} scale={[0.007, 0.007 * stretch, 0.007]} material={m('drop', () => new THREE.MeshStandardMaterial({color: '#cfe0e6', roughness: 0.05, metalness: 0.2, transparent: true, opacity: 0.85}))}>
+        <mesh position={[0, y, 0]} scale={[0.008, 0.008 * stretch, 0.008]} material={m('drop2', () => new THREE.MeshStandardMaterial({color: '#8fa8b2', roughness: 0.15, metalness: 0, transparent: true, opacity: 0.8}))}>
           <sphereGeometry args={[1, 20, 16]} />
         </mesh>
       )}
@@ -182,8 +182,11 @@ export const VoidSet: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
           {shot === 'shrine' && <Smoke p={[0, 0.9, 0.15]} t={t} />}
           {candleLight && <pointLight position={[0, 1.05, 0.3]} intensity={(0.9 + flare * 4) * (1 - out) + 0.05} distance={4} decay={1.6} color={flare > 0.3 ? '#9ff0e0' : '#ffb060'} castShadow />}
           {shot === 'sorcerer' && (
-            // a robed figure behind the altar, hands raised over the flames
-            <Human outfit="robe" face="neutral" position={[0, 0, -0.55]} armL={-1.6 + flare * -0.3} armR={-1.6 + flare * -0.3} outL={0.25} outR={0.25} elbowL={-0.4} elbowR={-0.4} headPitch={0.35} curl={0.2} breathe={t} />
+            // a robed figure behind the altar, hands raised over the flames, rim-lit so his whole shape reads
+            <>
+              <pointLight position={[0.0, 1.9, -1.4]} intensity={10} distance={3} decay={1.3} color="#5fb8c8" />
+              <Human outfit="robe" face="neutral" position={[0, 0, -0.55]} armL={-1.6 + flare * -0.3} armR={-1.6 + flare * -0.3} outL={0.25} outR={0.25} elbowL={-0.4} elbowR={-0.4} headPitch={0.35} curl={0.2} breathe={t} />
+            </>
           )}
         </group>
       )}

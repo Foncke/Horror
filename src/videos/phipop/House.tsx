@@ -133,6 +133,7 @@ export const HouseSet: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
   const floor = planks();
   const wall = planks();
   const matTex = useMemo(matTexture, []);
+  const isTrapped = shot === 'trapped' || shot === 'trapped2';
   const lampOn = shot === 'partner' || shot === 'dinner' || shot === 'elder' ? 1 : 0;
 
   // the host: where she is and what she looks like in each shot
@@ -194,9 +195,9 @@ export const HouseSet: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
       <group position={[-1.1, 0, -6.55]}>
         <Box p={[0, 0.85, 0]} s={[0.6, 1.7, 0.6]} mat={plain('#c9c6bd', 0.4)} />
         {/* door swings open toward the room; cold light inside */}
-        {shot === 'fridge' || shot === 'trapped' || shot === 'hands' || shot === 'hallway' || shot === 'switch' ? (
+        {shot === 'fridge' || isTrapped || shot === 'hands' || shot === 'hallway' || shot === 'switch' ? (
           <>
-            {shot !== 'trapped' && shot !== 'hands' && (
+            {!isTrapped && shot !== 'hands' && (
               <group position={[0.3, 0.85, 0.3]} rotation={[0, 1.6, 0]}>
                 <Box p={[-0.3, 0, 0.02]} s={[0.6, 1.7, 0.05]} mat={plain('#d0cdc4', 0.4)} />
               </group>
@@ -239,6 +240,7 @@ export const HouseSet: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
       </mesh>
       <Lamp p={[1.55, 0.04, 0.0]} t={t} on={lampOn} />
       {(shot === 'partner' || shot === 'dinner') && <pointLight position={[2.0, 1.1, 1.6]} intensity={2.5} distance={4} decay={1.6} color="#ffb070" />}
+      {shot === 'dinner' && <pointLight position={[1.0, 1.5, 1.9]} intensity={3.5} distance={4} decay={1.4} color="#ffc890" />}
       {(shot === 'sleeper' || shot === 'midnight' || shot === 'situp' || shot === 'clock') && <pointLight position={[-0.3, 1.6, 0.4]} intensity={3} distance={5} decay={1.4} color="#7fa8c8" />}
 
       {/* people */}
@@ -265,9 +267,15 @@ export const HouseSet: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
         // she sits bolt upright on her mat at three in the morning
         <Human face="wake" position={[-1.2, 0.05, -1.55]} rotationY={0.1} hipY={0.14} thigh={-1.5} knee={0.1} hunch={lerp(-1.45, 0.05, easeInOut(clamp((t - cue.three + 0.25) / 0.9)))} armL={-0.2} armR={-0.2} headPitch={-0.1} headYaw={twitch(t, 6)} headRoll={twitch(t, 9) * 0.8} />
       )}
-      {(shot === 'fridge' || shot === 'trapped' || shot === 'hallway' || shot === 'switch') && (
+      {(shot === 'fridge' || isTrapped || shot === 'hallway' || shot === 'switch') && (
         // crouched at the open fridge, lit only by its cold light
-        <Human face={shot === 'trapped' ? 'possessed' : 'possessed'} position={shot === 'hallway' || shot === 'switch' ? [-0.1, 0, -5.95] : [-1.05, 0, -5.6]} rotationY={Math.PI} hipY={0.45} thigh={-1.9} knee={2.4} spread={0.3} hunch={0.5} armL={shot === 'trapped' ? -0.2 : -1.2} armR={shot === 'trapped' ? -0.25 : -1.5} elbowL={-0.3} elbowR={-0.5} headPitch={shot === 'trapped' ? -0.15 : -0.2} headYaw={(shot === 'fridge' ? 2.75 * easeInOut(clamp((t - (cue.worst - 1.8)) / 1.1)) : shot === 'hallway' ? 2.75 * easeInOut(clamp((t - (cue.kitchen - 0.4)) / 0.9)) : shot === 'switch' ? 2.75 : 0) + twitch(t)} headRoll={twitch(t, 5) * 0.8} curl={0.6} hairDrift={t} />
+        <Human face={isTrapped ? 'possessed' : 'possessed'} position={shot === 'hallway' || shot === 'switch' ? [-0.1, 0, -5.95] : [-1.05, 0, -5.6]} rotationY={Math.PI} hipY={0.45} thigh={-1.9} knee={2.4} spread={0.3} hunch={0.5} armL={isTrapped ? -0.2 : -1.2} armR={isTrapped ? -0.25 : -1.5} elbowL={-0.3} elbowR={-0.5} headPitch={isTrapped ? -0.15 : -0.2} headYaw={(shot === 'fridge' ? 2.75 * easeInOut(clamp((t - (cue.worst - 1.8)) / 1.1)) : shot === 'hallway' ? 2.75 * easeInOut(clamp((t - (cue.kitchen - 0.4)) / 0.9)) : shot === 'switch' ? 2.75 : 0) + twitch(t)} headRoll={twitch(t, 5) * 0.8} curl={0.6} hairDrift={t} />
+      )}
+      {shot === 'trapped2' && (
+        <>
+          <Human face="wake" position={[0, 0, -3.2]} headYaw={twitch(t, 3)} headRoll={twitch(t, 11) * 0.9} breathe={t * 2} hairDrift={t} />
+          <Spot position={[0.2, 2.1, -2.0]} target={[0, 1.59, -3.2]} intensity={3} angle={0.3} penumbra={1} distance={4} color="#8fb8e0" />
+        </>
       )}
       {shot === 'avert' && (
         // cold blue light; the eyes slide away from yours

@@ -106,7 +106,7 @@ export const PhiPop: React.FC = () => {
   const cam = {...cameraAt(t), near: 0.05, far: 200}; // wider depth range than the other videos: the sky sits 90 m out
   const black = t >= cue.cut; // hard cut after "don't turn on the light."
   const fade = easeInOut(clamp(t / 0.8));
-  const close = ['eyes', 'trapped', 'avert', 'elder', 'smileclose', 'situp'].includes(shot.id);
+  const close = ['eyes', 'trapped', 'trapped2', 'avert', 'elder', 'smileclose', 'situp'].includes(shot.id);
   const day = daylight(shot.id);
 
   return (
@@ -117,7 +117,7 @@ export const PhiPop: React.FC = () => {
           {shot.set === 'village' && <VillageShot t={t} shot={shot.id} />}
           {shot.set === 'house' && <HouseSet t={t} shot={shot.id} />}
           {shot.set === 'void' && <VoidSet t={t} shot={shot.id} />}
-          <Post time={t} fade={fade} paint={0.9} grade={day ? 0.4 : 1} vignette={close ? 1.25 : 1.1} bloomStrength={0.55} bloomRadius={0.55} bloomThreshold={0.82} exposure={day ? 1.25 : 1.15} />
+          <Post time={t} fade={fade} paint={0.9} grade={day ? 0.4 : 1} vignette={close ? 1.25 : 1.1} bloomStrength={0.55} bloomRadius={0.55} bloomThreshold={shot.id === 'drop' ? 0.95 : 0.82} exposure={day ? 1.25 : 1.15} />
         </ThreeCanvas>
       )}
 

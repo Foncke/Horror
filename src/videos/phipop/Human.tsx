@@ -40,7 +40,7 @@ type Look = {skin: string; top: string; skirt: string; pattern: 'woman' | 'elder
 const LOOKS = (outfit: Outfit, face: HumanFace): Look => {
   const possessed = isPossessed(face);
   if (outfit === 'man') return {skin: '#b5825a', top: '#2b3550', skirt: '#22232a', pattern: null, hair: '#121010', style: 'short', messy: false, sabai: false, waistCloth: true};
-  if (outfit === 'robe') return {skin: '#8a6a52', top: '#141110', skirt: '#141110', pattern: null, hair: '#0d0b0a', style: 'hood', messy: false, sabai: false, waistCloth: false};
+  if (outfit === 'robe') return {skin: '#8a6a52', top: '#2a2420', skirt: '#2a2420', pattern: null, hair: '#0d0b0a', style: 'hood', messy: false, sabai: false, waistCloth: false};
   if (outfit === 'elder') return {skin: '#a8784f', top: '#e2dbcd', skirt: '#2a2434', pattern: 'elder', hair: '#cfcac2', style: 'crop', messy: false, sabai: true, waistCloth: false};
   // the host: neat bun by day; hair down and matted once the spirit has her
   return {
@@ -144,9 +144,9 @@ const khaoMa = () =>
     64,
     64,
     (ctx, w, h) => {
-      ctx.fillStyle = '#e6dccb';
+      ctx.fillStyle = '#a89c88';
       ctx.fillRect(0, 0, w, h);
-      ctx.fillStyle = 'rgba(160,40,40,0.75)';
+      ctx.fillStyle = 'rgba(140,35,35,0.8)';
       ctx.fillRect(0, 0, w / 2, h);
       ctx.fillStyle = 'rgba(40,60,140,0.55)';
       ctx.fillRect(0, 0, w, h / 2);
@@ -533,7 +533,13 @@ export const Human: React.FC<HumanPose & {outfit?: Outfit; face: HumanFace; posi
           {look.style !== 'hood' && (
             <mesh geometry={geo.scalp} material={mat(look.hair, 0.95)} position={[0, 0.012, -0.012]} rotation={[look.style === 'crop' ? -0.3 : -0.45, 0, 0]} scale={look.style === 'crop' || look.style === 'short' ? [0.9, 1.0, 0.98] : [0.92, 1.1, 1.0]} castShadow />
           )}
-          {look.style === 'hood' && <mesh geometry={geo.ball} material={mat('#141110')} position={[0, 0.03, -0.02]} scale={[0.125, 0.15, 0.135]} castShadow />}
+          {look.style === 'hood' && (
+            // a hood open at the face, falling to the shoulders
+            <group>
+              <mesh geometry={geo.scalp} material={mat('#221c19')} position={[0, 0.02, -0.02]} rotation={[-0.15, 0, 0]} scale={[1.3, 1.45, 1.35]} castShadow />
+              <mesh geometry={geo.curtain} material={mat('#221c19')} position={[0, -0.16, -0.02]} scale={[1.2, 0.6, 1.25]} castShadow />
+            </group>
+          )}
           {look.style === 'bun' && (
             <group>
               <mesh geometry={geo.ball} material={mat(look.hair, 0.8)} position={[0, 0.0, -0.11]} scale={[0.055, 0.05, 0.05]} castShadow />

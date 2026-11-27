@@ -28,6 +28,7 @@ export const cue = {
   itHijacks: w(6, 'it'),
   hunt: w(6, 'to', 1),
   worst: w(6, 'and', 1),
+  trapped: w(6, 'trapped'),
   watching: w(6, 'watching'),
   tear: w(6, 'tear'),
   ifIt: w(7, 'if'),
@@ -49,7 +50,7 @@ export const cue = {
 export type SetName = 'village' | 'house' | 'void';
 export type ShotId =
   | 'village' | 'underbed' | 'neighbor' | 'partner' | 'sleeper' | 'title' | 'shrine' | 'sorcerer' | 'xray1'
-  | 'day' | 'smileclose' | 'dinner' | 'midnight' | 'eyes' | 'creep' | 'fridge' | 'trapped' | 'hands' | 'empty'
+  | 'day' | 'smileclose' | 'dinner' | 'midnight' | 'eyes' | 'creep' | 'fridge' | 'trapped' | 'trapped2' | 'hands' | 'empty'
   | 'xray2' | 'drop' | 'elder' | 'avert' | 'clock' | 'situp' | 'hallway' | 'switch' | 'black';
 
 export type Shot = {id: ShotId; set: SetName; start: number; end: number};
@@ -72,6 +73,7 @@ const order: [ShotId, SetName, number][] = [
   ['creep', 'village', cue.itHijacks - 0.1],
   ['fridge', 'house', cue.hunt - 0.1],
   ['trapped', 'house', cue.worst - 0.1],
+  ['trapped2', 'house', cue.trapped - 0.1],
   ['hands', 'house', cue.watching - 0.1],
   ['empty', 'village', cue.ifIt - 0.1],
   ['xray2', 'void', cue.slowly - 0.1],
@@ -178,6 +180,12 @@ export const cameraAt = (t: number): Cam => {
       const head = H([-1.05, 1.06, -5.9]);
       return push({pos: at(head, [0.6, 0.02, -0.6]), target: head, fov: 34}, {pos: at(head, [0.5, 0.02, -0.5]), target: head, fov: 32}, u, t, 0.0015);
     }
+    case 'trapped2':
+    {
+      // her face in the dark corridor, staring out: whoever is inside can't look away
+      const head = H([0, 1.59, -3.2]);
+      return push({pos: at(head, [0.03, 0.0, 0.95]), target: head, fov: 30}, {pos: at(head, [0.02, 0.0, 0.62]), target: head, fov: 28}, u, t, 0.0015);
+    }
     case 'hands': {
       // through her own eyes, looking down at her hands at the kitchen counter
       // across the counter: her hands at work, her face bowed over them
@@ -186,7 +194,7 @@ export const cameraAt = (t: number): Cam => {
     case 'empty':
       return push({pos: [0.2, 1.6, -6], target: [0, 1.4, -30], fov: 46}, {pos: [0.2, 1.6, -8], target: [0, 1.4, -30], fov: 44}, u, t, 0.003);
     case 'drop':
-      return push({pos: V([0.0, 0.42, 0.62]), target: V([0, 0.42, 0]), fov: 38}, {pos: V([0.0, 0.41, 0.52]), target: V([0, 0.42, 0]), fov: 36}, u, t, 0.0015);
+      return push({pos: V([0.0, 0.44, 0.7]), target: V([0, 0.42, 0]), fov: 38}, {pos: V([0.0, 0.43, 0.6]), target: V([0, 0.42, 0]), fov: 36}, u, t, 0.0015);
     case 'elder': {
       const head = H([1.8, 0.85, -0.3]);
       return push({pos: at(head, [-0.15, 0.03, 0.85]), target: head, fov: 32}, {pos: at(head, [-0.1, 0.02, 0.65]), target: head, fov: 30}, u, t, 0.002);

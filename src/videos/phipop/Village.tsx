@@ -296,7 +296,7 @@ export const VillageSet: React.FC<{t: number; day: number; lights?: number}> = (
         <Box key={i} p={[2.0, 0.45, 8 - i * 1.6]} s={[0.06, 0.9, 0.06]} mat={plain('#4a3a2a')} />
       ))}
       <Box p={[2.0, 0.7, -2.4]} s={[0.04, 0.05, 22]} mat={plain('#4a3a2a')} />
-      {[[-2.2, 0, 1], [2.3, 0, -5], [-2.4, 0, -9], [2.2, 0, 10]].map((p, i) => (
+      {[[2.6, 0, -13], [2.3, 0, -5], [-2.4, 0, -9], [2.2, 0, 10]].map((p, i) => (
         <mesh key={i} geometry={new THREE.SphereGeometry(1, 16, 12)} material={plain('#2f4a24')} position={[p[0], 0.4, p[2]]} scale={[0.8, 0.5, 0.7]} castShadow />
       ))}
     </group>
