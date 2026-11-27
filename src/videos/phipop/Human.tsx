@@ -8,7 +8,7 @@ import {canvasTexture} from '../../three/textures';
  * at the waist; the elder a white blouse, dark pha sin and a sabai shawl, hair cropped short.
  * Feet at the group origin, faces +z. About 1.58 m tall when standing.
  */
-export type HumanFace = 'smile' | 'neutral' | 'sleep' | 'possessed' | 'avert' | 'wake' | 'elder';
+export type HumanFace = 'smile' | 'neutral' | 'sleep' | 'possessed' | 'avert' | 'wake' | 'elder' | 'krasue' | 'tired';
 export type Outfit = 'woman' | 'man' | 'elder' | 'robe';
 
 export type HumanPose = {
@@ -29,10 +29,12 @@ export type HumanPose = {
   headRoll?: number;
   breathe?: number;
   walk?: number; // walk-cycle phase in radians (0 = standing still)
+  headOnly?: boolean; // draw only the head (and hair), with its centre at the group origin
+  noHead?: boolean; // draw the body without its head
   stride?: number; // how far the legs swing when walking
 };
 
-const isPossessed = (f: HumanFace) => f === 'possessed' || f === 'avert' || f === 'wake';
+const isPossessed = (f: HumanFace) => f === 'possessed' || f === 'avert' || f === 'wake' || f === 'krasue';
 
 type Hair = 'long' | 'bun' | 'crop' | 'short' | 'hood';
 type Look = {skin: string; top: string; skirt: string; pattern: 'woman' | 'elder' | null; hair: string; style: Hair; messy: boolean; sabai: boolean; waistCloth: boolean};
@@ -42,6 +44,8 @@ const LOOKS = (outfit: Outfit, face: HumanFace): Look => {
   if (outfit === 'man') return {skin: '#b5825a', top: '#2b3550', skirt: '#22232a', pattern: null, hair: '#121010', style: 'short', messy: false, sabai: false, waistCloth: true};
   if (outfit === 'robe') return {skin: '#8a6a52', top: '#2a2420', skirt: '#2a2420', pattern: null, hair: '#0d0b0a', style: 'hood', messy: false, sabai: false, waistCloth: false};
   if (outfit === 'elder') return {skin: '#a8784f', top: '#e2dbcd', skirt: '#2a2434', pattern: 'elder', hair: '#cfcac2', style: 'crop', messy: false, sabai: true, waistCloth: false};
+  if (face === 'krasue') return {skin: '#c9c7bf', top: '#3a4a5c', skirt: '#4a1a22', pattern: 'woman', hair: '#070606', style: 'long', messy: true, sabai: false, waistCloth: false};
+  if (face === 'tired') return {skin: '#b99a80', top: '#3a4a5c', skirt: '#4a1a22', pattern: 'woman', hair: '#0c0a09', style: 'long', messy: false, sabai: false, waistCloth: false};
   // the host: neat bun by day; hair down and matted once the spirit has her
   return {
     skin: possessed ? '#76806f' : '#c4926a',
@@ -204,6 +208,9 @@ const drawFace = (kind: HumanFace, ctx: CanvasRenderingContext2D, w: number) => 
       vein(cx + s * 40, eyeY + 190, Math.PI / 2 + s * 0.3, 40, 4, 3);
     }
   }
+  if (kind === 'tired') {
+    for (const s of [-1, 1]) shade(cx + s * 122, eyeY + 30, 80, 42, 0.55, '40,24,30'); // dark rings under the eyes
+  }
   if (kind === 'elder') {
     ctx.strokeStyle = 'rgba(70,40,25,0.45)';
     ctx.lineWidth = 4;
@@ -229,7 +236,7 @@ const drawFace = (kind: HumanFace, ctx: CanvasRenderingContext2D, w: number) => 
   // eyes: almond-shaped; possessed eyes are solid black (the glowing pupil is a separate mesh)
   for (const s of [-1, 1]) {
     const ex = cx + s * 122;
-    const open = kind === 'sleep' ? 0 : kind === 'wake' ? 1.3 : kind === 'smile' ? 0.55 : 0.85;
+    const open = kind === 'sleep' ? 0 : kind === 'wake' || kind === 'krasue' ? 1.3 : kind === 'smile' ? 0.55 : kind === 'tired' ? 0.5 : 0.85;
     if (open === 0) {
       ctx.strokeStyle = ink;
       ctx.lineWidth = 6;
@@ -306,6 +313,32 @@ const drawFace = (kind: HumanFace, ctx: CanvasRenderingContext2D, w: number) => 
     ctx.quadraticCurveTo(cx, my + 12, cx + 42, my - 3);
     ctx.quadraticCurveTo(cx, my + 4, cx - 42, my - 3);
     ctx.fill();
+  } else if (kind === 'krasue') {
+    // the jaw hangs far too low: a long dark gape, a row of stained teeth, dark streaks down the chin
+    ctx.fillStyle = '#0a0404';
+    ctx.beginPath();
+    ctx.moveTo(cx - 62, my - 6);
+    ctx.quadraticCurveTo(cx, my - 22, cx + 62, my - 6);
+    ctx.quadraticCurveTo(cx + 40, my + 120, cx, my + 150);
+    ctx.quadraticCurveTo(cx - 40, my + 120, cx - 62, my - 6);
+    ctx.fill();
+    ctx.fillStyle = '#8a7a5a';
+    for (let i = -5; i <= 5; i++) {
+      ctx.beginPath();
+      ctx.moveTo(cx + i * 10 - 4, my - 8);
+      ctx.lineTo(cx + i * 10 + 4, my - 8);
+      ctx.lineTo(cx + i * 10, my + 12 - Math.abs(i) * 1.2);
+      ctx.fill();
+    }
+    ctx.fillStyle = 'rgba(70,6,6,0.92)';
+    for (const [dx, len] of [[-36, 120], [-12, 175], [20, 150], [44, 95]]) {
+      ctx.beginPath();
+      ctx.moveTo(cx + dx - 7, my + 40);
+      ctx.quadraticCurveTo(cx + dx - 5, my + 40 + len * 0.6, cx + dx - 2, my + 40 + len);
+      ctx.arc(cx + dx, my + 40 + len, 3.5, Math.PI, 0, true);
+      ctx.quadraticCurveTo(cx + dx + 5, my + 40 + len * 0.6, cx + dx + 7, my + 40);
+      ctx.fill();
+    }
   } else if (possessed) {
     // a slack, half-open mouth with a glimpse of teeth; dark stains run from the corners down the chin
     ctx.fillStyle = '#120808';
@@ -388,6 +421,7 @@ const textured = (key: string, map: THREE.Texture) => {
   return matCache.get(key)!;
 };
 const glowPupil = new THREE.MeshBasicMaterial({color: '#e9f3b8'});
+const glowRed = new THREE.MeshBasicMaterial({color: '#ff2a14'});
 const lockMat = () => {
   if (!matCache.has('hair-lock')) matCache.set('hair-lock', new THREE.MeshStandardMaterial({map: lockStrands(), roughness: 0.55, transparent: true, alphaTest: 0.3, side: THREE.DoubleSide}));
   return matCache.get('hair-lock')!;
@@ -458,6 +492,8 @@ export const Human: React.FC<HumanPose & {outfit?: Outfit; face: HumanFace; posi
   breathe = 0,
   walk = 0,
   stride = 0,
+  headOnly = false,
+  noHead = false,
 }) => {
   const look = LOOKS(outfit, face);
   const swingOf = (s: number) => Math.sin(walk + (s > 0 ? 0 : Math.PI)) * stride;
@@ -473,48 +509,7 @@ export const Human: React.FC<HumanPose & {outfit?: Outfit; face: HumanFace; posi
   const chest = 1 + Math.sin(breathe * 1.5) * 0.012;
   const possessed = isPossessed(face);
   const lookAside = face === 'avert' ? 0.012 : 0;
-  return (
-    <group position={position} rotation={[rotationX, rotationY, 0]}>
-      <group position={[0, bob, 0]}>
-      {/* legs */}
-      {[-1, 1].map((s) => (
-        <group key={s} position={[s * 0.085, hipY, 0]} rotation={[thigh - swingOf(s), 0, s * (0.02 + spread)]}>
-          <mesh geometry={geo.cap} material={skirted ? skirtMat : mat(look.skirt)} position={[0, -0.215, 0]} scale={[0.062, 0.153, 0.062]} castShadow receiveShadow />
-          <group position={[0, -0.43, 0]} rotation={[knee + liftOf(s), 0, 0]}>
-            <Seg len={0.41} r={0.045} color={skirted && standing ? look.skin : skirted ? look.skin : look.skirt} />
-            <mesh geometry={geo.ball} material={mat(look.skin)} position={[0, -0.42, 0.045]} rotation={[-knee - thigh, 0, 0]} scale={[0.04, 0.025, 0.11]} castShadow />
-          </group>
-        </group>
-      ))}
-      {/* crouching or sitting: the skirt drapes over the thighs and knees */}
-      {skirted && !standing && (
-        <mesh geometry={geo.ball} material={skirtMat} position={[0, hipY - 0.215 * Math.cos(thigh), -0.215 * Math.sin(thigh)]} rotation={[thigh + Math.PI / 2, 0, 0]} scale={[0.15 + spread * 0.2, 0.25, 0.09]} castShadow receiveShadow />
-      )}
-      {/* pelvis */}
-      <mesh geometry={geo.ball} material={skirted ? skirtMat : mat(look.skirt)} position={[0, hipY + 0.02, 0]} scale={skirted && standing ? [0.14, 0.1, 0.1] : [0.17, 0.12, 0.12]} castShadow />
-      {/* pha sin: a straight woven tube skirt to the ankles */}
-      {skirted && standing && (
-        <group position={[0, hipY + 0.06, 0]}>
-          <mesh geometry={geo.skirt} material={skirtMat} castShadow receiveShadow />
-          <mesh material={skirtMat} rotation={[-Math.PI / 2, 0, 0]}>
-            <circleGeometry args={[0.152, 32]} />
-          </mesh>
-        </group>
-      )}
-      {/* pha khao ma tied round the waist */}
-      {look.waistCloth && <mesh geometry={geo.ring} material={textured('khaoma', khaoMa())} position={[0, hipY + 0.1, 0]} scale={[0.15, 0.09, 0.105]} castShadow />}
-
-      {/* body */}
-      <group position={[0, hipY + 0.05, 0]} rotation={[hunch, 0, 0]}>
-        <mesh geometry={geo.torso} material={mat(look.top)} scale={[1, chest, 1]} castShadow receiveShadow />
-        {look.sabai && (
-          // the elder's sabai: a white shawl across the chest and over the left shoulder
-          <mesh geometry={geo.band} material={mat('#efe9dc')} position={[0.03, 0.27, 0.078]} rotation={[0.05, 0, -0.55]} scale={[0.11, 0.5, 0.01]} castShadow />
-        )}
-        <Arm side={-1} pitch={armL + swingOf(1) * 0.6} out={outL} elbow={elbowL} curl={curl} look={look} />
-        <Arm side={1} pitch={armR + swingOf(-1) * 0.6} out={outR} elbow={elbowR} curl={curl} look={look} />
-        {/* neck and head */}
-        <mesh geometry={geo.cap} material={mat(look.skin)} position={[0, 0.55, 0]} scale={[0.036, 0.04, 0.036]} castShadow />
+  const headNode = (
         <group position={[0, 0.66, 0.01]} rotation={[headPitch, headYaw, headRoll]}>
           <group scale={[0.86, 1.12, 0.98]}>
             <mesh geometry={geo.head} material={mat(look.skin, 0.75)} castShadow />
@@ -522,7 +517,7 @@ export const Human: React.FC<HumanPose & {outfit?: Outfit; face: HumanFace; posi
             {possessed &&
               [-1, 1].map((s) => (
                 // tiny pale pupils that shine in the dark
-                <mesh key={s} geometry={geo.ball} material={glowPupil} position={[s * 0.0294 + lookAside, -0.001, 0.0972]} scale={face === 'wake' ? 0.0068 : 0.0058} />
+                <mesh key={s} geometry={geo.ball} material={face === 'krasue' ? glowRed : glowPupil} position={[s * 0.0294 + lookAside, -0.001, 0.0972]} scale={face === 'krasue' ? 0.0095 : face === 'wake' ? 0.0068 : 0.0058} />
               ))}
           </group>
           <mesh geometry={geo.nose} material={mat(look.skin, 0.75)} position={[0, -0.016, 0.089]} scale={[0.011, 0.014, 0.008]} />
@@ -565,11 +560,66 @@ export const Human: React.FC<HumanPose & {outfit?: Outfit; face: HumanFace; posi
             </group>
           )}
         </group>
+  );
+  if (headOnly) return <group position={position} rotation={[rotationX, rotationY, 0]}><group position={[0, -0.66, -0.01]}>{headNode}</group></group>;
+  return (
+    <group position={position} rotation={[rotationX, rotationY, 0]}>
+      <group position={[0, bob, 0]}>
+      {/* legs */}
+      {[-1, 1].map((s) => (
+        <group key={s} position={[s * 0.085, hipY, 0]} rotation={[thigh - swingOf(s), 0, s * (0.02 + spread)]}>
+          <mesh geometry={geo.cap} material={skirted ? skirtMat : mat(look.skirt)} position={[0, -0.215, 0]} scale={[0.062, 0.153, 0.062]} castShadow receiveShadow />
+          <group position={[0, -0.43, 0]} rotation={[knee + liftOf(s), 0, 0]}>
+            <Seg len={0.41} r={0.045} color={skirted && standing ? look.skin : skirted ? look.skin : look.skirt} />
+            <mesh geometry={geo.ball} material={mat(look.skin)} position={[0, -0.42, 0.045]} rotation={[-knee - thigh, 0, 0]} scale={[0.04, 0.025, 0.11]} castShadow />
+          </group>
+        </group>
+      ))}
+      {/* crouching or sitting: the skirt drapes over the thighs and knees */}
+      {skirted && !standing && (
+        <mesh geometry={geo.ball} material={skirtMat} position={[0, hipY - 0.215 * Math.cos(thigh), -0.215 * Math.sin(thigh)]} rotation={[thigh + Math.PI / 2, 0, 0]} scale={[0.15 + spread * 0.2, 0.25, 0.09]} castShadow receiveShadow />
+      )}
+      {/* pelvis */}
+      <mesh geometry={geo.ball} material={skirted ? skirtMat : mat(look.skirt)} position={[0, hipY + 0.02, 0]} scale={skirted && standing ? [0.14, 0.1, 0.1] : [0.17, 0.12, 0.12]} castShadow />
+      {/* pha sin: a straight woven tube skirt to the ankles */}
+      {skirted && standing && (
+        <group position={[0, hipY + 0.06, 0]}>
+          <mesh geometry={geo.skirt} material={skirtMat} castShadow receiveShadow />
+          <mesh material={skirtMat} rotation={[-Math.PI / 2, 0, 0]}>
+            <circleGeometry args={[0.152, 32]} />
+          </mesh>
+        </group>
+      )}
+      {/* pha khao ma tied round the waist */}
+      {look.waistCloth && <mesh geometry={geo.ring} material={textured('khaoma', khaoMa())} position={[0, hipY + 0.1, 0]} scale={[0.15, 0.09, 0.105]} castShadow />}
+
+      {/* body */}
+      <group position={[0, hipY + 0.05, 0]} rotation={[hunch, 0, 0]}>
+        <mesh geometry={geo.torso} material={mat(look.top)} scale={[1, chest, 1]} castShadow receiveShadow />
+        {look.sabai && (
+          // the elder's sabai: a white shawl across the chest and over the left shoulder
+          <mesh geometry={geo.band} material={mat('#efe9dc')} position={[0.03, 0.27, 0.078]} rotation={[0.05, 0, -0.55]} scale={[0.11, 0.5, 0.01]} castShadow />
+        )}
+        <Arm side={-1} pitch={armL + swingOf(1) * 0.6} out={outL} elbow={elbowL} curl={curl} look={look} />
+        <Arm side={1} pitch={armR + swingOf(-1) * 0.6} out={outR} elbow={elbowR} curl={curl} look={look} />
+        {/* neck and head */}
+        <mesh geometry={geo.cap} material={mat(look.skin)} position={[0, 0.55, 0]} scale={[0.036, 0.04, 0.036]} castShadow />
+        {!noHead && headNode}
       </group>
       </group>
     </group>
   );
 };
+
+/** Extra long, wet hair hanging from a floating head (the Krasue): a longer strand curtain. */
+export const LongHair: React.FC<{length?: number; sway?: number}> = ({length = 2.2, sway = 0}) => (
+  <group>
+    <mesh geometry={geo.curtain} material={hairMat()} position={[0, -0.25 * length, -0.012]} rotation={[0.04 + sway * 0.03, 0, sway * 0.02]} scale={[1.05, length, 1.08]} castShadow />
+    {[-0.07, -0.03, 0.035, 0.072].map((x, i) => (
+      <mesh key={i} geometry={geo.lock} material={lockMat()} position={[x, 0.02 - 0.22 * length, 0.09 - Math.abs(x) * 0.4]} rotation={[-0.06, 0, (x > 0 ? -1 : 1) * 0.08 + Math.sin(sway + i * 2) * 0.05]} scale={[0.035, 0.44 * length, 1]} />
+    ))}
+  </group>
+);
 
 /** World height of the head centre for a standing human (for aiming cameras). */
 export const HEAD_Y = 0.88 + 0.05 + 0.66;

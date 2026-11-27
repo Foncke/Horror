@@ -1,0 +1,1364 @@
+{
+ "duration": 93.153,
+ "lines": [
+  {
+   "text": "In Thailand, there is an ancient curse so horrifying that villagers still hang thorny branches outside their windows at night.",
+   "start": 0.04,
+   "end": 8.1
+  },
+  {
+   "text": "She looks like an ordinary, quiet woman living down the street. She smiles at neighbors, buys groceries, and blends into the crowd.",
+   "start": 8.56,
+   "end": 17.4
+  },
+  {
+   "text": "They call her a Krasue.",
+   "start": 17.48,
+   "end": 19.78
+  },
+  {
+   "text": "By day, she is completely human. But the moment midnight falls... her body splits apart.",
+   "start": 20.12,
+   "end": 27.4
+  },
+  {
+   "text": "Her head detaches from her neck, rising silently into the night sky \u2014 trailing her glowing, pulsing heart, stomach, and dripping intestines beneath her.",
+   "start": 27.64,
+   "end": 38.684
+  },
+  {
+   "text": "Driven by an insatiable hunger, the Krasue floats through the dark in search of raw meat, stagnant blood, and newborn babies.",
+   "start": 38.684,
+   "end": 47.41
+  },
+  {
+   "text": "If you look out your window at three A.M., you might mistake her for a floating lantern drifting through the trees... until she turns around, and you see a severed head staring back with hollow, starving eyes.",
+   "start": 47.961,
+   "end": 61.41
+  },
+  {
+   "text": "Before sunrise, she must return to her headless body, reattaching herself before anyone notices. Because if her body is hidden or destroyed while she hunts, she dies in agony at dawn.",
+   "start": 61.921,
+   "end": 74.84
+  },
+  {
+   "text": "Elders say there is only one way to spot a Krasue in daylight.",
+   "start": 75.343,
+   "end": 79.45
+  },
+  {
+   "text": "She will look exhausted, avoid direct sunlight, and never touch cooked food.",
+   "start": 79.783,
+   "end": 84.96
+  },
+  {
+   "text": "So tonight, if you see a faint red glow hovering outside your bedroom window... don't open the curtains.",
+   "start": 85.359,
+   "end": 92.93
+  }
+ ],
+ "words": [
+  {
+   "text": "In",
+   "line": 0,
+   "start": 0.04,
+   "end": 0.24
+  },
+  {
+   "text": "Thailand,",
+   "line": 0,
+   "start": 0.24,
+   "end": 0.89
+  },
+  {
+   "text": "there",
+   "line": 0,
+   "start": 1.0,
+   "end": 1.24
+  },
+  {
+   "text": "is",
+   "line": 0,
+   "start": 1.24,
+   "end": 1.44
+  },
+  {
+   "text": "an",
+   "line": 0,
+   "start": 1.44,
+   "end": 1.6
+  },
+  {
+   "text": "ancient",
+   "line": 0,
+   "start": 1.6,
+   "end": 2.16
+  },
+  {
+   "text": "curse",
+   "line": 0,
+   "start": 2.16,
+   "end": 2.64
+  },
+  {
+   "text": "so",
+   "line": 0,
+   "start": 2.64,
+   "end": 3.0
+  },
+  {
+   "text": "horrifying",
+   "line": 0,
+   "start": 3.0,
+   "end": 3.74
+  },
+  {
+   "text": "that",
+   "line": 0,
+   "start": 3.84,
+   "end": 4.16
+  },
+  {
+   "text": "villagers",
+   "line": 0,
+   "start": 4.16,
+   "end": 4.8
+  },
+  {
+   "text": "still",
+   "line": 0,
+   "start": 4.8,
+   "end": 5.12
+  },
+  {
+   "text": "hang",
+   "line": 0,
+   "start": 5.12,
+   "end": 5.44
+  },
+  {
+   "text": "thorny",
+   "line": 0,
+   "start": 5.44,
+   "end": 5.96
+  },
+  {
+   "text": "branches",
+   "line": 0,
+   "start": 5.96,
+   "end": 6.52
+  },
+  {
+   "text": "outside",
+   "line": 0,
+   "start": 6.52,
+   "end": 6.96
+  },
+  {
+   "text": "their",
+   "line": 0,
+   "start": 6.96,
+   "end": 7.16
+  },
+  {
+   "text": "windows",
+   "line": 0,
+   "start": 7.16,
+   "end": 7.72
+  },
+  {
+   "text": "at",
+   "line": 0,
+   "start": 7.72,
+   "end": 7.96
+  },
+  {
+   "text": "night.",
+   "line": 0,
+   "start": 7.96,
+   "end": 8.1
+  },
+  {
+   "text": "She",
+   "line": 1,
+   "start": 8.56,
+   "end": 8.92
+  },
+  {
+   "text": "looks",
+   "line": 1,
+   "start": 8.92,
+   "end": 9.28
+  },
+  {
+   "text": "like",
+   "line": 1,
+   "start": 9.28,
+   "end": 9.52
+  },
+  {
+   "text": "an",
+   "line": 1,
+   "start": 9.52,
+   "end": 9.72
+  },
+  {
+   "text": "ordinary,",
+   "line": 1,
+   "start": 9.72,
+   "end": 10.48
+  },
+  {
+   "text": "quiet",
+   "line": 1,
+   "start": 10.48,
+   "end": 11.0
+  },
+  {
+   "text": "woman",
+   "line": 1,
+   "start": 11.0,
+   "end": 11.4
+  },
+  {
+   "text": "living",
+   "line": 1,
+   "start": 11.4,
+   "end": 11.84
+  },
+  {
+   "text": "down",
+   "line": 1,
+   "start": 11.84,
+   "end": 12.08
+  },
+  {
+   "text": "the",
+   "line": 1,
+   "start": 12.08,
+   "end": 12.24
+  },
+  {
+   "text": "street.",
+   "line": 1,
+   "start": 12.24,
+   "end": 12.57
+  },
+  {
+   "text": "She",
+   "line": 1,
+   "start": 12.92,
+   "end": 13.16
+  },
+  {
+   "text": "smiles",
+   "line": 1,
+   "start": 13.16,
+   "end": 13.76
+  },
+  {
+   "text": "at",
+   "line": 1,
+   "start": 13.76,
+   "end": 13.96
+  },
+  {
+   "text": "neighbors,",
+   "line": 1,
+   "start": 13.96,
+   "end": 14.62
+  },
+  {
+   "text": "buys",
+   "line": 1,
+   "start": 14.64,
+   "end": 15.04
+  },
+  {
+   "text": "groceries,",
+   "line": 1,
+   "start": 15.04,
+   "end": 15.84
+  },
+  {
+   "text": "and",
+   "line": 1,
+   "start": 15.84,
+   "end": 16.08
+  },
+  {
+   "text": "blends",
+   "line": 1,
+   "start": 16.08,
+   "end": 16.56
+  },
+  {
+   "text": "into",
+   "line": 1,
+   "start": 16.56,
+   "end": 16.8
+  },
+  {
+   "text": "the",
+   "line": 1,
+   "start": 16.8,
+   "end": 16.96
+  },
+  {
+   "text": "crowd.",
+   "line": 1,
+   "start": 16.96,
+   "end": 17.4
+  },
+  {
+   "text": "They",
+   "line": 2,
+   "start": 17.48,
+   "end": 18.04
+  },
+  {
+   "text": "call",
+   "line": 2,
+   "start": 18.04,
+   "end": 18.48
+  },
+  {
+   "text": "her",
+   "line": 2,
+   "start": 18.48,
+   "end": 18.88
+  },
+  {
+   "text": "a",
+   "line": 2,
+   "start": 18.88,
+   "end": 19.08
+  },
+  {
+   "text": "Krasue.",
+   "line": 2,
+   "start": 19.08,
+   "end": 19.78
+  },
+  {
+   "text": "By",
+   "line": 3,
+   "start": 20.12,
+   "end": 20.64
+  },
+  {
+   "text": "day,",
+   "line": 3,
+   "start": 20.64,
+   "end": 21.14
+  },
+  {
+   "text": "she",
+   "line": 3,
+   "start": 21.16,
+   "end": 21.44
+  },
+  {
+   "text": "is",
+   "line": 3,
+   "start": 21.44,
+   "end": 21.72
+  },
+  {
+   "text": "completely",
+   "line": 3,
+   "start": 21.72,
+   "end": 22.52
+  },
+  {
+   "text": "human.",
+   "line": 3,
+   "start": 22.52,
+   "end": 22.86
+  },
+  {
+   "text": "But",
+   "line": 3,
+   "start": 23.16,
+   "end": 23.44
+  },
+  {
+   "text": "the",
+   "line": 3,
+   "start": 23.44,
+   "end": 23.68
+  },
+  {
+   "text": "moment",
+   "line": 3,
+   "start": 23.68,
+   "end": 24.12
+  },
+  {
+   "text": "midnight",
+   "line": 3,
+   "start": 24.12,
+   "end": 24.76
+  },
+  {
+   "text": "falls...",
+   "line": 3,
+   "start": 24.76,
+   "end": 25.25
+  },
+  {
+   "text": "her",
+   "line": 3,
+   "start": 25.52,
+   "end": 25.88
+  },
+  {
+   "text": "body",
+   "line": 3,
+   "start": 25.88,
+   "end": 26.4
+  },
+  {
+   "text": "splits",
+   "line": 3,
+   "start": 26.4,
+   "end": 27.0
+  },
+  {
+   "text": "apart.",
+   "line": 3,
+   "start": 27.0,
+   "end": 27.4
+  },
+  {
+   "text": "Her",
+   "line": 4,
+   "start": 27.64,
+   "end": 27.96
+  },
+  {
+   "text": "head",
+   "line": 4,
+   "start": 27.96,
+   "end": 28.32
+  },
+  {
+   "text": "detaches",
+   "line": 4,
+   "start": 28.32,
+   "end": 29.08
+  },
+  {
+   "text": "from",
+   "line": 4,
+   "start": 29.08,
+   "end": 29.28
+  },
+  {
+   "text": "her",
+   "line": 4,
+   "start": 29.28,
+   "end": 29.48
+  },
+  {
+   "text": "neck,",
+   "line": 4,
+   "start": 29.48,
+   "end": 29.92
+  },
+  {
+   "text": "rising",
+   "line": 4,
+   "start": 29.92,
+   "end": 30.44
+  },
+  {
+   "text": "silently",
+   "line": 4,
+   "start": 30.44,
+   "end": 31.2
+  },
+  {
+   "text": "into",
+   "line": 4,
+   "start": 31.2,
+   "end": 31.4
+  },
+  {
+   "text": "the",
+   "line": 4,
+   "start": 31.4,
+   "end": 31.64
+  },
+  {
+   "text": "night",
+   "line": 4,
+   "start": 31.64,
+   "end": 31.96
+  },
+  {
+   "text": "sky",
+   "line": 4,
+   "start": 31.96,
+   "end": 32.36
+  },
+  {
+   "text": "trailing",
+   "line": 4,
+   "start": 32.684,
+   "end": 33.244
+  },
+  {
+   "text": "her",
+   "line": 4,
+   "start": 33.244,
+   "end": 33.444
+  },
+  {
+   "text": "glowing,",
+   "line": 4,
+   "start": 33.444,
+   "end": 34.084
+  },
+  {
+   "text": "pulsing",
+   "line": 4,
+   "start": 34.084,
+   "end": 34.804
+  },
+  {
+   "text": "heart,",
+   "line": 4,
+   "start": 34.804,
+   "end": 35.11
+  },
+  {
+   "text": "stomach,",
+   "line": 4,
+   "start": 35.324,
+   "end": 35.9
+  },
+  {
+   "text": "and",
+   "line": 4,
+   "start": 36.004,
+   "end": 36.284
+  },
+  {
+   "text": "dripping",
+   "line": 4,
+   "start": 36.284,
+   "end": 36.804
+  },
+  {
+   "text": "intestines",
+   "line": 4,
+   "start": 36.804,
+   "end": 37.644
+  },
+  {
+   "text": "beneath",
+   "line": 4,
+   "start": 37.644,
+   "end": 38.164
+  },
+  {
+   "text": "her.",
+   "line": 4,
+   "start": 38.164,
+   "end": 38.684
+  },
+  {
+   "text": "Driven",
+   "line": 5,
+   "start": 38.684,
+   "end": 39.244
+  },
+  {
+   "text": "by",
+   "line": 5,
+   "start": 39.244,
+   "end": 39.404
+  },
+  {
+   "text": "an",
+   "line": 5,
+   "start": 39.404,
+   "end": 39.604
+  },
+  {
+   "text": "insatiable",
+   "line": 5,
+   "start": 39.604,
+   "end": 40.444
+  },
+  {
+   "text": "hunger,",
+   "line": 5,
+   "start": 40.444,
+   "end": 40.87
+  },
+  {
+   "text": "the",
+   "line": 5,
+   "start": 41.004,
+   "end": 41.284
+  },
+  {
+   "text": "Krasue",
+   "line": 5,
+   "start": 41.284,
+   "end": 41.884
+  },
+  {
+   "text": "floats",
+   "line": 5,
+   "start": 41.884,
+   "end": 42.404
+  },
+  {
+   "text": "through",
+   "line": 5,
+   "start": 42.404,
+   "end": 42.604
+  },
+  {
+   "text": "the",
+   "line": 5,
+   "start": 42.604,
+   "end": 42.764
+  },
+  {
+   "text": "dark",
+   "line": 5,
+   "start": 42.764,
+   "end": 43.084
+  },
+  {
+   "text": "in",
+   "line": 5,
+   "start": 43.084,
+   "end": 43.324
+  },
+  {
+   "text": "search",
+   "line": 5,
+   "start": 43.324,
+   "end": 43.604
+  },
+  {
+   "text": "of",
+   "line": 5,
+   "start": 43.604,
+   "end": 43.764
+  },
+  {
+   "text": "raw",
+   "line": 5,
+   "start": 43.764,
+   "end": 44.164
+  },
+  {
+   "text": "meat,",
+   "line": 5,
+   "start": 44.164,
+   "end": 44.48
+  },
+  {
+   "text": "stagnant",
+   "line": 5,
+   "start": 44.764,
+   "end": 45.404
+  },
+  {
+   "text": "blood,",
+   "line": 5,
+   "start": 45.404,
+   "end": 45.77
+  },
+  {
+   "text": "and",
+   "line": 5,
+   "start": 45.924,
+   "end": 46.164
+  },
+  {
+   "text": "newborn",
+   "line": 5,
+   "start": 46.164,
+   "end": 46.884
+  },
+  {
+   "text": "babies.",
+   "line": 5,
+   "start": 46.884,
+   "end": 47.41
+  },
+  {
+   "text": "If",
+   "line": 6,
+   "start": 47.961,
+   "end": 48.121
+  },
+  {
+   "text": "you",
+   "line": 6,
+   "start": 48.121,
+   "end": 48.281
+  },
+  {
+   "text": "look",
+   "line": 6,
+   "start": 48.281,
+   "end": 48.521
+  },
+  {
+   "text": "out",
+   "line": 6,
+   "start": 48.521,
+   "end": 48.681
+  },
+  {
+   "text": "your",
+   "line": 6,
+   "start": 48.681,
+   "end": 48.921
+  },
+  {
+   "text": "window",
+   "line": 6,
+   "start": 48.921,
+   "end": 49.321
+  },
+  {
+   "text": "at",
+   "line": 6,
+   "start": 49.321,
+   "end": 49.481
+  },
+  {
+   "text": "three",
+   "line": 6,
+   "start": 49.481,
+   "end": 49.761
+  },
+  {
+   "text": "A.M.,",
+   "line": 6,
+   "start": 49.761,
+   "end": 50.21
+  },
+  {
+   "text": "you",
+   "line": 6,
+   "start": 50.361,
+   "end": 50.641
+  },
+  {
+   "text": "might",
+   "line": 6,
+   "start": 50.641,
+   "end": 50.881
+  },
+  {
+   "text": "mistake",
+   "line": 6,
+   "start": 50.881,
+   "end": 51.401
+  },
+  {
+   "text": "her",
+   "line": 6,
+   "start": 51.401,
+   "end": 51.561
+  },
+  {
+   "text": "for",
+   "line": 6,
+   "start": 51.561,
+   "end": 51.721
+  },
+  {
+   "text": "a",
+   "line": 6,
+   "start": 51.721,
+   "end": 51.881
+  },
+  {
+   "text": "floating",
+   "line": 6,
+   "start": 51.881,
+   "end": 52.361
+  },
+  {
+   "text": "lantern",
+   "line": 6,
+   "start": 52.361,
+   "end": 52.921
+  },
+  {
+   "text": "drifting",
+   "line": 6,
+   "start": 52.921,
+   "end": 53.481
+  },
+  {
+   "text": "through",
+   "line": 6,
+   "start": 53.481,
+   "end": 53.681
+  },
+  {
+   "text": "the",
+   "line": 6,
+   "start": 53.681,
+   "end": 53.881
+  },
+  {
+   "text": "trees...",
+   "line": 6,
+   "start": 53.881,
+   "end": 54.35
+  },
+  {
+   "text": "until",
+   "line": 6,
+   "start": 54.841,
+   "end": 55.281
+  },
+  {
+   "text": "she",
+   "line": 6,
+   "start": 55.281,
+   "end": 55.561
+  },
+  {
+   "text": "turns",
+   "line": 6,
+   "start": 55.561,
+   "end": 56.041
+  },
+  {
+   "text": "around,",
+   "line": 6,
+   "start": 56.041,
+   "end": 56.54
+  },
+  {
+   "text": "and",
+   "line": 6,
+   "start": 56.641,
+   "end": 56.921
+  },
+  {
+   "text": "you",
+   "line": 6,
+   "start": 56.921,
+   "end": 57.161
+  },
+  {
+   "text": "see",
+   "line": 6,
+   "start": 57.161,
+   "end": 57.361
+  },
+  {
+   "text": "a",
+   "line": 6,
+   "start": 57.361,
+   "end": 57.561
+  },
+  {
+   "text": "severed",
+   "line": 6,
+   "start": 57.561,
+   "end": 58.041
+  },
+  {
+   "text": "head",
+   "line": 6,
+   "start": 58.041,
+   "end": 58.441
+  },
+  {
+   "text": "staring",
+   "line": 6,
+   "start": 58.441,
+   "end": 59.041
+  },
+  {
+   "text": "back",
+   "line": 6,
+   "start": 59.041,
+   "end": 59.321
+  },
+  {
+   "text": "with",
+   "line": 6,
+   "start": 59.321,
+   "end": 59.561
+  },
+  {
+   "text": "hollow,",
+   "line": 6,
+   "start": 59.561,
+   "end": 60.201
+  },
+  {
+   "text": "starving",
+   "line": 6,
+   "start": 60.201,
+   "end": 61.001
+  },
+  {
+   "text": "eyes.",
+   "line": 6,
+   "start": 61.001,
+   "end": 61.41
+  },
+  {
+   "text": "Before",
+   "line": 7,
+   "start": 61.921,
+   "end": 62.361
+  },
+  {
+   "text": "sunrise,",
+   "line": 7,
+   "start": 62.361,
+   "end": 63.241
+  },
+  {
+   "text": "she",
+   "line": 7,
+   "start": 63.241,
+   "end": 63.481
+  },
+  {
+   "text": "must",
+   "line": 7,
+   "start": 63.481,
+   "end": 63.801
+  },
+  {
+   "text": "return",
+   "line": 7,
+   "start": 63.801,
+   "end": 64.241
+  },
+  {
+   "text": "to",
+   "line": 7,
+   "start": 64.241,
+   "end": 64.441
+  },
+  {
+   "text": "her",
+   "line": 7,
+   "start": 64.441,
+   "end": 64.641
+  },
+  {
+   "text": "headless",
+   "line": 7,
+   "start": 64.641,
+   "end": 65.161
+  },
+  {
+   "text": "body,",
+   "line": 7,
+   "start": 65.161,
+   "end": 65.43
+  },
+  {
+   "text": "reattaching",
+   "line": 7,
+   "start": 65.743,
+   "end": 66.543
+  },
+  {
+   "text": "herself",
+   "line": 7,
+   "start": 66.543,
+   "end": 67.023
+  },
+  {
+   "text": "before",
+   "line": 7,
+   "start": 67.023,
+   "end": 67.343
+  },
+  {
+   "text": "anyone",
+   "line": 7,
+   "start": 67.343,
+   "end": 67.863
+  },
+  {
+   "text": "notices.",
+   "line": 7,
+   "start": 67.863,
+   "end": 68.51
+  },
+  {
+   "text": "Because",
+   "line": 7,
+   "start": 68.863,
+   "end": 69.263
+  },
+  {
+   "text": "if",
+   "line": 7,
+   "start": 69.263,
+   "end": 69.423
+  },
+  {
+   "text": "her",
+   "line": 7,
+   "start": 69.423,
+   "end": 69.663
+  },
+  {
+   "text": "body",
+   "line": 7,
+   "start": 69.663,
+   "end": 69.983
+  },
+  {
+   "text": "is",
+   "line": 7,
+   "start": 69.983,
+   "end": 70.223
+  },
+  {
+   "text": "hidden",
+   "line": 7,
+   "start": 70.223,
+   "end": 70.583
+  },
+  {
+   "text": "or",
+   "line": 7,
+   "start": 70.583,
+   "end": 70.783
+  },
+  {
+   "text": "destroyed",
+   "line": 7,
+   "start": 70.783,
+   "end": 71.423
+  },
+  {
+   "text": "while",
+   "line": 7,
+   "start": 71.423,
+   "end": 71.663
+  },
+  {
+   "text": "she",
+   "line": 7,
+   "start": 71.663,
+   "end": 71.903
+  },
+  {
+   "text": "hunts,",
+   "line": 7,
+   "start": 71.903,
+   "end": 72.32
+  },
+  {
+   "text": "she",
+   "line": 7,
+   "start": 72.583,
+   "end": 72.903
+  },
+  {
+   "text": "dies",
+   "line": 7,
+   "start": 72.903,
+   "end": 73.423
+  },
+  {
+   "text": "in",
+   "line": 7,
+   "start": 73.423,
+   "end": 73.623
+  },
+  {
+   "text": "agony",
+   "line": 7,
+   "start": 73.623,
+   "end": 74.223
+  },
+  {
+   "text": "at",
+   "line": 7,
+   "start": 74.223,
+   "end": 74.463
+  },
+  {
+   "text": "dawn.",
+   "line": 7,
+   "start": 74.463,
+   "end": 74.84
+  },
+  {
+   "text": "Elders",
+   "line": 8,
+   "start": 75.343,
+   "end": 75.983
+  },
+  {
+   "text": "say",
+   "line": 8,
+   "start": 75.983,
+   "end": 76.223
+  },
+  {
+   "text": "there",
+   "line": 8,
+   "start": 76.223,
+   "end": 76.463
+  },
+  {
+   "text": "is",
+   "line": 8,
+   "start": 76.463,
+   "end": 76.703
+  },
+  {
+   "text": "only",
+   "line": 8,
+   "start": 76.703,
+   "end": 76.983
+  },
+  {
+   "text": "one",
+   "line": 8,
+   "start": 76.983,
+   "end": 77.303
+  },
+  {
+   "text": "way",
+   "line": 8,
+   "start": 77.303,
+   "end": 77.503
+  },
+  {
+   "text": "to",
+   "line": 8,
+   "start": 77.503,
+   "end": 77.743
+  },
+  {
+   "text": "spot",
+   "line": 8,
+   "start": 77.743,
+   "end": 78.063
+  },
+  {
+   "text": "a",
+   "line": 8,
+   "start": 78.063,
+   "end": 78.223
+  },
+  {
+   "text": "Krasue",
+   "line": 8,
+   "start": 78.223,
+   "end": 78.783
+  },
+  {
+   "text": "in",
+   "line": 8,
+   "start": 78.783,
+   "end": 78.983
+  },
+  {
+   "text": "daylight.",
+   "line": 8,
+   "start": 78.983,
+   "end": 79.45
+  },
+  {
+   "text": "She",
+   "line": 9,
+   "start": 79.783,
+   "end": 80.023
+  },
+  {
+   "text": "will",
+   "line": 9,
+   "start": 80.023,
+   "end": 80.263
+  },
+  {
+   "text": "look",
+   "line": 9,
+   "start": 80.263,
+   "end": 80.503
+  },
+  {
+   "text": "exhausted,",
+   "line": 9,
+   "start": 80.503,
+   "end": 81.19
+  },
+  {
+   "text": "avoid",
+   "line": 9,
+   "start": 81.399,
+   "end": 81.879
+  },
+  {
+   "text": "direct",
+   "line": 9,
+   "start": 81.879,
+   "end": 82.359
+  },
+  {
+   "text": "sunlight,",
+   "line": 9,
+   "start": 82.359,
+   "end": 82.86
+  },
+  {
+   "text": "and",
+   "line": 9,
+   "start": 83.039,
+   "end": 83.319
+  },
+  {
+   "text": "never",
+   "line": 9,
+   "start": 83.319,
+   "end": 83.719
+  },
+  {
+   "text": "touch",
+   "line": 9,
+   "start": 83.719,
+   "end": 84.199
+  },
+  {
+   "text": "cooked",
+   "line": 9,
+   "start": 84.199,
+   "end": 84.679
+  },
+  {
+   "text": "food.",
+   "line": 9,
+   "start": 84.679,
+   "end": 84.96
+  },
+  {
+   "text": "So",
+   "line": 10,
+   "start": 85.359,
+   "end": 85.719
+  },
+  {
+   "text": "tonight,",
+   "line": 10,
+   "start": 85.719,
+   "end": 86.4
+  },
+  {
+   "text": "if",
+   "line": 10,
+   "start": 86.519,
+   "end": 86.759
+  },
+  {
+   "text": "you",
+   "line": 10,
+   "start": 86.759,
+   "end": 86.999
+  },
+  {
+   "text": "see",
+   "line": 10,
+   "start": 86.999,
+   "end": 87.239
+  },
+  {
+   "text": "a",
+   "line": 10,
+   "start": 87.239,
+   "end": 87.399
+  },
+  {
+   "text": "faint",
+   "line": 10,
+   "start": 87.399,
+   "end": 87.799
+  },
+  {
+   "text": "red",
+   "line": 10,
+   "start": 87.799,
+   "end": 88.199
+  },
+  {
+   "text": "glow",
+   "line": 10,
+   "start": 88.199,
+   "end": 88.639
+  },
+  {
+   "text": "hovering",
+   "line": 10,
+   "start": 88.639,
+   "end": 89.119
+  },
+  {
+   "text": "outside",
+   "line": 10,
+   "start": 89.119,
+   "end": 89.559
+  },
+  {
+   "text": "your",
+   "line": 10,
+   "start": 89.559,
+   "end": 89.799
+  },
+  {
+   "text": "bedroom",
+   "line": 10,
+   "start": 89.799,
+   "end": 90.319
+  },
+  {
+   "text": "window...",
+   "line": 10,
+   "start": 90.319,
+   "end": 90.68
+  },
+  {
+   "text": "don't",
+   "line": 10,
+   "start": 91.159,
+   "end": 91.719
+  },
+  {
+   "text": "open",
+   "line": 10,
+   "start": 91.719,
+   "end": 92.039
+  },
+  {
+   "text": "the",
+   "line": 10,
+   "start": 92.039,
+   "end": 92.279
+  },
+  {
+   "text": "curtains.",
+   "line": 10,
+   "start": 92.279,
+   "end": 92.93
+  }
+ ]
+}

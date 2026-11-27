@@ -148,7 +148,47 @@ export const Box: React.FC<{p: V3; s: V3; r?: V3; mat: THREE.Material; cast?: bo
 );
 
 /** A wooden house raised on stilts, gable roof, a lit or dark window, steps up to the door (faces +z). */
-export const StiltHouse: React.FC<{p: V3; rotY?: number; w?: number; d?: number; lit?: number; door?: boolean}> = ({p, rotY = 0, w = 4, d = 3, lit = 0, door = true}) => {
+/** Thorny branches nailed across a window (Krasue): twisted dark sticks bristling with spikes. */
+const Thorns: React.FC<{p: V3; w: number; h: number}> = ({p, w, h}) => {
+  const bark = plain('#1c140e', 0.9);
+  const branches: [number, number, number][] = [[0.62, 0, 0.0], [-0.55, 0.06, 0.01], [0.1, -0.12, 0.02], [-0.15, 0.16, 0.015]];
+  return (
+    <group position={p}>
+      {branches.map(([rot, dy, dz], i) => {
+        const len = Math.hypot(w, h) * 1.05;
+        return (
+          <group key={i} position={[0, dy, dz]} rotation={[0, 0, rot + (i > 1 ? Math.PI / 2 : 0) * 0.3]}>
+            <mesh geometry={cyl} material={bark} rotation={[0, 0, Math.PI / 2]} scale={[0.014, len, 0.014]} castShadow />
+            {Array.from({length: 14}, (_, k) => {
+              const x = (k / 13 - 0.5) * len * 0.95;
+              const a = (k % 2 ? 1 : -1) * (0.9 + hash(k + i * 7) * 0.6);
+              return (
+                <mesh key={k} geometry={thornGeo} material={bark} position={[x, 0, 0.005]} rotation={[0, 0, a]} scale={[0.006, 0.04 + hash(k * 3 + i) * 0.03, 0.006]} />
+              );
+            })}
+          </group>
+        );
+      })}
+    </group>
+  );
+};
+const thornGeo = new THREE.ConeGeometry(1, 1, 5);
+
+/** A red paper lantern hanging from the porch eave. */
+const Lantern: React.FC<{p: V3; glow: number}> = ({p, glow}) => (
+  <group position={p}>
+    <mesh geometry={cyl} material={plain('#1a1410')} position={[0, 0.22, 0]} scale={[0.004, 0.44, 0.004]} />
+    <mesh material={m('lantern-red', () => new THREE.MeshStandardMaterial({color: '#7a1010', emissive: new THREE.Color('#ff2a10'), emissiveIntensity: 1.4, roughness: 0.6}))} scale={[0.13, 0.17, 0.13]}>
+      <sphereGeometry args={[1, 20, 14]} />
+    </mesh>
+    {[-1, 1].map((s) => (
+      <mesh key={s} geometry={cyl} material={plain('#2a1a10')} position={[0, s * 0.17, 0]} scale={[0.07, 0.02, 0.07]} />
+    ))}
+    {glow > 0 && <pointLight intensity={2.2 * glow} distance={4} decay={1.6} color="#ff3a1a" />}
+  </group>
+);
+
+export const StiltHouse: React.FC<{p: V3; rotY?: number; w?: number; d?: number; lit?: number; door?: boolean; thorns?: boolean; lantern?: number}> = ({p, rotY = 0, w = 4, d = 3, lit = 0, door = true, thorns = false, lantern = 0}) => {
   const floorY = 1.7;
   const wallH = 2.1;
   const roof = plain('#3b2f28', 0.95);
@@ -180,7 +220,19 @@ export const StiltHouse: React.FC<{p: V3; rotY?: number; w?: number; d?: number;
       ))}
       {!door && <mesh geometry={box} material={planks()} position={[0.1, floorY + 0.9, d / 2 - 0.02]} scale={[0.85, 1.8, 0.04]} />}
       {door && <Box p={[0.1, floorY + 1.05, -d / 2 + 0.06]} s={[w - 0.2, wallH, 0.02]} mat={plain('#120c08', 1)} cast={false} />}
-      <mesh geometry={box} material={lit > 0 ? windowGlow(lit) : plain('#0a0908', 1)} position={[-w / 4 - 0.3, floorY + 1.2, d / 2 + 0.055]} scale={[0.7, 0.55, 0.01]} />
+      {thorns ? (
+        // closed shutters; warm light leaks through the gaps between the boards
+        <group>
+          {lit > 0 && <mesh geometry={box} material={windowGlow(lit)} position={[-w / 4 - 0.3, floorY + 1.2, d / 2 + 0.05]} scale={[0.7, 0.55, 0.01]} />}
+          {[-0.26, -0.13, 0, 0.13, 0.26].map((x) => (
+            <Box key={x} p={[-w / 4 - 0.3 + x, floorY + 1.2, d / 2 + 0.065]} s={[0.115, 0.58, 0.02]} mat={planks()} />
+          ))}
+          <Thorns p={[-w / 4 - 0.3, floorY + 1.2, d / 2 + 0.1]} w={0.8} h={0.65} />
+        </group>
+      ) : (
+        <mesh geometry={box} material={lit > 0 ? windowGlow(lit) : plain('#0a0908', 1)} position={[-w / 4 - 0.3, floorY + 1.2, d / 2 + 0.055]} scale={[0.7, 0.55, 0.01]} />
+      )}
+      {lantern > 0 && <Lantern p={[1.15, floorY + 1.45, d / 2 + 0.95]} glow={lantern} />}
       {[-0.18, 0, 0.18].map((x) => (
         <Box key={x} p={[-w / 4 - 0.3 + x, floorY + 1.2, d / 2 + 0.075]} s={[0.035, 0.55, 0.03]} mat={post} />
       ))}
@@ -197,7 +249,7 @@ export const StiltHouse: React.FC<{p: V3; rotY?: number; w?: number; d?: number;
       ))}
       {/* clay water jar and baskets under the house */}
       <mesh geometry={new THREE.SphereGeometry(1, 20, 14)} material={plain('#7a4a2e', 0.8)} position={[w / 2 - 0.7, 0.35, -0.3]} scale={[0.3, 0.35, 0.3]} castShadow />
-      {lit > 0 && <pointLight position={[-w / 4 - 0.3, floorY + 1.2, d / 2 + 0.6]} intensity={6 * lit} distance={7} decay={1.6} color="#ff9a48" />}
+      {lit > 0 && <pointLight position={[-w / 4 - 0.3, floorY + 1.2, d / 2 + 0.6]} intensity={(thorns ? 2 : 6) * lit} distance={7} decay={1.6} color="#ff9a48" />}
     </group>
   );
 };

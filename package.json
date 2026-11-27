@@ -20,6 +20,9 @@
     "phipop:align": "python3 tools/align.py projects/phipop/voice.mp3 projects/phipop/script.txt projects/phipop/timings.json",
     "phipop:mix": "python3 projects/phipop/mix.py",
     "phipop:render": "remotion render PhiPop out/PhiPop.mp4",
+    "krasue:align": "python3 tools/align.py projects/krasue/voice.mp3 projects/krasue/script.txt projects/krasue/timings.json",
+    "krasue:mix": "python3 projects/krasue/mix.py",
+    "krasue:render": "remotion render Krasue out/Krasue.mp4",
     "stills": "node tools/stills.mjs"
   },
   "dependencies": {

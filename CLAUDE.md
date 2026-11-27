@@ -78,5 +78,16 @@ Thai title ผีปอบ uses Noto Sans Thai (`public/fonts/NotoSansThai-Extra
 though the voice says the phonetic "Pee Pop"/"Ee-sahn". Gore is only implied. Hard cut to black after "light."
 Camera depth range is per-shot optional (`Cam.near/far`, default 0.02/80); Phi Pop uses 0.05/200 for its sky.
 
+## "Krasue" (fifth video) is finished and rendered
+`projects/krasue/` (script, voice "Declan Sage", timings, mix.py), `src/videos/krasue/`, composition `Krasue`.
+`npm run krasue:render` → `out/Krasue.mp4` (95.6 s, 5,738 frames, 24.0 Mbps, 290 MB); uploaded as `renders/Krasue.mp4`.
+Same 3D painted look and Thai villagers as Phi Pop (reuses `src/videos/phipop/Human.tsx`, `Village.tsx`), but a
+different village: forest, bamboo, thorny branches on shuttered windows, red lanterns, a temple in the mist.
+The Krasue (`Krasue.tsx`): floating head, red-glowing eyes, jaw hanging too low, long wet hair, organs as a pulsing
+red glow beneath (never detailed, no babies shown), a lantern-like halo from afar. Ending: red glow through the
+curtains, her shadow behind them, dead silence from "don't open the curtains", a soft tap on the glass, cut to black.
+Mist sprites stay >6 m off the lane: a camera passing through a puff makes the haze pop. Music reuses
+`projects/phipop/thaimusic.py`.
+
 Only if the soundtrack or timings must be rebuilt (Python + FFmpeg needed):
 `npm run room414:align` then `npm run room414:mix`.
