@@ -66,6 +66,10 @@ Check new renders for stray dark frames: an earlier beam-shader NaN made single 
 (`Human.tsx`, not the toy `Character`), a Kuwahara brush filter + ink edges + teal/orange grade (`Post` props
 `paint`/`grade`, off by default so the other videos are unchanged), slow push-ins and hard cuts every 2–6 s.
 Three sets: village of stilt houses (`Village.tsx`), house + kitchen (`House.tsx`), black void (`Void.tsx`).
+Villagers dress Thai (Isan): women in a woven pha sin + blouse (no sari, no bindi), men in an indigo mor hom shirt
+with a checked pha khao ma, the elder with cropped grey hair and a white sabai. The possessed host: grey-green skin,
+dark veins, solid black eyes with small glowing pupils (meshes), a dark stain from the mouth, head twitches
+(`twitch()` in Human.tsx), and her head turning right round to look back (lane, fridge, kitchen).
 Thai title ผีปอบ uses Noto Sans Thai (`public/fonts/NotoSansThai-ExtraBold.woff2`). Captions show "Phi Pop"/"Isan"
 though the voice says the phonetic "Pee Pop"/"Ee-sahn". Gore is only implied. Hard cut to black after "light."
 Camera depth range is per-shot optional (`Cam.near/far`, default 0.02/80); Phi Pop uses 0.05/200 for its sky.

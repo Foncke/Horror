@@ -3,11 +3,13 @@ import * as THREE from 'three';
 import {canvasTexture} from '../../three/textures';
 
 /**
- * A villager with realistic proportions (Phi Pop only; the other videos keep their toy figures).
+ * A Thai villager from Isan with realistic proportions (Phi Pop only; the other videos keep their toy figures).
+ * Women wear a pha sin (woven tube skirt) and a blouse; men an indigo mor hom shirt with a checked pha khao ma
+ * at the waist; the elder a white blouse, dark pha sin and a sabai shawl, hair cropped short.
  * Feet at the group origin, faces +z. About 1.58 m tall when standing.
  */
-export type HumanFace = 'smile' | 'neutral' | 'sleep' | 'possessed' | 'avert' | 'wake' | 'elder' | 'gaunt';
-export type Outfit = 'sari' | 'man' | 'elder' | 'robe';
+export type HumanFace = 'smile' | 'neutral' | 'sleep' | 'possessed' | 'avert' | 'wake' | 'elder';
+export type Outfit = 'woman' | 'man' | 'elder' | 'robe';
 
 export type HumanPose = {
   hipY?: number; // 0.88 standing, ~0.45 crouching, ~0.14 sitting on a mat
@@ -28,28 +30,89 @@ export type HumanPose = {
   breathe?: number;
 };
 
-type Look = {skin: string; top: string; skirt: string; border: string; hair: string; long: boolean; messy: boolean; bun: boolean};
+const isPossessed = (f: HumanFace) => f === 'possessed' || f === 'avert' || f === 'wake';
+
+type Hair = 'long' | 'bun' | 'crop' | 'short' | 'hood';
+type Look = {skin: string; top: string; skirt: string; pattern: 'woman' | 'elder' | null; hair: string; style: Hair; messy: boolean; sabai: boolean; waistCloth: boolean};
 
 const LOOKS = (outfit: Outfit, face: HumanFace): Look => {
-  const possessed = face === 'possessed' || face === 'avert' || face === 'wake' || face === 'gaunt';
-  if (outfit === 'man') return {skin: '#9c6845', top: '#cfc6b2', skirt: '#2c2a27', border: '#2c2a27', hair: '#141110', long: false, messy: false, bun: false};
-  if (outfit === 'robe') return {skin: '#7d6250', top: '#141110', skirt: '#141110', border: '#141110', hair: '#0d0b0a', long: false, messy: false, bun: false};
-  if (outfit === 'elder') return {skin: '#93623f', top: '#5b3a2a', skirt: '#d9cfbd', border: '#7a2a24', hair: '#bdb8b0', long: false, messy: false, bun: true};
-  return {skin: possessed ? '#868780' : '#a8754f', top: '#7a2a2c', skirt: '#d6ccb8', border: '#8a2b26', hair: '#0d0b0a', long: true, messy: possessed, bun: false};
+  const possessed = isPossessed(face);
+  if (outfit === 'man') return {skin: '#b5825a', top: '#2b3550', skirt: '#22232a', pattern: null, hair: '#121010', style: 'short', messy: false, sabai: false, waistCloth: true};
+  if (outfit === 'robe') return {skin: '#8a6a52', top: '#141110', skirt: '#141110', pattern: null, hair: '#0d0b0a', style: 'hood', messy: false, sabai: false, waistCloth: false};
+  if (outfit === 'elder') return {skin: '#a8784f', top: '#e2dbcd', skirt: '#2a2434', pattern: 'elder', hair: '#cfcac2', style: 'crop', messy: false, sabai: true, waistCloth: false};
+  // the host: neat bun by day; hair down and matted once the spirit has her
+  return {
+    skin: possessed ? '#76806f' : '#c4926a',
+    top: '#3f5f7f',
+    skirt: '#6a1f2a',
+    pattern: 'woman',
+    hair: '#0c0a09',
+    style: possessed || face === 'sleep' ? 'long' : 'bun',
+    messy: possessed,
+    sabai: false,
+    waistCloth: false,
+  };
 };
 
+// --- textures -------------------------------------------------------------------
+/** Woven pha sin: horizontal bands of mudmee (ikat) zigzags and a plain hem. */
+const phaSin = (kind: 'woman' | 'elder') =>
+  canvasTexture(
+    `phasin-${kind}`,
+    128,
+    512,
+    (ctx, w, h) => {
+      const base = kind === 'woman' ? '#6a1f2a' : '#2a2434';
+      const a = kind === 'woman' ? '#c9a24a' : '#6f6a8a';
+      const b = kind === 'woman' ? '#2f6f72' : '#4a4560';
+      ctx.fillStyle = base;
+      ctx.fillRect(0, 0, w, h);
+      // body of the skirt: thin ikat stripes
+      for (let y = 40; y < h * 0.78; y += 34) {
+        ctx.strokeStyle = y % 68 ? a : b;
+        ctx.lineWidth = 5;
+        ctx.beginPath();
+        for (let x = 0; x <= w; x += 16) ctx.lineTo(x, y + (x % 32 ? 6 : -6));
+        ctx.stroke();
+      }
+      // the woven border near the hem (tin sin)
+      ctx.fillStyle = b;
+      ctx.fillRect(0, h * 0.8, w, h * 0.08);
+      ctx.fillStyle = a;
+      for (let x = 0; x < w; x += 16) ctx.fillRect(x + 4, h * 0.82, 8, h * 0.04);
+      ctx.fillStyle = kind === 'woman' ? '#3a0f16' : '#18141f';
+      ctx.fillRect(0, h * 0.9, w, h * 0.1);
+    },
+    {repeat: [5, 1]},
+  );
+
+/** Checked pha khao ma cloth. */
+const khaoMa = () =>
+  canvasTexture(
+    'khaoma',
+    64,
+    64,
+    (ctx, w, h) => {
+      ctx.fillStyle = '#e6dccb';
+      ctx.fillRect(0, 0, w, h);
+      ctx.fillStyle = 'rgba(160,40,40,0.75)';
+      ctx.fillRect(0, 0, w / 2, h);
+      ctx.fillStyle = 'rgba(40,60,140,0.55)';
+      ctx.fillRect(0, 0, w, h / 2);
+    },
+    {repeat: [10, 2]},
+  );
+
 // --- faces --------------------------------------------------------------------
-const drawFace = (kind: HumanFace, skin: string, ctx: CanvasRenderingContext2D, w: number, h: number) => {
-  ctx.clearRect(0, 0, w, h);
+const drawFace = (kind: HumanFace, ctx: CanvasRenderingContext2D, w: number) => {
+  ctx.clearRect(0, 0, w, 512);
   const cx = w / 2;
   const eyeY = 247;
-  const possessed = kind === 'possessed' || kind === 'avert' || kind === 'wake' || kind === 'gaunt';
-  const ink = 'rgba(25,16,12,0.95)';
+  const possessed = isPossessed(kind);
+  const ink = 'rgba(22,14,10,0.95)';
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
-
-  // soft shading: cheekbones, nose bridge, under the nose
-  const shade = (x: number, y: number, rx: number, ry: number, a: number, color = '40,22,14') => {
+  const shade = (x: number, y: number, rx: number, ry: number, a: number, color = '60,34,20') => {
     const g = ctx.createRadialGradient(x, y, 1, x, y, Math.max(rx, ry));
     g.addColorStop(0, `rgba(${color},${a})`);
     g.addColorStop(1, `rgba(${color},0)`);
@@ -58,156 +121,182 @@ const drawFace = (kind: HumanFace, skin: string, ctx: CanvasRenderingContext2D, 
     ctx.ellipse(x, y, rx, ry, 0, 0, Math.PI * 2);
     ctx.fill();
   };
-  for (const s of [-1, 1]) shade(cx + s * 30, eyeY + 50, 22, 70, 0.22); // sides of the nose
-  shade(cx, eyeY + 120, 40, 14, 0.25);
+  // soft, broad nose and cheek shading
+  for (const s of [-1, 1]) shade(cx + s * 34, eyeY + 60, 26, 62, 0.2);
+  shade(cx, eyeY + 118, 52, 16, 0.22);
+  for (const s of [-1, 1]) shade(cx + s * 175, eyeY + 70, 70, 60, 0.12, '160,70,50'); // warm cheeks
+
   if (possessed) {
+    // sunken black sockets, hollow cheeks, and dark veins crawling out from the eyes and mouth
     for (const s of [-1, 1]) {
-      shade(cx + s * 122, eyeY + 4, 105, 82, 1.0, '8,6,8'); // sunken black sockets
-      shade(cx + s * 122, eyeY + 4, 80, 60, 0.9, '5,4,6');
-      shade(cx + s * 160, eyeY + 140, 60, 80, 0.45, '20,18,22'); // hollow cheeks
+      shade(cx + s * 120, eyeY + 2, 112, 88, 1.0, '6,6,8');
+      shade(cx + s * 120, eyeY + 2, 82, 60, 1.0, '3,3,4');
+      shade(cx + s * 165, eyeY + 140, 64, 84, 0.55, '18,24,20');
+    }
+    ctx.strokeStyle = 'rgba(20,32,24,0.85)';
+    const vein = (x: number, y: number, ang: number, len: number, wdt: number, depth: number) => {
+      if (depth <= 0 || len < 8) return;
+      const x2 = x + Math.cos(ang) * len;
+      const y2 = y + Math.sin(ang) * len;
+      ctx.lineWidth = wdt;
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.quadraticCurveTo((x + x2) / 2 + Math.sin(ang * 7) * 8, (y + y2) / 2 + Math.cos(ang * 5) * 8, x2, y2);
+      ctx.stroke();
+      vein(x2, y2, ang + 0.45, len * 0.62, wdt * 0.7, depth - 1);
+      vein(x2, y2, ang - 0.5, len * 0.58, wdt * 0.7, depth - 1);
+    };
+    for (const s of [-1, 1]) {
+      vein(cx + s * 150, eyeY + 50, Math.PI / 2 + s * 0.5, 55, 5, 4);
+      vein(cx + s * 95, eyeY - 55, -Math.PI / 2 - s * 0.35, 50, 4, 3);
+      vein(cx + s * 200, eyeY, s > 0 ? 0.2 : Math.PI - 0.2, 45, 4, 3);
+      vein(cx + s * 40, eyeY + 190, Math.PI / 2 + s * 0.3, 40, 4, 3);
     }
   }
   if (kind === 'elder') {
-    ctx.strokeStyle = 'rgba(60,35,25,0.45)';
+    ctx.strokeStyle = 'rgba(70,40,25,0.45)';
     ctx.lineWidth = 4;
     for (const s of [-1, 1]) {
       for (let k = 0; k < 3; k++) {
         ctx.beginPath();
-        ctx.arc(cx + s * 175, eyeY + 2, 22 + k * 9, s < 0 ? Math.PI * 0.75 : -Math.PI * 0.25, s < 0 ? Math.PI * 1.25 : Math.PI * 0.25);
+        ctx.arc(cx + s * 178, eyeY + 2, 20 + k * 9, s < 0 ? Math.PI * 0.75 : -Math.PI * 0.25, s < 0 ? Math.PI * 1.25 : Math.PI * 0.25);
         ctx.stroke();
       }
       ctx.beginPath();
-      ctx.moveTo(cx + s * 40, eyeY + 110);
-      ctx.quadraticCurveTo(cx + s * 70, eyeY + 160, cx + s * 62, eyeY + 200);
+      ctx.moveTo(cx + s * 44, eyeY + 112);
+      ctx.quadraticCurveTo(cx + s * 72, eyeY + 160, cx + s * 64, eyeY + 200);
       ctx.stroke();
     }
     for (let k = 0; k < 3; k++) {
       ctx.beginPath();
-      ctx.moveTo(cx - 70, eyeY - 105 - k * 16);
-      ctx.quadraticCurveTo(cx, eyeY - 112 - k * 16, cx + 70, eyeY - 105 - k * 16);
+      ctx.moveTo(cx - 70, eyeY - 108 - k * 16);
+      ctx.quadraticCurveTo(cx, eyeY - 114 - k * 16, cx + 70, eyeY - 108 - k * 16);
       ctx.stroke();
     }
   }
 
-  // eyes
+  // eyes: almond-shaped; possessed eyes are solid black (the glowing pupil is a separate mesh)
   for (const s of [-1, 1]) {
     const ex = cx + s * 122;
-    const open = kind === 'sleep' ? 0 : kind === 'wake' ? 1.25 : kind === 'smile' ? 0.7 : 1;
+    const open = kind === 'sleep' ? 0 : kind === 'wake' ? 1.3 : kind === 'smile' ? 0.55 : 0.85;
     if (open === 0) {
       ctx.strokeStyle = ink;
       ctx.lineWidth = 6;
       ctx.beginPath();
-      ctx.moveTo(ex - 48, eyeY + 2);
-      ctx.quadraticCurveTo(ex, eyeY + 18, ex + 48, eyeY + 2);
+      ctx.moveTo(ex - 50, eyeY);
+      ctx.quadraticCurveTo(ex, eyeY + 12, ex + 50, eyeY - 2);
       ctx.stroke();
       continue;
     }
-    const ry = 27 * open;
+    const ry = 24 * open;
     ctx.save();
     ctx.beginPath();
-    ctx.moveTo(ex - 64, eyeY);
-    ctx.quadraticCurveTo(ex, eyeY - ry * 1.6, ex + 64, eyeY - 2);
-    ctx.quadraticCurveTo(ex, eyeY + ry * 1.25, ex - 64, eyeY);
+    ctx.moveTo(ex - s * 62, eyeY + 4);
+    ctx.quadraticCurveTo(ex - s * 10, eyeY - ry * 1.55, ex + s * 62, eyeY - 6);
+    ctx.quadraticCurveTo(ex, eyeY + ry * 1.05, ex - s * 62, eyeY + 4);
     ctx.closePath();
-    ctx.fillStyle = possessed ? '#c9c2a3' : '#eee6dc';
+    ctx.fillStyle = possessed ? '#050505' : '#efe7dc';
     ctx.fill();
     ctx.clip();
-    // iris and pupil: possessed eyes are tiny pinpricks; "avert" looks away from you
-    const look = kind === 'avert' ? 30 : 0;
-    const ix = ex + look;
-    if (possessed) {
-      ctx.fillStyle = '#1a1512';
+    if (!possessed) {
+      const ix = ex;
+      ctx.fillStyle = '#2a1a10';
       ctx.beginPath();
-      ctx.arc(ix, eyeY - 2, 7, 0, Math.PI * 2);
+      ctx.arc(ix, eyeY - 4, 23, 0, Math.PI * 2);
       ctx.fill();
-    } else {
-      ctx.fillStyle = '#3a2416';
+      ctx.fillStyle = '#0a0706';
       ctx.beginPath();
-      ctx.arc(ix, eyeY - 3, 24, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.fillStyle = '#0c0807';
-      ctx.beginPath();
-      ctx.arc(ix, eyeY - 3, 11, 0, Math.PI * 2);
+      ctx.arc(ix, eyeY - 4, 11, 0, Math.PI * 2);
       ctx.fill();
       ctx.fillStyle = 'rgba(255,255,255,0.85)';
       ctx.beginPath();
-      ctx.arc(ix + 6, eyeY - 10, 4, 0, Math.PI * 2);
+      ctx.arc(ix + 7, eyeY - 11, 4, 0, Math.PI * 2);
       ctx.fill();
     }
     ctx.restore();
-    // upper lid line and lashes
+    // upper lid
     ctx.strokeStyle = ink;
-    ctx.lineWidth = 9;
+    ctx.lineWidth = 8;
     ctx.beginPath();
-    ctx.moveTo(ex - 68, eyeY + 1);
-    ctx.quadraticCurveTo(ex, eyeY - ry * 1.65, ex + 68, eyeY - 3);
+    ctx.moveTo(ex - s * 64, eyeY + 4);
+    ctx.quadraticCurveTo(ex - s * 10, eyeY - ry * 1.6, ex + s * 66, eyeY - 7);
     ctx.stroke();
-    if (possessed) {
-      ctx.strokeStyle = 'rgba(120,20,20,0.5)';
-      ctx.lineWidth = 3;
-      ctx.beginPath();
-      ctx.moveTo(ex - 46, eyeY + 6);
-      ctx.quadraticCurveTo(ex, eyeY + ry * 1.3, ex + 46, eyeY + 4);
-      ctx.stroke();
-    }
   }
-  // brows
+  // brows: straight and fine (heavy and pulled down when possessed)
   ctx.strokeStyle = ink;
-  ctx.lineWidth = kind === 'elder' ? 9 : 14;
+  ctx.lineWidth = kind === 'elder' ? 8 : possessed ? 13 : 10;
   for (const s of [-1, 1]) {
-    const lift = kind === 'wake' ? -14 : 0;
+    const y0 = eyeY - (kind === 'wake' ? 70 : possessed ? 50 : 62);
     ctx.beginPath();
-    ctx.moveTo(cx + s * 70, eyeY - 52 + lift + (possessed ? 6 : 0));
-    ctx.quadraticCurveTo(cx + s * 125, eyeY - 74 + lift, cx + s * 180, eyeY - 56 + lift);
+    ctx.moveTo(cx + s * 66, y0 + (possessed ? 10 : 0));
+    ctx.quadraticCurveTo(cx + s * 120, y0 - 10, cx + s * 182, y0 + 2);
     ctx.stroke();
   }
-  // nose
-  ctx.strokeStyle = 'rgba(60,32,20,0.75)';
+  // nose: soft wings
+  ctx.strokeStyle = 'rgba(70,38,22,0.7)';
   ctx.lineWidth = 5;
   ctx.beginPath();
-  ctx.moveTo(cx - 26, eyeY + 92);
-  ctx.quadraticCurveTo(cx, eyeY + 106, cx + 26, eyeY + 92);
+  ctx.moveTo(cx - 34, eyeY + 96);
+  ctx.quadraticCurveTo(cx - 18, eyeY + 110, cx, eyeY + 104);
+  ctx.quadraticCurveTo(cx + 18, eyeY + 110, cx + 34, eyeY + 96);
   ctx.stroke();
   // mouth
   const my = eyeY + 172;
   if (kind === 'smile') {
-    ctx.fillStyle = '#6e2f2a';
+    ctx.fillStyle = '#7a3a33';
     ctx.beginPath();
-    ctx.moveTo(cx - 52, my - 6);
-    ctx.quadraticCurveTo(cx, my + 34, cx + 52, my - 6);
-    ctx.quadraticCurveTo(cx, my + 8, cx - 52, my - 6);
+    ctx.moveTo(cx - 56, my - 8);
+    ctx.quadraticCurveTo(cx, my + 32, cx + 56, my - 8);
+    ctx.quadraticCurveTo(cx, my + 6, cx - 56, my - 8);
     ctx.fill();
     ctx.fillStyle = '#f1ebe2';
     ctx.beginPath();
-    ctx.moveTo(cx - 40, my - 1);
-    ctx.quadraticCurveTo(cx, my + 14, cx + 40, my - 1);
-    ctx.quadraticCurveTo(cx, my + 6, cx - 40, my - 1);
+    ctx.moveTo(cx - 42, my - 3);
+    ctx.quadraticCurveTo(cx, my + 12, cx + 42, my - 3);
+    ctx.quadraticCurveTo(cx, my + 4, cx - 42, my - 3);
     ctx.fill();
-  } else {
-    ctx.fillStyle = possessed ? '#3d3436' : '#7a3a33';
+  } else if (possessed) {
+    // a slack, half-open mouth with a glimpse of teeth; dark stains run from the corners down the chin
+    ctx.fillStyle = '#120808';
     ctx.beginPath();
-    ctx.moveTo(cx - 40, my);
-    ctx.quadraticCurveTo(cx, my - 10, cx + 40, my);
-    ctx.quadraticCurveTo(cx, my + (kind === 'wake' ? 26 : 14), cx - 40, my);
+    ctx.moveTo(cx - 58, my);
+    ctx.quadraticCurveTo(cx, my - 14, cx + 58, my + 4);
+    ctx.quadraticCurveTo(cx, my + (kind === 'wake' ? 48 : 30), cx - 58, my);
     ctx.fill();
-    ctx.strokeStyle = 'rgba(30,14,12,0.8)';
+    ctx.strokeStyle = 'rgba(200,190,160,0.8)';
+    ctx.lineWidth = 3;
+    for (let i = -4; i <= 4; i++) {
+      ctx.beginPath();
+      ctx.moveTo(cx + i * 11, my - 6);
+      ctx.lineTo(cx + i * 11, my + 6);
+      ctx.stroke();
+    }
+    ctx.fillStyle = 'rgba(60,8,8,0.9)';
+    for (const [dx, len] of [[-50, 70], [-22, 110], [38, 85]]) {
+      ctx.beginPath();
+      ctx.moveTo(cx + dx - 8, my + 6);
+      ctx.quadraticCurveTo(cx + dx - 6, my + len * 0.6, cx + dx - 3, my + len);
+      ctx.arc(cx + dx, my + len, 4, Math.PI, 0, true);
+      ctx.quadraticCurveTo(cx + dx + 6, my + len * 0.6, cx + dx + 8, my + 6);
+      ctx.fill();
+    }
+  } else {
+    ctx.fillStyle = '#8a463d';
+    ctx.beginPath();
+    ctx.moveTo(cx - 46, my);
+    ctx.quadraticCurveTo(cx, my - 14, cx + 46, my);
+    ctx.quadraticCurveTo(cx, my + 20, cx - 46, my);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(40,16,12,0.8)';
     ctx.lineWidth = 4;
     ctx.beginPath();
-    ctx.moveTo(cx - 40, my);
-    ctx.quadraticCurveTo(cx, my + 3, cx + 40, my);
+    ctx.moveTo(cx - 46, my);
+    ctx.quadraticCurveTo(cx, my + 3, cx + 46, my);
     ctx.stroke();
   }
-  // a bindi for the women
-  if (!possessed && kind !== 'elder') {
-    ctx.fillStyle = '#8f1d1d';
-    ctx.beginPath();
-    ctx.arc(cx, eyeY - 70, 8, 0, Math.PI * 2);
-    ctx.fill();
-  }
-  void skin;
 };
 
-const faceTex = (kind: HumanFace, skin: string) => canvasTexture(`human-face-${kind}`, 1024, 512, (ctx, w, h) => drawFace(kind, skin, ctx, w, h));
+const faceTex = (kind: HumanFace) => canvasTexture(`thai-face-${kind}`, 1024, 512, (ctx, w) => drawFace(kind, ctx, w));
 
 // --- geometry -----------------------------------------------------------------
 const HEAD_R = 0.1;
@@ -218,7 +307,7 @@ const geo = {
   face: new THREE.SphereGeometry(HEAD_R * 1.004, 64, 32, Math.PI / 2 - 1.25, 2.5, 0.2 * Math.PI, 0.62 * Math.PI),
   scalp: new THREE.SphereGeometry(HEAD_R * 1.07, 40, 20, 0, Math.PI * 2, 0, Math.PI * 0.56),
   skirt: (() => {
-    const pts = [new THREE.Vector2(0.15, 0.0), new THREE.Vector2(0.165, -0.2), new THREE.Vector2(0.2, -0.5), new THREE.Vector2(0.24, -0.84), new THREE.Vector2(0.245, -0.86)];
+    const pts = [new THREE.Vector2(0.15, 0.0), new THREE.Vector2(0.162, -0.2), new THREE.Vector2(0.18, -0.5), new THREE.Vector2(0.2, -0.84), new THREE.Vector2(0.202, -0.86)];
     return new THREE.LatheGeometry(pts, 32);
   })(),
   nose: new THREE.SphereGeometry(1, 16, 12),
@@ -231,14 +320,20 @@ const geo = {
     return g;
   })(),
   band: new THREE.BoxGeometry(1, 1, 1),
+  ring: new THREE.CylinderGeometry(1, 1, 1, 32, 1, true),
 };
 
-const matCache = new Map<string, THREE.MeshStandardMaterial>();
+const matCache = new Map<string, THREE.Material>();
 const mat = (color: string, rough = 0.85) => {
   const k = `${color}-${rough}`;
   if (!matCache.has(k)) matCache.set(k, new THREE.MeshStandardMaterial({color, roughness: rough, side: THREE.DoubleSide}));
   return matCache.get(k)!;
 };
+const textured = (key: string, map: THREE.Texture) => {
+  if (!matCache.has(key)) matCache.set(key, new THREE.MeshStandardMaterial({map, roughness: 0.9, side: THREE.DoubleSide}));
+  return matCache.get(key)!;
+};
+const glowPupil = new THREE.MeshBasicMaterial({color: '#e9f3b8'});
 
 /** Capsule hanging down -y from the origin. */
 export const Seg: React.FC<{len: number; r: number; color: string; cast?: boolean}> = ({len, r, color, cast = true}) => (
@@ -262,10 +357,11 @@ export const Hand: React.FC<{skin: string; curl: number; side: number}> = ({skin
   </group>
 );
 
-const Arm: React.FC<{side: number; pitch: number; out: number; elbow: number; curl: number; look: Look; sleeve: string}> = ({side, pitch, out, elbow, curl, look, sleeve}) => (
+const Arm: React.FC<{side: number; pitch: number; out: number; elbow: number; curl: number; look: Look}> = ({side, pitch, out, elbow, curl, look}) => (
   <group position={[side * 0.155, 0.44, 0]} rotation={[pitch, 0, side * (0.05 + out)]}>
     <Seg len={0.28} r={0.033} color={look.skin} />
-    <mesh geometry={geo.cap} material={mat(sleeve)} position={[0, -0.06, 0]} scale={[0.038, 0.05, 0.038]} castShadow />
+    {/* sleeve to just above the elbow */}
+    <mesh geometry={geo.cap} material={mat(look.top)} position={[0, -0.09, 0]} scale={[0.039, 0.08, 0.039]} castShadow />
     <group position={[0, -0.27, 0]} rotation={[elbow, 0, 0]}>
       <Seg len={0.25} r={0.027} color={look.skin} />
       <group position={[0, -0.25, 0]}>
@@ -276,7 +372,7 @@ const Arm: React.FC<{side: number; pitch: number; out: number; elbow: number; cu
 );
 
 export const Human: React.FC<HumanPose & {outfit?: Outfit; face: HumanFace; position?: [number, number, number]; rotationY?: number; rotationX?: number; hairDrift?: number}> = ({
-  outfit = 'sari',
+  outfit = 'woman',
   face,
   position = [0, 0, 0],
   rotationY = 0,
@@ -301,83 +397,79 @@ export const Human: React.FC<HumanPose & {outfit?: Outfit; face: HumanFace; posi
 }) => {
   const look = LOOKS(outfit, face);
   const faceMat = useMemo(
-    () => new THREE.MeshStandardMaterial({map: faceTex(face, look.skin), transparent: true, depthWrite: false, roughness: 0.8, polygonOffset: true, polygonOffsetFactor: -2}),
-    [face, look.skin],
+    () => new THREE.MeshStandardMaterial({map: faceTex(face), transparent: true, depthWrite: false, roughness: 0.8, polygonOffset: true, polygonOffsetFactor: -2}),
+    [face],
   );
+  const skirtMat = look.pattern ? textured(`skirt-${look.pattern}`, phaSin(look.pattern)) : mat(look.skirt);
   const standing = thigh > -0.35;
-  const legColor = outfit === 'man' ? look.skirt : look.skirt;
+  const skirted = outfit === 'woman' || outfit === 'elder';
   const chest = 1 + Math.sin(breathe * 1.5) * 0.012;
-  const sleeve = outfit === 'man' ? look.top : look.top;
+  const possessed = isPossessed(face);
+  const lookAside = face === 'avert' ? 0.012 : 0;
   return (
     <group position={position} rotation={[rotationX, rotationY, 0]}>
       {/* legs */}
       {[-1, 1].map((s) => (
         <group key={s} position={[s * 0.085, hipY, 0]} rotation={[thigh, 0, s * (0.02 + spread)]}>
-          <Seg len={0.43} r={0.062} color={legColor} />
+          <mesh geometry={geo.cap} material={skirted ? skirtMat : mat(look.skirt)} position={[0, -0.215, 0]} scale={[0.062, 0.153, 0.062]} castShadow receiveShadow />
           <group position={[0, -0.43, 0]} rotation={[knee, 0, 0]}>
-            <Seg len={0.41} r={0.045} color={standing && outfit !== 'man' ? look.skin : legColor} />
+            <Seg len={0.41} r={0.045} color={skirted && standing ? look.skin : skirted ? look.skin : look.skirt} />
             <mesh geometry={geo.ball} material={mat(look.skin)} position={[0, -0.42, 0.045]} rotation={[-knee - thigh, 0, 0]} scale={[0.04, 0.025, 0.11]} castShadow />
           </group>
         </group>
       ))}
-      {/* crouching or sitting: the sari drapes over the thighs and knees */}
-      {outfit !== 'man' && !standing && (
-        <mesh
-          geometry={geo.ball}
-          material={mat(look.skirt)}
-          position={[0, hipY - 0.215 * Math.cos(thigh), -0.215 * Math.sin(thigh)]}
-          rotation={[thigh + Math.PI / 2, 0, 0]}
-          scale={[0.15 + spread * 0.2, 0.25, 0.09]}
-          castShadow
-          receiveShadow
-        />
+      {/* crouching or sitting: the skirt drapes over the thighs and knees */}
+      {skirted && !standing && (
+        <mesh geometry={geo.ball} material={skirtMat} position={[0, hipY - 0.215 * Math.cos(thigh), -0.215 * Math.sin(thigh)]} rotation={[thigh + Math.PI / 2, 0, 0]} scale={[0.15 + spread * 0.2, 0.25, 0.09]} castShadow receiveShadow />
       )}
       {/* pelvis */}
-      <mesh geometry={geo.ball} material={mat(legColor)} position={[0, hipY + 0.02, 0]} scale={[0.17, 0.12, 0.12]} castShadow />
-      {/* sari skirt falls to the ankles when standing */}
-      {outfit !== 'man' && standing && (
+      <mesh geometry={geo.ball} material={skirted ? skirtMat : mat(look.skirt)} position={[0, hipY + 0.02, 0]} scale={[0.17, 0.12, 0.12]} castShadow />
+      {/* pha sin: a straight woven tube skirt to the ankles */}
+      {skirted && standing && (
         <group position={[0, hipY + 0.06, 0]}>
-          <mesh geometry={geo.skirt} material={mat(look.skirt)} castShadow receiveShadow />
-          <mesh geometry={geo.skirt} material={mat(look.border)} position={[0, -0.84, 0]} scale={[1.01, 0.04, 1.01]} />
+          <mesh geometry={geo.skirt} material={skirtMat} castShadow receiveShadow />
         </group>
       )}
+      {/* pha khao ma tied round the waist */}
+      {look.waistCloth && <mesh geometry={geo.ring} material={textured('khaoma', khaoMa())} position={[0, hipY + 0.1, 0]} scale={[0.15, 0.09, 0.105]} castShadow />}
 
       {/* body */}
       <group position={[0, hipY + 0.05, 0]} rotation={[hunch, 0, 0]}>
         <mesh geometry={geo.torso} material={mat(look.top)} scale={[1, chest, 1]} castShadow receiveShadow />
-        {outfit !== 'man' && (
-          // the sari's loose end: a flat band across the chest and over the left shoulder
-          <group>
-            <mesh geometry={geo.band} material={mat(look.top === '#7a2a2c' ? '#b9ad97' : look.skirt)} position={[0.03, 0.27, 0.078]} rotation={[0.05, 0, -0.5]} scale={[0.13, 0.48, 0.01]} castShadow />
-            <mesh geometry={geo.band} material={mat(look.border)} position={[0.085, 0.28, 0.084]} rotation={[0.05, 0, -0.5]} scale={[0.01, 0.48, 0.004]} />
-            <mesh geometry={geo.band} material={mat(look.skirt)} position={[-0.11, 0.33, -0.04]} rotation={[0.3, 0, 0.15]} scale={[0.1, 0.42, 0.012]} castShadow />
-          </group>
+        {look.sabai && (
+          // the elder's sabai: a white shawl across the chest and over the left shoulder
+          <mesh geometry={geo.band} material={mat('#efe9dc')} position={[0.03, 0.27, 0.078]} rotation={[0.05, 0, -0.55]} scale={[0.11, 0.5, 0.01]} castShadow />
         )}
-        {outfit === 'elder' && <mesh geometry={geo.ball} material={mat('#3b2a22')} position={[0, 0.42, -0.02]} scale={[0.22, 0.1, 0.14]} castShadow />}
-        <Arm side={-1} pitch={armL} out={outL} elbow={elbowL} curl={curl} look={look} sleeve={outfit === 'man' ? look.top : look.skin} />
-        <Arm side={1} pitch={armR} out={outR} elbow={elbowR} curl={curl} look={look} sleeve={outfit === 'man' ? look.top : look.skin} />
+        <Arm side={-1} pitch={armL} out={outL} elbow={elbowL} curl={curl} look={look} />
+        <Arm side={1} pitch={armR} out={outR} elbow={elbowR} curl={curl} look={look} />
         {/* neck and head */}
         <mesh geometry={geo.cap} material={mat(look.skin)} position={[0, 0.55, 0]} scale={[0.036, 0.04, 0.036]} castShadow />
         <group position={[0, 0.66, 0.01]} rotation={[headPitch, headYaw, headRoll]}>
           <group scale={[0.86, 1.12, 0.98]}>
             <mesh geometry={geo.head} material={mat(look.skin, 0.75)} castShadow />
             <mesh geometry={geo.face} material={faceMat} />
+            {possessed &&
+              [-1, 1].map((s) => (
+                // tiny pale pupils that shine in the dark
+                <mesh key={s} geometry={geo.ball} material={glowPupil} position={[s * 0.0294 + lookAside, -0.001, 0.0972]} scale={face === 'wake' ? 0.0068 : 0.0058} />
+              ))}
           </group>
-          <mesh geometry={geo.nose} material={mat(look.skin, 0.75)} position={[0, -0.014, 0.09]} scale={[0.008, 0.016, 0.008]} />
+          <mesh geometry={geo.nose} material={mat(look.skin, 0.75)} position={[0, -0.016, 0.089]} scale={[0.011, 0.014, 0.008]} />
           {[-1, 1].map((s) => (
             <mesh key={s} geometry={geo.ball} material={mat(look.skin)} position={[s * 0.087, -0.005, -0.005]} scale={[0.012, 0.025, 0.016]} />
           ))}
           {/* hair */}
-          <mesh geometry={geo.scalp} material={mat(look.hair, 0.95)} position={[0, 0.012, -0.012]} rotation={[-0.45, 0, 0]} scale={[0.92, 1.1, 1.0]} castShadow />
-          {outfit === 'robe' && <mesh geometry={geo.ball} material={mat('#141110')} position={[0, 0.03, -0.02]} scale={[0.125, 0.15, 0.135]} castShadow />}
-          {look.bun && <mesh geometry={geo.ball} material={mat(look.hair, 0.6)} position={[0, 0.03, -0.11]} scale={0.05} castShadow />}
-          {look.long && (
+          {look.style !== 'hood' && (
+            <mesh geometry={geo.scalp} material={mat(look.hair, 0.95)} position={[0, 0.012, -0.012]} rotation={[look.style === 'crop' ? -0.3 : -0.45, 0, 0]} scale={look.style === 'crop' || look.style === 'short' ? [0.9, 1.0, 0.98] : [0.92, 1.1, 1.0]} castShadow />
+          )}
+          {look.style === 'hood' && <mesh geometry={geo.ball} material={mat('#141110')} position={[0, 0.03, -0.02]} scale={[0.125, 0.15, 0.135]} castShadow />}
+          {look.style === 'bun' && <mesh geometry={geo.ball} material={mat(look.hair, 0.8)} position={[0, -0.02, -0.105]} scale={[0.05, 0.045, 0.045]} castShadow />}
+          {look.style === 'long' && (
             <group>
               <mesh geometry={geo.cap} material={mat(look.hair, 0.6)} position={[0, -0.2, -0.065]} rotation={[0.1 + hairDrift * 0.05, 0, 0]} scale={[0.1, 0.2, 0.04]} castShadow />
               {[-1, 1].map((s) => (
                 <mesh key={s} geometry={geo.cap} material={mat(look.hair, 0.6)} position={[s * 0.085, -0.13, 0.0]} rotation={[0.05, 0, s * (0.08 + hairDrift * 0.03)]} scale={[0.028, 0.14, 0.03]} castShadow />
               ))}
-              {/* loose locks over the shoulders */}
               {[-0.07, -0.045, 0.045, 0.07].map((x, i) => (
                 <mesh key={'l' + x} geometry={geo.cap} material={mat(look.hair, 0.6)} position={[x * 1.25, -0.17, 0.005]} rotation={[0.15, 0, (x > 0 ? -1 : 1) * 0.05 + Math.sin(hairDrift + i) * 0.04]} scale={[0.008, 0.17, 0.008]} castShadow />
               ))}
@@ -396,3 +488,16 @@ export const Human: React.FC<HumanPose & {outfit?: Outfit; face: HumanFace; posi
 
 /** World height of the head centre for a standing human (for aiming cameras). */
 export const HEAD_Y = 0.88 + 0.05 + 0.66;
+
+/** Sudden small snaps of a possessed head, held for a moment, then back (radians). */
+export const twitch = (t: number, seed = 0) => {
+  const period = 1.1;
+  const k = Math.floor((t + seed) / period);
+  const ph = t + seed - k * period;
+  const r = Math.sin(k * 12.9898 + seed * 78.233) * 43758.5453;
+  const h1 = r - Math.floor(r);
+  const r2 = Math.sin(k * 7.13 + seed * 3.1) * 15731.743;
+  const h2 = r2 - Math.floor(r2);
+  if (h1 < 0.4 || ph > 0.2) return 0;
+  return (h2 - 0.5) * 0.6 * (ph < 0.04 ? ph / 0.04 : 1 - Math.max(0, ph - 0.12) / 0.08);
+};

@@ -39,6 +39,7 @@ export const cue = {
   andThey: w(9, 'and'),
   three: w(9, 'three'),
   tonight: w(10, 'so'),
+  kitchen: w(10, 'kitchen'),
   dont: w(10, 'don'),
   /** hard cut to black right after "light." (same moment as the mix) */
   cut: LASTW.end + 0.06,
@@ -169,7 +170,8 @@ export const cameraAt = (t: number): Cam => {
       return push({pos: at(head, [0.05, 0.62, 0.32]), target: head, fov: 32}, {pos: at(head, [0.04, 0.5, 0.26]), target: head, fov: 28}, u, t, 0.0015);
     }
     case 'creep':
-      return push({pos: [-0.4, 0.8, 4.4], target: [-0.8, 0.6, -2.5], fov: 44}, {pos: [-0.45, 0.75, 3.6], target: [-0.8, 0.6, -2.5], fov: 40}, u, t);
+      // following her down the lane, closing in as her head comes round
+      return push({pos: [-0.4, 0.85, 4.4], target: [-0.8, 0.65, -2.5], fov: 44}, {pos: [-0.75, 1.0, 0.95], target: [-0.8, 0.85, -1.2], fov: 40}, u, t);
     case 'fridge':
       return push({pos: H([-0.55, 1.15, -4.35]), target: H([-1.05, 0.75, -6.4]), fov: 46}, {pos: H([-0.6, 1.1, -4.6]), target: H([-1.05, 0.78, -6.4]), fov: 42}, u, t, 0.002);
     case 'trapped': {

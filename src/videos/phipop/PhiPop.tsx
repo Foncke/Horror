@@ -8,7 +8,7 @@ import {clamp, easeInOut, easeOut, lerp} from '../../lib/timeline';
 import {CameraRig} from '../../three/Common';
 import {Post} from '../../three/Post';
 import {HouseSet} from './House';
-import {Human} from './Human';
+import {Human, twitch} from './Human';
 import {Mist, VillageSet} from './Village';
 import {VoidSet} from './Void';
 import {ShotId, cameraAt, cue, daylight, shotAt, timings} from './cues';
@@ -47,9 +47,10 @@ const VillageShot: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
           <pointLight position={[1.9, 3.3, 1.0]} intensity={day ? 1.5 : 2.2} distance={3} decay={1.6} color={day ? '#fff0d8' : '#ffb070'} />
         </>
       )}
+      {shot === 'creep' && <pointLight position={[-0.6, 1.4, 1.2]} intensity={2.4} distance={4} decay={1.5} color="#9fc0d8" />}
       {shot === 'creep' && (
         // crouched low, creeping away down the misty lane
-        <Human face="possessed" position={[-0.8, 0, lerp(1.6, -0.6, clamp((t - cue.itHijacks) / 5))]} rotationY={Math.PI} hipY={0.55} thigh={-1.4} knee={1.9} spread={0.15} hunch={0.8} armL={-0.6} armR={-0.9} elbowL={-0.3} elbowR={-0.3} headPitch={-0.5} hairDrift={t} />
+        <Human face="possessed" position={[-0.8, 0, lerp(1.6, -0.6, clamp((t - cue.itHijacks) / 5))]} rotationY={Math.PI} hipY={0.55} thigh={-1.4} knee={1.9} spread={0.15} hunch={0.8} armL={-0.6} armR={-0.9} elbowL={-0.3} elbowR={-0.3} headPitch={-0.5} headYaw={2.75 * easeInOut(clamp((t - (cue.hunt - 1.7)) / 1.0)) + twitch(t)} headRoll={twitch(t, 3) * 0.8} hairDrift={t} />
       )}
     </group>
   );

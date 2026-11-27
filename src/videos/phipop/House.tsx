@@ -2,7 +2,7 @@ import React, {useMemo} from 'react';
 import * as THREE from 'three';
 import {Spot} from '../../three/Common';
 import {clamp, easeInOut, lerp} from '../../lib/timeline';
-import {Hand, Human, HumanFace, Seg} from './Human';
+import {Hand, Human, HumanFace, Seg, twitch} from './Human';
 import {Box, m, plain, planks} from './Village';
 import {HOUSE, ShotId, cue, tremble} from './cues';
 
@@ -244,7 +244,7 @@ export const HouseSet: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
       {/* people */}
       {sleeping && (
         // the host asleep under the net, head on the pillow
-        <Human face={hostFace} rotationX={-Math.PI / 2} position={[-1.2, 0.14, -0.28]} armL={0.1} armR={0.1} breathe={t} />
+        <Human face={hostFace} rotationX={-Math.PI / 2} position={[-1.2, 0.14, -0.28]} armL={0.1} armR={0.1} headRoll={hostFace === 'wake' ? twitch(t, 8) : 0} breathe={t} />
       )}
       {(shot === 'partner' || shot === 'dinner') && (
         <Human outfit="man" face="neutral" position={shot === 'partner' ? [1.0, 0, 0.6] : [1.15, 0, -0.15]} rotationY={shot === 'partner' ? 0.1 : 0.2} hipY={0.14} thigh={-1.45} knee={2.7} spread={0.5} armL={-0.4} armR={-0.6} elbowL={-0.9} elbowR={-1.0} headYaw={shot === 'partner' ? 0.25 * easeInOut(clamp((t - cue.partner) / 1.2)) : -0.3} breathe={t} />
@@ -263,16 +263,16 @@ export const HouseSet: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
       )}
       {shot === 'situp' && (
         // she sits bolt upright on her mat at three in the morning
-        <Human face="wake" position={[-1.2, 0.05, -1.55]} rotationY={0.1} hipY={0.14} thigh={-1.5} knee={0.1} hunch={lerp(-1.45, 0.05, easeInOut(clamp((t - cue.three + 0.25) / 0.9)))} armL={-0.2} armR={-0.2} headPitch={-0.1} />
+        <Human face="wake" position={[-1.2, 0.05, -1.55]} rotationY={0.1} hipY={0.14} thigh={-1.5} knee={0.1} hunch={lerp(-1.45, 0.05, easeInOut(clamp((t - cue.three + 0.25) / 0.9)))} armL={-0.2} armR={-0.2} headPitch={-0.1} headYaw={twitch(t, 6)} headRoll={twitch(t, 9) * 0.8} />
       )}
       {(shot === 'fridge' || shot === 'trapped' || shot === 'hallway' || shot === 'switch') && (
         // crouched at the open fridge, lit only by its cold light
-        <Human face={shot === 'trapped' ? 'possessed' : 'possessed'} position={shot === 'hallway' || shot === 'switch' ? [-0.1, 0, -5.95] : [-1.05, 0, -5.6]} rotationY={Math.PI} hipY={0.45} thigh={-1.9} knee={2.4} spread={0.3} hunch={0.5} armL={shot === 'trapped' ? -0.2 : -1.2} armR={shot === 'trapped' ? -0.25 : -1.5} elbowL={-0.3} elbowR={-0.5} headPitch={shot === 'trapped' ? -0.15 : -0.2} curl={0.6} hairDrift={t} />
+        <Human face={shot === 'trapped' ? 'possessed' : 'possessed'} position={shot === 'hallway' || shot === 'switch' ? [-0.1, 0, -5.95] : [-1.05, 0, -5.6]} rotationY={Math.PI} hipY={0.45} thigh={-1.9} knee={2.4} spread={0.3} hunch={0.5} armL={shot === 'trapped' ? -0.2 : -1.2} armR={shot === 'trapped' ? -0.25 : -1.5} elbowL={-0.3} elbowR={-0.5} headPitch={shot === 'trapped' ? -0.15 : -0.2} headYaw={(shot === 'fridge' ? 2.75 * easeInOut(clamp((t - (cue.worst - 1.8)) / 1.1)) : shot === 'hallway' ? 2.75 * easeInOut(clamp((t - (cue.kitchen - 0.4)) / 0.9)) : shot === 'switch' ? 2.75 : 0) + twitch(t)} headRoll={twitch(t, 5) * 0.8} curl={0.6} hairDrift={t} />
       )}
       {shot === 'avert' && (
         // cold blue light; the eyes slide away from yours
         <>
-          <Human face="avert" position={[0.4, 0, -1.2]} headYaw={-0.12} breathe={t} hairDrift={t} />
+          <Human face="avert" position={[0.4, 0, -1.2]} headYaw={-0.12 + twitch(t, 1)} headRoll={twitch(t, 4) * 0.7} breathe={t} hairDrift={t} />
           <Spot position={[0.1, 2.0, 0.2]} target={[0.4, 1.59, -1.2]} intensity={4} angle={0.3} penumbra={1} distance={4} color="#8fb8e0" />
         </>
       )}
@@ -292,6 +292,8 @@ export const HouseSet: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
             elbowR={-0.75 + Math.sin(t * 4.6 + 2) * 0.12}
             curl={0.55 + Math.sin(t * 6) * 0.3}
             headPitch={0.55}
+            headYaw={twitch(t, 2)}
+            headRoll={twitch(t, 7) * 0.9}
             hairDrift={t}
           />
           <pointLight position={[-0.6, 1.3, -5.7]} intensity={2.2} distance={3} decay={1.6} color="#bfe3ff" />
@@ -301,6 +303,7 @@ export const HouseSet: React.FC<{t: number; shot: ShotId}> = ({t, shot}) => {
       {shot === 'switch' && (
         <PovArm from={[0.05, 1.05, -3.25]} to={[lerp(0.25, 0.43, easeInOut(clamp((t - cue.dont + 0.1) / 1.0))), 1.27, lerp(-3.55, -3.78, easeInOut(clamp((t - cue.dont + 0.1) / 1.0)))]} curl={0.25} side={1} />
       )}
+      {shot === 'fridge' && <pointLight position={[-0.55, 1.35, -4.7]} intensity={1.6 * easeInOut(clamp((t - (cue.worst - 1.8)) / 1.1))} distance={2.5} decay={1.5} color="#9fc0d8" />}
       {(shot === 'hallway' || shot === 'switch') && <pointLight position={[0, 1.2, -5.0]} intensity={3} distance={4} decay={1.6} color="#9fc8e8" />}
     </group>
   );
