@@ -72,6 +72,13 @@ dark veins, solid black eyes with small glowing pupils (meshes), a dark stain fr
 (`twitch()` in Human.tsx), and her head turning right round to look back (lane, fridge, kitchen).
 She walks with a real stalking gait (`walk`/`stride` props), and long hair is a strand-textured curtain with a few
 sparse loose locks (not capsules). The neighbour stands on the house's porch, clear of the door frame.
+Hair: Phi Pop keeps its original hair (scalp sphere, `hairMatV1`/`lockMatV1`, elder '#cfcac2'), unchanged pixel for pixel.
+The rebuilt hair is **Krasue only** (the owner's choice), switched on by `<NewHair.Provider value={true}>` inside
+Krasue's canvas: `hairCap()` builds a cap that hugs the skull and thins to nothing at a ragged,
+parted hairline (never a helmet); one cap shape per style (long/bun/short/crop). Strand textures are light grey and
+tinted per hair colour (`strandMat`), cut out with alphaTest (not blended), matte (`specularIntensity` 0.25). The scalp
+material has a stronger polygonOffset than the painted face so the face never draws over the hairline. Long hair
+tucks under the cap; loose locks are rooted under the hairline and tilt forward to clear the face.
 Music: a synthesised Thai-style score (`projects/phipop/thaimusic.py`): khaen drone, ranat and khim, ching and klong,
 in Thai 7-tone tuning; dark and sparse at night, lighter by day, only the drone under the chewing, dead stop at the cut.
 Thai title ผีปอบ uses Noto Sans Thai (`public/fonts/NotoSansThai-ExtraBold.woff2`). Captions show "Phi Pop"/"Isan"

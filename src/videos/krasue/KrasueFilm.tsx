@@ -7,6 +7,7 @@ import {loadFonts} from '../../lib/fonts';
 import {clamp, easeInOut, easeOut} from '../../lib/timeline';
 import {CameraRig} from '../../three/Common';
 import {Post} from '../../three/Post';
+import {NewHair} from '../phipop/Human';
 import {KrasueScene} from './Scene';
 import {cameraAt, cue, moodOf, shotAt, timings} from './cues';
 
@@ -15,9 +16,9 @@ export const DURATION_FRAMES = Math.ceil(cue.end * FPS);
 
 /** Title: the Thai name, then KRASUE. */
 const Title: React.FC<{t: number}> = ({t}) => {
-  const a = easeOut(clamp((t - cue.krasue2 + 0.05) / 0.6));
-  const out = 1 - easeInOut(clamp((t - (cue.byDay - 0.5)) / 0.4));
-  const sub = easeOut(clamp((t - cue.krasue2 - 0.6) / 0.5));
+  const a = easeOut(clamp((t - cue.call + 0.05) / 0.6));
+  const out = 1 - easeInOut(clamp((t - (cue.byDay - 0.3)) / 0.3));
+  const sub = easeOut(clamp((t - cue.call - 0.7) / 0.5));
   return (
     <AbsoluteFill style={{alignItems: 'center', justifyContent: 'flex-start', paddingTop: 330, opacity: a * out}}>
       <div style={{fontFamily: 'Noto Sans Thai', fontWeight: 800, fontSize: 200, color: '#f2e6cf', lineHeight: 1.1, textShadow: '0 8px 40px rgba(0,0,0,0.9)', transform: 'scale(' + (0.92 + 0.08 * a) + ')'}}>
@@ -71,7 +72,9 @@ export const KrasueFilm: React.FC = () => {
       {fontsReady && !black && (
         <ThreeCanvas width={width} height={height} shadows dpr={1} gl={{antialias: true, preserveDrawingBuffer: true, powerPreference: 'high-performance'}} camera={{fov: 40, near: 0.05, far: 200}}>
           <CameraRig cam={cam} />
-          <KrasueScene t={t} shot={shot.id} set={shot.set} mood={mood} />
+          <NewHair.Provider value={true}>
+            <KrasueScene t={t} shot={shot.id} set={shot.set} mood={mood} />
+          </NewHair.Provider>
           <Post time={t} fade={fade} paint={0.9} grade={mood === 'day' ? 0.4 : 1} vignette={close ? 1.25 : 1.1} bloomStrength={0.6} bloomRadius={0.55} bloomThreshold={0.82} exposure={mood === 'day' ? 1.2 : mood === 'night' ? 1.4 : 1.15} />
         </ThreeCanvas>
       )}
@@ -99,7 +102,8 @@ export const KrasueFilm: React.FC = () => {
             accent={['krasue', 'splits', 'apart', 'severed', "don't", 'open', 'curtains']}
             accentColor="#c41a22"
             y={0.7}
-            hidden={[[cue.call - 0.1, cue.byDay - 0.4]]}
+            yAt={(s) => (['smile', 'stare', 'elder', 'tired', 'split', 'organs'].includes(shotAt(s).id) ? 0.84 : 0.7)}
+            hidden={[[cue.call - 0.1, cue.byDay - 0.02]]}
           />
         </>
       )}

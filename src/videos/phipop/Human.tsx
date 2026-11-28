@@ -43,9 +43,9 @@ const LOOKS = (outfit: Outfit, face: HumanFace): Look => {
   const possessed = isPossessed(face);
   if (outfit === 'man') return {skin: '#b5825a', top: '#2b3550', skirt: '#22232a', pattern: null, hair: '#121010', style: 'short', messy: false, sabai: false, waistCloth: true};
   if (outfit === 'robe') return {skin: '#8a6a52', top: '#2a2420', skirt: '#2a2420', pattern: null, hair: '#0d0b0a', style: 'hood', messy: false, sabai: false, waistCloth: false};
-  if (outfit === 'elder') return {skin: '#a8784f', top: '#e2dbcd', skirt: '#2a2434', pattern: 'elder', hair: '#cfcac2', style: 'crop', messy: false, sabai: true, waistCloth: false};
+  if (outfit === 'elder') return {skin: '#a8784f', top: '#e2dbcd', skirt: '#2a2434', pattern: 'elder', hair: '#5a5650', style: 'crop', messy: false, sabai: true, waistCloth: false};
   if (face === 'krasue') return {skin: '#c9c7bf', top: '#3a4a5c', skirt: '#4a1a22', pattern: 'woman', hair: '#070606', style: 'long', messy: true, sabai: false, waistCloth: false};
-  if (face === 'tired') return {skin: '#b99a80', top: '#3a4a5c', skirt: '#4a1a22', pattern: 'woman', hair: '#0c0a09', style: 'long', messy: false, sabai: false, waistCloth: false};
+  if (face === 'tired') return {skin: '#b99a80', top: '#3a4a5c', skirt: '#4a1a22', pattern: 'woman', hair: '#0c0a09', style: 'long', messy: true, sabai: false, waistCloth: false};
   // the host: neat bun by day; hair down and matted once the spirit has her
   return {
     skin: possessed ? '#76806f' : '#c4926a',
@@ -92,8 +92,94 @@ const phaSin = (kind: 'woman' | 'elder') =>
     {repeat: [5, 1]},
   );
 
-/** Long black hair: many fine strands, a little sheen, a ragged uneven end. */
+const rng = (seed: number) => () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+
+/** Hair on the scalp: strands combed down from the crown, parted at the front (u = 0.5),
+ *  solid underneath and ending in a ragged, uneven hairline. Light grey: the material tints it. */
+const scalpStrands = () =>
+  canvasTexture('hair-scalp4', 512, 256, (ctx, w, h) => {
+    ctx.clearRect(0, 0, w, h);
+    const r = rng(7);
+    ctx.fillStyle = 'rgb(105,105,105)';
+    ctx.fillRect(0, 0, w, h * 0.84);
+    ctx.lineCap = 'round';
+    for (let i = 0; i < 2200; i++) {
+      const x = r() * w;
+      const len = h * (0.82 + r() * 0.18);
+      const d = (x - w / 2) / (w * 0.22);
+      const lean = Math.abs(d) < 1 ? Math.sign(d) * (1 - Math.abs(d)) * 26 : 0; // swept away from the parting
+      const v = 80 + Math.floor(r() * 150);
+      ctx.strokeStyle = 'rgba(' + v + ',' + v + ',' + v + ',' + (0.55 + r() * 0.45) + ')';
+      ctx.lineWidth = 1 + r() * 2;
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.bezierCurveTo(x + lean * 0.6, len * 0.4, x + lean, len * 0.75, x + lean + (r() - 0.5) * 4, len);
+      ctx.stroke();
+    }
+    // the parting itself: a thin darker line from the crown to the front
+    ctx.strokeStyle = 'rgba(40,40,40,0.8)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(w / 2, h * 0.15);
+    ctx.lineTo(w / 2, h * 0.7);
+    ctx.stroke();
+  });
+
+/** Long hair: dense strands in the middle, thinning out to loose strands at both edges, ragged ends. */
 const hairStrands = () =>
+  canvasTexture('hair-strands3', 512, 512, (ctx, w, h) => {
+    ctx.clearRect(0, 0, w, h);
+    const r = rng(11);
+    ctx.lineCap = 'round';
+    for (let i = 0; i < 1500; i++) {
+      const x = r() * w;
+      const edge = Math.min(x, w - x) / (w * 0.12); // < 1 near the open front edges
+      if (edge < 1 && r() > edge * edge) continue;
+      const len = h * (0.68 + r() * 0.32);
+      const sway = (r() - 0.5) * 12;
+      const v = 80 + Math.floor(r() * 150);
+      ctx.strokeStyle = 'rgba(' + v + ',' + v + ',' + v + ',' + (0.6 + r() * 0.4) + ')';
+      ctx.lineWidth = 1.5 + r() * 2.5;
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.bezierCurveTo(x + sway, len * 0.35, x - sway, len * 0.7, x + sway * 0.5, len);
+      ctx.stroke();
+    }
+    // a little sheen near the top
+    for (let i = 0; i < 90; i++) {
+      const x = w * 0.1 + r() * w * 0.8;
+      ctx.strokeStyle = 'rgba(255,255,255,' + (0.15 + r() * 0.2) + ')';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(x, h * 0.04);
+      ctx.lineTo(x + (r() - 0.5) * 6, h * (0.2 + r() * 0.25));
+      ctx.stroke();
+    }
+  });
+
+/** A loose lock: a bundle of strands, thick at the root and thinning to a few wisps at the tip. */
+const lockStrands = () =>
+  canvasTexture('hair-lock3', 64, 512, (ctx, w, h) => {
+    ctx.clearRect(0, 0, w, h);
+    const r = rng(29);
+    ctx.lineCap = 'round';
+    for (let i = 0; i < 40; i++) {
+      const x = w / 2 + (r() - 0.5) * w * 0.7;
+      const y0 = r() * h * 0.08;
+      const len = h * (0.45 + r() * 0.55);
+      const tip = w / 2 + (x - w / 2) * 0.4 + (r() - 0.5) * 8; // the strands gather towards the tip
+      const v = 80 + Math.floor(r() * 150);
+      ctx.strokeStyle = 'rgba(' + v + ',' + v + ',' + v + ',' + (0.6 + r() * 0.4) + ')';
+      ctx.lineWidth = 1.2 + r() * 1.8;
+      ctx.beginPath();
+      ctx.moveTo(x, y0);
+      ctx.bezierCurveTo(x, len * 0.4, tip, len * 0.75, tip, len);
+      ctx.stroke();
+    }
+  });
+
+/** Phi Pop's hair (v1). Long black hair: many fine strands, a little sheen, a ragged uneven end. */
+const hairStrandsV1 = () =>
   canvasTexture('hair-strands', 256, 512, (ctx, w, h) => {
     ctx.clearRect(0, 0, w, h);
     let seed = 11;
@@ -123,7 +209,7 @@ const hairStrands = () =>
   });
 
 /** A loose lock: a few separate strands with gaps between them. */
-const lockStrands = () =>
+const lockStrandsV1 = () =>
   canvasTexture('hair-lock', 64, 512, (ctx, w, h) => {
     ctx.clearRect(0, 0, w, h);
     let seed = 29;
@@ -384,6 +470,47 @@ const faceTex = (kind: HumanFace) => canvasTexture(`thai-face-${kind}`, 1024, 51
 
 // --- geometry -----------------------------------------------------------------
 const HEAD_R = 0.1;
+
+/** Hair that hugs the skull: thickest at the crown, thinning to nothing at the hairline (so it never reads as
+ *  a helmet). front/side/back: how far down the hair reaches (polar angle as a fraction of pi) facing forward,
+ *  over the ears and at the nape. lift: extra volume at the crown. Front is +z; the seam sits at the back. */
+const hairCap = (front: number, side: number, back: number, lift: number) => {
+  const A = 72;
+  const S = 18;
+  const pos: number[] = [];
+  const nor: number[] = [];
+  const uv: number[] = [];
+  const idx: number[] = [];
+  for (let j = 0; j <= S; j++) {
+    const k = j / S;
+    for (let i = 0; i <= A; i++) {
+      const u = i / A;
+      const a = (u - 0.5) * Math.PI * 2;
+      const c = Math.cos(a);
+      const reach = c >= 0 ? side + (front - side) * Math.pow(c, 1.5) : side + (back - side) * Math.pow(-c, 0.7); // falls quickly behind the ears to the nape
+      const polar = k * reach * Math.PI;
+      const rad = HEAD_R * (1.014 + lift * Math.pow(1 - k, 1.4));
+      const nx = Math.sin(polar) * Math.sin(a);
+      const ny = Math.cos(polar);
+      const nz = Math.sin(polar) * Math.cos(a);
+      pos.push(rad * nx, rad * ny, rad * nz);
+      nor.push(nx, ny, nz);
+      uv.push(u, 1 - k);
+    }
+  }
+  for (let j = 0; j < S; j++)
+    for (let i = 0; i < A; i++) {
+      const p0 = j * (A + 1) + i;
+      const p1 = p0 + A + 1;
+      idx.push(p0, p1, p0 + 1, p0 + 1, p1, p1 + 1);
+    }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.setAttribute('normal', new THREE.Float32BufferAttribute(nor, 3));
+  g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+  g.setIndex(idx);
+  return g;
+};
 const geo = {
   cap: new THREE.CapsuleGeometry(1, 1, 6, 16),
   ball: new THREE.SphereGeometry(1, 32, 20),
@@ -406,7 +533,12 @@ const geo = {
   band: new THREE.BoxGeometry(1, 1, 1),
   ring: new THREE.CylinderGeometry(1, 1, 1, 32, 1, true),
   // hair falling round the back and sides of the head (open at the face)
-  curtain: new THREE.CylinderGeometry(0.104, 0.17, 0.62, 40, 6, true, 1.05, Math.PI * 2 - 2.1),
+  curtain: new THREE.CylinderGeometry(0.092, 0.15, 0.62, 48, 8, true, 1.15, Math.PI * 2 - 2.3),
+  curtainV1: new THREE.CylinderGeometry(0.104, 0.17, 0.62, 40, 6, true, 1.05, Math.PI * 2 - 2.1),
+  capLong: hairCap(0.41, 0.68, 0.9, 0.02),
+  capBun: hairCap(0.41, 0.63, 0.88, 0.018),
+  capShort: hairCap(0.4, 0.58, 0.86, 0.014),
+  capCrop: hairCap(0.39, 0.56, 0.84, 0.01),
   lock: new THREE.PlaneGeometry(1, 1, 1, 6),
 };
 
@@ -422,14 +554,37 @@ const textured = (key: string, map: THREE.Texture) => {
 };
 const glowPupil = new THREE.MeshBasicMaterial({color: '#e9f3b8'});
 const glowRed = new THREE.MeshBasicMaterial({color: '#ff2a14'});
-const lockMat = () => {
-  if (!matCache.has('hair-lock')) matCache.set('hair-lock', new THREE.MeshStandardMaterial({map: lockStrands(), roughness: 0.55, transparent: true, alphaTest: 0.3, side: THREE.DoubleSide}));
+/** Strand material tinted by the hair colour (the textures are light grey). Cut out, not blended, so it
+ *  never sorts wrong or flickers. */
+const strandMat = (key: string, tex: () => THREE.Texture, color: string, alphaTest: number) => {
+  const k = key + color;
+  if (!matCache.has(k))
+    matCache.set(k, new THREE.MeshPhysicalMaterial({map: tex(), color: new THREE.Color(color).multiplyScalar(2.6).add(new THREE.Color(0.045, 0.038, 0.034)), roughness: 0.7, specularIntensity: 0.25, alphaTest, side: THREE.DoubleSide}));
+  return matCache.get(k)!;
+};
+// the cap is pulled forward in depth more than the painted face (which uses polygonOffset -2), so at grazing angles
+// the face never draws over the hair at the hairline
+const scalpMat = (color: string) => {
+  const m = strandMat('hair-scalp-', scalpStrands, color, 0.35);
+  m.polygonOffset = true;
+  m.polygonOffsetFactor = -6;
+  m.polygonOffsetUnits = -6;
+  return m;
+};
+const hairMat = (color: string) => strandMat('hair-long-', hairStrands, color, 0.3);
+const lockMat = (color: string) => strandMat('hair-lock-', lockStrands, color, 0.35);
+
+const lockMatV1 = () => {
+  if (!matCache.has('hair-lock')) matCache.set('hair-lock', new THREE.MeshStandardMaterial({map: lockStrandsV1(), roughness: 0.55, transparent: true, alphaTest: 0.3, side: THREE.DoubleSide}));
   return matCache.get('hair-lock')!;
 };
-const hairMat = () => {
-  if (!matCache.has('hair-strands')) matCache.set('hair-strands', new THREE.MeshStandardMaterial({map: hairStrands(), color: '#ffffff', roughness: 0.55, transparent: true, alphaTest: 0.25, side: THREE.DoubleSide}));
+const hairMatV1 = () => {
+  if (!matCache.has('hair-strands')) matCache.set('hair-strands', new THREE.MeshStandardMaterial({map: hairStrandsV1(), color: '#ffffff', roughness: 0.55, transparent: true, alphaTest: 0.25, side: THREE.DoubleSide}));
   return matCache.get('hair-strands')!;
 };
+
+/** Which hair the villagers get: Phi Pop keeps its original hair (false); Krasue turns on the rebuilt hair. */
+export const NewHair = React.createContext(false);
 
 /** Capsule hanging down -y from the origin. */
 export const Seg: React.FC<{len: number; r: number; color: string; cast?: boolean}> = ({len, r, color, cast = true}) => (
@@ -495,7 +650,9 @@ export const Human: React.FC<HumanPose & {outfit?: Outfit; face: HumanFace; posi
   headOnly = false,
   noHead = false,
 }) => {
-  const look = LOOKS(outfit, face);
+  const newHair = React.useContext(NewHair);
+  const look0 = LOOKS(outfit, face);
+  const look = !newHair && outfit === 'elder' ? {...look0, hair: '#cfcac2'} : look0;
   const swingOf = (s: number) => Math.sin(walk + (s > 0 ? 0 : Math.PI)) * stride;
   const liftOf = (s: number) => Math.max(0, Math.sin(walk + (s > 0 ? 0 : Math.PI) + Math.PI / 2)) * stride * 1.6;
   const bob = stride > 0 ? Math.abs(Math.cos(walk)) * 0.025 : 0;
@@ -524,6 +681,52 @@ export const Human: React.FC<HumanPose & {outfit?: Outfit; face: HumanFace; posi
           {[-1, 1].map((s) => (
             <mesh key={s} geometry={geo.ball} material={mat(look.skin)} position={[s * 0.087, -0.005, -0.005]} scale={[0.012, 0.025, 0.016]} />
           ))}
+          {newHair ? (
+            <>
+          {/* hair: a cap that hugs the skull (same shape as the head) */}
+          {look.style !== 'hood' && (
+            <group scale={[0.86, 1.12, 0.98]}>
+              <mesh
+                geometry={look.style === 'long' ? geo.capLong : look.style === 'bun' ? geo.capBun : look.style === 'crop' ? geo.capCrop : geo.capShort}
+                material={scalpMat(look.hair)}
+                castShadow
+              />
+            </group>
+          )}
+          {look.style === 'hood' && (
+            // a hood open at the face, falling to the shoulders
+            <group>
+              <mesh geometry={geo.scalp} material={mat('#221c19')} position={[0, 0.02, -0.02]} rotation={[-0.15, 0, 0]} scale={[1.3, 1.45, 1.35]} castShadow />
+              <mesh geometry={geo.curtain} material={mat('#221c19')} position={[0, -0.16, -0.02]} scale={[1.2, 0.6, 1.25]} castShadow />
+            </group>
+          )}
+          {look.style === 'bun' && (
+            // a low bun at the nape, wrapped in strands
+            <mesh geometry={geo.ball} material={scalpMat(look.hair)} position={[0, -0.035, -0.1]} rotation={[-0.4, 0, 0]} scale={[0.046, 0.04, 0.038]} castShadow />
+          )}
+          {look.style === 'long' && (
+            <group>
+              {/* a curtain of long black hair round the back and sides, down past the shoulders */}
+              <mesh geometry={geo.curtain} material={hairMat(look.hair)} position={[0, -0.3, -0.008]} rotation={[0.06 + Math.sin(hairDrift * 0.7) * 0.02, 0, 0]} scale={[0.94, 1, 1.06]} castShadow />
+              {look.messy &&
+                // loose locks rooted under the hair: one stray lock (tired), or three with one across an eye (possessed)
+                (face === 'tired'
+                  ? [{x: -0.056, y: 0.05, z: 0.05, w: 0.03, l: 0.22, r: -0.16, tilt: -0.3}]
+                  : [
+                      {x: -0.056, y: 0.05, z: 0.05, w: 0.03, l: 0.3, r: -0.12, tilt: -0.3},
+                      {x: 0.03, y: 0.066, z: 0.072, w: 0.018, l: 0.32, r: -0.04, tilt: -0.42},
+                      {x: 0.056, y: 0.05, z: 0.05, w: 0.028, l: 0.26, r: 0.12, tilt: -0.3},
+                    ]
+                ).map((k, i) => (
+                  <group key={i} position={[k.x, k.y, k.z]} rotation={[k.tilt, 0, k.r + Math.sin(hairDrift * 0.9 + i * 2) * 0.03]}>
+                    <mesh geometry={geo.lock} material={lockMat(look.hair)} position={[0, -k.l / 2, 0]} scale={[k.w, k.l, 1]} />
+                  </group>
+                ))}
+            </group>
+          )}
+            </>
+          ) : (
+            <>
           {/* hair */}
           {look.style !== 'hood' && (
             <mesh geometry={geo.scalp} material={mat(look.hair, 0.95)} position={[0, 0.012, -0.012]} rotation={[look.style === 'crop' ? -0.3 : -0.45, 0, 0]} scale={look.style === 'crop' || look.style === 'short' ? [0.9, 1.0, 0.98] : [0.92, 1.1, 1.0]} castShadow />
@@ -532,7 +735,7 @@ export const Human: React.FC<HumanPose & {outfit?: Outfit; face: HumanFace; posi
             // a hood open at the face, falling to the shoulders
             <group>
               <mesh geometry={geo.scalp} material={mat('#221c19')} position={[0, 0.02, -0.02]} rotation={[-0.15, 0, 0]} scale={[1.3, 1.45, 1.35]} castShadow />
-              <mesh geometry={geo.curtain} material={mat('#221c19')} position={[0, -0.16, -0.02]} scale={[1.2, 0.6, 1.25]} castShadow />
+              <mesh geometry={geo.curtainV1} material={mat('#221c19')} position={[0, -0.16, -0.02]} scale={[1.2, 0.6, 1.25]} castShadow />
             </group>
           )}
           {look.style === 'bun' && (
@@ -547,7 +750,7 @@ export const Human: React.FC<HumanPose & {outfit?: Outfit; face: HumanFace; posi
           {look.style === 'long' && (
             <group>
               {/* a curtain of long black hair round the back and sides, down past the shoulders */}
-              <mesh geometry={geo.curtain} material={hairMat()} position={[0, -0.25, -0.012]} rotation={[0.06 + Math.sin(hairDrift * 0.7) * 0.02, 0, 0]} castShadow />
+              <mesh geometry={geo.curtainV1} material={hairMatV1()} position={[0, -0.25, -0.012]} rotation={[0.06 + Math.sin(hairDrift * 0.7) * 0.02, 0, 0]} castShadow />
               {look.messy &&
                 // a few loose locks falling over the face (one across an eye)
                 [
@@ -555,9 +758,11 @@ export const Human: React.FC<HumanPose & {outfit?: Outfit; face: HumanFace; posi
                   {x: 0.028, w: 0.026, l: 0.4, z: 0.1, r: -0.06},
                   {x: 0.062, w: 0.03, l: 0.33, z: 0.088, r: -0.14},
                 ].map((k, i) => (
-                  <mesh key={i} geometry={geo.lock} material={lockMat()} position={[k.x, 0.03 - k.l / 2, k.z]} rotation={[-0.08, 0, k.r + Math.sin(hairDrift * 0.9 + i * 2) * 0.04]} scale={[k.w, k.l, 1]} />
+                  <mesh key={i} geometry={geo.lock} material={lockMatV1()} position={[k.x, 0.03 - k.l / 2, k.z]} rotation={[-0.08, 0, k.r + Math.sin(hairDrift * 0.9 + i * 2) * 0.04]} scale={[k.w, k.l, 1]} />
                 ))}
             </group>
+          )}
+            </>
           )}
         </group>
   );
@@ -612,11 +817,11 @@ export const Human: React.FC<HumanPose & {outfit?: Outfit; face: HumanFace; posi
 };
 
 /** Extra long, wet hair hanging from a floating head (the Krasue): a longer strand curtain. */
-export const LongHair: React.FC<{length?: number; sway?: number}> = ({length = 2.2, sway = 0}) => (
+export const LongHair: React.FC<{length?: number; sway?: number; color?: string}> = ({length = 2.2, sway = 0, color = '#070606'}) => (
   <group>
-    <mesh geometry={geo.curtain} material={hairMat()} position={[0, -0.25 * length, -0.012]} rotation={[0.04 + sway * 0.03, 0, sway * 0.02]} scale={[1.05, length, 1.08]} castShadow />
+    <mesh geometry={geo.curtain} material={hairMat(color)} position={[0, 0.0 - 0.31 * length, -0.008]} rotation={[0.04 + sway * 0.03, 0, sway * 0.02]} scale={[0.96, length, 1.08]} castShadow />
     {[-0.07, -0.03, 0.035, 0.072].map((x, i) => (
-      <mesh key={i} geometry={geo.lock} material={lockMat()} position={[x, 0.02 - 0.22 * length, 0.09 - Math.abs(x) * 0.4]} rotation={[-0.06, 0, (x > 0 ? -1 : 1) * 0.08 + Math.sin(sway + i * 2) * 0.05]} scale={[0.035, 0.44 * length, 1]} />
+      <mesh key={i} geometry={geo.lock} material={lockMat(color)} position={[x, 0.02 - 0.22 * length, 0.09 - Math.abs(x) * 0.4]} rotation={[-0.06, 0, (x > 0 ? -1 : 1) * 0.08 + Math.sin(sway + i * 2) * 0.05]} scale={[0.035, 0.44 * length, 1]} />
     ))}
   </group>
 );

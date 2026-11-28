@@ -159,7 +159,7 @@ export const cameraAt = (t: number): Cam => {
     case 'title':
       return push({pos: [-1.5, 6.5, 20], target: [0, 2.5, -8], fov: 50}, {pos: [-1.0, 5.5, 15], target: [0, 2.6, -8], fov: 46}, u, t, 0.005);
     case 'day':
-      return push({pos: [-1.3, 2.1, 4.2], target: [2.0, 2.5, 1.8], fov: 42}, {pos: [-0.8, 2.15, 3.6], target: [2.0, 2.55, 1.8], fov: 38}, u, t);
+      return push({pos: [-1.5, 2.3, 4.4], target: [2.0, 2.95, 1.8], fov: 44}, {pos: [-1.0, 2.35, 3.8], target: [2.0, 3.0, 1.8], fov: 40}, u, t);
     case 'midnight':
       return push({pos: B([1.3, 1.45, 1.0]), target: B([MAT[0], 0.7, MAT[2]]), fov: 42}, {pos: B([1.0, 1.35, 0.7]), target: B([MAT[0], 0.75, MAT[2]]), fov: 38}, u, t, 0.002);
     case 'split': {
@@ -183,11 +183,12 @@ export const cameraAt = (t: number): Cam => {
     case 'window': {
       // from inside: out through the window to a red glow drifting among the trees, slowly zooming in
       const f = farPos(t);
-      return {pos: B([0.3, 1.45, 0.55]), target: B([f[0] * 0.6, f[1] * 0.9, f[2]]), fov: lerp(46, 26, easeInOut(u)), near: 0.05, far: 200};
+      // right up at the open window, so nothing crosses the view
+      return {pos: B([0.3, 1.45, 1.72]), target: B([f[0] * 0.6, f[1] * 0.9, f[2]]), fov: lerp(40, 24, easeInOut(u)), near: 0.05, far: 200};
     }
     case 'turn': {
       const f = farPos(t);
-      return {pos: add(B([0.3, 1.45, 0.75]), tremble(t, 0.002)), target: B(f), fov: lerp(14, 11, easeInOut(u)), near: 0.05, far: 200};
+      return {pos: add(B([0.3, 1.45, 1.75]), tremble(t, 0.002)), target: B(f), fov: lerp(14, 11, easeInOut(u)), near: 0.05, far: 200};
     }
     case 'stare': {
       // right in front of it: the severed head staring back
@@ -206,7 +207,7 @@ export const cameraAt = (t: number): Cam => {
     }
     case 'tired': {
       const head: V3 = [PORCH[0], PORCH[1] + 1.59, PORCH[2]];
-      return push({pos: add(head, [-0.95, -0.05, 0.4]), target: head, fov: 34}, {pos: add(head, [-0.75, -0.04, 0.3]), target: head, fov: 32}, u, t, 0.0015);
+      return push({pos: add(head, [-1.05, -0.1, 0.42]), target: add(head, [0, 0.12, 0]), fov: 36}, {pos: add(head, [-0.85, -0.08, 0.34]), target: add(head, [0, 0.12, 0]), fov: 34}, u, t, 0.0015);
     }
     case 'food':
       return push({pos: B([-0.15, 0.55, 0.15]), target: B([-0.6, 0.05, -0.3]), fov: 40}, {pos: B([-0.25, 0.5, 0.05]), target: B([-0.6, 0.05, -0.3]), fov: 38}, u, t, 0.0015);

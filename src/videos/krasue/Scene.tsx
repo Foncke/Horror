@@ -256,8 +256,8 @@ const Bedroom: React.FC<{t: number; shot: ShotId; mood: Mood}> = ({t, shot, mood
       {[-1, 1].map((s) => (
         <Box key={s} p={[winX + s * 0.78, 1.42, 1.86]} s={[0.5, 1.05, 0.03]} r={[0, s * 0.35, 0]} mat={planks()} />
       ))}
-      {/* thorny branches across the outside of this window too */}
-      <group position={[winX, 1.42, 1.82]}>
+      {/* thorny branches across the outside of this window too (not while you look out through it) */}
+      <group position={[winX, 1.42, 1.82]} visible={shot !== 'window' && shot !== 'turn'}>
         {[0.6, -0.55, 0.12].map((r, i) => (
           <mesh key={i} geometry={cyl} material={plain('#1c140e')} rotation={[0, 0, Math.PI / 2 + r]} scale={[0.012, 1.25, 0.012]} />
         ))}
@@ -341,7 +341,7 @@ const Bedroom: React.FC<{t: number; shot: ShotId; mood: Mood}> = ({t, shot, mood
         <planeGeometry args={[60, 30]} />
         <meshStandardMaterial color="#20281c" roughness={1} />
       </mesh>
-      {[[-3, 0, 9], [4, 0, 11], [-1, 0, 16], [6, 0, 17], [-5, 0, 19], [1.5, 0, 21], [8, 0, 14], [-7, 0, 13]].map((p, i) => (
+      {[[-3.5, 0, 9], [5.5, 0, 11], [-4.5, 0, 16], [7, 0, 17], [-6, 0, 19], [9, 0, 22], [9.5, 0, 14], [-8, 0, 13]].map((p, i) => (
         <BigTree key={i} p={p as V3} s={0.8 + hash(i) * 0.4} />
       ))}
       <Mist t={t} color="#2a3a44" opacity={0.3} area={[-10, 10, 5, 24]} y={[0.5, 4]} count={30} />
@@ -395,7 +395,7 @@ export const KrasueScene: React.FC<{t: number; shot: ShotId; set: 'village' | 'b
               <Human outfit="man" face="neutral" position={[1.2, 0, -0.8]} rotationY={-1.6} walk={t * 3} stride={0.25} />
             </>
           )}
-          {shot === 'day' && <Human face="smile" position={PORCH} rotationY={-Math.PI / 2} armL={-0.5} armR={-0.6} elbowL={-0.4} elbowR={-0.4} breathe={t} />}
+          {shot === 'day' && <Human face="smile" position={PORCH} rotationY={-Math.PI / 2 + 0.25} armL={0.05} armR={-0.15} elbowL={-0.2} elbowR={-0.5} headYaw={-0.2} breathe={t} />}
           {shot === 'tired' && (
             <>
               <Human face="tired" position={PORCH} rotationY={-Math.PI / 2 + 0.3} headPitch={0.2} breathe={t * 0.6} hairDrift={t} />
@@ -407,7 +407,7 @@ export const KrasueScene: React.FC<{t: number; shot: ShotId; set: 'village' | 'b
           {/* out on the forest path, drifting through the dark */}
           {(shot === 'path' || shot === 'hunt') && <Krasue t={t} position={shot === 'path' ? [Math.sin(t * 0.3) * 0.8, 1.7, PATH_Z - 4 + (t - cue.driven) * 0.5] : [lerp(-1.6, 1.6, clamp((t - cue.search + 0.2) / 4.5)), 1.25, PATH_Z - 0.6]} rotationY={shot === 'path' ? 0.2 : -Math.PI / 2} glow={1} light={1.8} halo={shot === 'path' ? 0.9 : 0.5} />}
           {/* far off in the title shot: a red glow drifting above the trees */}
-          {shot === 'title' && <Krasue t={t} position={[-3 + (t - cue.call) * 0.4, 6.5, -14]} rotationY={Math.PI} glow={1} light={0.8} halo={1.4} />}
+          {shot === 'title' && <Krasue t={t} position={[-2.2 + (t - cue.call) * 0.5, 3.6, -10]} rotationY={Math.PI} glow={1} light={0.8} halo={1.5} />}
         </>
       )}
       {set === 'bedroom' && (
