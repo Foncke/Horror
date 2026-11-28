@@ -21,7 +21,9 @@ export const canvasTexture = (key: string, w: number, h: number, draw: (ctx: Can
   return tex;
 };
 
-export type FaceKind = 'calm' | 'worried' | 'scared' | 'scaredDown' | 'laugh' | 'sleepwalk' | 'grin' | 'blank' | 'double' | 'doubleWide' | 'void' | 'voidGrin';
+export type FaceKind = 'calm' | 'worried' | 'scared' | 'scaredDown' | 'laugh' | 'sleepwalk' | 'grin' | 'blank' | 'double' | 'doubleWide' | 'void' | 'voidGrin'
+  // 17 Seconds: the narrator and the thing behind him
+  | 'stare' | 'tired' | 'smirk' | 'fear' | 'leaner' | 'leanerTeeth';
 
 /**
  * Face painted on the front of a sphere head. The texture covers a patch of
@@ -253,6 +255,236 @@ export const faceTexture = (kind: FaceKind, girly = false) =>
     drawFace(kind, ctx, w, h);
     if (girly) drawGirly(kind, ctx, w, h);
   });
+
+const NEW_FACES: FaceKind[] = ['stare', 'tired', 'smirk', 'fear', 'leaner', 'leanerTeeth'];
+
+/** 17 Seconds faces, drawn in the same 1024x512 layout as drawFace. */
+const drawFace17 = (kind: FaceKind, ctx: CanvasRenderingContext2D, w: number, h: number) => {
+  ctx.clearRect(0, 0, w, h);
+  const cx = w / 2;
+  const eyeY = h * 0.5;
+  const ink = '#111114';
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  if (kind === 'leaner' || kind === 'leanerTeeth') {
+    // sunken grey sockets round pitch-black eyes (the eyes are meshes), and a grin that runs nearly ear to ear
+    for (const s of [-1, 1]) {
+      const g = ctx.createRadialGradient(cx + s * 112, eyeY - 6, 30, cx + s * 112, eyeY - 6, 120);
+      g.addColorStop(0, 'rgba(22,20,24,0.92)');
+      g.addColorStop(0.55, 'rgba(40,36,40,0.55)');
+      g.addColorStop(1, 'rgba(40,38,40,0)');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.ellipse(cx + s * 112, eyeY - 6, 120, 128, 0, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    const wide = kind === 'leanerTeeth';
+    const half = wide ? 360 : 235;
+    const y0 = eyeY + 22;
+    const u = (x: number) => 1 - ((x - cx) / half) ** 2;
+    // open grin: dark gums, two crowded rows of thin, uneven teeth
+    const top = (x: number) => y0 + (wide ? 0 : 70) + u(x) * (wide ? 95 : 40);
+    const bot = (x: number) => y0 + (wide ? 0 : 70) + u(x) * (wide ? 215 : 92);
+    ctx.beginPath();
+    for (let x = cx - half; x <= cx + half; x += 8) ctx.lineTo(x, top(x));
+    for (let x = cx + half; x >= cx - half; x -= 8) ctx.lineTo(x, bot(x));
+    ctx.closePath();
+    ctx.fillStyle = '#1a0507';
+    ctx.fill();
+    ctx.save();
+    ctx.clip();
+    let seed = 11;
+    const r = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    for (const row of [0, 1]) {
+      const n = wide ? 44 : 30;
+      for (let i = 0; i < n; i++) {
+        const x = cx - half + ((i + 0.5) / n) * half * 2 + (r() - 0.5) * 4;
+        const wTooth = 15 + r() * 5;
+        const len = ((row === 0 ? 40 : 34) + r() * 20) * (wide ? 1 : 0.62);
+        const yEdge = row === 0 ? top(x) - 6 : bot(x) + 6;
+        const dir = row === 0 ? 1 : -1;
+        const shade = 214 - r() * 34;
+        ctx.fillStyle = `rgb(${shade + 10},${shade},${shade - 22})`;
+        ctx.beginPath();
+        ctx.moveTo(x - wTooth / 2, yEdge);
+        ctx.lineTo(x + wTooth / 2, yEdge);
+        ctx.lineTo(x + (r() - 0.5) * 4, yEdge + dir * len);
+        ctx.closePath();
+        ctx.fill();
+      }
+    }
+    ctx.restore();
+    ctx.strokeStyle = '#140708';
+    ctx.lineWidth = 6;
+    ctx.beginPath();
+    for (let x = cx - half; x <= cx + half; x += 8) ctx.lineTo(x, top(x));
+    for (let x = cx + half; x >= cx - half; x -= 8) ctx.lineTo(x, bot(x));
+    ctx.closePath();
+    ctx.stroke();
+    return;
+  }
+  // the narrator: toy face with tired shadows under the eyes
+  const big = kind === 'stare' || kind === 'fear';
+  const rx = big ? 30 : 22;
+  const ry = big ? 36 : 25;
+  for (const s of [-1, 1]) {
+    const ex = cx + s * 105;
+    const g = ctx.createRadialGradient(ex, eyeY + 48, 4, ex, eyeY + 48, 62);
+    g.addColorStop(0, 'rgba(120,95,110,0.33)');
+    g.addColorStop(1, 'rgba(120,95,110,0)');
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.ellipse(ex, eyeY + 48, 64, 30, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = ink;
+    ctx.beginPath();
+    if (kind === 'tired') {
+      // heavy lids: the top of the eye cut flat
+      ctx.ellipse(ex, eyeY + 2, rx, ry, 0, 0.05 * Math.PI, 0.95 * Math.PI);
+      ctx.closePath();
+    } else ctx.ellipse(ex, eyeY, rx, ry, 0, 0, Math.PI * 2);
+    ctx.fill();
+    // a catchlight, so the eyes stay alive
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath();
+    ctx.arc(ex + 9, kind === 'tired' ? eyeY + 10 : eyeY - 12, big ? 7 : 5, 0, Math.PI * 2);
+    ctx.fill();
+    if (kind === 'tired') {
+      ctx.strokeStyle = ink;
+      ctx.lineWidth = 9;
+      ctx.beginPath();
+      ctx.moveTo(ex - rx - 6, eyeY + 1);
+      ctx.lineTo(ex + rx + 6, eyeY + 1);
+      ctx.stroke();
+    }
+  }
+  ctx.strokeStyle = ink;
+  ctx.lineWidth = 11;
+  ctx.beginPath();
+  if (kind === 'smirk') {
+    ctx.moveTo(cx - 42, eyeY + 122);
+    ctx.quadraticCurveTo(cx + 6, eyeY + 138, cx + 46, eyeY + 108);
+  } else if (kind === 'fear') {
+    ctx.ellipse(cx, eyeY + 126, 18, 26, 0, 0, Math.PI * 2);
+  } else if (kind === 'tired') {
+    ctx.moveTo(cx - 36, eyeY + 124);
+    ctx.quadraticCurveTo(cx, eyeY + 116, cx + 36, eyeY + 126);
+  } else {
+    ctx.moveTo(cx - 30, eyeY + 122);
+    ctx.lineTo(cx + 30, eyeY + 122);
+  }
+  ctx.stroke();
+  // brows
+  ctx.lineWidth = 10;
+  for (const s of [-1, 1]) {
+    ctx.beginPath();
+    if (kind === 'fear') {
+      ctx.moveTo(cx + s * 62, eyeY - 96);
+      ctx.lineTo(cx + s * 142, eyeY - 72);
+    } else if (kind === 'smirk') {
+      ctx.moveTo(cx + s * 66, eyeY - (s < 0 ? 66 : 80));
+      ctx.lineTo(cx + s * 142, eyeY - (s < 0 ? 70 : 82));
+    } else if (kind === 'tired') {
+      ctx.moveTo(cx + s * 64, eyeY - 58);
+      ctx.lineTo(cx + s * 142, eyeY - 60);
+    } else {
+      ctx.moveTo(cx + s * 62, eyeY - 82);
+      ctx.lineTo(cx + s * 142, eyeY - 76);
+    }
+    ctx.stroke();
+  }
+};
+
+/** A face at twice the resolution, for extreme close-ups. The new 17 Seconds faces are drawn here too. */
+export const faceTextureHi = (kind: FaceKind, girly = false) =>
+  canvasTexture(`facehi-${kind}${girly ? '-girly' : ''}`, 2048, 1024, (ctx) => {
+    ctx.scale(2, 2);
+    if (NEW_FACES.includes(kind)) drawFace17(kind, ctx, 1024, 512);
+    else {
+      drawFace(kind, ctx, 1024, 512);
+      if (girly) drawGirly(kind, ctx, 1024, 512);
+    }
+  });
+
+/** The note: plain printer paper, block capitals, no handwriting. */
+export const noteTexture = () =>
+  canvasTexture('note17', 1024, 1360, (ctx, w, h) => {
+    ctx.fillStyle = '#ece9e1';
+    ctx.fillRect(0, 0, w, h);
+    const g = ctx.createRadialGradient(w / 2, h / 2, h * 0.2, w / 2, h / 2, h * 0.75);
+    g.addColorStop(0, 'rgba(0,0,0,0)');
+    g.addColorStop(1, 'rgba(60,50,40,0.18)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, w, h);
+    // the creases of a sheet folded in three
+    for (const y of [h / 3, (2 * h) / 3]) {
+      ctx.fillStyle = 'rgba(0,0,0,0.06)';
+      ctx.fillRect(0, y, w, 3);
+      ctx.fillStyle = 'rgba(255,255,255,0.4)';
+      ctx.fillRect(0, y + 3, w, 2);
+    }
+    ctx.fillStyle = '#16151a';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = '400 80px "Special Elite"';
+    const lines = ['WHATEVER IS', 'STANDING', 'BEHIND YOUR', 'REFLECTION', 'ONLY MOVES', 'WHILE THE', 'LIGHTS ARE', 'OFF.'];
+    lines.forEach((l, i) => ctx.fillText(l, w / 2, 250 + i * 122));
+  });
+
+/** Phone screen: a countdown ("00:17.00"), 'off', or 'live' (the camera badge over a dim view). */
+export const phoneTexture = (text: string) =>
+  canvasTexture(`phone17-${text}`, 360, 760, (ctx, w, h) => {
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, w, h);
+    if (text === 'off') return;
+    if (text === 'live') {
+      const g = ctx.createLinearGradient(0, 0, 0, h);
+      g.addColorStop(0, '#24302f');
+      g.addColorStop(1, '#0b1213');
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, w, h);
+      // a dim figure: the back of a head and shoulders
+      ctx.fillStyle = 'rgba(10,14,14,0.9)';
+      ctx.beginPath();
+      ctx.ellipse(w / 2, h * 0.6, 88, 96, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.ellipse(w / 2, h * 0.98, 190, 150, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#ff2a2a';
+      ctx.beginPath();
+      ctx.arc(42, 56, 12, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.font = '800 36px Inter';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('LIVE', 64, 57);
+      return;
+    }
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = '700 40px Inter';
+    ctx.fillStyle = 'rgba(255,255,255,0.55)';
+    ctx.fillText('Timer', w / 2, 140);
+    ctx.strokeStyle = 'rgba(255,159,10,0.25)';
+    ctx.lineWidth = 12;
+    ctx.beginPath();
+    ctx.arc(w / 2, h / 2 - 20, 150, 0, Math.PI * 2);
+    ctx.stroke();
+    const left = Number(text.slice(3)) / 17;
+    ctx.strokeStyle = '#ff9f0a';
+    ctx.beginPath();
+    ctx.arc(w / 2, h / 2 - 20, 150, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * left);
+    ctx.stroke();
+    ctx.font = '800 70px Inter';
+    ctx.fillStyle = '#ffffff';
+    ctx.fillText(text, w / 2, h / 2 - 20);
+    ctx.fillStyle = '#ff453a';
+    ctx.beginPath();
+    ctx.arc(w / 2, h - 130, 44, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
 
 export const carpetTexture = () =>
   canvasTexture(

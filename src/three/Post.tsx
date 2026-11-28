@@ -143,6 +143,8 @@ export type FinishProps = {
   paint?: number;
   /** teal/orange colour grade 0..1 (default off) */
   grade?: number;
+  /** chromatic aberration (default 0.0015) */
+  aberration?: number;
 };
 
 /** Takes over rendering: scene -> bloom -> tone mapping -> lens finish (grain, vignette, fades). */
@@ -182,6 +184,7 @@ export const Post: React.FC<FinishProps> = (p) => {
   u.uTint.value.set(...(p.tint ?? [1, 1, 1]));
   u.uTintAmount.value = p.tintAmount ?? 0;
   u.uPeephole.value = p.peephole ? 1 : 0;
+  u.uAberration.value = p.aberration ?? 0.0015;
   paint.enabled = (p.paint ?? 0) > 0 || (p.grade ?? 0) > 0;
   paint.uniforms.uPaint.value = p.paint ?? 0;
   paint.uniforms.uGrade.value = p.grade ?? 0;

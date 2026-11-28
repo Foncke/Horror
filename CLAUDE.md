@@ -98,3 +98,14 @@ Mist sprites stay >6 m off the lane: a camera passing through a puff makes the h
 
 Only if the soundtrack or timings must be rebuilt (Python + FFmpeg needed):
 `npm run room414:align` then `npm run room414:mix`.
+
+## "17 Seconds" (sixth video) is finished and rendered
+`projects/seventeen/` (script, ElevenLabs voice "Valko - Slow & Dark", timings, mix.py, the owner's scene guide),
+`src/videos/seventeen/`, composition `Seventeen`. `npm run seventeen:render` → `out/Seventeen.mp4` (69.9 s, 4,193 frames,
+24.0 Mbps, 212 MB); uploaded as `renders/Seventeen.mp4`. Toy look of 3 A.M. (the owner's choice): the narrator is
+`Character` outfit `sleeper` (a man, short hair) with the new hi-res faces `stare`/`tired`/`smirk`/`fear` (`faceHi`).
+The mirror is a real `Reflector` whose camera also sees **layer 1**: the thing (`Leaner.tsx`: black hooded body, long dark
+neck, pale face, slanted black eyes, a slit of teeth that stretches into a huge grin) and the black doorway exist only on
+layer 1, so they show in the mirror but not in the room; the phone feed and the last shot enable layer 1 (`Cam17.real`).
+Present-day shots (lamp on, door shut) bracket the story; big 00:07 / 00:12 / red 00:17 stamps; title "17 SECONDS".
+No fade in, hard cut after "Don't look behind you" so it loops into the first shot; dead silence there plus one tap.

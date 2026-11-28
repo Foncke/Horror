@@ -23,6 +23,9 @@
     "krasue:align": "python3 tools/align.py projects/krasue/voice.mp3 projects/krasue/script.txt projects/krasue/timings.json",
     "krasue:mix": "python3 projects/krasue/mix.py",
     "krasue:render": "remotion render Krasue out/Krasue.mp4",
+    "seventeen:align": "python3 tools/align.py projects/seventeen/voice.mp3 projects/seventeen/script.txt projects/seventeen/timings.json",
+    "seventeen:mix": "python3 projects/seventeen/mix.py",
+    "seventeen:render": "remotion render Seventeen out/Seventeen.mp4",
     "stills": "node tools/stills.mjs"
   },
   "dependencies": {

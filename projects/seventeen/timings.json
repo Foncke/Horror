@@ -1,0 +1,1167 @@
+{
+ "duration": 69.878,
+ "lines": [
+  {
+   "text": "If you're watching this alone in the dark... start a seventeen-second timer right now.",
+   "start": 0.0,
+   "end": 5.5
+  },
+  {
+   "text": "Do not blink while the clock is running. And if you hear a knock on wood near you... do not answer it.",
+   "start": 6.0,
+   "end": 13.2
+  },
+  {
+   "text": "Last night, I found a note taped to my bedroom mirror. No handwriting. Just printed letters. It said: \"Whatever is standing behind your reflection only moves while the lights are off.\"",
+   "start": 13.2,
+   "end": 25.845
+  },
+  {
+   "text": "I laughed it off... turned off the lamp... and looked into the dark glass.",
+   "start": 25.845,
+   "end": 30.14
+  },
+  {
+   "text": "At first, there was nothing. Just my own tired face.",
+   "start": 30.805,
+   "end": 34.88
+  },
+  {
+   "text": "Then, at seven seconds... the doorway behind me in the reflection went completely black. Even though my hallway light was on.",
+   "start": 35.397,
+   "end": 43.637
+  },
+  {
+   "text": "At twelve seconds... something tall leaned in over my left shoulder. Its chin rested right above my collarbone. And it smiled with too many teeth.",
+   "start": 43.637,
+   "end": 53.32
+  },
+  {
+   "text": "When I spun around to look behind me... the room was empty.",
+   "start": 53.737,
+   "end": 56.84
+  },
+  {
+   "text": "The scariest part? The note was gone. And my phone screen flickered on by itself... showing a live camera view of the back of my own head.",
+   "start": 57.337,
+   "end": 65.97
+  },
+  {
+   "text": "Your seventeen seconds are up. Don't look behind you.",
+   "start": 66.235,
+   "end": 69.635
+  }
+ ],
+ "words": [
+  {
+   "text": "If",
+   "line": 0,
+   "start": 0.0,
+   "end": 0.12
+  },
+  {
+   "text": "you're",
+   "line": 0,
+   "start": 0.12,
+   "end": 0.4
+  },
+  {
+   "text": "watching",
+   "line": 0,
+   "start": 0.4,
+   "end": 0.8
+  },
+  {
+   "text": "this",
+   "line": 0,
+   "start": 0.8,
+   "end": 1.04
+  },
+  {
+   "text": "alone",
+   "line": 0,
+   "start": 1.04,
+   "end": 1.56
+  },
+  {
+   "text": "in",
+   "line": 0,
+   "start": 1.56,
+   "end": 1.72
+  },
+  {
+   "text": "the",
+   "line": 0,
+   "start": 1.72,
+   "end": 1.92
+  },
+  {
+   "text": "dark...",
+   "line": 0,
+   "start": 1.92,
+   "end": 2.27
+  },
+  {
+   "text": "start",
+   "line": 0,
+   "start": 2.68,
+   "end": 3.12
+  },
+  {
+   "text": "a",
+   "line": 0,
+   "start": 3.12,
+   "end": 3.28
+  },
+  {
+   "text": "seventeen-second",
+   "line": 0,
+   "start": 3.28,
+   "end": 4.36
+  },
+  {
+   "text": "timer",
+   "line": 0,
+   "start": 4.36,
+   "end": 4.92
+  },
+  {
+   "text": "right",
+   "line": 0,
+   "start": 4.92,
+   "end": 5.32
+  },
+  {
+   "text": "now.",
+   "line": 0,
+   "start": 5.32,
+   "end": 5.5
+  },
+  {
+   "text": "Do",
+   "line": 1,
+   "start": 6.0,
+   "end": 6.32
+  },
+  {
+   "text": "not",
+   "line": 1,
+   "start": 6.32,
+   "end": 6.64
+  },
+  {
+   "text": "blink",
+   "line": 1,
+   "start": 6.64,
+   "end": 7.12
+  },
+  {
+   "text": "while",
+   "line": 1,
+   "start": 7.12,
+   "end": 7.28
+  },
+  {
+   "text": "the",
+   "line": 1,
+   "start": 7.28,
+   "end": 7.44
+  },
+  {
+   "text": "clock",
+   "line": 1,
+   "start": 7.44,
+   "end": 7.76
+  },
+  {
+   "text": "is",
+   "line": 1,
+   "start": 7.76,
+   "end": 7.92
+  },
+  {
+   "text": "running.",
+   "line": 1,
+   "start": 7.92,
+   "end": 8.27
+  },
+  {
+   "text": "And",
+   "line": 1,
+   "start": 8.44,
+   "end": 8.72
+  },
+  {
+   "text": "if",
+   "line": 1,
+   "start": 8.72,
+   "end": 8.88
+  },
+  {
+   "text": "you",
+   "line": 1,
+   "start": 8.88,
+   "end": 9.12
+  },
+  {
+   "text": "hear",
+   "line": 1,
+   "start": 9.12,
+   "end": 9.36
+  },
+  {
+   "text": "a",
+   "line": 1,
+   "start": 9.36,
+   "end": 9.52
+  },
+  {
+   "text": "knock",
+   "line": 1,
+   "start": 9.52,
+   "end": 9.84
+  },
+  {
+   "text": "on",
+   "line": 1,
+   "start": 9.84,
+   "end": 10.04
+  },
+  {
+   "text": "wood",
+   "line": 1,
+   "start": 10.04,
+   "end": 10.4
+  },
+  {
+   "text": "near",
+   "line": 1,
+   "start": 10.4,
+   "end": 10.68
+  },
+  {
+   "text": "you...",
+   "line": 1,
+   "start": 10.68,
+   "end": 10.88
+  },
+  {
+   "text": "do",
+   "line": 1,
+   "start": 11.2,
+   "end": 11.6
+  },
+  {
+   "text": "not",
+   "line": 1,
+   "start": 11.6,
+   "end": 12.04
+  },
+  {
+   "text": "answer",
+   "line": 1,
+   "start": 12.04,
+   "end": 12.48
+  },
+  {
+   "text": "it.",
+   "line": 1,
+   "start": 12.48,
+   "end": 13.2
+  },
+  {
+   "text": "Last",
+   "line": 2,
+   "start": 13.2,
+   "end": 13.76
+  },
+  {
+   "text": "night,",
+   "line": 2,
+   "start": 13.76,
+   "end": 14.08
+  },
+  {
+   "text": "I",
+   "line": 2,
+   "start": 14.08,
+   "end": 14.36
+  },
+  {
+   "text": "found",
+   "line": 2,
+   "start": 14.36,
+   "end": 14.64
+  },
+  {
+   "text": "a",
+   "line": 2,
+   "start": 14.64,
+   "end": 14.8
+  },
+  {
+   "text": "note",
+   "line": 2,
+   "start": 14.8,
+   "end": 15.16
+  },
+  {
+   "text": "taped",
+   "line": 2,
+   "start": 15.16,
+   "end": 15.44
+  },
+  {
+   "text": "to",
+   "line": 2,
+   "start": 15.44,
+   "end": 15.56
+  },
+  {
+   "text": "my",
+   "line": 2,
+   "start": 15.56,
+   "end": 15.76
+  },
+  {
+   "text": "bedroom",
+   "line": 2,
+   "start": 15.76,
+   "end": 16.24
+  },
+  {
+   "text": "mirror.",
+   "line": 2,
+   "start": 16.24,
+   "end": 16.54
+  },
+  {
+   "text": "No",
+   "line": 2,
+   "start": 16.885,
+   "end": 17.165
+  },
+  {
+   "text": "handwriting.",
+   "line": 2,
+   "start": 17.165,
+   "end": 17.86
+  },
+  {
+   "text": "Just",
+   "line": 2,
+   "start": 18.045,
+   "end": 18.37
+  },
+  {
+   "text": "printed",
+   "line": 2,
+   "start": 18.405,
+   "end": 18.965
+  },
+  {
+   "text": "letters.",
+   "line": 2,
+   "start": 18.965,
+   "end": 19.22
+  },
+  {
+   "text": "It",
+   "line": 2,
+   "start": 19.765,
+   "end": 20.085
+  },
+  {
+   "text": "said:",
+   "line": 2,
+   "start": 20.085,
+   "end": 20.49
+  },
+  {
+   "text": "\"Whatever",
+   "line": 2,
+   "start": 20.645,
+   "end": 21.285
+  },
+  {
+   "text": "is",
+   "line": 2,
+   "start": 21.285,
+   "end": 21.485
+  },
+  {
+   "text": "standing",
+   "line": 2,
+   "start": 21.485,
+   "end": 21.925
+  },
+  {
+   "text": "behind",
+   "line": 2,
+   "start": 21.925,
+   "end": 22.325
+  },
+  {
+   "text": "your",
+   "line": 2,
+   "start": 22.325,
+   "end": 22.525
+  },
+  {
+   "text": "reflection",
+   "line": 2,
+   "start": 22.525,
+   "end": 23.24
+  },
+  {
+   "text": "only",
+   "line": 2,
+   "start": 23.365,
+   "end": 23.765
+  },
+  {
+   "text": "moves",
+   "line": 2,
+   "start": 23.765,
+   "end": 24.245
+  },
+  {
+   "text": "while",
+   "line": 2,
+   "start": 24.245,
+   "end": 24.445
+  },
+  {
+   "text": "the",
+   "line": 2,
+   "start": 24.445,
+   "end": 24.605
+  },
+  {
+   "text": "lights",
+   "line": 2,
+   "start": 24.605,
+   "end": 24.965
+  },
+  {
+   "text": "are",
+   "line": 2,
+   "start": 24.965,
+   "end": 25.13
+  },
+  {
+   "text": "off.\"",
+   "line": 2,
+   "start": 25.165,
+   "end": 25.845
+  },
+  {
+   "text": "I",
+   "line": 3,
+   "start": 25.845,
+   "end": 26.245
+  },
+  {
+   "text": "laughed",
+   "line": 3,
+   "start": 26.245,
+   "end": 26.605
+  },
+  {
+   "text": "it",
+   "line": 3,
+   "start": 26.605,
+   "end": 26.805
+  },
+  {
+   "text": "off...",
+   "line": 3,
+   "start": 26.805,
+   "end": 26.925
+  },
+  {
+   "text": "turned",
+   "line": 3,
+   "start": 27.285,
+   "end": 27.685
+  },
+  {
+   "text": "off",
+   "line": 3,
+   "start": 27.685,
+   "end": 27.925
+  },
+  {
+   "text": "the",
+   "line": 3,
+   "start": 27.925,
+   "end": 28.085
+  },
+  {
+   "text": "lamp...",
+   "line": 3,
+   "start": 28.085,
+   "end": 28.44
+  },
+  {
+   "text": "and",
+   "line": 3,
+   "start": 28.565,
+   "end": 28.805
+  },
+  {
+   "text": "looked",
+   "line": 3,
+   "start": 28.805,
+   "end": 29.245
+  },
+  {
+   "text": "into",
+   "line": 3,
+   "start": 29.245,
+   "end": 29.445
+  },
+  {
+   "text": "the",
+   "line": 3,
+   "start": 29.445,
+   "end": 29.645
+  },
+  {
+   "text": "dark",
+   "line": 3,
+   "start": 29.645,
+   "end": 29.965
+  },
+  {
+   "text": "glass.",
+   "line": 3,
+   "start": 29.965,
+   "end": 30.14
+  },
+  {
+   "text": "At",
+   "line": 4,
+   "start": 30.805,
+   "end": 31.125
+  },
+  {
+   "text": "first,",
+   "line": 4,
+   "start": 31.125,
+   "end": 31.73
+  },
+  {
+   "text": "there",
+   "line": 4,
+   "start": 31.845,
+   "end": 32.165
+  },
+  {
+   "text": "was",
+   "line": 4,
+   "start": 32.165,
+   "end": 32.445
+  },
+  {
+   "text": "nothing.",
+   "line": 4,
+   "start": 32.445,
+   "end": 32.8
+  },
+  {
+   "text": "Just",
+   "line": 4,
+   "start": 33.117,
+   "end": 33.477
+  },
+  {
+   "text": "my",
+   "line": 4,
+   "start": 33.477,
+   "end": 33.677
+  },
+  {
+   "text": "own",
+   "line": 4,
+   "start": 33.677,
+   "end": 33.997
+  },
+  {
+   "text": "tired",
+   "line": 4,
+   "start": 33.997,
+   "end": 34.557
+  },
+  {
+   "text": "face.",
+   "line": 4,
+   "start": 34.557,
+   "end": 34.88
+  },
+  {
+   "text": "Then,",
+   "line": 5,
+   "start": 35.397,
+   "end": 35.917
+  },
+  {
+   "text": "at",
+   "line": 5,
+   "start": 35.917,
+   "end": 36.277
+  },
+  {
+   "text": "seven",
+   "line": 5,
+   "start": 36.277,
+   "end": 36.797
+  },
+  {
+   "text": "seconds...",
+   "line": 5,
+   "start": 36.797,
+   "end": 37.27
+  },
+  {
+   "text": "the",
+   "line": 5,
+   "start": 37.477,
+   "end": 37.717
+  },
+  {
+   "text": "doorway",
+   "line": 5,
+   "start": 37.717,
+   "end": 38.277
+  },
+  {
+   "text": "behind",
+   "line": 5,
+   "start": 38.277,
+   "end": 38.637
+  },
+  {
+   "text": "me",
+   "line": 5,
+   "start": 38.637,
+   "end": 38.797
+  },
+  {
+   "text": "in",
+   "line": 5,
+   "start": 38.797,
+   "end": 38.917
+  },
+  {
+   "text": "the",
+   "line": 5,
+   "start": 38.917,
+   "end": 39.037
+  },
+  {
+   "text": "reflection",
+   "line": 5,
+   "start": 39.037,
+   "end": 39.717
+  },
+  {
+   "text": "went",
+   "line": 5,
+   "start": 39.717,
+   "end": 40.037
+  },
+  {
+   "text": "completely",
+   "line": 5,
+   "start": 40.037,
+   "end": 40.757
+  },
+  {
+   "text": "black.",
+   "line": 5,
+   "start": 40.757,
+   "end": 40.92
+  },
+  {
+   "text": "Even",
+   "line": 5,
+   "start": 41.357,
+   "end": 41.677
+  },
+  {
+   "text": "though",
+   "line": 5,
+   "start": 41.677,
+   "end": 41.917
+  },
+  {
+   "text": "my",
+   "line": 5,
+   "start": 41.917,
+   "end": 42.157
+  },
+  {
+   "text": "hallway",
+   "line": 5,
+   "start": 42.157,
+   "end": 42.277
+  },
+  {
+   "text": "light",
+   "line": 5,
+   "start": 42.197,
+   "end": 42.917
+  },
+  {
+   "text": "was",
+   "line": 5,
+   "start": 42.917,
+   "end": 43.117
+  },
+  {
+   "text": "on.",
+   "line": 5,
+   "start": 43.117,
+   "end": 43.637
+  },
+  {
+   "text": "At",
+   "line": 6,
+   "start": 43.637,
+   "end": 43.957
+  },
+  {
+   "text": "twelve",
+   "line": 6,
+   "start": 43.957,
+   "end": 44.397
+  },
+  {
+   "text": "seconds...",
+   "line": 6,
+   "start": 44.397,
+   "end": 45.0
+  },
+  {
+   "text": "something",
+   "line": 6,
+   "start": 45.237,
+   "end": 45.757
+  },
+  {
+   "text": "tall",
+   "line": 6,
+   "start": 45.757,
+   "end": 46.237
+  },
+  {
+   "text": "leaned",
+   "line": 6,
+   "start": 46.237,
+   "end": 46.637
+  },
+  {
+   "text": "in",
+   "line": 6,
+   "start": 46.637,
+   "end": 46.877
+  },
+  {
+   "text": "over",
+   "line": 6,
+   "start": 46.877,
+   "end": 47.117
+  },
+  {
+   "text": "my",
+   "line": 6,
+   "start": 47.117,
+   "end": 47.317
+  },
+  {
+   "text": "left",
+   "line": 6,
+   "start": 47.317,
+   "end": 47.637
+  },
+  {
+   "text": "shoulder.",
+   "line": 6,
+   "start": 47.637,
+   "end": 48.02
+  },
+  {
+   "text": "Its",
+   "line": 6,
+   "start": 48.337,
+   "end": 48.657
+  },
+  {
+   "text": "chin",
+   "line": 6,
+   "start": 48.657,
+   "end": 49.017
+  },
+  {
+   "text": "rested",
+   "line": 6,
+   "start": 49.017,
+   "end": 49.497
+  },
+  {
+   "text": "right",
+   "line": 6,
+   "start": 49.497,
+   "end": 49.777
+  },
+  {
+   "text": "above",
+   "line": 6,
+   "start": 49.777,
+   "end": 50.097
+  },
+  {
+   "text": "my",
+   "line": 6,
+   "start": 50.097,
+   "end": 50.257
+  },
+  {
+   "text": "collarbone.",
+   "line": 6,
+   "start": 50.257,
+   "end": 50.83
+  },
+  {
+   "text": "And",
+   "line": 6,
+   "start": 51.137,
+   "end": 51.377
+  },
+  {
+   "text": "it",
+   "line": 6,
+   "start": 51.377,
+   "end": 51.617
+  },
+  {
+   "text": "smiled",
+   "line": 6,
+   "start": 51.617,
+   "end": 52.177
+  },
+  {
+   "text": "with",
+   "line": 6,
+   "start": 52.177,
+   "end": 52.297
+  },
+  {
+   "text": "too",
+   "line": 6,
+   "start": 52.417,
+   "end": 52.777
+  },
+  {
+   "text": "many",
+   "line": 6,
+   "start": 52.777,
+   "end": 53.137
+  },
+  {
+   "text": "teeth.",
+   "line": 6,
+   "start": 53.137,
+   "end": 53.32
+  },
+  {
+   "text": "When",
+   "line": 7,
+   "start": 53.737,
+   "end": 53.937
+  },
+  {
+   "text": "I",
+   "line": 7,
+   "start": 53.937,
+   "end": 54.097
+  },
+  {
+   "text": "spun",
+   "line": 7,
+   "start": 54.097,
+   "end": 54.417
+  },
+  {
+   "text": "around",
+   "line": 7,
+   "start": 54.417,
+   "end": 54.737
+  },
+  {
+   "text": "to",
+   "line": 7,
+   "start": 54.737,
+   "end": 54.897
+  },
+  {
+   "text": "look",
+   "line": 7,
+   "start": 54.897,
+   "end": 55.097
+  },
+  {
+   "text": "behind",
+   "line": 7,
+   "start": 55.097,
+   "end": 55.497
+  },
+  {
+   "text": "me...",
+   "line": 7,
+   "start": 55.497,
+   "end": 55.63
+  },
+  {
+   "text": "the",
+   "line": 7,
+   "start": 55.777,
+   "end": 56.057
+  },
+  {
+   "text": "room",
+   "line": 7,
+   "start": 56.057,
+   "end": 56.337
+  },
+  {
+   "text": "was",
+   "line": 7,
+   "start": 56.337,
+   "end": 56.577
+  },
+  {
+   "text": "empty.",
+   "line": 7,
+   "start": 56.577,
+   "end": 56.84
+  },
+  {
+   "text": "The",
+   "line": 8,
+   "start": 57.337,
+   "end": 57.537
+  },
+  {
+   "text": "scariest",
+   "line": 8,
+   "start": 57.537,
+   "end": 58.257
+  },
+  {
+   "text": "part?",
+   "line": 8,
+   "start": 58.257,
+   "end": 58.49
+  },
+  {
+   "text": "The",
+   "line": 8,
+   "start": 58.737,
+   "end": 59.057
+  },
+  {
+   "text": "note",
+   "line": 8,
+   "start": 59.057,
+   "end": 59.417
+  },
+  {
+   "text": "was",
+   "line": 8,
+   "start": 59.417,
+   "end": 59.697
+  },
+  {
+   "text": "gone.",
+   "line": 8,
+   "start": 59.697,
+   "end": 59.96
+  },
+  {
+   "text": "And",
+   "line": 8,
+   "start": 60.257,
+   "end": 60.457
+  },
+  {
+   "text": "my",
+   "line": 8,
+   "start": 60.457,
+   "end": 60.657
+  },
+  {
+   "text": "phone",
+   "line": 8,
+   "start": 60.657,
+   "end": 61.057
+  },
+  {
+   "text": "screen",
+   "line": 8,
+   "start": 61.057,
+   "end": 61.417
+  },
+  {
+   "text": "flickered",
+   "line": 8,
+   "start": 61.417,
+   "end": 61.897
+  },
+  {
+   "text": "on",
+   "line": 8,
+   "start": 61.897,
+   "end": 62.097
+  },
+  {
+   "text": "by",
+   "line": 8,
+   "start": 62.097,
+   "end": 62.257
+  },
+  {
+   "text": "itself...",
+   "line": 8,
+   "start": 62.257,
+   "end": 62.65
+  },
+  {
+   "text": "showing",
+   "line": 8,
+   "start": 62.977,
+   "end": 63.377
+  },
+  {
+   "text": "a",
+   "line": 8,
+   "start": 63.377,
+   "end": 63.537
+  },
+  {
+   "text": "live",
+   "line": 8,
+   "start": 63.537,
+   "end": 63.897
+  },
+  {
+   "text": "camera",
+   "line": 8,
+   "start": 63.897,
+   "end": 64.257
+  },
+  {
+   "text": "view",
+   "line": 8,
+   "start": 64.257,
+   "end": 64.537
+  },
+  {
+   "text": "of",
+   "line": 8,
+   "start": 64.537,
+   "end": 64.657
+  },
+  {
+   "text": "the",
+   "line": 8,
+   "start": 64.657,
+   "end": 64.817
+  },
+  {
+   "text": "back",
+   "line": 8,
+   "start": 64.817,
+   "end": 65.057
+  },
+  {
+   "text": "of",
+   "line": 8,
+   "start": 65.057,
+   "end": 65.217
+  },
+  {
+   "text": "my",
+   "line": 8,
+   "start": 65.217,
+   "end": 65.457
+  },
+  {
+   "text": "own",
+   "line": 8,
+   "start": 65.457,
+   "end": 65.777
+  },
+  {
+   "text": "head.",
+   "line": 8,
+   "start": 65.777,
+   "end": 65.97
+  },
+  {
+   "text": "Your",
+   "line": 9,
+   "start": 66.235,
+   "end": 66.795
+  },
+  {
+   "text": "seventeen",
+   "line": 9,
+   "start": 66.795,
+   "end": 67.395
+  },
+  {
+   "text": "seconds",
+   "line": 9,
+   "start": 67.395,
+   "end": 67.875
+  },
+  {
+   "text": "are",
+   "line": 9,
+   "start": 67.875,
+   "end": 68.075
+  },
+  {
+   "text": "up.",
+   "line": 9,
+   "start": 68.075,
+   "end": 68.25
+  },
+  {
+   "text": "Don't",
+   "line": 9,
+   "start": 68.435,
+   "end": 68.875
+  },
+  {
+   "text": "look",
+   "line": 9,
+   "start": 68.875,
+   "end": 69.115
+  },
+  {
+   "text": "behind",
+   "line": 9,
+   "start": 69.115,
+   "end": 69.515
+  },
+  {
+   "text": "you.",
+   "line": 9,
+   "start": 69.515,
+   "end": 69.635
+  }
+ ]
+}

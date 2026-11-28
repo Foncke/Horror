@@ -1,9 +1,9 @@
 import React, {useMemo} from 'react';
 import * as THREE from 'three';
-import {FaceKind, faceTexture} from './textures';
+import {FaceKind, faceTexture, faceTextureHi} from './textures';
 
 /** Toy-like vinyl figure: big sphere head, soft capsule body. Feet at the group origin, ~1.6 m tall. */
-export type Outfit = 'you' | 'clerk' | 'bellhop' | 'guest' | 'guest2' | 'guest3' | 'pajamas' | 'double' | 'hiker' | 'mimic';
+export type Outfit = 'you' | 'clerk' | 'bellhop' | 'guest' | 'guest2' | 'guest3' | 'pajamas' | 'double' | 'hiker' | 'mimic' | 'sleeper';
 
 export type Pose = {
   headPitch?: number; // + looks down
@@ -63,8 +63,10 @@ const OUTFIT: Record<Outfit, {skin: string; body: string; arm: string; legs: str
   // Found You: the hiker and the thing that copies her (same clothes, paler skin)
   hiker: {skin: '#ebe7df', body: '#2f6a6c', arm: '#2f6a6c', legs: '#3b3a35', hands: '#ebe7df'},
   mimic: {skin: '#aeb0ab', body: '#2f6a6c', arm: '#2f6a6c', legs: '#3b3a35', hands: '#9fa29c'},
+  // 17 Seconds: the narrator, a man in a dark t-shirt and grey sweatpants
+  sleeper: {skin: '#ebe7df', body: '#262e3b', arm: '#262e3b', legs: '#4a4d55', hands: '#ebe7df'},
 };
-const HAIR: Partial<Record<Outfit, string>> = {pajamas: '#3a2418', double: '#3a2418', hiker: '#5a321f', mimic: '#5a321f'};
+const HAIR: Partial<Record<Outfit, string>> = {pajamas: '#3a2418', double: '#3a2418', hiker: '#5a321f', mimic: '#5a321f', sleeper: '#231812'};
 /** Knit beanie and backpack for the hiking outfits. */
 const HIKING: Partial<Record<Outfit, boolean>> = {hiker: true, mimic: true};
 /** Outfits drawn as a girl: long hair, a bow, lashes and blush. */
@@ -80,9 +82,11 @@ type Props = Pose & {
   shadows?: boolean;
   /** draw only the head (e.g. someone tucked under a blanket) */
   headOnly?: boolean;
+  /** face texture at double resolution (extreme close-ups) */
+  faceHi?: boolean;
 };
 
-export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0, 0, 0], rotationY = 0, faceGlow = 0, faceOpacity = 1, shadows = true, headOnly = false, ...pose}) => {
+export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0, 0, 0], rotationY = 0, faceGlow = 0, faceOpacity = 1, shadows = true, headOnly = false, faceHi = false, ...pose}) => {
   const o = OUTFIT[outfit];
   const walk = pose.walk ?? 0;
   const stride = pose.stride ?? (walk ? 0.45 : 0);
@@ -94,7 +98,7 @@ export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0
   const hunch = pose.hunch ?? 0;
 
   const faceMat = useMemo(() => {
-    const tex = faceTexture(face, GIRLY[outfit] ?? false);
+    const tex = faceHi ? faceTextureHi(face, GIRLY[outfit] ?? false) : faceTexture(face, GIRLY[outfit] ?? false);
     if (face === 'grin') {
       return new THREE.MeshStandardMaterial({
         map: tex,
@@ -108,7 +112,7 @@ export const Character: React.FC<Props> = ({outfit, face = 'calm', position = [0
       });
     }
     return new THREE.MeshStandardMaterial({map: tex, transparent: true, depthWrite: false, roughness: 0.5, polygonOffset: true, polygonOffsetFactor: -2});
-  }, [face, outfit]);
+  }, [face, outfit, faceHi]);
   faceMat.opacity = faceOpacity;
   if (face === 'grin') faceMat.emissiveIntensity = (0.9 + faceGlow) * faceOpacity;
 
